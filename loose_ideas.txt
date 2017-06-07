@@ -1,0 +1,47 @@
+Meta-information encapsulates all relevant knowledge obtained through time-travel
+	If the internal player is being controlled by the external player, then any relevant information the external player knows can be deduced from events in the past and meta-information.
+	
+Meta-information can be shared via
+	Antitelephone arrival from you (vertical)
+	Antitelephone departure from the opponent in timeline to the left (horizontal)
+	Using the Oracle (horizontal)
+	Encounter (vertical for the first one, horizontal for the rest)
+	Missing an encounter in timeline to the left (horizontal)
+	
+	Vertical means meta-information from the future is sent to the past
+	Horizontal means meta-information is sent between points at the same time
+		Are also affected by vertical transfers that go through them
+
+Meta-information available:
+	Earliest deduction that the opponent used the bridge / oracle / shield
+	Information from an encounter for encounter-related events
+	The events of the previous timeline for antitelephone arrival event
+		As well as the locations of the opponent between departure and arrival in timeline to the left
+	
+Information obtained in an encounter:
+	Location of the opponent
+	Amount of damage the opponent dealt
+	Amount of health opponent has
+	
+If an opponent loses an ability, it can't be known for sure.
+
+Players have 2 energy given to them per turn
+	Can use it to charge an ability, train an ability or heal
+	
+Using the antitelephone puts it into lockdown
+	Use energy to whittle down the lockdown amount. At best, can finish in half of the travel distance.
+	
+All abilities grant 4 attack and 25 max health once unlocked
+A familiar encounter adds 50% attack to the one who has seen the encounter before
+Players start with 10 health out of 20 max health
+
+All items have 4 cooldown. When the cooldown is zero, any extra energy will activate the item. Cooldown rises by 1 per turn.
+	Oracle: make player conscious. Activation is instantaneous. Upon activation, cooldown is reset.
+	Bridge: allow antitelephone to pass through arrivals. Upon activation, cooldown rises by 2 each turn until full, then it deactivates.
+	Shield: player is granted extra HP = 4 - cooldown. Antitelephone departures from the player will set an additional store of energy:
+		100% of the current energy balance
+		50% of the stored energy balance
+	
+Early game: healing beats aggressive, aggressive beats training, training beats healing
+
+Network game by making a server process deal with the backend. Messages passed to the server can also be used to save a replay file.

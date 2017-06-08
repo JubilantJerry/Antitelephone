@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+  <namespace>com.nostalgamer.Antitelephone</namespace>
+  <virtualFolder>doc</virtualFolder>
+  <filterSection>
+    <filterAttribute>doxygen</filterAttribute>
+    <toc>
+      <section title="Antitelephone 0.1" ref="index.html">
+        <section title="Index" ref="index.html" />
+        <section title="Classes" ref="annotated.html">
+          <section title="Class List" ref="annotated.html">
+            <section title="std">
+              <section title="hash&lt; timeplane::Moment &gt;" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html">
+                <section title="operator()" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html#a29ac692bfada0bbd1a2c47ae433942f7" />
+              </section>
+            </section>
+            <section title="timeplane">
+              <section title="Moment" ref="classtimeplane_1_1_moment.html">
+                <section title="Moment" ref="classtimeplane_1_1_moment.html#a5eecc085ee6010fa5079ddea4e79d6cb" />
+                <section title="Moment" ref="classtimeplane_1_1_moment.html#a33106530bbe889016479d1443d592571" />
+                <section title="operator!=" ref="classtimeplane_1_1_moment.html#a2e50bd80270c77f8d1b9fdbc586efc7c" />
+                <section title="operator==" ref="classtimeplane_1_1_moment.html#abe69bf9b6e324f3147c9f1ed078b9d0c" />
+                <section title="parent_timeline_num" ref="classtimeplane_1_1_moment.html#ad8ea04fc7e079694a0843ff7b3f42c6c" />
+                <section title="serialize" ref="classtimeplane_1_1_moment.html#ac7870eb30ed18b8ea85bf7584632cd11" />
+                <section title="time" ref="classtimeplane_1_1_moment.html#a118be8757aa459d4d6e4d859a5164251" />
+                <section title="boost::serialization::access" ref="classtimeplane_1_1_moment.html#ac98d07dd8f7b70e16ccb9a01abf56b9c" />
+                <section title="std::hash&lt; Moment &gt;" ref="classtimeplane_1_1_moment.html#a6000ec770baa14dc72ef269915ff4f6d" />
+              </section>
+              <section title="TimeLine" ref="classtimeplane_1_1_time_line.html">
+                <section title="MomentDeleter" ref="classtimeplane_1_1_time_line.html#ac0192758efee9819ae91308d339fc3f4" />
+                <section title="MomentIterators" ref="classtimeplane_1_1_time_line.html#a6f6445b9dc0cafb2affc5f146aa2d5c9" />
+                <section title="TimeLine" ref="classtimeplane_1_1_time_line.html#afacd08f817ddae17b1dea9c1989f74ae" />
+                <section title="TimeLine" ref="classtimeplane_1_1_time_line.html#a5e9a864bc9838c82dc3e5a50e69ece9b" />
+                <section title="~TimeLine" ref="classtimeplane_1_1_time_line.html#a2d16c3db644a5e8dc4c0f12622c6a4e6" />
+                <section title="TimeLine" ref="classtimeplane_1_1_time_line.html#abba50bd707ce998356abd59bbf302f94" />
+                <section title="TimeLine" ref="classtimeplane_1_1_time_line.html#a345833bfe7d67e2ca39067e92cb4929a" />
+                <section title="GetMoment" ref="classtimeplane_1_1_time_line.html#ae18ca86c0f036731e1bb148ed3381ea8" />
+                <section title="LatestMoment" ref="classtimeplane_1_1_time_line.html#acc391553e5c45a647c82f27e53ae3af8" />
+                <section title="MakeMoment" ref="classtimeplane_1_1_time_line.html#a7520362a8b33962371b1a47831b37b03" />
+                <section title="operator=" ref="classtimeplane_1_1_time_line.html#ad8eb0c4a4c85e5d859fab5e1d70a757f" />
+                <section title="operator=" ref="classtimeplane_1_1_time_line.html#a6914130bc8b7bed844517bd0daed7b6b" />
+                <section title="timeline_number" ref="classtimeplane_1_1_time_line.html#a4297da8acc6fbee73bfc7db0de2f80a5" />
+              </section>
+            </section>
+          </section>
+          <section title="Class Index" ref="classes.html" />
+          <section title="Class Members" ref="functions.html">
+            <section title="All" ref="functions.html" />
+            <section title="Functions" ref="functions_func.html" />
+          </section>
+        </section>
+        <section title="Files">
+          <section title="File List" ref="files.html">
+            <section title="src" ref="dir_68267d1309a1af8e8297ef4c3efbcdba.html">
+              <section title="moment.hpp" ref="moment_8hpp_source.html" />
+              <section title="timeline.hpp" ref="timeline_8hpp_source.html" />
+            </section>
+          </section>
+        </section>
+      </section>
+    </toc>
+    <keywords>
+      <keyword name="std::hash&lt; timeplane::Moment &gt;" id="std::hash&lt; timeplane::Moment &gt;" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html" />
+      <keyword name="operator()" id="std::hash&lt; timeplane::Moment &gt;::operator()" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html#a29ac692bfada0bbd1a2c47ae433942f7" />
+      <keyword name="timeplane::Moment" id="timeplane::Moment" ref="classtimeplane_1_1_moment.html" />
+      <keyword name="Moment" id="timeplane::Moment::Moment" ref="classtimeplane_1_1_moment.html#a5eecc085ee6010fa5079ddea4e79d6cb" />
+      <keyword name="Moment" id="timeplane::Moment::Moment" ref="classtimeplane_1_1_moment.html#a33106530bbe889016479d1443d592571" />
+      <keyword name="parent_timeline_num" id="timeplane::Moment::parent_timeline_num" ref="classtimeplane_1_1_moment.html#ad8ea04fc7e079694a0843ff7b3f42c6c" />
+      <keyword name="time" id="timeplane::Moment::time" ref="classtimeplane_1_1_moment.html#a118be8757aa459d4d6e4d859a5164251" />
+      <keyword name="operator==" id="timeplane::Moment::operator==" ref="classtimeplane_1_1_moment.html#abe69bf9b6e324f3147c9f1ed078b9d0c" />
+      <keyword name="operator!=" id="timeplane::Moment::operator!=" ref="classtimeplane_1_1_moment.html#a2e50bd80270c77f8d1b9fdbc586efc7c" />
+      <keyword name="serialize" id="timeplane::Moment::serialize" ref="classtimeplane_1_1_moment.html#ac7870eb30ed18b8ea85bf7584632cd11" />
+      <keyword name="boost::serialization::access" id="timeplane::Moment::boost::serialization::access" ref="classtimeplane_1_1_moment.html#ac98d07dd8f7b70e16ccb9a01abf56b9c" />
+      <keyword name="std::hash&lt; Moment &gt;" id="timeplane::Moment::std::hash&lt; Moment &gt;" ref="classtimeplane_1_1_moment.html#a6000ec770baa14dc72ef269915ff4f6d" />
+      <keyword name="timeplane::TimeLine" id="timeplane::TimeLine" ref="classtimeplane_1_1_time_line.html" />
+      <keyword name="MomentIterators" id="timeplane::TimeLine::MomentIterators" ref="classtimeplane_1_1_time_line.html#a6f6445b9dc0cafb2affc5f146aa2d5c9" />
+      <keyword name="MomentDeleter" id="timeplane::TimeLine::MomentDeleter" ref="classtimeplane_1_1_time_line.html#ac0192758efee9819ae91308d339fc3f4" />
+      <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#afacd08f817ddae17b1dea9c1989f74ae" />
+      <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#a5e9a864bc9838c82dc3e5a50e69ece9b" />
+      <keyword name="~TimeLine" id="timeplane::TimeLine::~TimeLine" ref="classtimeplane_1_1_time_line.html#a2d16c3db644a5e8dc4c0f12622c6a4e6" />
+      <keyword name="timeline_number" id="timeplane::TimeLine::timeline_number" ref="classtimeplane_1_1_time_line.html#a4297da8acc6fbee73bfc7db0de2f80a5" />
+      <keyword name="GetMoment" id="timeplane::TimeLine::GetMoment" ref="classtimeplane_1_1_time_line.html#ae18ca86c0f036731e1bb148ed3381ea8" />
+      <keyword name="MakeMoment" id="timeplane::TimeLine::MakeMoment" ref="classtimeplane_1_1_time_line.html#a7520362a8b33962371b1a47831b37b03" />
+      <keyword name="LatestMoment" id="timeplane::TimeLine::LatestMoment" ref="classtimeplane_1_1_time_line.html#acc391553e5c45a647c82f27e53ae3af8" />
+      <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#abba50bd707ce998356abd59bbf302f94" />
+      <keyword name="operator=" id="timeplane::TimeLine::operator=" ref="classtimeplane_1_1_time_line.html#ad8eb0c4a4c85e5d859fab5e1d70a757f" />
+      <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#a345833bfe7d67e2ca39067e92cb4929a" />
+      <keyword name="operator=" id="timeplane::TimeLine::operator=" ref="classtimeplane_1_1_time_line.html#a6914130bc8b7bed844517bd0daed7b6b" />
+    </keywords>
+    <files>
+      <file>tabs.css</file>
+      <file>tab_a.png</file>
+      <file>tab_b.png</file>
+      <file>tab_h.png</file>
+      <file>tab_s.png</file>
+      <file>nav_h.png</file>
+      <file>nav_f.png</file>
+      <file>bc_s.png</file>
+      <file>doxygen.png</file>
+      <file>closed.png</file>
+      <file>open.png</file>
+      <file>bdwn.png</file>
+      <file>sync_on.png</file>
+      <file>sync_off.png</file>
+      <file>doxygen.css</file>
+      <file>jquery.js</file>
+      <file>dynsections.js</file>
+      <file>search/search_l.png</file>
+      <file>search/search_m.png</file>
+      <file>search/search_r.png</file>
+      <file>search/close.png</file>
+      <file>search/mag_sel.png</file>
+      <file>search/search.css</file>
+      <file>search/search.js</file>
+      <file>moment_8hpp_source.html</file>
+      <file>timeline_8hpp_source.html</file>
+      <file>structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html</file>
+      <file>structstd_1_1hash_3_01timeplane_1_1_moment_01_4-members.html</file>
+      <file>classtimeplane_1_1_moment.html</file>
+      <file>classtimeplane_1_1_moment-members.html</file>
+      <file>classtimeplane_1_1_time_line.html</file>
+      <file>classtimeplane_1_1_time_line-members.html</file>
+      <file>dir_68267d1309a1af8e8297ef4c3efbcdba.html</file>
+      <file>index.html</file>
+      <file>annotated.html</file>
+      <file>classes.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>files.html</file>
+    </files>
+  </filterSection>
+</QtHelpProject>

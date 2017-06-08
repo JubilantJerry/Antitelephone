@@ -1,0 +1,165 @@
+\hypertarget{classtimeplane_1_1_moment}{}\section{timeplane\+:\+:Moment Class Reference}
+\label{classtimeplane_1_1_moment}\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+
+
+A unique moment in a {\ttfamily Time\+Plane}.  
+
+
+
+
+{\ttfamily \#include $<$moment.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtimeplane_1_1_moment_a5eecc085ee6010fa5079ddea4e79d6cb}{Moment} () noexcept
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classtimeplane_1_1_moment_a33106530bbe889016479d1443d592571}{Moment} (int \hyperlink{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}{parent\+\_\+timeline\+\_\+num}, int \hyperlink{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}{time}) noexcept
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}{parent\+\_\+timeline\+\_\+num} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the timeline number. \end{DoxyCompactList}\item 
+int \hyperlink{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}{time} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the time. \end{DoxyCompactList}\item 
+bool \hyperlink{classtimeplane_1_1_moment_abe69bf9b6e324f3147c9f1ed078b9d0c}{operator==} (const \hyperlink{classtimeplane_1_1_moment}{Moment} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classtimeplane_1_1_moment_a2e50bd80270c77f8d1b9fdbc586efc7c}{operator!=} (const \hyperlink{classtimeplane_1_1_moment}{Moment} \&rhs) const noexcept
+\begin{DoxyCompactList}\small\item\em Inequality operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive $>$ }\\void \hyperlink{classtimeplane_1_1_moment_ac7870eb30ed18b8ea85bf7584632cd11}{serialize} (Archive \&ar, unsigned int const version)
+\begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classtimeplane_1_1_moment_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classtimeplane_1_1_moment_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+class {\bfseries boost\+::serialization\+::access}
+\item 
+\mbox{\Hypertarget{classtimeplane_1_1_moment_a6000ec770baa14dc72ef269915ff4f6d}\label{classtimeplane_1_1_moment_a6000ec770baa14dc72ef269915ff4f6d}} 
+struct {\bfseries std\+::hash$<$ Moment $>$}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A unique moment in a {\ttfamily Time\+Plane}. 
+
+This class represents a fixed moment in the game, regardless of time manipulation. The instance is very small and is often passed by value. Each moment is associated with a timeline (through the timeline number) and a time value (which may be the same across different moments). It is also possible to serialize the instance. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_a5eecc085ee6010fa5079ddea4e79d6cb}\label{classtimeplane_1_1_moment_a5eecc085ee6010fa5079ddea4e79d6cb}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!Moment@{Moment}}
+\index{Moment@{Moment}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{Moment()}{Moment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily timeplane\+::\+Moment\+::\+Moment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Default constructor. 
+
+The fields are not initialized. The only mutator is the {\ttfamily serialize} function, and so this constructor should only be used to deserialize an instance. \mbox{\Hypertarget{classtimeplane_1_1_moment_a33106530bbe889016479d1443d592571}\label{classtimeplane_1_1_moment_a33106530bbe889016479d1443d592571}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!Moment@{Moment}}
+\index{Moment@{Moment}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{Moment()}{Moment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily timeplane\+::\+Moment\+::\+Moment (\begin{DoxyParamCaption}\item[{int}]{parent\+\_\+timeline\+\_\+num,  }\item[{int}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent\+\_\+timeline\+\_\+num} & The timeline number of the moment. \\
+\hline
+{\em time} & The time associated with the moment. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_a2e50bd80270c77f8d1b9fdbc586efc7c}\label{classtimeplane_1_1_moment_a2e50bd80270c77f8d1b9fdbc586efc7c}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool timeplane\+::\+Moment\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classtimeplane_1_1_moment}{Moment} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Inequality operator. 
+
+Both the timeline number and time are compared. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The instance to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the instances are not equal. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_abe69bf9b6e324f3147c9f1ed078b9d0c}\label{classtimeplane_1_1_moment_abe69bf9b6e324f3147c9f1ed078b9d0c}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!operator==@{operator==}}
+\index{operator==@{operator==}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool timeplane\+::\+Moment\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classtimeplane_1_1_moment}{Moment} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Equality operator. 
+
+Both the timeline number and time are compared. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The instance to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the instances are equal. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}\label{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!parent\+\_\+timeline\+\_\+num@{parent\+\_\+timeline\+\_\+num}}
+\index{parent\+\_\+timeline\+\_\+num@{parent\+\_\+timeline\+\_\+num}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{parent\+\_\+timeline\+\_\+num()}{parent\_timeline\_num()}}
+{\footnotesize\ttfamily int timeplane\+::\+Moment\+::parent\+\_\+timeline\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the timeline number. 
+
+\begin{DoxyReturn}{Returns}
+The timeline number of the moment. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_ac7870eb30ed18b8ea85bf7584632cd11}\label{classtimeplane_1_1_moment_ac7870eb30ed18b8ea85bf7584632cd11}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!serialize@{serialize}}
+\index{serialize@{serialize}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename Archive $>$ \\
+void timeplane\+::\+Moment\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{unsigned int const}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialization function. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Archive} & The serialization archive type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & The serialization archive. \\
+\hline
+{\em version} & The verion of the serialization protocol to use. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}\label{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!time@{time}}
+\index{time@{time}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily int timeplane\+::\+Moment\+::time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the time. 
+
+\begin{DoxyReturn}{Returns}
+The time associated with the moment. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/moment.\+hpp\end{DoxyCompactItemize}

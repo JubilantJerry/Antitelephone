@@ -1,6 +1,6 @@
-**Antitelephone**
+# Antitelephone
 
-#Overview#
+## Overview
 
 This project is a new concept for a multiplayer time travel game inspired by the parallel universe theory. I wanted to make a game like this because so few multiplayer games use time travel as a central game element (instead of, say, a plot element).
 
@@ -8,7 +8,7 @@ The only true multiplayer time travel game I could find online was <a href="http
 
 Unlike Achron, I didn't want to push the responsibility of time toward some kind of "meta-time". Instead, players can use a time machine (a magical item that behaves like a <a href="https://en.wikipedia.org/wiki/Tachyonic_antitelephone">tachyonic antitelephone</a>) which has the potential to send messages to any point in their own past. This naturally brings many problems in game design, and I tried my best to make a meaningful game without compromising the time travel element.
 
-#Cursory Explanation of Game Mechanics#
+## Cursory Explanation of Game Mechanics
 
 The game is turn-based, so there is no need for real-time action. There are a small number of rooms in a game, and the player can visit any one of those rooms each turn. The moves of all players are processed simultaneously, unlike other turn-based games where the first player or the player with the highest speed stat makes the first move. If multiple players meet in the same room, combat occurs instantly and automatically.
 
@@ -18,7 +18,7 @@ In this game, time travel doesn't feel like something useless you can do to dela
 
 Other time-related items exist in the game too, which can be unlocked with persistent effort. In addition to increasing damage output and maximum health, they also offer abilities that complement the Antitelephone. They could make more points in time accessible to time travel, notify past versions of you about moving to different timelines, or act as a shield from damage whose effects can be carried to the past. If you're interested, play the game when it comes out! Or read the source code to see what's going on, if you're into that kind of stuff.
 
-#Details#
+## Details
 
 This game is written in C++, and I plan to support network multiplayer games of 2 - 6 players. I'm probably not going to get a dedicated server to do this, so players might have to set up the server program on some machine of their own.
 

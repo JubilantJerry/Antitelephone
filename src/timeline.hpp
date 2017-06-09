@@ -19,8 +19,9 @@ class Moment;
  */
 class TimeLine {
   public:
-    using MomentIterators = ::std::pair<::std::vector<Moment>::iterator,
-          ::std::vector<Moment>::iterator>;
+    using MomentIterators = ::std::pair<
+                            ::std::vector<Moment>::const_iterator,
+                            ::std::vector<Moment>::const_iterator>;
     using MomentDeleter = ::std::function<void(typename MomentIterators)>;
 
     /**
@@ -95,6 +96,7 @@ class TimeLine {
     //Declaring the pimpl idiom with a shared pointer.
     ///@cond INTERNAL
     class Impl;
+    static void ImplDeleter(Impl* pimpl);
     friend Impl Impl(TimeLine const& left_timeline, int branch_time);
     ::std::shared_ptr<Impl> pimpl_;
     ///@endcond

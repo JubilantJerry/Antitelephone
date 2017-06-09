@@ -11,7 +11,7 @@
           <section title="Class List" ref="annotated.html">
             <section title="std">
               <section title="hash&lt; timeplane::Moment &gt;" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html">
-                <section title="operator()" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html#a29ac692bfada0bbd1a2c47ae433942f7" />
+                <section title="operator()" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html#ad80181ebc12d459ea83dd1f62ddb6713" />
               </section>
             </section>
             <section title="timeplane">
@@ -27,8 +27,6 @@
                 <section title="std::hash&lt; Moment &gt;" ref="classtimeplane_1_1_moment.html#a6000ec770baa14dc72ef269915ff4f6d" />
               </section>
               <section title="TimeLine" ref="classtimeplane_1_1_time_line.html">
-                <section title="MomentDeleter" ref="classtimeplane_1_1_time_line.html#ac0192758efee9819ae91308d339fc3f4" />
-                <section title="MomentIterators" ref="classtimeplane_1_1_time_line.html#a6f6445b9dc0cafb2affc5f146aa2d5c9" />
                 <section title="TimeLine" ref="classtimeplane_1_1_time_line.html#afacd08f817ddae17b1dea9c1989f74ae" />
                 <section title="TimeLine" ref="classtimeplane_1_1_time_line.html#a5e9a864bc9838c82dc3e5a50e69ece9b" />
                 <section title="~TimeLine" ref="classtimeplane_1_1_time_line.html#a2d16c3db644a5e8dc4c0f12622c6a4e6" />
@@ -38,8 +36,16 @@
                 <section title="LatestMoment" ref="classtimeplane_1_1_time_line.html#acc391553e5c45a647c82f27e53ae3af8" />
                 <section title="MakeMoment" ref="classtimeplane_1_1_time_line.html#a7520362a8b33962371b1a47831b37b03" />
                 <section title="operator=" ref="classtimeplane_1_1_time_line.html#ad8eb0c4a4c85e5d859fab5e1d70a757f" />
-                <section title="operator=" ref="classtimeplane_1_1_time_line.html#a6914130bc8b7bed844517bd0daed7b6b" />
+                <section title="operator=" ref="classtimeplane_1_1_time_line.html#a14e1d9701e1a6571458343e0831855b6" />
                 <section title="timeline_number" ref="classtimeplane_1_1_time_line.html#a4297da8acc6fbee73bfc7db0de2f80a5" />
+              </section>
+              <section title="TimePlane" ref="classtimeplane_1_1_time_plane.html">
+                <section title="TimePlane" ref="classtimeplane_1_1_time_plane.html#a8d8f1227ade6490fa8b814f1b7f18ecc" />
+                <section title="latest_antitelephone_arrival" ref="classtimeplane_1_1_time_plane.html#ae66d15a7ce9adb5f63906011a455400b" />
+                <section title="MakeNewTimeLine" ref="classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c" />
+                <section title="RegisterMomentDeleter" ref="classtimeplane_1_1_time_plane.html#a10f6e26c2043a2d2cb0271a06c2495d0" />
+                <section title="rightmost_timeline" ref="classtimeplane_1_1_time_plane.html#a317c9e247011cf5f4e6e36f2f7651932" />
+                <section title="second_rightmost_timeLine" ref="classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f" />
               </section>
             </section>
           </section>
@@ -47,13 +53,16 @@
           <section title="Class Members" ref="functions.html">
             <section title="All" ref="functions.html" />
             <section title="Functions" ref="functions_func.html" />
+            <section title="Variables" ref="functions_vars.html" />
           </section>
         </section>
         <section title="Files">
           <section title="File List" ref="files.html">
             <section title="src" ref="dir_68267d1309a1af8e8297ef4c3efbcdba.html">
+              <section title="aliases.hpp" ref="aliases_8hpp_source.html" />
               <section title="moment.hpp" ref="moment_8hpp_source.html" />
               <section title="timeline.hpp" ref="timeline_8hpp_source.html" />
+              <section title="timeplane.hpp" ref="timeplane_8hpp_source.html" />
             </section>
           </section>
         </section>
@@ -61,7 +70,7 @@
     </toc>
     <keywords>
       <keyword name="std::hash&lt; timeplane::Moment &gt;" id="std::hash&lt; timeplane::Moment &gt;" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html" />
-      <keyword name="operator()" id="std::hash&lt; timeplane::Moment &gt;::operator()" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html#a29ac692bfada0bbd1a2c47ae433942f7" />
+      <keyword name="operator()" id="std::hash&lt; timeplane::Moment &gt;::operator()" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html#ad80181ebc12d459ea83dd1f62ddb6713" />
       <keyword name="timeplane::Moment" id="timeplane::Moment" ref="classtimeplane_1_1_moment.html" />
       <keyword name="Moment" id="timeplane::Moment::Moment" ref="classtimeplane_1_1_moment.html#a5eecc085ee6010fa5079ddea4e79d6cb" />
       <keyword name="Moment" id="timeplane::Moment::Moment" ref="classtimeplane_1_1_moment.html#a33106530bbe889016479d1443d592571" />
@@ -73,8 +82,6 @@
       <keyword name="boost::serialization::access" id="timeplane::Moment::boost::serialization::access" ref="classtimeplane_1_1_moment.html#ac98d07dd8f7b70e16ccb9a01abf56b9c" />
       <keyword name="std::hash&lt; Moment &gt;" id="timeplane::Moment::std::hash&lt; Moment &gt;" ref="classtimeplane_1_1_moment.html#a6000ec770baa14dc72ef269915ff4f6d" />
       <keyword name="timeplane::TimeLine" id="timeplane::TimeLine" ref="classtimeplane_1_1_time_line.html" />
-      <keyword name="MomentIterators" id="timeplane::TimeLine::MomentIterators" ref="classtimeplane_1_1_time_line.html#a6f6445b9dc0cafb2affc5f146aa2d5c9" />
-      <keyword name="MomentDeleter" id="timeplane::TimeLine::MomentDeleter" ref="classtimeplane_1_1_time_line.html#ac0192758efee9819ae91308d339fc3f4" />
       <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#afacd08f817ddae17b1dea9c1989f74ae" />
       <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#a5e9a864bc9838c82dc3e5a50e69ece9b" />
       <keyword name="~TimeLine" id="timeplane::TimeLine::~TimeLine" ref="classtimeplane_1_1_time_line.html#a2d16c3db644a5e8dc4c0f12622c6a4e6" />
@@ -85,7 +92,15 @@
       <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#abba50bd707ce998356abd59bbf302f94" />
       <keyword name="operator=" id="timeplane::TimeLine::operator=" ref="classtimeplane_1_1_time_line.html#ad8eb0c4a4c85e5d859fab5e1d70a757f" />
       <keyword name="TimeLine" id="timeplane::TimeLine::TimeLine" ref="classtimeplane_1_1_time_line.html#a345833bfe7d67e2ca39067e92cb4929a" />
-      <keyword name="operator=" id="timeplane::TimeLine::operator=" ref="classtimeplane_1_1_time_line.html#a6914130bc8b7bed844517bd0daed7b6b" />
+      <keyword name="operator=" id="timeplane::TimeLine::operator=" ref="classtimeplane_1_1_time_line.html#a14e1d9701e1a6571458343e0831855b6" />
+      <keyword name="timeplane::TimePlane" id="timeplane::TimePlane" ref="classtimeplane_1_1_time_plane.html" />
+      <keyword name="TimePlane" id="timeplane::TimePlane::TimePlane" ref="classtimeplane_1_1_time_plane.html#a8d8f1227ade6490fa8b814f1b7f18ecc" />
+      <keyword name="latest_antitelephone_arrival" id="timeplane::TimePlane::latest_antitelephone_arrival" ref="classtimeplane_1_1_time_plane.html#ae66d15a7ce9adb5f63906011a455400b" />
+      <keyword name="rightmost_timeline" id="timeplane::TimePlane::rightmost_timeline" ref="classtimeplane_1_1_time_plane.html#a317c9e247011cf5f4e6e36f2f7651932" />
+      <keyword name="second_rightmost_timeLine" id="timeplane::TimePlane::second_rightmost_timeLine" ref="classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f" />
+      <keyword name="MakeNewTimeLine" id="timeplane::TimePlane::MakeNewTimeLine" ref="classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c" />
+      <keyword name="RegisterMomentDeleter" id="timeplane::TimePlane::RegisterMomentDeleter" ref="classtimeplane_1_1_time_plane.html#a10f6e26c2043a2d2cb0271a06c2495d0" />
+      <keyword name="kNoAntitelephoneArrival" id="timeplane::TimePlane::kNoAntitelephoneArrival" ref="classtimeplane_1_1_time_plane.html#ab131bfc5a6c85a3db846591159db2559" />
     </keywords>
     <files>
       <file>tabs.css</file>
@@ -112,14 +127,18 @@
       <file>search/mag_sel.png</file>
       <file>search/search.css</file>
       <file>search/search.js</file>
+      <file>aliases_8hpp_source.html</file>
       <file>moment_8hpp_source.html</file>
       <file>timeline_8hpp_source.html</file>
+      <file>timeplane_8hpp_source.html</file>
       <file>structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html</file>
       <file>structstd_1_1hash_3_01timeplane_1_1_moment_01_4-members.html</file>
       <file>classtimeplane_1_1_moment.html</file>
       <file>classtimeplane_1_1_moment-members.html</file>
       <file>classtimeplane_1_1_time_line.html</file>
       <file>classtimeplane_1_1_time_line-members.html</file>
+      <file>classtimeplane_1_1_time_plane.html</file>
+      <file>classtimeplane_1_1_time_plane-members.html</file>
       <file>dir_68267d1309a1af8e8297ef4c3efbcdba.html</file>
       <file>index.html</file>
       <file>annotated.html</file>
@@ -132,6 +151,8 @@
       <file>functions.html</file>
       <file>functions.html</file>
       <file>functions.html</file>
+      <file>functions.html</file>
+      <file>functions.html</file>
       <file>functions_func.html</file>
       <file>functions_func.html</file>
       <file>functions_func.html</file>
@@ -140,6 +161,8 @@
       <file>functions_func.html</file>
       <file>functions_func.html</file>
       <file>functions_func.html</file>
+      <file>functions_func.html</file>
+      <file>functions_vars.html</file>
       <file>files.html</file>
     </files>
   </filterSection>

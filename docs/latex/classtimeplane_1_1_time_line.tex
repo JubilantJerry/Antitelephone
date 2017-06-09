@@ -9,15 +9,6 @@ A chronological sequence of {\ttfamily \hyperlink{classtimeplane_1_1_moment}{Mom
 
 {\ttfamily \#include $<$timeline.\+hpp$>$}
 
-\subsection*{Public Types}
-\begin{DoxyCompactItemize}
-\item 
-\mbox{\Hypertarget{classtimeplane_1_1_time_line_a6f6445b9dc0cafb2affc5f146aa2d5c9}\label{classtimeplane_1_1_time_line_a6f6445b9dc0cafb2affc5f146aa2d5c9}} 
-using {\bfseries Moment\+Iterators} = \+::std\+::pair$<$\+::std\+::vector$<$ \hyperlink{classtimeplane_1_1_moment}{Moment} $>$\+::iterator, \+::std\+::vector$<$ \hyperlink{classtimeplane_1_1_moment}{Moment} $>$\+::iterator $>$
-\item 
-\mbox{\Hypertarget{classtimeplane_1_1_time_line_ac0192758efee9819ae91308d339fc3f4}\label{classtimeplane_1_1_time_line_ac0192758efee9819ae91308d339fc3f4}} 
-using {\bfseries Moment\+Deleter} = \+::std\+::function$<$ void(typename Moment\+Iterators)$>$
-\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,7 +17,7 @@ using {\bfseries Moment\+Deleter} = \+::std\+::function$<$ void(typename Moment\
 \hyperlink{classtimeplane_1_1_time_line_a5e9a864bc9838c82dc3e5a50e69ece9b}{Time\+Line} (\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} const \&left\+\_\+timeline, int branch\+\_\+time, Moment\+Deleter moment\+\_\+deleter=Moment\+Deleter\{\})
 \begin{DoxyCompactList}\small\item\em Constructor from an existing timeline. \end{DoxyCompactList}\item 
 \hyperlink{classtimeplane_1_1_time_line_a2d16c3db644a5e8dc4c0f12622c6a4e6}{$\sim$\+Time\+Line} ()
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Custom destructor. \end{DoxyCompactList}\item 
 int const \hyperlink{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f80a5}{timeline\+\_\+number} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the timeline number. \end{DoxyCompactList}\item 
 \hyperlink{classtimeplane_1_1_moment}{Moment} const \hyperlink{classtimeplane_1_1_time_line_ae18ca86c0f036731e1bb148ed3381ea8}{Get\+Moment} (int time) const
@@ -44,9 +35,8 @@ int const \hyperlink{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f8
 \mbox{\Hypertarget{classtimeplane_1_1_time_line_a345833bfe7d67e2ca39067e92cb4929a}\label{classtimeplane_1_1_time_line_a345833bfe7d67e2ca39067e92cb4929a}} 
 {\bfseries Time\+Line} (\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \&\&)=default
 \item 
-\mbox{\Hypertarget{classtimeplane_1_1_time_line_a6914130bc8b7bed844517bd0daed7b6b}\label{classtimeplane_1_1_time_line_a6914130bc8b7bed844517bd0daed7b6b}} 
-\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \& {\bfseries operator=} (\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \&\&)=default
-\end{DoxyCompactItemize}
+\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \& \hyperlink{classtimeplane_1_1_time_line_a14e1d9701e1a6571458343e0831855b6}{operator=} (\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \&\&rhs)
+\begin{DoxyCompactList}\small\item\em Custom move assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -97,9 +87,9 @@ This constructor creates a timeline as a branch of an existing timeline. It also
 
 
 
-Destructor. 
+Custom destructor. 
 
-The moment deletion handler, if active, is called to handle the removal of all moments contained within the timeline before it is destroyed. 
+The moment deletion handler, if active, is called to handle the removal of all unreachable moments within the timeline before it is destroyed. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classtimeplane_1_1_time_line_ae18ca86c0f036731e1bb148ed3381ea8}\label{classtimeplane_1_1_time_line_ae18ca86c0f036731e1bb148ed3381ea8}} 
@@ -150,6 +140,24 @@ Creates a new moment at the end of the timeline.
 
 \begin{DoxyReturn}{Returns}
 The moment newly created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimeplane_1_1_time_line_a14e1d9701e1a6571458343e0831855b6}\label{classtimeplane_1_1_time_line_a14e1d9701e1a6571458343e0831855b6}} 
+\index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!operator=@{operator=}}
+\index{operator=@{operator=}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classtimeplane_1_1_time_line}{Time\+Line}\& timeplane\+::\+Time\+Line\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \&\&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Custom move assignment operator. 
+
+This function also cleans up any moments that cannot be accessed as a result of the assignment. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The object to be moved. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The object that was assigned to. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f80a5}\label{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f80a5}} 
 \index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!timeline\+\_\+number@{timeline\+\_\+number}}

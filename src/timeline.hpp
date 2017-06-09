@@ -6,6 +6,7 @@
 #include <functional>
 #include <vector>
 #include <memory>
+#include "aliases.hpp"
 
 namespace timeplane {
 class Moment;
@@ -19,11 +20,6 @@ class Moment;
  */
 class TimeLine {
   public:
-    using MomentIterators = ::std::pair<
-                            ::std::vector<Moment>::const_iterator,
-                            ::std::vector<Moment>::const_iterator>;
-    using MomentDeleter = ::std::function<void(typename MomentIterators)>;
-
     /**
      * @brief Default constructor.
      *
@@ -49,10 +45,10 @@ class TimeLine {
              MomentDeleter moment_deleter = MomentDeleter{});
 
     /**
-     * @brief Destructor.
+     * @brief Custom destructor.
      *
      * The moment deletion handler, if active, is called to handle
-     * the removal of all moments contained within the timeline
+     * the removal of all unreachable moments within the timeline
      * before it is destroyed.
      */
     ~TimeLine();
@@ -90,16 +86,31 @@ class TimeLine {
     TimeLine(TimeLine const&) = delete;
     TimeLine& operator=(TimeLine const&) = delete;
     TimeLine(TimeLine&&) = default;
-    TimeLine& operator=(TimeLine&&) = default;
+
+    /**
+     * @brief Custom move assignment operator.
+     *
+     * This function also cleans up any moments that cannot be accessed
+     * as a result of the assignment.
+     * @param rhs       The object to be moved.
+     * @return The object that was assigned to.
+     */
+    TimeLine& operator=(TimeLine&& rhs) {
+        CleanUp();
+        pimpl_ = std::move(rhs.pimpl_);
+        return *this;
+    }
 
   private:
     //Declaring the pimpl idiom with a shared pointer.
     ///@cond INTERNAL
     class Impl;
-    static void ImplDeleter(Impl* pimpl);
     friend Impl Impl(TimeLine const& left_timeline, int branch_time);
-    ::std::shared_ptr<Impl> pimpl_;
     ///@endcond
+
+    ::std::shared_ptr<Impl> pimpl_;
+    static void ImplDeleter(Impl* pimpl);
+    void CleanUp();
 };
 }
 

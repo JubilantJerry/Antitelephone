@@ -60,7 +60,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
 <div class="summary">
-<a href="#pub-types">Public Types</a> |
 <a href="#pub-methods">Public Member Functions</a> |
 <a href="classtimeplane_1_1_time_line-members.html">List of all members</a> </div>
 <div class="headertitle">
@@ -71,15 +70,6 @@ $(function() {
  <a href="classtimeplane_1_1_time_line.html#details">More...</a></p><!-- @@@TimeLine -->
 <p><code>#include &lt;<a class="el" href="timeline_8hpp_source.html">timeline.hpp</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a6f6445b9dc0cafb2affc5f146aa2d5c9"><td align="right" class="memItemLeft" valign="top"><a id="a6f6445b9dc0cafb2affc5f146aa2d5c9"></a>
-using </td><td class="memItemRight" valign="bottom"><b>MomentIterators</b> = ::std::pair&lt;::std::vector&lt; <a class="el" href="classtimeplane_1_1_moment.html">Moment</a> &gt;::iterator, ::std::vector&lt; <a class="el" href="classtimeplane_1_1_moment.html">Moment</a> &gt;::iterator &gt;</td></tr>
-<tr class="separator:a6f6445b9dc0cafb2affc5f146aa2d5c9"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ac0192758efee9819ae91308d339fc3f4"><td align="right" class="memItemLeft" valign="top"><a id="ac0192758efee9819ae91308d339fc3f4"></a>
-using </td><td class="memItemRight" valign="bottom"><b>MomentDeleter</b> = ::std::function&lt; void(typename MomentIterators)&gt;</td></tr>
-<tr class="separator:ac0192758efee9819ae91308d339fc3f4"><td class="memSeparator" colspan="2"> </td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afacd08f817ddae17b1dea9c1989f74ae"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#afacd08f817ddae17b1dea9c1989f74ae">TimeLine</a> (MomentDeleter moment_deleter=MomentDeleter{})</td></tr>
@@ -89,7 +79,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5e9a864bc9838c82dc3e5a50e69ece9b"><td class="mdescLeft"> </td><td class="mdescRight">Constructor from an existing timeline.  <a href="#a5e9a864bc9838c82dc3e5a50e69ece9b">More...</a><br/></td></tr>
 <tr class="separator:a5e9a864bc9838c82dc3e5a50e69ece9b"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a2d16c3db644a5e8dc4c0f12622c6a4e6"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#a2d16c3db644a5e8dc4c0f12622c6a4e6">~TimeLine</a> ()</td></tr>
-<tr class="memdesc:a2d16c3db644a5e8dc4c0f12622c6a4e6"><td class="mdescLeft"> </td><td class="mdescRight">Destructor.  <a href="#a2d16c3db644a5e8dc4c0f12622c6a4e6">More...</a><br/></td></tr>
+<tr class="memdesc:a2d16c3db644a5e8dc4c0f12622c6a4e6"><td class="mdescLeft"> </td><td class="mdescRight">Custom destructor.  <a href="#a2d16c3db644a5e8dc4c0f12622c6a4e6">More...</a><br/></td></tr>
 <tr class="separator:a2d16c3db644a5e8dc4c0f12622c6a4e6"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a4297da8acc6fbee73bfc7db0de2f80a5"><td align="right" class="memItemLeft" valign="top">int const </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#a4297da8acc6fbee73bfc7db0de2f80a5">timeline_number</a> () const noexcept</td></tr>
 <tr class="memdesc:a4297da8acc6fbee73bfc7db0de2f80a5"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the timeline number.  <a href="#a4297da8acc6fbee73bfc7db0de2f80a5">More...</a><br/></td></tr>
@@ -112,9 +102,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a345833bfe7d67e2ca39067e92cb4929a"><td align="right" class="memItemLeft" valign="top"><a id="a345833bfe7d67e2ca39067e92cb4929a"></a>
  </td><td class="memItemRight" valign="bottom"><b>TimeLine</b> (<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp;&amp;)=default</td></tr>
 <tr class="separator:a345833bfe7d67e2ca39067e92cb4929a"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a6914130bc8b7bed844517bd0daed7b6b"><td align="right" class="memItemLeft" valign="top"><a id="a6914130bc8b7bed844517bd0daed7b6b"></a>
-<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp; </td><td class="memItemRight" valign="bottom"><b>operator=</b> (<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp;&amp;)=default</td></tr>
-<tr class="separator:a6914130bc8b7bed844517bd0daed7b6b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a14e1d9701e1a6571458343e0831855b6"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#a14e1d9701e1a6571458343e0831855b6">operator=</a> (<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp;&amp;rhs)</td></tr>
+<tr class="memdesc:a14e1d9701e1a6571458343e0831855b6"><td class="mdescLeft"> </td><td class="mdescRight">Custom move assignment operator.  <a href="#a14e1d9701e1a6571458343e0831855b6">More...</a><br/></td></tr>
+<tr class="separator:a14e1d9701e1a6571458343e0831855b6"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A chronological sequence of <code><a class="el" href="classtimeplane_1_1_moment.html" title="A unique moment in a TimePlane. ">Moment</a></code> instances. </p>
@@ -197,8 +187,8 @@ Public Member Functions</h2></td></tr>
 </tr>
 </table>
 </div><!-- $$$~TimeLine[overload1]$$$timeplane::TimeLine::~TimeLine() --><div class="memdoc"><div style="display: none">timeplane::TimeLine::~TimeLine ()</div>
-<p>Destructor. </p>
-<p>The moment deletion handler, if active, is called to handle the removal of all moments contained within the timeline before it is destroyed. </p>
+<p>Custom destructor. </p>
+<p>The moment deletion handler, if active, is called to handle the removal of all unreachable moments within the timeline before it is destroyed. </p>
 </div><!-- @@@~TimeLine -->
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -273,6 +263,38 @@ Public Member Functions</h2></td></tr>
 <p>Creates a new moment at the end of the timeline. </p>
 <dl class="section return"><dt>Returns</dt><dd>The moment newly created. </dd></dl>
 </div><!-- @@@MakeMoment -->
+</div>
+<a id="a14e1d9701e1a6571458343e0831855b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e1d9701e1a6571458343e0831855b6">◆ </a></span>operator=()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a>&amp; timeplane::TimeLine::operator= </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp;&amp; </td>
+<td class="paramname"><em>rhs</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$operator=[overload1]$$$TimeLine&timeplane::TimeLine::operator=(TimeLine&& rhs) --><div class="memdoc"><div style="display: none">TimeLine&amp; timeplane::TimeLine::operator= (TimeLine &amp;&amp; rhs)</div>
+<p>Custom move assignment operator. </p>
+<p>This function also cleans up any moments that cannot be accessed as a result of the assignment. </p><dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">rhs</td><td>The object to be moved. </td></tr>
+</table>
+</dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The object that was assigned to. </dd></dl>
+</div><!-- @@@operator= -->
 </div>
 <a id="a4297da8acc6fbee73bfc7db0de2f80a5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4297da8acc6fbee73bfc7db0de2f80a5">◆ </a></span>timeline_number()</h2>

@@ -6,9 +6,11 @@
 #include <unordered_set>
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
+#include <boost/optional/optional.hpp>
 
 #include "../src/moment.hpp"
 #include "../src/timeline.hpp"
+#include "../src/timeplane.hpp"
 
 using namespace timeplane;
 
@@ -144,8 +146,8 @@ TEST_CASE("TimeLine branching", "[timeline, timeplane_all]") {
 
 TEST_CASE("TimeLine moment deletion", "[timeline, timeplane_all]") {
     std::unordered_set<Moment> items;
-    TimeLine::MomentDeleter deleter =
-    [&items] (TimeLine::MomentIterators iterators) {
+    MomentDeleter deleter =
+    [&items] (MomentIterators iterators) {
         std::for_each(iterators.first, iterators.second,
         [&items] (Moment m) {
             items.erase(m);
@@ -510,4 +512,113 @@ TEST_CASE("TimeLine moment deletion", "[timeline, timeplane_all]") {
         REQUIRE(items.size() == 4);
     }
 }
+
+TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
+    TimePlane tp{};
+    Moment m;
+
+    {
+        boost::optional<TimeLine>& tbad = tp.second_rightmost_timeLine();
+        TimeLine& t0 = tp.rightmost_timeline();
+
+        REQUIRE(!tbad.is_initialized());
+        Moment m = t0.LatestMoment();
+        REQUIRE(m.parent_timeline_num() == 0);
+        REQUIRE(m.time() == 0);
+
+        t0.MakeMoment();
+        t0.MakeMoment();
+    }
+
+    tp.MakeNewTimeLine(2);
+
+    {
+        boost::optional<TimeLine>& t0 = tp.second_rightmost_timeLine();
+        TimeLine& t1 = tp.rightmost_timeline();
+
+        REQUIRE(t0.is_initialized());
+        m = t0.get().LatestMoment();
+        REQUIRE(m.parent_timeline_num() == 0);
+        REQUIRE(m.time() == 2);
+        m = t1.LatestMoment();
+        REQUIRE(m.parent_timeline_num() == 1);
+        REQUIRE(m.time() == 2);
+    }
+
+    tp.MakeNewTimeLine(1);
+
+    {
+        boost::optional<TimeLine>& t1 = tp.second_rightmost_timeLine();
+        TimeLine& t2 = tp.rightmost_timeline();
+
+        REQUIRE(t1.is_initialized());
+        m = t1.get().LatestMoment();
+        REQUIRE(m.parent_timeline_num() == 1);
+        REQUIRE(m.time() == 2);
+        m = t2.LatestMoment();
+        REQUIRE(m.parent_timeline_num() == 2);
+        REQUIRE(m.time() == 1);
+    }
+}
+
+TEST_CASE("TimePlane moment deletion", "[timeplane, timeplane_all]") {
+    TimePlane tp{};
+    std::unordered_set<Moment> items0;
+    std::unordered_set<Moment> items1;
+    MomentDeleter deleter0 =
+    [&items0] (MomentIterators iterators) {
+        std::for_each(iterators.first, iterators.second,
+        [&items0] (Moment m) {
+            items0.erase(m);
+        });
+    };
+
+    MomentDeleter deleter1 =
+    [&items1] (MomentIterators iterators) {
+        std::for_each(iterators.first, iterators.second,
+        [&items1] (Moment m) {
+            items1.erase(m);
+        });
+    };
+
+    tp.RegisterMomentDeleter(deleter0);
+    tp.RegisterMomentDeleter(deleter1);
+
+    {
+        TimeLine& t0 = tp.rightmost_timeline();
+        items0.insert(t0.LatestMoment());
+        items1.insert(t0.MakeMoment());
+        items0.insert(t0.MakeMoment());
+        items1.insert(t0.MakeMoment());
+        items0.insert(t0.MakeMoment());
+        items1.insert(t0.MakeMoment());
+        REQUIRE(t0.LatestMoment().time() == 5);
+    }
+
+    tp.MakeNewTimeLine(3);
+
+    {
+        TimeLine& t1 = tp.rightmost_timeline();
+        items0.insert(t1.LatestMoment());
+        items1.insert(t1.MakeMoment());
+        items0.insert(t1.MakeMoment());
+        REQUIRE(t1.LatestMoment().time() == 5);
+    }
+
+    // 010101
+    //    010
+    REQUIRE(items0.size() == 5);
+    REQUIRE(items1.size() == 4);
+
+    tp.MakeNewTimeLine(5);
+    TimeLine& t2 = tp.rightmost_timeline();
+    items1.insert(t2.LatestMoment());
+
+    // 010xxx
+    //    010
+    //      1
+    REQUIRE(items0.size() == 4);
+    REQUIRE(items1.size() == 3);
+}
+
 

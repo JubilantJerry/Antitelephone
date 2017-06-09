@@ -49,7 +49,7 @@
                          </base-DElement>
                          <object>{4d78cb2c-e18f-46ae-b2b8-ce7593ef62ba}</object>
                          <name>TimeLine</name>
-                         <pos>x:185;y:95</pos>
+                         <pos>x:185;y:105</pos>
                          <rect>x:-115;y:-60;w:230;h:120</rect>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -244,7 +244,7 @@
                          <object>{f188611f-e8ff-487c-a0d0-7d0f4876cac7}</object>
                          <name>TimePlane</name>
                          <pos>x:365;y:-120</pos>
-                         <rect>x:-200;y:-80;w:400;h:160</rect>
+                         <rect>x:-200;y:-85;w:400;h:170</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -270,7 +270,7 @@
                        </base-DRelation>
                        <a>
                         <DAssociationEnd>
-                         <cradinality>*</cradinality>
+                         <cradinality>2</cradinality>
                          <navigable>true</navigable>
                          <kind>2</kind>
                         </DAssociationEnd>
@@ -895,7 +895,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1496902629234</last-modified>
+                  <last-modified>1497036164404</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -961,7 +961,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{4274c595-536a-4bf4-985c-f17c8a55c584}</uid>
+                    <uid>{9473d20b-3bbe-46c9-bf80-6138f41d27b7}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>(move only type)</declaration>
@@ -969,7 +969,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{eb6fe001-f1a0-4073-b47c-cb93ba002783}</uid>
+                    <uid>{f0f27925-3952-42ef-9fb4-a76cc89d5a6f}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -978,7 +978,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cd1c0bda-55f9-4678-81e3-f1d5284ed321}</uid>
+                    <uid>{32007a85-16b8-44a1-8a41-2b05725bc889}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -987,7 +987,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c3e57a36-ce59-42d4-9c30-b5de4e4cb7df}</uid>
+                    <uid>{cb503446-35cf-4589-b5dc-b799f12f7b84}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>Moment const MakeMoment()</declaration>
@@ -995,7 +995,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{81236fa4-afde-42b9-8b1a-8fc62c625848}</uid>
+                    <uid>{cfd9b627-e541-48c5-958e-0d2568fae9fd}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -1029,7 +1029,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{296a1550-d284-48ca-ac48-c3618d532e5d}</uid>
+                    <uid>{20dfeb55-dcbd-4afd-b2b3-538dd42b0573}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>int parent_timeline_num()</declaration>
@@ -1037,7 +1037,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b719ab58-f971-45db-b4f5-f7fcc0c54e1f}</uid>
+                    <uid>{6fa5e76f-2303-44d0-bec9-4ce8b212a48d}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>int time()</declaration>
@@ -1045,15 +1045,15 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{49e5a39d-0727-4159-87f2-12aabe896dfc}</uid>
+                    <uid>{5685d3de-1bb1-4f7e-bb34-547518a84400}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>bool operator═ ═(const Moment&amp; rhs)</declaration>
+                    <declaration>bool operator═ ═(Moment const&amp; rhs)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cf86e26c-6a54-48e1-8e2f-b174b60d4ae2}</uid>
+                    <uid>{745f1c9b-df59-447c-b507-a7edf840d0a4}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void serialize(Archive&amp; ar, unsigned int const version)</declaration>
@@ -1061,7 +1061,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6e3cd561-1da9-4f1c-af65-192b1c2764f3}</uid>
+                    <uid>{f0a82eec-7411-4854-b674-ac9bb2b77e03}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int parent_timeline_num_</declaration>
@@ -1069,7 +1069,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5160b74a-f37b-4730-af5e-8288d94ea407}</uid>
+                    <uid>{9cb91b2b-d3bc-4772-bf97-590c8427d55b}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int time_</declaration>
@@ -1253,7 +1253,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{50e0cf48-725d-4b41-ad70-a2a484ecebb3}</uid>
+                    <uid>{0c85dcb5-bebe-42f2-9a42-e83a54951456}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>...(...)</declaration>
@@ -1261,7 +1261,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4d01758f-d941-4bde-b8e8-9efa0b4fc77c}</uid>
+                    <uid>{3dc4402c-07f7-4e92-93dd-3b00c818f412}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int const timeline_num_</declaration>
@@ -1269,7 +1269,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ba1bd560-956b-47a5-8087-498beef0b81d}</uid>
+                    <uid>{44411cc6-203f-498c-a0aa-277a8ec32454}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::shared_ptr&lt;TimeLineImpl&gt; const left_timeline_</declaration>
@@ -1277,7 +1277,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{50bc5311-5779-4cb2-b0ba-27f8c62ec6cf}</uid>
+                    <uid>{e0a09d69-3f36-441b-9c50-da1d1944eeb4}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::vector&lt;Moment&gt; moments_</declaration>
@@ -1285,7 +1285,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{dd9dfe3d-4060-481a-8c74-6074e3d09fce}</uid>
+                    <uid>{ad5c63d9-e235-4cca-815a-74f20b1d0031}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int const branch_time_</declaration>
@@ -1293,7 +1293,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{1eab0186-af6f-4e6d-a147-46c957d50c71}</uid>
+                    <uid>{6fcbb4bf-a645-40f2-abff-bb5f76155a92}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::function&lt;void(MomentIterators)&gt; moment_deleter_</declaration>
@@ -1344,7 +1344,7 @@
                            </base-MRelation>
                            <a>
                             <MAssociationEnd>
-                             <cardinality>*</cardinality>
+                             <cardinality>2</cardinality>
                              <navigable>true</navigable>
                              <kind>2</kind>
                             </MAssociationEnd>
@@ -1369,33 +1369,32 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{7edbb77a-99ad-47c1-a2b7-0c7ea8ac8f84}</uid>
+                    <uid>{b40aca54-27ea-4fb4-9940-b74a85405360}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
+                    <properties>4</properties>
                     <declaration>int latest_antitelephone_arrival()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f4fd482e-1fdc-41b5-a3b0-09d3bb3638c3}</uid>
+                    <uid>{79343fb1-3429-4b11-841e-944e75219d5f}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <properties>4</properties>
-                    <declaration>TimeLine&amp; GetCurrentTimeLine()</declaration>
+                    <declaration>TimeLine&amp; rightmost_timeline()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0436cb62-9c84-4f1d-8300-4459a658171e}</uid>
+                    <uid>{a457414b-3baa-4edd-905d-aef0a907d7ed}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <properties>4</properties>
-                    <declaration>TimeLine&amp; GetLeftTimeLine()</declaration>
+                    <declaration>boost::optional&lt;TimeLine&gt;&amp; second_rightmost_timeLine()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{92ad73b4-af0d-4a1b-bde9-8cc5cc75e0e9}</uid>
+                    <uid>{9e698cfb-7e8f-4736-8522-87e3b0298ca7}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>TimeLine&amp; MakeNewTimeLine(int branch_time)</declaration>
@@ -1403,7 +1402,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d2055d8e-ee15-4ec9-bd6a-48e8b42252be}</uid>
+                    <uid>{8ccd49bc-f4eb-4fce-ac0a-98959ac5b0f2}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void RegisterMomentDeleter(std::function&lt;void(MomentIterators)&gt; handler)</declaration>
@@ -1411,7 +1410,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c7687745-66d4-4af0-bc45-c3253c9a9c5a}</uid>
+                    <uid>{cbaecdcf-6bb3-4249-aabb-81588d88c502}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::vector&lt;std::function&lt;void(MomentIterators)&gt;&gt; handlers_</declaration>
@@ -1419,10 +1418,18 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b2c7b20c-2428-4ad1-876b-9b99e2899499}</uid>
+                    <uid>{b0bf9421-b064-4e37-9762-45b5fd0df125}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int latest_antitelephone_arrival</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{42682b5d-8580-4524-9ad1-f1984244b7ce}</uid>
+                    <visibility>3</visibility>
+                    <type>2</type>
+                    <declaration>void MomentDeleter(MomentIterators iterators)</declaration>
                    </MClassMember>
                   </item>
                  </qlist>

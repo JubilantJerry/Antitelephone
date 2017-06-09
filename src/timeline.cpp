@@ -6,7 +6,7 @@ using namespace timeplane;
 ///@cond INTERNAL
 class TimeLine::Impl {
   public:
-    TimeLine::Impl(MomentDeleter moment_deleter)
+    Impl(MomentDeleter moment_deleter)
         :timeline_num_{0},
          left_timeline_{},
          branch_time_{0},
@@ -14,23 +14,8 @@ class TimeLine::Impl {
          moment_deleter_{moment_deleter},
          erase_from_{-1} {}
 
-    TimeLine::Impl(TimeLine const& left_timeline, int branch_time,
-                   MomentDeleter moment_deleter)
-        :timeline_num_{left_timeline.pimpl_->timeline_num_ + 1},
-         left_timeline_{left_timeline.pimpl_},
-         branch_time_{branch_time},
-         moments_{Moment{timeline_num_, branch_time}},
-         moment_deleter_{moment_deleter},
-         erase_from_{-1} {
-        if (branch_time < 0 ||
-                branch_time >= left_timeline.pimpl_->size()) {
-            throw std::out_of_range("Branch time is not valid.");
-        }
-        if (left_timeline.pimpl_->erase_from_ != -1) {
-            throw std::invalid_argument("Left timeline already has a branch.");
-        }
-        left_timeline.pimpl_->erase_from_ = branch_time;
-    }
+    Impl(TimeLine const& left_timeline, int branch_time,
+         MomentDeleter moment_deleter);
 
     Moment const GetMoment(int time) const {
         assert(externally_reachable_);
@@ -52,25 +37,28 @@ class TimeLine::Impl {
         return moments_.back();
     }
 
-    void EraseAllMoments() {
+    /* Cleans up all moments owned by the instance */
+    void CleanUpAllMoments() {
         externally_reachable_ = false;
-        EraseMomentsInternal(branch_time_);
+        CleanUpMomentsInternal(branch_time_);
     }
 
-    void EraseExternallyUnreachableMoments() {
+    /* Cleans up all moments that can only be reached by direct
+     * access from the parent TimeLine instance rather than indirectly
+     * via timelines on the right. */
+    void CleanUpInternallyUnreachableMoments() {
         externally_reachable_ = false;
         int time = erase_from_;
         if (erase_from_ == kInitialEraseFrom) {
             time = branch_time_;
         }
-        EraseMomentsInternal(time);
+        CleanUpMomentsInternal(time);
     }
 
     TimeLine::Impl(TimeLine::Impl const&) = delete;
     TimeLine::Impl& operator=(TimeLine::Impl const&) = delete;
 
   private:
-    using MomentDeleter = TimeLine::MomentDeleter;
     static constexpr int kInitialEraseFrom = -1;
 
     int const timeline_num_;
@@ -81,20 +69,41 @@ class TimeLine::Impl {
     int erase_from_;
     bool externally_reachable_ = true;
 
-    void EraseMomentsInternal(int time);
+    /* Erases and calls the moment deleter for all moments past the
+     * specified time. If the time is before the branch time, then the
+     * left timeline is also told to erase its moments once possible */
+    void CleanUpMomentsInternal(int time);
 
     int size() {
         return branch_time_ + static_cast<int>(moments_.size());
     }
 };
 
-void TimeLine::Impl::EraseMomentsInternal(int time) {
+TimeLine::Impl::Impl(TimeLine const& left_timeline, int branch_time,
+                     MomentDeleter moment_deleter)
+    :timeline_num_{left_timeline.pimpl_->timeline_num_ + 1},
+     left_timeline_{left_timeline.pimpl_},
+     branch_time_{branch_time},
+     moments_{Moment{timeline_num_, branch_time}},
+     moment_deleter_{moment_deleter},
+     erase_from_{-1} {
+    if (branch_time < 0 ||
+            branch_time >= left_timeline.pimpl_->size()) {
+        throw std::out_of_range("Branch time is not valid.");
+    }
+    if (left_timeline.pimpl_->erase_from_ != -1) {
+        throw std::invalid_argument("Left timeline already has a branch.");
+    }
+    left_timeline.pimpl_->erase_from_ = branch_time;
+}
+
+void TimeLine::Impl::CleanUpMomentsInternal(int time) {
     int pos = time - branch_time_;
     if (pos < 0) {
         pos = 0;
         left_timeline_->erase_from_ = time;
         if (!externally_reachable_) {
-            left_timeline_->EraseMomentsInternal(time);
+            left_timeline_->CleanUpMomentsInternal(time);
         } else {
             return;
         }
@@ -116,20 +125,28 @@ void TimeLine::Impl::EraseMomentsInternal(int time) {
 }
 
 void TimeLine::ImplDeleter(TimeLine::Impl* pimpl) {
-    pimpl->EraseAllMoments();
+    pimpl->CleanUpAllMoments();
     delete pimpl;
 }
 
-TimeLine::TimeLine(TimeLine::MomentDeleter moment_deleter)
+TimeLine::TimeLine(MomentDeleter moment_deleter)
     :pimpl_{new TimeLine::Impl{moment_deleter}, &TimeLine::ImplDeleter} {}
 
 TimeLine::TimeLine(const TimeLine &left_timeline, int branch_time,
-                   TimeLine::MomentDeleter moment_deleter)
+                   MomentDeleter moment_deleter)
     :pimpl_{new TimeLine::Impl{left_timeline, branch_time,
                                moment_deleter}, &TimeLine::ImplDeleter} {}
 
 TimeLine::~TimeLine() {
-    pimpl_->EraseExternallyUnreachableMoments();
+    CleanUp();
+}
+
+/* Shared function to clean up moments that cannot be accessed */
+void TimeLine::CleanUp() {
+    if (pimpl_) {
+        // The instance has not been moved away
+        pimpl_->CleanUpInternallyUnreachableMoments();
+    }
 }
 
 Moment const TimeLine::GetMoment(int time) const {

@@ -25,7 +25,7 @@ TimeLine& TimePlane::MakeNewTimeLine(int branch_time) {
 }
 
 void TimePlane::MomentDeleterFacade(MomentIterators iterators) {
-    for (MomentDeleter const& handler : handlers_) {
+    for (MomentDeleterFn const& handler : handlers_) {
         handler(iterators);
     }
 }

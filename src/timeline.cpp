@@ -6,7 +6,7 @@ using namespace timeplane;
 ///@cond INTERNAL
 class TimeLine::Impl {
   public:
-    Impl(MomentDeleter moment_deleter)
+    Impl(MomentDeleterFn moment_deleter)
         :timeline_num_{0},
          left_timeline_{},
          branch_time_{0},
@@ -15,7 +15,7 @@ class TimeLine::Impl {
          erase_from_{-1} {}
 
     Impl(TimeLine const& left_timeline, int branch_time,
-         MomentDeleter moment_deleter);
+         MomentDeleterFn moment_deleter);
 
     Moment const GetMoment(int time) const {
         assert(externally_reachable_);
@@ -59,13 +59,13 @@ class TimeLine::Impl {
     TimeLine::Impl& operator=(TimeLine::Impl const&) = delete;
 
   private:
-    static constexpr int kInitialEraseFrom = -1;
+    static int constexpr kInitialEraseFrom = -1;
 
     int const timeline_num_;
     ::std::shared_ptr<TimeLine::Impl> const left_timeline_;
     int const branch_time_;
     ::std::vector<Moment> moments_;
-    MomentDeleter moment_deleter_;
+    MomentDeleterFn moment_deleter_;
     int erase_from_;
     bool externally_reachable_ = true;
 
@@ -80,7 +80,7 @@ class TimeLine::Impl {
 };
 
 TimeLine::Impl::Impl(TimeLine const& left_timeline, int branch_time,
-                     MomentDeleter moment_deleter)
+                     MomentDeleterFn moment_deleter)
     :timeline_num_{left_timeline.pimpl_->timeline_num_ + 1},
      left_timeline_{left_timeline.pimpl_},
      branch_time_{branch_time},
@@ -129,11 +129,11 @@ void TimeLine::ImplDeleter(TimeLine::Impl* pimpl) {
     delete pimpl;
 }
 
-TimeLine::TimeLine(MomentDeleter moment_deleter)
+TimeLine::TimeLine(MomentDeleterFn moment_deleter)
     :pimpl_{new TimeLine::Impl{moment_deleter}, &TimeLine::ImplDeleter} {}
 
 TimeLine::TimeLine(const TimeLine &left_timeline, int branch_time,
-                   MomentDeleter moment_deleter)
+                   MomentDeleterFn moment_deleter)
     :pimpl_{new TimeLine::Impl{left_timeline, branch_time,
                                moment_deleter}, &TimeLine::ImplDeleter} {}
 

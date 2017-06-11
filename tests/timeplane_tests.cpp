@@ -146,7 +146,7 @@ TEST_CASE("TimeLine branching", "[timeline, timeplane_all]") {
 
 TEST_CASE("TimeLine moment deletion", "[timeline, timeplane_all]") {
     std::unordered_set<Moment> items;
-    MomentDeleter deleter =
+    MomentDeleterFn deleter =
     [&items] (MomentIterators iterators) {
         std::for_each(iterators.first, iterators.second,
         [&items] (Moment m) {
@@ -515,7 +515,6 @@ TEST_CASE("TimeLine moment deletion", "[timeline, timeplane_all]") {
 
 TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
     TimePlane tp{};
-    Moment m;
 
     {
         boost::optional<TimeLine>& tbad = tp.second_rightmost_timeLine();
@@ -537,12 +536,12 @@ TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
         TimeLine& t1 = tp.rightmost_timeline();
 
         REQUIRE(t0.is_initialized());
-        m = t0.get().LatestMoment();
-        REQUIRE(m.parent_timeline_num() == 0);
-        REQUIRE(m.time() == 2);
-        m = t1.LatestMoment();
-        REQUIRE(m.parent_timeline_num() == 1);
-        REQUIRE(m.time() == 2);
+        Moment m0 = t0.get().LatestMoment();
+        REQUIRE(m0.parent_timeline_num() == 0);
+        REQUIRE(m0.time() == 2);
+        Moment m1 = t1.LatestMoment();
+        REQUIRE(m1.parent_timeline_num() == 1);
+        REQUIRE(m1.time() == 2);
     }
 
     tp.MakeNewTimeLine(1);
@@ -552,12 +551,12 @@ TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
         TimeLine& t2 = tp.rightmost_timeline();
 
         REQUIRE(t1.is_initialized());
-        m = t1.get().LatestMoment();
-        REQUIRE(m.parent_timeline_num() == 1);
-        REQUIRE(m.time() == 2);
-        m = t2.LatestMoment();
-        REQUIRE(m.parent_timeline_num() == 2);
-        REQUIRE(m.time() == 1);
+        Moment m1 = t1.get().LatestMoment();
+        REQUIRE(m1.parent_timeline_num() == 1);
+        REQUIRE(m1.time() == 2);
+        Moment m2 = t2.LatestMoment();
+        REQUIRE(m2.parent_timeline_num() == 2);
+        REQUIRE(m2.time() == 1);
     }
 }
 
@@ -565,7 +564,7 @@ TEST_CASE("TimePlane moment deletion", "[timeplane, timeplane_all]") {
     TimePlane tp{};
     std::unordered_set<Moment> items0;
     std::unordered_set<Moment> items1;
-    MomentDeleter deleter0 =
+    MomentDeleterFn deleter0 =
     [&items0] (MomentIterators iterators) {
         std::for_each(iterators.first, iterators.second,
         [&items0] (Moment m) {
@@ -573,7 +572,7 @@ TEST_CASE("TimePlane moment deletion", "[timeplane, timeplane_all]") {
         });
     };
 
-    MomentDeleter deleter1 =
+    MomentDeleterFn deleter1 =
     [&items1] (MomentIterators iterators) {
         std::for_each(iterators.first, iterators.second,
         [&items1] (Moment m) {

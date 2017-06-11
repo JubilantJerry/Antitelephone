@@ -2,10 +2,10 @@
 #define TIMELINE_H
 
 #include <cassert>
-#include <utility>
 #include <functional>
-#include <vector>
 #include <memory>
+#include <utility>
+#include <vector>
 #include "aliases.hpp"
 
 namespace timeplane {
@@ -28,7 +28,7 @@ class TimeLine {
      * @param moment_deleter        A handler for moments that
      *      fall out of scope from outside clients.
      */
-    TimeLine(MomentDeleter moment_deleter = MomentDeleter{});
+    TimeLine(MomentDeleterFn moment_deleter = MomentDeleterFn{});
 
     /**
      * @brief Constructor from an existing timeline.
@@ -42,7 +42,7 @@ class TimeLine {
      *      fall out of scope from outside clients.
      */
     TimeLine(TimeLine const& left_timeline, int branch_time,
-             MomentDeleter moment_deleter = MomentDeleter{});
+             MomentDeleterFn moment_deleter = MomentDeleterFn{});
 
     /**
      * @brief Custom destructor.
@@ -108,7 +108,7 @@ class TimeLine {
     friend Impl Impl(TimeLine const& left_timeline, int branch_time);
     ///@endcond
 
-    ::std::shared_ptr<Impl> pimpl_;
+    std::shared_ptr<Impl> pimpl_;
     static void ImplDeleter(Impl* pimpl);
     void CleanUp();
 };

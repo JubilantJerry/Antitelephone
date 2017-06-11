@@ -2,8 +2,8 @@
 #define TIMEPLANE_H
 
 #include <utility>
-#include <vector>
 #include <functional>
+#include <vector>
 #include <boost/optional/optional.hpp>
 #include "aliases.hpp"
 #include "timeline.hpp"
@@ -27,7 +27,7 @@ class TimePlane {
     /**
      * @brief Constant representing a lack of antitelephone arrivals.
      */
-    static constexpr int kNoAntitelephoneArrival = -1;
+    static int constexpr kNoAntitelephoneArrival = -1;
 
     /**
      * @brief Default constructor.
@@ -91,14 +91,14 @@ class TimePlane {
      * denoting @c Moment instances that are no longer externally accessible.
      * @param handler       The moment deletion handler to register.
      */
-    void RegisterMomentDeleter(MomentDeleter handler) {
+    void RegisterMomentDeleter(MomentDeleterFn handler) {
         handlers_.push_back(handler);
     }
 
   private:
     TimeLine rightmost_timeline_;
     boost::optional<TimeLine> second_rightmost_timeline_;
-    std::vector<MomentDeleter> handlers_;
+    std::vector<MomentDeleterFn> handlers_;
     int latest_antitelephone_arrival_;
 
     /* Calls all the moment deletion handlers. */

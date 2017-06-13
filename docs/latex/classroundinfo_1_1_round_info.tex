@@ -1,0 +1,277 @@
+\hypertarget{classroundinfo_1_1_round_info}{}\section{roundinfo\+:\+:Round\+Info Class Reference}
+\label{classroundinfo_1_1_round_info}\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+
+
+A representation of data relevant to a single round of gameplay.  
+
+
+
+
+{\ttfamily \#include $<$roundinfo.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classroundinfo_1_1_round_info_abf54268ebef648dc57353dd2fd6374b5}{Round\+Info} (int \hyperlink{classroundinfo_1_1_round_info_a004757e903e2b24d73d746040f8afd42}{num\+\_\+players})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_a004757e903e2b24d73d746040f8afd42}{num\+\_\+players} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the number of players in the game. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_aab20da577e7b2741d4e478b6d353324c}{Location} (int player, int viewing\+\_\+player) const
+\begin{DoxyCompactList}\small\item\em Accessor for the location of a player. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_a2b6c4500a8076cb24f83591f05b99fba}{Damage\+Received} (int player, int viewing\+\_\+player) const
+\begin{DoxyCompactList}\small\item\em Accessor for the damage a player received. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_accb2ab979f9fe090cf03753ed1c78e0a}{Health\+Remaining} (int player, int viewing\+\_\+player) const
+\begin{DoxyCompactList}\small\item\em Accessor for the health a player has remaining. \end{DoxyCompactList}\item 
+\hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const  \& \hyperlink{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}{calliance\+\_\+data} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor to view the alliance data. \end{DoxyCompactList}\item 
+bool \hyperlink{classroundinfo_1_1_round_info_a03a7ee40677506160aef2766929e6105}{Active} (int player) const
+\begin{DoxyCompactList}\small\item\em Accessor for whether a player is active. \end{DoxyCompactList}\item 
+Int\+Iterator \hyperlink{classroundinfo_1_1_round_info_ab9e17ca5d68f9981862cbf540cc0b297}{Location\+Iterator} () noexcept
+\begin{DoxyCompactList}\small\item\em Iterator to modify the location data. \end{DoxyCompactList}\item 
+Int\+Iterator \hyperlink{classroundinfo_1_1_round_info_a94ea1a09ae7680e74188296aef0b0d63}{Damage\+Received\+Iterator} () noexcept
+\begin{DoxyCompactList}\small\item\em Iterator to modify the damage received data. \end{DoxyCompactList}\item 
+Int\+Iterator \hyperlink{classroundinfo_1_1_round_info_a3a81f2d87bea27339f035201f1887423}{Health\+Remaining\+Iterator} () noexcept
+\begin{DoxyCompactList}\small\item\em Iterator to modify the health remaining data. \end{DoxyCompactList}\item 
+void \hyperlink{classroundinfo_1_1_round_info_a28d85479753dae18a6b2a27d048d2973}{Set\+Active} (int player, bool value)
+\begin{DoxyCompactList}\small\item\em Mutator to set the active status of a player. \end{DoxyCompactList}\item 
+\hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} \& \hyperlink{classroundinfo_1_1_round_info_a9d5ae58298d3acd11377da7992235762}{alliance\+\_\+data} () noexcept
+\begin{DoxyCompactList}\small\item\em Accessor to modify the alliance data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a6a7ac5df8cced5aac3c30a98f88df3d9}\label{classroundinfo_1_1_round_info_a6a7ac5df8cced5aac3c30a98f88df3d9}} 
+static int constexpr {\bfseries k\+Unknown} = -\/1
+\item 
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a29eb9d113e033613762e50e1aaf63290}\label{classroundinfo_1_1_round_info_a29eb9d113e033613762e50e1aaf63290}} 
+static int constexpr {\bfseries k\+Omniscient\+Viewer} = -\/1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A representation of data relevant to a single round of gameplay. 
+
+Information about the players as well as any interactions between players in a single round of gameplay is stored in this instance. Information about the items held by players is  not stored in this instance. Using alliance and encounter data, the instance also enforces the privacy of certain player information from other viewers. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_abf54268ebef648dc57353dd2fd6374b5}\label{classroundinfo_1_1_round_info_abf54268ebef648dc57353dd2fd6374b5}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Round\+Info@{Round\+Info}}
+\index{Round\+Info@{Round\+Info}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Round\+Info()}{RoundInfo()}}
+{\footnotesize\ttfamily Round\+Info\+::\+Round\+Info (\begin{DoxyParamCaption}\item[{int}]{num\+\_\+players }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+The alliances of the players are by default set such that each player is not allied to any different player (though they are trivially allied to themselves). Initial values of locations, health data and player active status are unspecified. 
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+players} & The number of players in the game. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a004757e903e2b24d73d746040f8afd42}\label{classroundinfo_1_1_round_info_a004757e903e2b24d73d746040f8afd42}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!num\+\_\+players@{num\+\_\+players}}
+\index{num\+\_\+players@{num\+\_\+players}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{num\+\_\+players()}{num\_players()}}
+{\footnotesize\ttfamily int roundinfo\+::\+Round\+Info\+::num\+\_\+players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the number of players in the game. 
+
+\begin{DoxyReturn}{Returns}
+The number of players in the game. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_aab20da577e7b2741d4e478b6d353324c}\label{classroundinfo_1_1_round_info_aab20da577e7b2741d4e478b6d353324c}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Location@{Location}}
+\index{Location@{Location}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Location()}{Location()}}
+{\footnotesize\ttfamily int Round\+Info\+::\+Location (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{int}]{viewing\+\_\+player }\end{DoxyParamCaption}) const}
+
+
+
+Accessor for the location of a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The player ID to query. \\
+\hline
+{\em viewing\+\_\+player} & The player attempting to make the query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The location of the player queried, or {\ttfamily k\+Unknown} if the player making the query is not authorized to know. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a2b6c4500a8076cb24f83591f05b99fba}\label{classroundinfo_1_1_round_info_a2b6c4500a8076cb24f83591f05b99fba}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Damage\+Received@{Damage\+Received}}
+\index{Damage\+Received@{Damage\+Received}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Damage\+Received()}{DamageReceived()}}
+{\footnotesize\ttfamily int Round\+Info\+::\+Damage\+Received (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{int}]{viewing\+\_\+player }\end{DoxyParamCaption}) const}
+
+
+
+Accessor for the damage a player received. 
+
+This value is distinct from the change in health across moments because of potential shielding effects from items. 
+\begin{DoxyParams}{Parameters}
+{\em player} & The player ID to query. \\
+\hline
+{\em viewing\+\_\+player} & The player attempting to make the query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The damage received of the player queried, or {\ttfamily k\+Unknown} if the player making the query is not authorized to know. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_accb2ab979f9fe090cf03753ed1c78e0a}\label{classroundinfo_1_1_round_info_accb2ab979f9fe090cf03753ed1c78e0a}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Health\+Remaining@{Health\+Remaining}}
+\index{Health\+Remaining@{Health\+Remaining}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Health\+Remaining()}{HealthRemaining()}}
+{\footnotesize\ttfamily int Round\+Info\+::\+Health\+Remaining (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{int}]{viewing\+\_\+player }\end{DoxyParamCaption}) const}
+
+
+
+Accessor for the health a player has remaining. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The player ID to query. \\
+\hline
+{\em viewing\+\_\+player} & The player attempting to make the query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The health remaining of the player queried, or {\ttfamily k\+Unknown} if the player making the query is not authorized to know. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}\label{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!calliance\+\_\+data@{calliance\+\_\+data}}
+\index{calliance\+\_\+data@{calliance\+\_\+data}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{calliance\+\_\+data()}{calliance\_data()}}
+{\footnotesize\ttfamily \hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const\& roundinfo\+::\+Round\+Info\+::calliance\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor to view the alliance data. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the alliance data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a03a7ee40677506160aef2766929e6105}\label{classroundinfo_1_1_round_info_a03a7ee40677506160aef2766929e6105}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Active@{Active}}
+\index{Active@{Active}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Active()}{Active()}}
+{\footnotesize\ttfamily bool Round\+Info\+::\+Active (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption}) const}
+
+
+
+Accessor for whether a player is active. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The player ID to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the player queried is active. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_ab9e17ca5d68f9981862cbf540cc0b297}\label{classroundinfo_1_1_round_info_ab9e17ca5d68f9981862cbf540cc0b297}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Location\+Iterator@{Location\+Iterator}}
+\index{Location\+Iterator@{Location\+Iterator}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Location\+Iterator()}{LocationIterator()}}
+{\footnotesize\ttfamily Int\+Iterator roundinfo\+::\+Round\+Info\+::\+Location\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Iterator to modify the location data. 
+
+\begin{DoxyReturn}{Returns}
+A random access iterator to the location data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a94ea1a09ae7680e74188296aef0b0d63}\label{classroundinfo_1_1_round_info_a94ea1a09ae7680e74188296aef0b0d63}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Damage\+Received\+Iterator@{Damage\+Received\+Iterator}}
+\index{Damage\+Received\+Iterator@{Damage\+Received\+Iterator}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Damage\+Received\+Iterator()}{DamageReceivedIterator()}}
+{\footnotesize\ttfamily Int\+Iterator roundinfo\+::\+Round\+Info\+::\+Damage\+Received\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Iterator to modify the damage received data. 
+
+\begin{DoxyReturn}{Returns}
+A random access iterator to the damage received data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a3a81f2d87bea27339f035201f1887423}\label{classroundinfo_1_1_round_info_a3a81f2d87bea27339f035201f1887423}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Health\+Remaining\+Iterator@{Health\+Remaining\+Iterator}}
+\index{Health\+Remaining\+Iterator@{Health\+Remaining\+Iterator}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Health\+Remaining\+Iterator()}{HealthRemainingIterator()}}
+{\footnotesize\ttfamily Int\+Iterator roundinfo\+::\+Round\+Info\+::\+Health\+Remaining\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Iterator to modify the health remaining data. 
+
+\begin{DoxyReturn}{Returns}
+A random access iterator to the health remaining data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a28d85479753dae18a6b2a27d048d2973}\label{classroundinfo_1_1_round_info_a28d85479753dae18a6b2a27d048d2973}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Set\+Active@{Set\+Active}}
+\index{Set\+Active@{Set\+Active}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{Set\+Active()}{SetActive()}}
+{\footnotesize\ttfamily void Round\+Info\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{bool}]{value }\end{DoxyParamCaption})}
+
+
+
+Mutator to set the active status of a player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The player whose active status is modified. \\
+\hline
+{\em value} & The active status value to set. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a9d5ae58298d3acd11377da7992235762}\label{classroundinfo_1_1_round_info_a9d5ae58298d3acd11377da7992235762}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!alliance\+\_\+data@{alliance\+\_\+data}}
+\index{alliance\+\_\+data@{alliance\+\_\+data}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{alliance\+\_\+data()}{alliance\_data()}}
+{\footnotesize\ttfamily \hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix}\& roundinfo\+::\+Round\+Info\+::alliance\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor to modify the alliance data. 
+
+\begin{DoxyReturn}{Returns}
+A mutable reference to the alliance data. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/roundinfo.\+hpp\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/roundinfo.\+cpp\end{DoxyCompactItemize}

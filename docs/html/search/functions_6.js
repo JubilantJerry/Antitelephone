@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['second_5frightmost_5ftimeline',['second_rightmost_timeLine',['../classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f',1,'timeplane::TimePlane']]],
-  ['serialize',['serialize',['../classtimeplane_1_1_moment.html#ac7870eb30ed18b8ea85bf7584632cd11',1,'timeplane::Moment']]]
+  ['healthremaining',['HealthRemaining',['../classroundinfo_1_1_round_info.html#accb2ab979f9fe090cf03753ed1c78e0a',1,'roundinfo::RoundInfo::HealthRemaining()'],['../classroundinfo_1_1_round_info_view.html#a5b7dd1135b438e04017ad0a3bcc4034a',1,'roundinfo::RoundInfoView::HealthRemaining()']]],
+  ['healthremainingiterator',['HealthRemainingIterator',['../classroundinfo_1_1_round_info.html#a3a81f2d87bea27339f035201f1887423',1,'roundinfo::RoundInfo']]]
 ];

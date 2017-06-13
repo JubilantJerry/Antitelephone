@@ -106,7 +106,7 @@ template <>
  * @brief Hash function for @c Moment instances.
  */
 struct hash<timeplane::Moment> {
-    size_t operator()(const timeplane::Moment &m) const {
+    size_t operator()(timeplane::Moment const& m) const {
         size_t v0 = std::hash<int> {} (m.parent_timeline_num_);
         size_t v1 = std::hash<int> {} (m.time_);
         return (v0 * 3) ^ v1;

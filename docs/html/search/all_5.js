@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['makemoment',['MakeMoment',['../classtimeplane_1_1_time_line.html#a7520362a8b33962371b1a47831b37b03',1,'timeplane::TimeLine']]],
-  ['makenewtimeline',['MakeNewTimeLine',['../classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c',1,'timeplane::TimePlane']]],
-  ['moment',['Moment',['../classtimeplane_1_1_moment.html',1,'timeplane::Moment'],['../classtimeplane_1_1_moment.html#a5eecc085ee6010fa5079ddea4e79d6cb',1,'timeplane::Moment::Moment() noexcept'],['../classtimeplane_1_1_moment.html#a33106530bbe889016479d1443d592571',1,'timeplane::Moment::Moment(int parent_timeline_num, int time) noexcept']]]
+  ['getmoment',['GetMoment',['../classtimeplane_1_1_time_line.html#ae18ca86c0f036731e1bb148ed3381ea8',1,'timeplane::TimeLine']]],
+  ['getproperties',['GetProperties',['../classitem_1_1_item.html#a23790dceafc9e3f8950f69380cc4c4aa',1,'item::Item']]]
 ];

@@ -88,16 +88,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab8c82092c1c5c3f18c8677f8ce38662c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c">MakeNewTimeLine</a> (int branch_time)</td></tr>
 <tr class="memdesc:ab8c82092c1c5c3f18c8677f8ce38662c"><td class="mdescLeft"> </td><td class="mdescRight">Creates a new timeline branching from the rightmost timeline.  <a href="#ab8c82092c1c5c3f18c8677f8ce38662c">More...</a><br/></td></tr>
 <tr class="separator:ab8c82092c1c5c3f18c8677f8ce38662c"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a10f6e26c2043a2d2cb0271a06c2495d0"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#a10f6e26c2043a2d2cb0271a06c2495d0">RegisterMomentDeleter</a> (MomentDeleter handler)</td></tr>
-<tr class="memdesc:a10f6e26c2043a2d2cb0271a06c2495d0"><td class="mdescLeft"> </td><td class="mdescRight">Registers a moment deletion handler.  <a href="#a10f6e26c2043a2d2cb0271a06c2495d0">More...</a><br/></td></tr>
-<tr class="separator:a10f6e26c2043a2d2cb0271a06c2495d0"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a22be7b27d461dcb849f48c149a044502"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#a22be7b27d461dcb849f48c149a044502">RegisterMomentDeleter</a> (MomentDeleterFn handler)</td></tr>
+<tr class="memdesc:a22be7b27d461dcb849f48c149a044502"><td class="mdescLeft"> </td><td class="mdescRight">Registers a moment deletion handler.  <a href="#a22be7b27d461dcb849f48c149a044502">More...</a><br/></td></tr>
+<tr class="separator:a22be7b27d461dcb849f48c149a044502"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
-<tr class="memitem:ab131bfc5a6c85a3db846591159db2559"><td align="right" class="memItemLeft" valign="top"><a id="ab131bfc5a6c85a3db846591159db2559"></a>
-static constexpr int </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#ab131bfc5a6c85a3db846591159db2559">kNoAntitelephoneArrival</a> = -1</td></tr>
-<tr class="memdesc:ab131bfc5a6c85a3db846591159db2559"><td class="mdescLeft"> </td><td class="mdescRight">Constant representing a lack of antitelephone arrivals. <br/></td></tr>
-<tr class="separator:ab131bfc5a6c85a3db846591159db2559"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:afe378e5e76ef261c9fc9c2637157c75e"><td align="right" class="memItemLeft" valign="top"><a id="afe378e5e76ef261c9fc9c2637157c75e"></a>
+static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#afe378e5e76ef261c9fc9c2637157c75e">kNoAntitelephoneArrival</a> = -1</td></tr>
+<tr class="memdesc:afe378e5e76ef261c9fc9c2637157c75e"><td class="mdescLeft"> </td><td class="mdescRight">Constant representing a lack of antitelephone arrivals. <br/></td></tr>
+<tr class="separator:afe378e5e76ef261c9fc9c2637157c75e"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A wrapper to access individual <code><a class="el" href="classtimeplane_1_1_time_line.html" title="A chronological sequence of Moment instances. ">TimeLine</a></code> instances. </p>
@@ -146,61 +146,6 @@ static constexpr int </td><td class="memItemRight" valign="bottom"><a class="el
 <p>The value applies to the rightmost timeline, though note that Antitelephone arrivals all still occur for timelines to the right of the leftmost arrival, even if some of these timelines have early Antitelephone arrivals.</p>
 <p>If there is no Antitelephone arrival, then the constant <code>kNoAntitelephoneArrival</code> is returned. </p><dl class="section return"><dt>Returns</dt><dd>Time of the latest Antitelephone arrival. </dd></dl>
 </div><!-- @@@latest_antitelephone_arrival -->
-</div>
-<a id="ab8c82092c1c5c3f18c8677f8ce38662c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8c82092c1c5c3f18c8677f8ce38662c">◆ </a></span>MakeNewTimeLine()</h2>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp; TimePlane::MakeNewTimeLine </td>
-<td>(</td>
-<td class="paramtype">int </td>
-<td class="paramname"><em>branch_time</em></td><td>)</td>
-<td></td>
-</tr>
-</table>
-</div><!-- $$$MakeNewTimeLine[overload1]$$$TimeLine&TimePlane::MakeNewTimeLine(int branch_time) --><div class="memdoc"><div style="display: none">TimeLine &amp; TimePlane::MakeNewTimeLine (int branch_time)</div>
-<p>Creates a new timeline branching from the rightmost timeline. </p>
-<p>The reference returned is invalidated once a new timeline is created. </p><dl class="params"><dt>Parameters</dt><dd>
-<table class="params">
-<tr><td class="paramname">branch_time</td><td>The time of the branch, which will be the the time of the sole moment available in the new timeline. </td></tr>
-</table>
-</dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to the newly created timeline. </dd></dl>
-</div><!-- @@@MakeNewTimeLine -->
-</div>
-<a id="a10f6e26c2043a2d2cb0271a06c2495d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a10f6e26c2043a2d2cb0271a06c2495d0">◆ </a></span>RegisterMomentDeleter()</h2>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-<tr>
-<td class="mlabels-left">
-<table class="memname">
-<tr>
-<td class="memname">void timeplane::TimePlane::RegisterMomentDeleter </td>
-<td>(</td>
-<td class="paramtype">MomentDeleter </td>
-<td class="paramname"><em>handler</em></td><td>)</td>
-<td></td>
-</tr>
-</table>
-</td>
-<td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span> </td>
-</tr>
-</table>
-</div><!-- $$$RegisterMomentDeleter[overload1]$$$voidtimeplane::TimePlane::RegisterMomentDeleter(MomentDeleter handler) --><div class="memdoc"><div style="display: none">void timeplane::TimePlane::RegisterMomentDeleter (MomentDeleter handler)</div>
-<p>Registers a moment deletion handler. </p>
-<p>The moment deletion handler is called with a pair of output iterators denoting <code><a class="el" href="classtimeplane_1_1_moment.html" title="A unique moment in a TimePlane. ">Moment</a></code> instances that are no longer externally accessible. </p><dl class="params"><dt>Parameters</dt><dd>
-<table class="params">
-<tr><td class="paramname">handler</td><td>The moment deletion handler to register. </td></tr>
-</table>
-</dd>
-</dl>
-</div><!-- @@@RegisterMomentDeleter -->
 </div>
 <a id="a317c9e247011cf5f4e6e36f2f7651932"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a317c9e247011cf5f4e6e36f2f7651932">◆ </a></span>rightmost_timeline()</h2>
@@ -251,6 +196,61 @@ static constexpr int </td><td class="memItemRight" valign="bottom"><a class="el
 <p>Accessor for the rightmost timeline. </p>
 <p>The reference returned is invalidated once a new timeline is created. </p><dl class="section return"><dt>Returns</dt><dd>A reference to an optional type containing the rightmost timeline, or <code>boost::none</code> if there is no such timeline. </dd></dl>
 </div><!-- @@@second_rightmost_timeLine -->
+</div>
+<a id="ab8c82092c1c5c3f18c8677f8ce38662c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8c82092c1c5c3f18c8677f8ce38662c">◆ </a></span>MakeNewTimeLine()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp; TimePlane::MakeNewTimeLine </td>
+<td>(</td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>branch_time</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><!-- $$$MakeNewTimeLine[overload1]$$$TimeLine&TimePlane::MakeNewTimeLine(int branch_time) --><div class="memdoc"><div style="display: none">TimeLine &amp; TimePlane::MakeNewTimeLine (int branch_time)</div>
+<p>Creates a new timeline branching from the rightmost timeline. </p>
+<p>The reference returned is invalidated once a new timeline is created. </p><dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">branch_time</td><td>The time of the branch, which will be the the time of the sole moment available in the new timeline. </td></tr>
+</table>
+</dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the newly created timeline. </dd></dl>
+</div><!-- @@@MakeNewTimeLine -->
+</div>
+<a id="a22be7b27d461dcb849f48c149a044502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22be7b27d461dcb849f48c149a044502">◆ </a></span>RegisterMomentDeleter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname">void timeplane::TimePlane::RegisterMomentDeleter </td>
+<td>(</td>
+<td class="paramtype">MomentDeleterFn </td>
+<td class="paramname"><em>handler</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$RegisterMomentDeleter[overload1]$$$voidtimeplane::TimePlane::RegisterMomentDeleter(MomentDeleterFn handler) --><div class="memdoc"><div style="display: none">void timeplane::TimePlane::RegisterMomentDeleter (MomentDeleterFn handler)</div>
+<p>Registers a moment deletion handler. </p>
+<p>The moment deletion handler is called with a pair of output iterators denoting <code><a class="el" href="classtimeplane_1_1_moment.html" title="A unique moment in a TimePlane. ">Moment</a></code> instances that are no longer externally accessible. </p><dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">handler</td><td>The moment deletion handler to register. </td></tr>
+</table>
+</dd>
+</dl>
+</div><!-- @@@RegisterMomentDeleter -->
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>K:/Personal Projects/AntitelephoneQT/src/<a class="el" href="timeplane_8hpp_source.html">timeplane.hpp</a></li>

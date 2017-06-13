@@ -4,12 +4,15 @@
 #include <cstdint>
 #include <functional>
 #include <memory>
+#include <string>
 #include <utility>
 #include <vector>
 #include <boost/dynamic_bitset.hpp>
 
 using IntIterator = std::vector<int>::iterator;
 using BitSet = boost::dynamic_bitset<uintptr_t>;
+using Tag = std::pair<std::string, std::string>;
+using Tags = std::vector<Tag>;
 
 namespace timeplane {
 class Moment;
@@ -20,7 +23,7 @@ using MomentIterators = std::pair<
 using MomentDeleterFn = std::function<void(typename MomentIterators)>;
 }
 
-namespace Item {
+namespace item {
 class Item;
 
 using ItemPtr = std::unique_ptr<Item>;

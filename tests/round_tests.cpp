@@ -62,9 +62,8 @@ TEST_CASE("SymmetricBitMatrix overall", "[bitmatrix, misc]") {
     REQUIRE( m.Value(2, 2));
 }
 
-TEST_CASE("RoundInfo overall", "[roundinfo, round_all]") {
+RoundInfo MakeRoundInfo() {
     RoundInfo info{5};
-    REQUIRE(info.num_players() == 5);
 
     IntIterator locations = info.LocationIterator();
     locations[0] = 1;
@@ -72,6 +71,13 @@ TEST_CASE("RoundInfo overall", "[roundinfo, round_all]") {
     locations[2] = 4;
     locations[3] = 2;
     locations[4] = 3;
+
+    IntIterator damage_received = info.DamageReceivedIterator();
+    damage_received[0] = 0;
+    damage_received[1] = 2;
+    damage_received[2] = 4;
+    damage_received[3] = 0;
+    damage_received[4] = 0;
 
     IntIterator health_remaining = info.HealthRemainingIterator();
     health_remaining[0] = 14;
@@ -90,6 +96,14 @@ TEST_CASE("RoundInfo overall", "[roundinfo, round_all]") {
     alliances.SetValue(0, 2, true);
     alliances.SetValue(1, 3, true);
     alliances.SetValue(0, 1, true);
+
+    return info;
+}
+
+TEST_CASE("RoundInfo overall", "[roundinfo, round_all]") {
+    RoundInfo info = MakeRoundInfo();
+
+    REQUIRE(info.num_players() == 5);
 
     REQUIRE(info.Location(0, 0) == 1);
     REQUIRE(info.Location(0, 1) == 1);
@@ -125,6 +139,42 @@ TEST_CASE("RoundInfo overall", "[roundinfo, round_all]") {
     REQUIRE_THROWS_AS(info.Location(4, -2), std::out_of_range);
     REQUIRE_THROWS_AS(info.Location(5, 4), std::out_of_range);
     REQUIRE_THROWS_AS(info.Location(-2, 4), std::out_of_range);
+
+    REQUIRE(info.DamageReceived(0, 0) == 0);
+    REQUIRE(info.DamageReceived(0, 1) == 0);
+    REQUIRE(info.DamageReceived(0, 2) == 0);
+    REQUIRE(info.DamageReceived(0, 3) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(0, 4) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(0, RoundInfo::kOmniscientViewer) == 0);
+    REQUIRE(info.DamageReceived(1, 0) == 2);
+    REQUIRE(info.DamageReceived(1, 1) == 2);
+    REQUIRE(info.DamageReceived(1, 2) == 2);
+    REQUIRE(info.DamageReceived(1, 3) == 2);
+    REQUIRE(info.DamageReceived(1, 4) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(1, RoundInfo::kOmniscientViewer) == 2);
+    REQUIRE(info.DamageReceived(2, 0) == 4);
+    REQUIRE(info.DamageReceived(2, 1) == 4);
+    REQUIRE(info.DamageReceived(2, 2) == 4);
+    REQUIRE(info.DamageReceived(2, 3) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(2, 4) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(2, RoundInfo::kOmniscientViewer) == 4);
+    REQUIRE(info.DamageReceived(3, 0) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(3, 1) == 0);
+    REQUIRE(info.DamageReceived(3, 2) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(3, 3) == 0);
+    REQUIRE(info.DamageReceived(3, 4) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(3, RoundInfo::kOmniscientViewer) == 0);
+    REQUIRE(info.DamageReceived(4, 0) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(4, 1) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(4, 2) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(4, 3) == RoundInfo::kUnknown);
+    REQUIRE(info.DamageReceived(4, 4) == 0);
+    REQUIRE(info.DamageReceived(4, RoundInfo::kOmniscientViewer) == 0);
+    REQUIRE_THROWS_AS(info.DamageReceived(4, 5), std::out_of_range);
+    REQUIRE_THROWS_AS(info.DamageReceived(4, -2), std::out_of_range);
+    REQUIRE_THROWS_AS(info.DamageReceived(5, 4), std::out_of_range);
+    REQUIRE_THROWS_AS(info.DamageReceived(-2, 4), std::out_of_range);
+
 
     REQUIRE(info.HealthRemaining(0, 0) == 14);
     REQUIRE(info.HealthRemaining(0, 1) == 14);
@@ -233,6 +283,32 @@ void TestRoundInfoViewers(RoundInfoView const& viewer0,
     REQUIRE(viewer3.Location(4) == RoundInfo::kUnknown);
     REQUIRE(viewer4.Location(4) == 3);
 
+    REQUIRE(viewer0.DamageReceived(0) == 0);
+    REQUIRE(viewer1.DamageReceived(0) == 0);
+    REQUIRE(viewer2.DamageReceived(0) == 0);
+    REQUIRE(viewer3.DamageReceived(0) == RoundInfo::kUnknown);
+    REQUIRE(viewer4.DamageReceived(0) == RoundInfo::kUnknown);
+    REQUIRE(viewer0.DamageReceived(1) == 2);
+    REQUIRE(viewer1.DamageReceived(1) == 2);
+    REQUIRE(viewer2.DamageReceived(1) == 2);
+    REQUIRE(viewer3.DamageReceived(1) == 2);
+    REQUIRE(viewer4.DamageReceived(1) == RoundInfo::kUnknown);
+    REQUIRE(viewer0.DamageReceived(2) == 4);
+    REQUIRE(viewer1.DamageReceived(2) == 4);
+    REQUIRE(viewer2.DamageReceived(2) == 4);
+    REQUIRE(viewer3.DamageReceived(2) == RoundInfo::kUnknown);
+    REQUIRE(viewer4.DamageReceived(2) == RoundInfo::kUnknown);
+    REQUIRE(viewer0.DamageReceived(3) == RoundInfo::kUnknown);
+    REQUIRE(viewer1.DamageReceived(3) == 0);
+    REQUIRE(viewer2.DamageReceived(3) == RoundInfo::kUnknown);
+    REQUIRE(viewer3.DamageReceived(3) == 0);
+    REQUIRE(viewer4.DamageReceived(3) == RoundInfo::kUnknown);
+    REQUIRE(viewer0.DamageReceived(4) == RoundInfo::kUnknown);
+    REQUIRE(viewer1.DamageReceived(4) == RoundInfo::kUnknown);
+    REQUIRE(viewer2.DamageReceived(4) == RoundInfo::kUnknown);
+    REQUIRE(viewer3.DamageReceived(4) == RoundInfo::kUnknown);
+    REQUIRE(viewer4.DamageReceived(4) == 0);
+
     REQUIRE(viewer0.HealthRemaining(0) == 14);
     REQUIRE(viewer1.HealthRemaining(0) == 14);
     REQUIRE(viewer2.HealthRemaining(0) == 14);
@@ -298,38 +374,13 @@ void TestRoundInfoViewers(RoundInfoView const& viewer0,
 }
 
 TEST_CASE("RoundInfoView overall", "[roundinfoview, round_all]") {
-    RoundInfo info{5};
-
-    IntIterator locations = info.LocationIterator();
-    locations[0] = 1;
-    locations[1] = 4;
-    locations[2] = 4;
-    locations[3] = 2;
-    locations[4] = 3;
-
-    IntIterator health_remaining = info.HealthRemainingIterator();
-    health_remaining[0] = 14;
-    health_remaining[1] = 5;
-    health_remaining[2] = 26;
-    health_remaining[3] = 18;
-    health_remaining[4] = 9;
-
-    info.SetActive(0, true);
-    info.SetActive(1, true);
-    info.SetActive(2, true);
-    info.SetActive(3, false);
-    info.SetActive(4, false);
-
-    SymmetricBitMatrix& alliances = info.alliance_data();
-    alliances.SetValue(0, 2, true);
-    alliances.SetValue(1, 3, true);
-    alliances.SetValue(0, 1, true);
+    RoundInfo info = MakeRoundInfo();
 
     SECTION("Regular construction") {
         RoundInfoView viewer0{info, 0, false};
         RoundInfoView viewer1{info, 1, false};
-        RoundInfoView viewer2{info, 2, false};
-        RoundInfoView viewer3{info, 3, false};
+        RoundInfoView viewer2{info, 2};
+        RoundInfoView viewer3{info, 3};
         RoundInfoView viewer4{info, 4, true};
 
         TestRoundInfoViewers(viewer0, viewer1, viewer2,
@@ -339,8 +390,8 @@ TEST_CASE("RoundInfoView overall", "[roundinfoview, round_all]") {
     SECTION("Serialization and deserialization") {
         RoundInfoView viewer0{info, 0, false};
         RoundInfoView viewer1{info, 1, false};
-        RoundInfoView viewer2{info, 2, false};
-        RoundInfoView viewer3{info, 3, false};
+        RoundInfoView viewer2{info, 2};
+        RoundInfoView viewer3{info, 3};
         RoundInfoView viewer4{info, 4, true};
 
         std::stringstream stream{};

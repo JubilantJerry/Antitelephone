@@ -2,6 +2,7 @@
 #define BOOST_SERIALIZATION_DYNAMIC_BITSET_H
 
 #include <vector>
+#include <boost/dynamic_bitset.hpp>
 #include <boost/serialization/vector.hpp>
 
 namespace boost {

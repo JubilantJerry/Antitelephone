@@ -18,7 +18,6 @@ class TimeLine::Impl {
          MomentDeleterFn moment_deleter);
 
     Moment const GetMoment(int time) const {
-        assert(externally_reachable_);
         if (time < branch_time_ && left_timeline_) {
             return left_timeline_->GetMoment(time);
         }

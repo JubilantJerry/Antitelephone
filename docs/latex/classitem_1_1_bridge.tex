@@ -1,0 +1,162 @@
+\hypertarget{classitem_1_1_bridge}{}\section{item\+:\+:Bridge Class Reference}
+\label{classitem_1_1_bridge}\index{item\+::\+Bridge@{item\+::\+Bridge}}
+
+
+\hyperlink{classitem_1_1_item}{Item} which bridges together separated moments.  
+
+
+
+
+{\ttfamily \#include $<$bridge.\+hpp$>$}
+
+Inheritance diagram for item\+:\+:Bridge\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classitem_1_1_bridge}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classitem_1_1_bridge_a5bc97b39c3fcb52578942f5f41d7bb7d}\label{classitem_1_1_bridge_a5bc97b39c3fcb52578942f5f41d7bb7d}} 
+{\bfseries Bridge} (\hyperlink{classtimeplane_1_1_moment}{Moment} first\+\_\+moment)
+\item 
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m)
+\begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
+Tags \hyperlink{classitem_1_1_bridge_af49adc6bbaf4788cce2b4cbf8d895865}{State\+Tags} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
+\begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Item\+Type constexpr \hyperlink{classitem_1_1_bridge_aeb376b4b999ec6144454cd806e5e06d2}{type} = Item\+Type\+::k\+Bridge
+\begin{DoxyCompactList}\small\item\em An enum representation of the type of the item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classitem_1_1_bridge_ad779bb244833ce97048e1a105ff09a8f}\label{classitem_1_1_bridge_ad779bb244833ce97048e1a105ff09a8f}} 
+static int constexpr \hyperlink{classitem_1_1_bridge_ad779bb244833ce97048e1a105ff09a8f}{k\+Unlock\+Requirement} = 45
+\begin{DoxyCompactList}\small\item\em Energy requirement to unlock the item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ \hyperlink{classitem_1_1_bridge_a08aa3fdb36e203e489bc0af65dde451c}{Step\+Impl} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&round\+\_\+info\+\_\+view, int energy\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Virtual method for computing the results of making a step. \end{DoxyCompactList}\item 
+std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ \hyperlink{classitem_1_1_bridge_a175b2a911174c682ea163bc248836a87}{Branch\+Impl} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classtimeplane_1_1_moment}{Moment} dest)
+\begin{DoxyCompactList}\small\item\em Virtual method for computing the results of branching. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classitem_1_1_item}{Item} which bridges together separated moments. 
+
+Moments that are otherwise separated because the latest antitelephone arrival lies in between can be connected with the \hyperlink{classitem_1_1_bridge}{Bridge}. Then it would be possible to travel from the later moment to the earlier moment. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}\label{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}} 
+\index{item\+::\+Bridge@{item\+::\+Bridge}!View@{View}}
+\index{View@{View}!item\+::\+Bridge@{item\+::\+Bridge}}
+\subsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Bridge\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+View the effects of an item at a specific moment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The moment to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item at the specified moment. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{item\+::\+Item}.
+
+\mbox{\Hypertarget{classitem_1_1_bridge_af49adc6bbaf4788cce2b4cbf8d895865}\label{classitem_1_1_bridge_af49adc6bbaf4788cce2b4cbf8d895865}} 
+\index{item\+::\+Bridge@{item\+::\+Bridge}!State\+Tags@{State\+Tags}}
+\index{State\+Tags@{State\+Tags}!item\+::\+Bridge@{item\+::\+Bridge}}
+\subsubsection{\texorpdfstring{State\+Tags()}{StateTags()}}
+{\footnotesize\ttfamily Tags Bridge\+::\+State\+Tags (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual method to provide user-\/friendly tagged values. 
+
+The tags are used as a user-\/friendly indication of the internal state of the item at a given moment without revealing implementation detail, and can also be used to attach specific meaning to the abstract lockdown and cooldown values associated with all items. 
+\begin{DoxyParams}{Parameters}
+{\em m} & The moment to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A group of tagged values describing the state of an item. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}{item\+::\+Item}.
+
+\mbox{\Hypertarget{classitem_1_1_bridge_a08aa3fdb36e203e489bc0af65dde451c}\label{classitem_1_1_bridge_a08aa3fdb36e203e489bc0af65dde451c}} 
+\index{item\+::\+Bridge@{item\+::\+Bridge}!Step\+Impl@{Step\+Impl}}
+\index{Step\+Impl@{Step\+Impl}!item\+::\+Bridge@{item\+::\+Bridge}}
+\subsubsection{\texorpdfstring{Step\+Impl()}{StepImpl()}}
+{\footnotesize\ttfamily std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ Bridge\+::\+Step\+Impl (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&}]{turn\+\_\+data,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Virtual method for computing the results of making a step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before the step. \\
+\hline
+{\em turn\+\_\+data} & The information about the turn just played. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round, and the properties of the item for the next round. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_a90df61c8a2a20144eb1100af5fb2d464}{item\+::\+Item}.
+
+\mbox{\Hypertarget{classitem_1_1_bridge_a175b2a911174c682ea163bc248836a87}\label{classitem_1_1_bridge_a175b2a911174c682ea163bc248836a87}} 
+\index{item\+::\+Bridge@{item\+::\+Bridge}!Branch\+Impl@{Branch\+Impl}}
+\index{Branch\+Impl@{Branch\+Impl}!item\+::\+Bridge@{item\+::\+Bridge}}
+\subsubsection{\texorpdfstring{Branch\+Impl()}{BranchImpl()}}
+{\footnotesize\ttfamily std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ Bridge\+::\+Branch\+Impl (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Virtual method for computing the results of branching. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before branching. \\
+\hline
+{\em dest} & The destination moment to reach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round, and the properties of the item for the next round. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_afef6bdd5c1c734c67122e4118e9e1930}{item\+::\+Item}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classitem_1_1_bridge_aeb376b4b999ec6144454cd806e5e06d2}\label{classitem_1_1_bridge_aeb376b4b999ec6144454cd806e5e06d2}} 
+\index{item\+::\+Bridge@{item\+::\+Bridge}!type@{type}}
+\index{type@{type}!item\+::\+Bridge@{item\+::\+Bridge}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily Item\+Type constexpr item\+::\+Bridge\+::type = Item\+Type\+::k\+Bridge\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+An enum representation of the type of the item. 
+
+The value of the enum is a unique value for each item, and are consecutive starting at 0 across all items. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/bridge.\+hpp\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/bridge.\+cpp\end{DoxyCompactItemize}

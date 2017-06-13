@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['operator_21_3d',['operator!=',['../classtimeplane_1_1_moment.html#a2e50bd80270c77f8d1b9fdbc586efc7c',1,'timeplane::Moment']]],
-  ['operator_3d',['operator=',['../classtimeplane_1_1_time_line.html#a14e1d9701e1a6571458343e0831855b6',1,'timeplane::TimeLine']]],
-  ['operator_3d_3d',['operator==',['../classtimeplane_1_1_moment.html#abe69bf9b6e324f3147c9f1ed078b9d0c',1,'timeplane::Moment']]]
+  ['damagereceived',['DamageReceived',['../classroundinfo_1_1_round_info.html#a2b6c4500a8076cb24f83591f05b99fba',1,'roundinfo::RoundInfo::DamageReceived()'],['../classroundinfo_1_1_round_info_view.html#ac2d60e02ab84297d958b5b5caa653c7b',1,'roundinfo::RoundInfoView::DamageReceived()']]],
+  ['damagereceivediterator',['DamageReceivedIterator',['../classroundinfo_1_1_round_info.html#a94ea1a09ae7680e74188296aef0b0d63',1,'roundinfo::RoundInfo']]]
 ];

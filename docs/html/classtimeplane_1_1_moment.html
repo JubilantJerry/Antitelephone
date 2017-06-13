@@ -177,8 +177,8 @@ struct </td><td class="memItemRight" valign="bottom"><b>std::hash&lt; Moment &g
 </div><!-- @@@Moment -->
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2e50bd80270c77f8d1b9fdbc586efc7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e50bd80270c77f8d1b9fdbc586efc7c">◆ </a></span>operator!=()</h2>
+<a id="ad8ea04fc7e079694a0843ff7b3f42c6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ea04fc7e079694a0843ff7b3f42c6c">◆ </a></span>parent_timeline_num()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -186,10 +186,9 @@ struct </td><td class="memItemRight" valign="bottom"><b>std::hash&lt; Moment &g
 <td class="mlabels-left">
 <table class="memname">
 <tr>
-<td class="memname">bool timeplane::Moment::operator!= </td>
+<td class="memname">int timeplane::Moment::parent_timeline_num </td>
 <td>(</td>
-<td class="paramtype">const <a class="el" href="classtimeplane_1_1_moment.html">Moment</a> &amp; </td>
-<td class="paramname"><em>rhs</em></td><td>)</td>
+<td class="paramname"></td><td>)</td>
 <td> const</td>
 </tr>
 </table>
@@ -198,16 +197,35 @@ struct </td><td class="memItemRight" valign="bottom"><b>std::hash&lt; Moment &g
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
 </tr>
 </table>
-</div><!-- $$$operator!=[overload1]$$$booltimeplane::Moment::operator!=(constMoment& rhs)const --><div class="memdoc"><div style="display: none">bool timeplane::Moment::operator!= (const Moment &amp; rhs) const</div>
-<p>Inequality operator. </p>
-<p>Both the timeline number and time are compared. </p><dl class="params"><dt>Parameters</dt><dd>
-<table class="params">
-<tr><td class="paramname">rhs</td><td>The instance to compare against. </td></tr>
+</div><!-- $$$parent_timeline_num[overload1]$$$inttimeplane::Moment::parent_timeline_num()const --><div class="memdoc"><div style="display: none">int timeplane::Moment::parent_timeline_num () const</div>
+<p>Accessor for the timeline number. </p>
+<dl class="section return"><dt>Returns</dt><dd>The timeline number of the moment. </dd></dl>
+</div><!-- @@@parent_timeline_num -->
+</div>
+<a id="a118be8757aa459d4d6e4d859a5164251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118be8757aa459d4d6e4d859a5164251">◆ </a></span>time()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname">int timeplane::Moment::time </td>
+<td>(</td>
+<td class="paramname"></td><td>)</td>
+<td> const</td>
+</tr>
 </table>
-</dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Whether the instances are not equal. </dd></dl>
-</div><!-- @@@operator!= -->
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$time[overload1]$$$inttimeplane::Moment::time()const --><div class="memdoc"><div style="display: none">int timeplane::Moment::time () const</div>
+<p>Accessor for the time. </p>
+<dl class="section return"><dt>Returns</dt><dd>The time associated with the moment. </dd></dl>
+</div><!-- @@@time -->
 </div>
 <a id="abe69bf9b6e324f3147c9f1ed078b9d0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe69bf9b6e324f3147c9f1ed078b9d0c">◆ </a></span>operator==()</h2>
@@ -241,8 +259,8 @@ struct </td><td class="memItemRight" valign="bottom"><b>std::hash&lt; Moment &g
 <dl class="section return"><dt>Returns</dt><dd>Whether the instances are equal. </dd></dl>
 </div><!-- @@@operator== -->
 </div>
-<a id="ad8ea04fc7e079694a0843ff7b3f42c6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8ea04fc7e079694a0843ff7b3f42c6c">◆ </a></span>parent_timeline_num()</h2>
+<a id="a2e50bd80270c77f8d1b9fdbc586efc7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e50bd80270c77f8d1b9fdbc586efc7c">◆ </a></span>operator!=()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -250,9 +268,10 @@ struct </td><td class="memItemRight" valign="bottom"><b>std::hash&lt; Moment &g
 <td class="mlabels-left">
 <table class="memname">
 <tr>
-<td class="memname">int timeplane::Moment::parent_timeline_num </td>
+<td class="memname">bool timeplane::Moment::operator!= </td>
 <td>(</td>
-<td class="paramname"></td><td>)</td>
+<td class="paramtype">const <a class="el" href="classtimeplane_1_1_moment.html">Moment</a> &amp; </td>
+<td class="paramname"><em>rhs</em></td><td>)</td>
 <td> const</td>
 </tr>
 </table>
@@ -261,10 +280,16 @@ struct </td><td class="memItemRight" valign="bottom"><b>std::hash&lt; Moment &g
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
 </tr>
 </table>
-</div><!-- $$$parent_timeline_num[overload1]$$$inttimeplane::Moment::parent_timeline_num()const --><div class="memdoc"><div style="display: none">int timeplane::Moment::parent_timeline_num () const</div>
-<p>Accessor for the timeline number. </p>
-<dl class="section return"><dt>Returns</dt><dd>The timeline number of the moment. </dd></dl>
-</div><!-- @@@parent_timeline_num -->
+</div><!-- $$$operator!=[overload1]$$$booltimeplane::Moment::operator!=(constMoment& rhs)const --><div class="memdoc"><div style="display: none">bool timeplane::Moment::operator!= (const Moment &amp; rhs) const</div>
+<p>Inequality operator. </p>
+<p>Both the timeline number and time are compared. </p><dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">rhs</td><td>The instance to compare against. </td></tr>
+</table>
+</dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether the instances are not equal. </dd></dl>
+</div><!-- @@@operator!= -->
 </div>
 <a id="ac7870eb30ed18b8ea85bf7584632cd11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac7870eb30ed18b8ea85bf7584632cd11">◆ </a></span>serialize()</h2>
@@ -315,31 +340,6 @@ template&lt;typename Archive &gt; </div>
 </dd>
 </dl>
 </div><!-- @@@serialize -->
-</div>
-<a id="a118be8757aa459d4d6e4d859a5164251"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a118be8757aa459d4d6e4d859a5164251">◆ </a></span>time()</h2>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-<tr>
-<td class="mlabels-left">
-<table class="memname">
-<tr>
-<td class="memname">int timeplane::Moment::time </td>
-<td>(</td>
-<td class="paramname"></td><td>)</td>
-<td> const</td>
-</tr>
-</table>
-</td>
-<td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
-</tr>
-</table>
-</div><!-- $$$time[overload1]$$$inttimeplane::Moment::time()const --><div class="memdoc"><div style="display: none">int timeplane::Moment::time () const</div>
-<p>Accessor for the time. </p>
-<dl class="section return"><dt>Returns</dt><dd>The time associated with the moment. </dd></dl>
-</div><!-- @@@time -->
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>K:/Personal Projects/AntitelephoneQT/src/<a class="el" href="moment_8hpp_source.html">moment.hpp</a></li>

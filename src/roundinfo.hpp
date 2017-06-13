@@ -32,16 +32,7 @@ class RoundInfo {
      * health data and player active status are unspecified.
      * @param num_players       The number of players in the game.
      */
-    RoundInfo(int num_players)
-        :num_players_(num_players),
-         location_data_(num_players),
-         health_remaining_data_(num_players),
-         active_data_(num_players),
-         alliance_data_(num_players) {
-        for (int i = 0; i < num_players; i++) {
-            alliance_data_.SetValue(i, i, true);
-        }
-    }
+    RoundInfo(int num_players);
 
     /**
      * @brief Accessor for the number of players in the game.
@@ -61,34 +52,31 @@ class RoundInfo {
      *      player making the query is not authorized to know.
      * @throws std::out_of_range If no player with the specified ID exists.
      */
-    int Location(int player, int viewing_player) const {
-        if (player < 0 || player >= num_players_ ||
-                viewing_player < kOmniscientViewer ||
-                viewing_player >= num_players_) {
-            throw std::out_of_range("Player ID is invalid");
-        }
-        return KeepIfAlliedOrEncounter(player, viewing_player,
-                                       location_data_[player]);
-    }
+    int Location(int player, int viewing_player) const;
+
+    /**
+     * @brief Accessor for the damage a player received.
+     *
+     * This value is distinct from the change in health across moments
+     * because of potential shielding effects from items.
+     * @param player                The player ID to query.
+     * @param viewing_player        The player attempting to make the query.
+     * @return The damage received of the player queried, or @c kUnknown if
+     *      the player making the query is not authorized to know.
+     * @throws std::out_of_range If no player with the specified ID exists.
+     */
+    int DamageReceived(int player, int viewing_player) const;
 
     /**
      * @brief Accessor for the health a player has remaining.
      *
      * @param player                The player ID to query.
      * @param viewing_player        The player attempting to make the query.
-     * @return The location of the player queried, or @c kUnknown if the
-     *      player making the query is not authorized to know.
+     * @return The health remaining of the player queried, or @c kUnknown if
+     *      the player making the query is not authorized to know.
      * @throws std::out_of_range If no player with the specified ID exists.
      */
-    int HealthRemaining(int player, int viewing_player) const {
-        if (player < 0 || player >= num_players_ ||
-                viewing_player < kOmniscientViewer ||
-                viewing_player >= num_players_) {
-            throw std::out_of_range("Player ID is invalid");
-        }
-        return KeepIfAlliedOrEncounter(player, viewing_player,
-                                       health_remaining_data_[player]);
-    }
+    int HealthRemaining(int player, int viewing_player) const;
 
     /**
      * @brief Accessor to view the alliance data.
@@ -105,26 +93,29 @@ class RoundInfo {
      * @return Whether the player queried is active.
      * @throws std::out_of_range If no player with the specified ID exists.
      */
-    bool Active(int player) const {
-        if (player < 0 || player >= num_players_) {
-            throw std::out_of_range("Player ID is invalid");
-        }
-        return active_data_.test(player);
-    }
+    bool Active(int player) const;
 
     /**
      * @brief Iterator to modify the location data.
      * @return A random access iterator to the location data.
      */
-    IntIterator LocationIterator() {
+    IntIterator LocationIterator() noexcept {
         return location_data_.begin();
+    }
+
+    /**
+     * @brief Iterator to modify the damage received data.
+     * @return A random access iterator to the damage received data.
+     */
+    IntIterator DamageReceivedIterator() noexcept {
+        return damage_received_data_.begin();
     }
 
     /**
      * @brief Iterator to modify the health remaining data.
      * @return A random access iterator to the health remaining data.
      */
-    IntIterator HealthRemainingIterator() {
+    IntIterator HealthRemainingIterator() noexcept {
         return health_remaining_data_.begin();
     }
 
@@ -134,12 +125,7 @@ class RoundInfo {
      * @param value         The active status value to set.
      * @throws std::out_of_range If no player with the specified ID exists.
      */
-    void SetActive(int player, bool value) {
-        if (player < 0 || player >= num_players_) {
-            throw std::out_of_range("Player ID is invalid");
-        }
-        active_data_.set(player, value);
-    }
+    void SetActive(int player, bool value);
 
     /**
      * @brief Accessor to modify the alliance data.
@@ -153,6 +139,7 @@ class RoundInfo {
   private:
     int num_players_;
     std::vector<int> location_data_;
+    std::vector<int> damage_received_data_;
     std::vector<int> health_remaining_data_;
     BitSet active_data_;
     SymmetricBitMatrix alliance_data_;
@@ -161,18 +148,6 @@ class RoundInfo {
     int KeepIfAlliedOrEncounter(int player, int viewing_player,
                                 int value) const;
 };
-
-int RoundInfo::KeepIfAlliedOrEncounter(int player, int viewing_player,
-                                       int value) const {
-    if (viewing_player == kOmniscientViewer ||
-            alliance_data_.Value(viewing_player, player) ||
-            location_data_[player] ==
-            location_data_[viewing_player]) {
-        return value;
-    } else {
-        return kUnknown;
-    }
-}
 }
 
 #endif //ROUNDINFO_H

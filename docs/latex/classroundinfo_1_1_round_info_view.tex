@@ -1,0 +1,200 @@
+\hypertarget{classroundinfo_1_1_round_info_view}{}\section{roundinfo\+:\+:Round\+Info\+View Class Reference}
+\label{classroundinfo_1_1_round_info_view}\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+
+
+Information contained in {\ttfamily \hyperlink{classroundinfo_1_1_round_info}{Round\+Info}} as seen from a single player.  
+
+
+
+
+{\ttfamily \#include $<$roundinfoview.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classroundinfo_1_1_round_info_view_a29937c9ac9cd71b7edd10f612ce76c91}{Round\+Info\+View} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classroundinfo_1_1_round_info_view_a8c5bca173f30cc869505c36baf04ebaa}{Round\+Info\+View} (\hyperlink{classroundinfo_1_1_round_info}{Round\+Info} const \&source, int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player}, bool location\+\_\+omniscience=false)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the ID of the player that the view centers from. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_view_a05f42a982570552bbeb8c330e62437ad}{Location} (int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player}) const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the location of another player. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_view_ac2d60e02ab84297d958b5b5caa653c7b}{Damage\+Received} (int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player}) const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the health remaining of another player. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_view_a5b7dd1135b438e04017ad0a3bcc4034a}{Health\+Remaining} (int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player}) const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the health remaining of another player. \end{DoxyCompactList}\item 
+Bit\+Set const  \& \hyperlink{classroundinfo_1_1_round_info_view_af00b23d7a3f2fa21fd3cbba1f71e0fd4}{allies} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the set of allies the player has. \end{DoxyCompactList}\item 
+bool \hyperlink{classroundinfo_1_1_round_info_view_a1ff1802f7ab8e24008f02bbc0169a160}{active} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for whether the player is actively in control. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive $>$ }\\void \hyperlink{classroundinfo_1_1_round_info_view_a101e6ee624aacfa8dd110aea67e67538}{serialize} (Archive \&ar, unsigned int const version)
+\begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classroundinfo_1_1_round_info_view_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+class {\bfseries boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Information contained in {\ttfamily \hyperlink{classroundinfo_1_1_round_info}{Round\+Info}} as seen from a single player. 
+
+Any information that a player is unauthorized to see is reported as {\ttfamily Round\+Info\+::k\+Unknown}. Instances of this class can be serialized. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a29937c9ac9cd71b7edd10f612ce76c91}\label{classroundinfo_1_1_round_info_view_a29937c9ac9cd71b7edd10f612ce76c91}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!Round\+Info\+View@{Round\+Info\+View}}
+\index{Round\+Info\+View@{Round\+Info\+View}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{Round\+Info\+View()}{RoundInfoView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Round\+Info\+View\+::\+Round\+Info\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+The fields are not initialized. The only mutator is the {\ttfamily serialize} function, and so this constructor should only be used to deserialize an instance. \mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a8c5bca173f30cc869505c36baf04ebaa}\label{classroundinfo_1_1_round_info_view_a8c5bca173f30cc869505c36baf04ebaa}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!Round\+Info\+View@{Round\+Info\+View}}
+\index{Round\+Info\+View@{Round\+Info\+View}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{Round\+Info\+View()}{RoundInfoView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Round\+Info\+View\+::\+Round\+Info\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classroundinfo_1_1_round_info}{Round\+Info} const \&}]{source,  }\item[{int}]{player,  }\item[{bool}]{location\+\_\+omniscience = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The {\ttfamily \hyperlink{classroundinfo_1_1_round_info}{Round\+Info}} instance as a centralized source to obtain data from. \\
+\hline
+{\em player} & The ID of the player to view from. \\
+\hline
+{\em location\+\_\+omniscience} & Whether the player is granted omniscience into the locations of other players. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}\label{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!player@{player}}
+\index{player@{player}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{player()}{player()}}
+{\footnotesize\ttfamily int roundinfo\+::\+Round\+Info\+View\+::player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the ID of the player that the view centers from. 
+
+\begin{DoxyReturn}{Returns}
+Player ID of the viewer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a05f42a982570552bbeb8c330e62437ad}\label{classroundinfo_1_1_round_info_view_a05f42a982570552bbeb8c330e62437ad}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!Location@{Location}}
+\index{Location@{Location}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{Location()}{Location()}}
+{\footnotesize\ttfamily int roundinfo\+::\+Round\+Info\+View\+::\+Location (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the location of another player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The ID of the player to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The location of the player queried, or {\ttfamily Round\+Info\+::k\+Unknown} if the viewer is not authorized to know. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_ac2d60e02ab84297d958b5b5caa653c7b}\label{classroundinfo_1_1_round_info_view_ac2d60e02ab84297d958b5b5caa653c7b}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!Damage\+Received@{Damage\+Received}}
+\index{Damage\+Received@{Damage\+Received}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{Damage\+Received()}{DamageReceived()}}
+{\footnotesize\ttfamily int roundinfo\+::\+Round\+Info\+View\+::\+Damage\+Received (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the health remaining of another player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The ID of the player to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The health remaining of the player queried, or {\ttfamily Round\+Info\+::k\+Unknown} if the viewer is not authorized to know. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a5b7dd1135b438e04017ad0a3bcc4034a}\label{classroundinfo_1_1_round_info_view_a5b7dd1135b438e04017ad0a3bcc4034a}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!Health\+Remaining@{Health\+Remaining}}
+\index{Health\+Remaining@{Health\+Remaining}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{Health\+Remaining()}{HealthRemaining()}}
+{\footnotesize\ttfamily int roundinfo\+::\+Round\+Info\+View\+::\+Health\+Remaining (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the health remaining of another player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The ID of the player to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The health remaining of the player queried, or {\ttfamily Round\+Info\+::k\+Unknown} if the viewer is not authorized to know. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_af00b23d7a3f2fa21fd3cbba1f71e0fd4}\label{classroundinfo_1_1_round_info_view_af00b23d7a3f2fa21fd3cbba1f71e0fd4}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!allies@{allies}}
+\index{allies@{allies}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{allies()}{allies()}}
+{\footnotesize\ttfamily Bit\+Set const\& roundinfo\+::\+Round\+Info\+View\+::allies (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the set of allies the player has. 
+
+\begin{DoxyReturn}{Returns}
+A bit set representing who the player is allied with. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a1ff1802f7ab8e24008f02bbc0169a160}\label{classroundinfo_1_1_round_info_view_a1ff1802f7ab8e24008f02bbc0169a160}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!active@{active}}
+\index{active@{active}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{active()}{active()}}
+{\footnotesize\ttfamily bool roundinfo\+::\+Round\+Info\+View\+::active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for whether the player is actively in control. 
+
+\begin{DoxyReturn}{Returns}
+Whether the player can actively control their moves. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a101e6ee624aacfa8dd110aea67e67538}\label{classroundinfo_1_1_round_info_view_a101e6ee624aacfa8dd110aea67e67538}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!serialize@{serialize}}
+\index{serialize@{serialize}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename Archive $>$ \\
+void roundinfo\+::\+Round\+Info\+View\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{unsigned int const}]{version }\end{DoxyParamCaption})}
+
+
+
+Serialization function. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Archive} & The serialization archive type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & The serialization archive. \\
+\hline
+{\em version} & The verion of the serialization protocol to use. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/roundinfoview.\+hpp\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/roundinfoview.\+cpp\end{DoxyCompactItemize}

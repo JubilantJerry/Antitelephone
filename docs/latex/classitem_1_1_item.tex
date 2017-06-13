@@ -1,0 +1,341 @@
+\hypertarget{classitem_1_1_item}{}\section{item\+:\+:Item Class Reference}
+\label{classitem_1_1_item}\index{item\+::\+Item@{item\+::\+Item}}
+
+
+The properties of an item in the game across moments.  
+
+
+
+
+{\ttfamily \#include $<$item.\+hpp$>$}
+
+Inheritance diagram for item\+:\+:Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classitem_1_1_item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_ad8d77979820782fd86a0a67e2ea25c75}{Step} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&round\+\_\+info\+\_\+view, int energy\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Update the item across a regular step into the future. \end{DoxyCompactList}\item 
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_aa4b1c982b6d35d047c7a8ea86b06be99}{Branch} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classtimeplane_1_1_moment}{Moment} dest)
+\begin{DoxyCompactList}\small\item\em Update the item while traveling to the past (branching). \end{DoxyCompactList}\item 
+void \hyperlink{classitem_1_1_item_a99eaccdd31a817a7cb0e501cb632f711}{Confirm\+Pending} (\hyperlink{classtimeplane_1_1_moment}{Moment} new\+\_\+moment)
+\begin{DoxyCompactList}\small\item\em Finalize the changes in the item after a call to {\ttfamily Step} or {\ttfamily Branch}. \end{DoxyCompactList}\item 
+virtual \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m)=0
+\begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
+virtual Tags \hyperlink{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}{State\+Tags} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const =0
+\begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classitem_1_1_item_aae2db5aecbcd2703453521c457bc9419}\label{classitem_1_1_item_aae2db5aecbcd2703453521c457bc9419}} 
+static int constexpr \hyperlink{classitem_1_1_item_aae2db5aecbcd2703453521c457bc9419}{k\+Max\+Cooldown} = 4
+\begin{DoxyCompactList}\small\item\em Maximum cooldown of items, by default. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classitem_1_1_item_a445a6061775c6a8cd3ce4e984698b9f6}\label{classitem_1_1_item_a445a6061775c6a8cd3ce4e984698b9f6}} 
+static int constexpr \hyperlink{classitem_1_1_item_a445a6061775c6a8cd3ce4e984698b9f6}{k\+Basic\+Max\+Hitpoints} = 20
+\begin{DoxyCompactList}\small\item\em Maximum hitpoints the player has as a basic guarantee. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classitem_1_1_item_a30b4c60171ecd398d5ff79f5340f40cb}\label{classitem_1_1_item_a30b4c60171ecd398d5ff79f5340f40cb}} 
+static int constexpr \hyperlink{classitem_1_1_item_a30b4c60171ecd398d5ff79f5340f40cb}{k\+Max\+Hitpoint\+Increment} = 20
+\begin{DoxyCompactList}\small\item\em Maximum hitpoints gained for each new unlocked item. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classitem_1_1_item_a198b43663d2cafe26b5a495738882df7}\label{classitem_1_1_item_a198b43663d2cafe26b5a495738882df7}} 
+static int constexpr \hyperlink{classitem_1_1_item_a198b43663d2cafe26b5a495738882df7}{k\+Basic\+Attack} = 4
+\begin{DoxyCompactList}\small\item\em Maximum hitpoints the player has as a basic guarantee. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classitem_1_1_item_a00def77d22585b09011b09981f3ad3b6}\label{classitem_1_1_item_a00def77d22585b09011b09981f3ad3b6}} 
+static int constexpr \hyperlink{classitem_1_1_item_a00def77d22585b09011b09981f3ad3b6}{k\+Attack\+Increment} = 4
+\begin{DoxyCompactList}\small\item\em Attack boost gained for each new unlocked item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classitem_1_1_item_aebe9569e9074ee805b6213f500066115}{Item} (\hyperlink{classtimeplane_1_1_moment}{Moment} first\+\_\+moment, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} const \&first\+\_\+properties)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classitem_1_1_item_properties}{Item\+Properties} const  \& \hyperlink{classitem_1_1_item_a23790dceafc9e3f8950f69380cc4c4aa}{Get\+Properties} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
+\begin{DoxyCompactList}\small\item\em Accessor for the properties of an item at a specific moment. \end{DoxyCompactList}\item 
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_a35583f2bcdaea50728a9e16e0626e341}{Increment\+Effect\+If} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
+\begin{DoxyCompactList}\small\item\em {\ttfamily \hyperlink{classitem_1_1_effect}{Effect}} instance with an attack and maximum hitpoint increase. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ \hyperlink{classitem_1_1_item_a90df61c8a2a20144eb1100af5fb2d464}{Step\+Impl} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&turn\+\_\+data, int energy\+\_\+input)=0
+\begin{DoxyCompactList}\small\item\em Virtual method for computing the results of making a step. \end{DoxyCompactList}\item 
+virtual std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ \hyperlink{classitem_1_1_item_afef6bdd5c1c734c67122e4118e9e1930}{Branch\+Impl} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classtimeplane_1_1_moment}{Moment} dest)=0
+\begin{DoxyCompactList}\small\item\em Virtual method for computing the results of branching. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_a69a02566ccfd21e054e48864a9d4362e}{Basic\+Effect} () noexcept
+\begin{DoxyCompactList}\small\item\em {\ttfamily \hyperlink{classitem_1_1_effect}{Effect}} instance with basic attack and maximum hitpoints. \end{DoxyCompactList}\item 
+static \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_abaff3ea78fa8c9940868b99ce8b6d2ea}{Increment\+Effect\+If} (\hyperlink{classitem_1_1_item_properties}{Item\+Properties} const \&p) noexcept
+\begin{DoxyCompactList}\small\item\em {\ttfamily \hyperlink{classitem_1_1_effect}{Effect}} instance with an attack and maximum hitpoint increase. \end{DoxyCompactList}\item 
+static bool \hyperlink{classitem_1_1_item_a93ef8f291ecf2886ea6902d496624334}{Standard\+Step\+Update} (\hyperlink{classitem_1_1_item_properties}{Item\+Properties} \&properties, int energy\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Standard update algorithm for properties. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The properties of an item in the game across moments. 
+
+This class contains is virtual and cannot be instantiated directly. The various items in the game inherit from this type. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classitem_1_1_item_aebe9569e9074ee805b6213f500066115}\label{classitem_1_1_item_aebe9569e9074ee805b6213f500066115}} 
+\index{item\+::\+Item@{item\+::\+Item}!Item@{Item}}
+\index{Item@{Item}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Item()}{Item()}}
+{\footnotesize\ttfamily Item\+::\+Item (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{first\+\_\+moment,  }\item[{\hyperlink{classitem_1_1_item_properties}{Item\+Properties} const \&}]{first\+\_\+properties }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+\_\+moment} & The first moment in the game. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classitem_1_1_item_ad8d77979820782fd86a0a67e2ea25c75}\label{classitem_1_1_item_ad8d77979820782fd86a0a67e2ea25c75}} 
+\index{item\+::\+Item@{item\+::\+Item}!Step@{Step}}
+\index{Step@{Step}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Step()}{Step()}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Item\+::\+Step (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&}]{round\+\_\+info\+\_\+view,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})}
+
+
+
+Update the item across a regular step into the future. 
+
+The resulting item properties are stored temporarily until the client calls {\ttfamily Confirm\+Pending} to finalize them. The item properties are updated after considering the events that have occurred in the turn. 
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before the step. \\
+\hline
+{\em turn\+\_\+data} & The information about the turn just played. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classitem_1_1_item_aa4b1c982b6d35d047c7a8ea86b06be99}\label{classitem_1_1_item_aa4b1c982b6d35d047c7a8ea86b06be99}} 
+\index{item\+::\+Item@{item\+::\+Item}!Branch@{Branch}}
+\index{Branch@{Branch}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Branch()}{Branch()}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Item\+::\+Branch (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{dest }\end{DoxyParamCaption})}
+
+
+
+Update the item while traveling to the past (branching). 
+
+The resulting item properties are stored temporarily until the client calls {\ttfamily Confirm\+Pending} to finalize them. 
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before branching. \\
+\hline
+{\em dest} & The destination moment to reach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & If the destination is not in the past. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classitem_1_1_item_a99eaccdd31a817a7cb0e501cb632f711}\label{classitem_1_1_item_a99eaccdd31a817a7cb0e501cb632f711}} 
+\index{item\+::\+Item@{item\+::\+Item}!Confirm\+Pending@{Confirm\+Pending}}
+\index{Confirm\+Pending@{Confirm\+Pending}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Confirm\+Pending()}{ConfirmPending()}}
+{\footnotesize\ttfamily void Item\+::\+Confirm\+Pending (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{new\+\_\+moment }\end{DoxyParamCaption})}
+
+
+
+Finalize the changes in the item after a call to {\ttfamily Step} or {\ttfamily Branch}. 
+
+This requires that the new moment occurs at time one more than the one provided to {\ttfamily Step}, or has the same time as the destination moment providede to {\ttfamily Branch}. 
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+moment} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}\label{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}} 
+\index{item\+::\+Item@{item\+::\+Item}!View@{View}}
+\index{View@{View}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily virtual \hyperlink{classitem_1_1_effect}{Effect} item\+::\+Item\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+View the effects of an item at a specific moment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The moment to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item at the specified moment. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a9982f1934a769cc461246bab31b8a72d}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_abdc88bd6d0a4d6021805fa3097f47633}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}{item\+::\+Antitelephone}.
+
+\mbox{\Hypertarget{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}\label{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}} 
+\index{item\+::\+Item@{item\+::\+Item}!State\+Tags@{State\+Tags}}
+\index{State\+Tags@{State\+Tags}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{State\+Tags()}{StateTags()}}
+{\footnotesize\ttfamily virtual Tags item\+::\+Item\+::\+State\+Tags (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Virtual method to provide user-\/friendly tagged values. 
+
+The tags are used as a user-\/friendly indication of the internal state of the item at a given moment without revealing implementation detail, and can also be used to attach specific meaning to the abstract lockdown and cooldown values associated with all items. 
+\begin{DoxyParams}{Parameters}
+{\em m} & The moment to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A group of tagged values describing the state of an item. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classitem_1_1_bridge_af49adc6bbaf4788cce2b4cbf8d895865}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a61b1924335a4c4443a78ee75f9935b14}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_a91b92d4e1fca7015b75142d43f43e80e}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_a0322847417981b9acd4b323c35e728f0}{item\+::\+Antitelephone}.
+
+\mbox{\Hypertarget{classitem_1_1_item_a23790dceafc9e3f8950f69380cc4c4aa}\label{classitem_1_1_item_a23790dceafc9e3f8950f69380cc4c4aa}} 
+\index{item\+::\+Item@{item\+::\+Item}!Get\+Properties@{Get\+Properties}}
+\index{Get\+Properties@{Get\+Properties}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Get\+Properties()}{GetProperties()}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_item_properties}{Item\+Properties} const  \& Item\+::\+Get\+Properties (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Accessor for the properties of an item at a specific moment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The moment to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The properties of the item at the specified moment. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no properties are stored for the moment. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classitem_1_1_item_a69a02566ccfd21e054e48864a9d4362e}\label{classitem_1_1_item_a69a02566ccfd21e054e48864a9d4362e}} 
+\index{item\+::\+Item@{item\+::\+Item}!Basic\+Effect@{Basic\+Effect}}
+\index{Basic\+Effect@{Basic\+Effect}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Basic\+Effect()}{BasicEffect()}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Item\+::\+Basic\+Effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+{\ttfamily \hyperlink{classitem_1_1_effect}{Effect}} instance with basic attack and maximum hitpoints. 
+
+\begin{DoxyReturn}{Returns}
+An effect with basic parameters already set. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classitem_1_1_item_abaff3ea78fa8c9940868b99ce8b6d2ea}\label{classitem_1_1_item_abaff3ea78fa8c9940868b99ce8b6d2ea}} 
+\index{item\+::\+Item@{item\+::\+Item}!Increment\+Effect\+If@{Increment\+Effect\+If}}
+\index{Increment\+Effect\+If@{Increment\+Effect\+If}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Increment\+Effect\+If()}{IncrementEffectIf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Item\+::\+Increment\+Effect\+If (\begin{DoxyParamCaption}\item[{\hyperlink{classitem_1_1_item_properties}{Item\+Properties} const \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}, {\ttfamily [noexcept]}}
+
+
+
+{\ttfamily \hyperlink{classitem_1_1_effect}{Effect}} instance with an attack and maximum hitpoint increase. 
+
+The increase for this overloaded function is only present if the item is not locked down for the specified item properties. \begin{DoxyReturn}{Returns}
+An effect with the parameters set to increase attack and maximum hitpoints. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classitem_1_1_item_a35583f2bcdaea50728a9e16e0626e341}\label{classitem_1_1_item_a35583f2bcdaea50728a9e16e0626e341}} 
+\index{item\+::\+Item@{item\+::\+Item}!Increment\+Effect\+If@{Increment\+Effect\+If}}
+\index{Increment\+Effect\+If@{Increment\+Effect\+If}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Increment\+Effect\+If()}{IncrementEffectIf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Item\+::\+Increment\+Effect\+If (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+{\ttfamily \hyperlink{classitem_1_1_effect}{Effect}} instance with an attack and maximum hitpoint increase. 
+
+The increase for this overloaded function is only present if the item is not locked down for the specified moment. \begin{DoxyReturn}{Returns}
+An effect with the parameters set to increase attack and maximum hitpoints. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no properties are stored for the moment. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classitem_1_1_item_a93ef8f291ecf2886ea6902d496624334}\label{classitem_1_1_item_a93ef8f291ecf2886ea6902d496624334}} 
+\index{item\+::\+Item@{item\+::\+Item}!Standard\+Step\+Update@{Standard\+Step\+Update}}
+\index{Standard\+Step\+Update@{Standard\+Step\+Update}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Standard\+Step\+Update()}{StandardStepUpdate()}}
+{\footnotesize\ttfamily bool Item\+::\+Standard\+Step\+Update (\begin{DoxyParamCaption}\item[{\hyperlink{classitem_1_1_item_properties}{Item\+Properties} \&}]{properties,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Standard update algorithm for properties. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em properties} & The properties to update. \\
+\hline
+{\em energy\+\_\+input} & The amount of energy put into the item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the item was actived as a result of the energy input. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classitem_1_1_item_a90df61c8a2a20144eb1100af5fb2d464}\label{classitem_1_1_item_a90df61c8a2a20144eb1100af5fb2d464}} 
+\index{item\+::\+Item@{item\+::\+Item}!Step\+Impl@{Step\+Impl}}
+\index{Step\+Impl@{Step\+Impl}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Step\+Impl()}{StepImpl()}}
+{\footnotesize\ttfamily virtual std\+::pair$<$\hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties}$>$ item\+::\+Item\+::\+Step\+Impl (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&}]{turn\+\_\+data,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Virtual method for computing the results of making a step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before the step. \\
+\hline
+{\em turn\+\_\+data} & The information about the turn just played. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round, and the properties of the item for the next round. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classitem_1_1_bridge_a08aa3fdb36e203e489bc0af65dde451c}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_af765dd1df5a43de79539f9ce960854c0}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_a0c446c3f436c4eb221ebafd817df9a5f}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_aa59b4569bac948f37fd15dbea234503f}{item\+::\+Antitelephone}.
+
+\mbox{\Hypertarget{classitem_1_1_item_afef6bdd5c1c734c67122e4118e9e1930}\label{classitem_1_1_item_afef6bdd5c1c734c67122e4118e9e1930}} 
+\index{item\+::\+Item@{item\+::\+Item}!Branch\+Impl@{Branch\+Impl}}
+\index{Branch\+Impl@{Branch\+Impl}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Branch\+Impl()}{BranchImpl()}}
+{\footnotesize\ttfamily virtual std\+::pair$<$\hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties}$>$ item\+::\+Item\+::\+Branch\+Impl (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Virtual method for computing the results of branching. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before branching. \\
+\hline
+{\em dest} & The destination moment to reach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round, and the properties of the item for the next round. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classitem_1_1_bridge_a175b2a911174c682ea163bc248836a87}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a9a8911eef902d4dcca95f111fda7c5d0}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_a29993d7965fe391d052214cd415eec75}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_a1b094baeb7cae7e1161d1aa1650022d1}{item\+::\+Antitelephone}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/item.\+hpp\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/item.\+cpp\end{DoxyCompactItemize}

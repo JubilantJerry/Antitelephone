@@ -9,10 +9,10 @@
 #include <boost/serialization/unordered_map.hpp>
 #include "boost_serialization_dynamic_bitset.hpp"
 #include "aliases.hpp"
-#include "roundinfo.hpp"
 #include "symmetricbitmatrix.hpp"
 
 namespace roundinfo {
+class RoundInfo;
 
 /**
  * @brief Information contained in @c RoundInfo as seen from a single player.
@@ -40,7 +40,7 @@ class RoundInfoView {
      *      omniscience into the locations of other players.
      */
     RoundInfoView(RoundInfo const& source, int player,
-                  bool location_omniscience);
+                  bool location_omniscience = false);
 
     /**
      * @brief Accessor for the ID of the player that the view centers from.
@@ -58,6 +58,16 @@ class RoundInfoView {
      */
     int Location(int player) const noexcept {
         return TryFindValue(location_data_, player);
+    }
+
+    /**
+     * @brief Accessor for the health remaining of another player.
+     * @param player        The ID of the player to query.
+     * @return The health remaining of the player queried, or
+     *      @c RoundInfo::kUnknown if the viewer is not authorized to know.
+     */
+    int DamageReceived(int player) const noexcept {
+        return TryFindValue(damage_received_data_, player);
     }
 
     /**
@@ -102,6 +112,7 @@ class RoundInfoView {
 
     int player_;
     IntIntMap location_data_;
+    IntIntMap damage_received_data_;
     IntIntMap health_remaining_data_;
     bool active_;
     BitSet allies_;
@@ -110,48 +121,11 @@ class RoundInfoView {
     int TryFindValue(IntIntMap const& source, int key) const;
 };
 
-RoundInfoView::RoundInfoView() {}
-
-RoundInfoView::RoundInfoView(RoundInfo const& source, int player,
-                             bool location_omniscience)
-    :player_{player},
-     location_data_{},
-     health_remaining_data_{},
-     active_{source.Active(player)},
-     allies_{source.num_players()} {
-    SymmetricBitMatrix allies_matrix = source.calliance_data();
-    int num_players = source.num_players();
-    int loc_viewer = location_omniscience ?
-                     RoundInfo::kOmniscientViewer : player;
-
-    for (int i = 0; i < num_players; i++) {
-        int location = source.Location(i, loc_viewer);
-        if (location != RoundInfo::kUnknown) {
-            location_data_.emplace(i, location);
-        }
-
-        int health_remaining = source.HealthRemaining(i, player);
-        if (health_remaining != RoundInfo::kUnknown) {
-            health_remaining_data_.emplace(i, health_remaining);
-        }
-        allies_.set(i, allies_matrix.Value(player, i));
-    }
-}
-
 template <typename Archive>
 void RoundInfoView::serialize(Archive &ar, const unsigned int version) {
     assert(version == 0);
-    ar & player_ & location_data_ & health_remaining_data_;
-    ar & active_ & allies_;
-}
-
-int RoundInfoView::TryFindValue(IntIntMap const& source, int key) const {
-    IntIntMap::const_iterator pos = source.find(key);
-    if (pos != source.end()) {
-        return pos->second;
-    } else {
-        return RoundInfo::kUnknown;
-    }
+    ar & player_ & location_data_ & damage_received_data_;
+    ar & health_remaining_data_ & active_ & allies_;
 }
 }
 

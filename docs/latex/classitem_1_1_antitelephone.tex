@@ -1,0 +1,157 @@
+\hypertarget{classitem_1_1_antitelephone}{}\section{item\+:\+:Antitelephone Class Reference}
+\label{classitem_1_1_antitelephone}\index{item\+::\+Antitelephone@{item\+::\+Antitelephone}}
+
+
+\hyperlink{classitem_1_1_item}{Item} which allows traveling to the past.  
+
+
+
+
+{\ttfamily \#include $<$antitelephone.\+hpp$>$}
+
+Inheritance diagram for item\+:\+:Antitelephone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classitem_1_1_antitelephone}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classitem_1_1_antitelephone_a832d79223e555ae7dd69d11377392731}\label{classitem_1_1_antitelephone_a832d79223e555ae7dd69d11377392731}} 
+{\bfseries Antitelephone} (\hyperlink{classtimeplane_1_1_moment}{Moment} first\+\_\+moment)
+\item 
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment})
+\begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
+Tags \hyperlink{classitem_1_1_antitelephone_a0322847417981b9acd4b323c35e728f0}{State\+Tags} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
+\begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Item\+Type constexpr \hyperlink{classitem_1_1_antitelephone_ab6d34885da8ab27a578da87a0c746744}{type} = Item\+Type\+::k\+Antitelephone
+\begin{DoxyCompactList}\small\item\em An enum representation of the type of the item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ \hyperlink{classitem_1_1_antitelephone_aa59b4569bac948f37fd15dbea234503f}{Step\+Impl} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&round\+\_\+info\+\_\+view, int energy\+\_\+input)
+\begin{DoxyCompactList}\small\item\em Virtual method for computing the results of making a step. \end{DoxyCompactList}\item 
+std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ \hyperlink{classitem_1_1_antitelephone_a1b094baeb7cae7e1161d1aa1650022d1}{Branch\+Impl} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classtimeplane_1_1_moment}{Moment} dest)
+\begin{DoxyCompactList}\small\item\em Virtual method for computing the results of branching. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classitem_1_1_item}{Item} which allows traveling to the past. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}\label{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}} 
+\index{item\+::\+Antitelephone@{item\+::\+Antitelephone}!View@{View}}
+\index{View@{View}!item\+::\+Antitelephone@{item\+::\+Antitelephone}}
+\subsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Antitelephone\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+View the effects of an item at a specific moment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & The moment to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item at the specified moment. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{item\+::\+Item}.
+
+\mbox{\Hypertarget{classitem_1_1_antitelephone_a0322847417981b9acd4b323c35e728f0}\label{classitem_1_1_antitelephone_a0322847417981b9acd4b323c35e728f0}} 
+\index{item\+::\+Antitelephone@{item\+::\+Antitelephone}!State\+Tags@{State\+Tags}}
+\index{State\+Tags@{State\+Tags}!item\+::\+Antitelephone@{item\+::\+Antitelephone}}
+\subsubsection{\texorpdfstring{State\+Tags()}{StateTags()}}
+{\footnotesize\ttfamily Tags Antitelephone\+::\+State\+Tags (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Virtual method to provide user-\/friendly tagged values. 
+
+The tags are used as a user-\/friendly indication of the internal state of the item at a given moment without revealing implementation detail, and can also be used to attach specific meaning to the abstract lockdown and cooldown values associated with all items. 
+\begin{DoxyParams}{Parameters}
+{\em m} & The moment to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A group of tagged values describing the state of an item. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}{item\+::\+Item}.
+
+\mbox{\Hypertarget{classitem_1_1_antitelephone_aa59b4569bac948f37fd15dbea234503f}\label{classitem_1_1_antitelephone_aa59b4569bac948f37fd15dbea234503f}} 
+\index{item\+::\+Antitelephone@{item\+::\+Antitelephone}!Step\+Impl@{Step\+Impl}}
+\index{Step\+Impl@{Step\+Impl}!item\+::\+Antitelephone@{item\+::\+Antitelephone}}
+\subsubsection{\texorpdfstring{Step\+Impl()}{StepImpl()}}
+{\footnotesize\ttfamily std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ Antitelephone\+::\+Step\+Impl (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const \&}]{turn\+\_\+data,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Virtual method for computing the results of making a step. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before the step. \\
+\hline
+{\em turn\+\_\+data} & The information about the turn just played. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round, and the properties of the item for the next round. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_a90df61c8a2a20144eb1100af5fb2d464}{item\+::\+Item}.
+
+\mbox{\Hypertarget{classitem_1_1_antitelephone_a1b094baeb7cae7e1161d1aa1650022d1}\label{classitem_1_1_antitelephone_a1b094baeb7cae7e1161d1aa1650022d1}} 
+\index{item\+::\+Antitelephone@{item\+::\+Antitelephone}!Branch\+Impl@{Branch\+Impl}}
+\index{Branch\+Impl@{Branch\+Impl}!item\+::\+Antitelephone@{item\+::\+Antitelephone}}
+\subsubsection{\texorpdfstring{Branch\+Impl()}{BranchImpl()}}
+{\footnotesize\ttfamily std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_1_item_properties}{Item\+Properties} $>$ Antitelephone\+::\+Branch\+Impl (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{curr,  }\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{dest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Virtual method for computing the results of branching. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & The current moment before branching. \\
+\hline
+{\em dest} & The destination moment to reach. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The effects granted by the item for the next round, and the properties of the item for the next round. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classitem_1_1_item_afef6bdd5c1c734c67122e4118e9e1930}{item\+::\+Item}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classitem_1_1_antitelephone_ab6d34885da8ab27a578da87a0c746744}\label{classitem_1_1_antitelephone_ab6d34885da8ab27a578da87a0c746744}} 
+\index{item\+::\+Antitelephone@{item\+::\+Antitelephone}!type@{type}}
+\index{type@{type}!item\+::\+Antitelephone@{item\+::\+Antitelephone}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily Item\+Type constexpr item\+::\+Antitelephone\+::type = Item\+Type\+::k\+Antitelephone\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+An enum representation of the type of the item. 
+
+The value of the enum is a unique value for each item, and are consecutive starting at 0 across all items. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/antitelephone.\+hpp\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/antitelephone.\+cpp\end{DoxyCompactItemize}

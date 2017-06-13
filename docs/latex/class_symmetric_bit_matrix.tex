@@ -1,0 +1,103 @@
+\hypertarget{class_symmetric_bit_matrix}{}\section{Symmetric\+Bit\+Matrix Class Reference}
+\label{class_symmetric_bit_matrix}\index{Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}}
+
+
+A symmetric square matrix of boolean values.  
+
+
+
+
+{\ttfamily \#include $<$symmetricbitmatrix.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_symmetric_bit_matrix_a828dbcd597cd13390922d863357da3f3}{Symmetric\+Bit\+Matrix} (int \hyperlink{class_symmetric_bit_matrix_aed948744d70716f6325063ed55a76c6c}{size})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{class_symmetric_bit_matrix_aed948744d70716f6325063ed55a76c6c}{size} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the size of the matrix. \end{DoxyCompactList}\item 
+bool \hyperlink{class_symmetric_bit_matrix_a02221e8620c41734a56ec329da1b66c6}{Value} (int row, int col) const
+\begin{DoxyCompactList}\small\item\em Accessor for a boolean value at a specific position. \end{DoxyCompactList}\item 
+void \hyperlink{class_symmetric_bit_matrix_a5d97dfec2cf3910b2f46b80307528c43}{Set\+Value} (int row, int col, bool value)
+\begin{DoxyCompactList}\small\item\em Mutator for a boolean value at a specific position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A symmetric square matrix of boolean values. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_symmetric_bit_matrix_a828dbcd597cd13390922d863357da3f3}\label{class_symmetric_bit_matrix_a828dbcd597cd13390922d863357da3f3}} 
+\index{Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}!Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}}
+\index{Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}!Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}}
+\subsubsection{\texorpdfstring{Symmetric\+Bit\+Matrix()}{SymmetricBitMatrix()}}
+{\footnotesize\ttfamily Symmetric\+Bit\+Matrix\+::\+Symmetric\+Bit\+Matrix (\begin{DoxyParamCaption}\item[{int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+The boolean values are by default all set to {\ttfamily false}. 
+\begin{DoxyParams}{Parameters}
+{\em size} & The dimensions of the matrix to create. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_symmetric_bit_matrix_aed948744d70716f6325063ed55a76c6c}\label{class_symmetric_bit_matrix_aed948744d70716f6325063ed55a76c6c}} 
+\index{Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}!size@{size}}
+\index{size@{size}!Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int Symmetric\+Bit\+Matrix\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the size of the matrix. 
+
+\begin{DoxyReturn}{Returns}
+The number of rows, or number of columns in the matrix. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_symmetric_bit_matrix_a02221e8620c41734a56ec329da1b66c6}\label{class_symmetric_bit_matrix_a02221e8620c41734a56ec329da1b66c6}} 
+\index{Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}!Value@{Value}}
+\index{Value@{Value}!Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}}
+\subsubsection{\texorpdfstring{Value()}{Value()}}
+{\footnotesize\ttfamily bool Symmetric\+Bit\+Matrix\+::\+Value (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor for a boolean value at a specific position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row to query. \\
+\hline
+{\em col} & The column to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The boolean value at the specified position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_symmetric_bit_matrix_a5d97dfec2cf3910b2f46b80307528c43}\label{class_symmetric_bit_matrix_a5d97dfec2cf3910b2f46b80307528c43}} 
+\index{Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}!Set\+Value@{Set\+Value}}
+\index{Set\+Value@{Set\+Value}!Symmetric\+Bit\+Matrix@{Symmetric\+Bit\+Matrix}}
+\subsubsection{\texorpdfstring{Set\+Value()}{SetValue()}}
+{\footnotesize\ttfamily void Symmetric\+Bit\+Matrix\+::\+Set\+Value (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col,  }\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mutator for a boolean value at a specific position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The row to set. \\
+\hline
+{\em col} & The column to set. \\
+\hline
+{\em value} & The boolean value to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/symmetricbitmatrix.\+hpp\end{DoxyCompactItemize}

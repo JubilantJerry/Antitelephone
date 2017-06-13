@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['makemoment',['MakeMoment',['../classtimeplane_1_1_time_line.html#a7520362a8b33962371b1a47831b37b03',1,'timeplane::TimeLine']]],
-  ['makenewtimeline',['MakeNewTimeLine',['../classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c',1,'timeplane::TimePlane']]],
-  ['moment',['Moment',['../classtimeplane_1_1_moment.html#a5eecc085ee6010fa5079ddea4e79d6cb',1,'timeplane::Moment::Moment() noexcept'],['../classtimeplane_1_1_moment.html#a33106530bbe889016479d1443d592571',1,'timeplane::Moment::Moment(int parent_timeline_num, int time) noexcept']]]
+  ['calliance_5fdata',['calliance_data',['../classroundinfo_1_1_round_info.html#a0944e6bf6facb52e9955695ea0b3feb3',1,'roundinfo::RoundInfo']]],
+  ['confirmpending',['ConfirmPending',['../classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711',1,'item::Item']]],
+  ['cooldown',['cooldown',['../classitem_1_1_item_properties.html#ad51e71ee8a456e511c87a6e345acb839',1,'item::ItemProperties']]],
+  ['custom',['custom',['../classitem_1_1_item_properties.html#af81450b28e66fb82ca3f3c4d25143641',1,'item::ItemProperties']]]
 ];

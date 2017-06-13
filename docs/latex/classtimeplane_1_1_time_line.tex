@@ -12,9 +12,9 @@ A chronological sequence of {\ttfamily \hyperlink{classtimeplane_1_1_moment}{Mom
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classtimeplane_1_1_time_line_afacd08f817ddae17b1dea9c1989f74ae}{Time\+Line} (Moment\+Deleter moment\+\_\+deleter=Moment\+Deleter\{\})
+\hyperlink{classtimeplane_1_1_time_line_a1f23d03d9ca5799fc641ffbc29a5f32d}{Time\+Line} (Moment\+Deleter\+Fn moment\+\_\+deleter=Moment\+Deleter\+Fn\{\})
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{classtimeplane_1_1_time_line_a5e9a864bc9838c82dc3e5a50e69ece9b}{Time\+Line} (\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} const \&left\+\_\+timeline, int branch\+\_\+time, Moment\+Deleter moment\+\_\+deleter=Moment\+Deleter\{\})
+\hyperlink{classtimeplane_1_1_time_line_a914a02e64e4bbc4bb4840012368c03f3}{Time\+Line} (\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} const \&left\+\_\+timeline, int branch\+\_\+time, Moment\+Deleter\+Fn moment\+\_\+deleter=Moment\+Deleter\+Fn\{\})
 \begin{DoxyCompactList}\small\item\em Constructor from an existing timeline. \end{DoxyCompactList}\item 
 \hyperlink{classtimeplane_1_1_time_line_a2d16c3db644a5e8dc4c0f12622c6a4e6}{$\sim$\+Time\+Line} ()
 \begin{DoxyCompactList}\small\item\em Custom destructor. \end{DoxyCompactList}\item 
@@ -45,11 +45,11 @@ A chronological sequence of {\ttfamily \hyperlink{classtimeplane_1_1_moment}{Mom
 The times of the {\ttfamily \hyperlink{classtimeplane_1_1_moment}{Moment}} instances in a timeline are consecutive and begin at 0. It is possible to create new moments at the end of the timeline or retrieve moments at any valid time in the timeline. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classtimeplane_1_1_time_line_afacd08f817ddae17b1dea9c1989f74ae}\label{classtimeplane_1_1_time_line_afacd08f817ddae17b1dea9c1989f74ae}} 
+\mbox{\Hypertarget{classtimeplane_1_1_time_line_a1f23d03d9ca5799fc641ffbc29a5f32d}\label{classtimeplane_1_1_time_line_a1f23d03d9ca5799fc641ffbc29a5f32d}} 
 \index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!Time\+Line@{Time\+Line}}
 \index{Time\+Line@{Time\+Line}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
 \subsubsection{\texorpdfstring{Time\+Line()}{TimeLine()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily timeplane\+::\+Time\+Line\+::\+Time\+Line (\begin{DoxyParamCaption}\item[{Moment\+Deleter}]{moment\+\_\+deleter = {\ttfamily MomentDeleter\{\}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily timeplane\+::\+Time\+Line\+::\+Time\+Line (\begin{DoxyParamCaption}\item[{Moment\+Deleter\+Fn}]{moment\+\_\+deleter = {\ttfamily MomentDeleterFn\{\}} }\end{DoxyParamCaption})}
 
 
 
@@ -60,11 +60,11 @@ This constructor is used to make the leftmost timeline, and in the process it cr
 {\em moment\+\_\+deleter} & A handler for moments that fall out of scope from outside clients. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classtimeplane_1_1_time_line_a5e9a864bc9838c82dc3e5a50e69ece9b}\label{classtimeplane_1_1_time_line_a5e9a864bc9838c82dc3e5a50e69ece9b}} 
+\mbox{\Hypertarget{classtimeplane_1_1_time_line_a914a02e64e4bbc4bb4840012368c03f3}\label{classtimeplane_1_1_time_line_a914a02e64e4bbc4bb4840012368c03f3}} 
 \index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!Time\+Line@{Time\+Line}}
 \index{Time\+Line@{Time\+Line}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
 \subsubsection{\texorpdfstring{Time\+Line()}{TimeLine()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily timeplane\+::\+Time\+Line\+::\+Time\+Line (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} const \&}]{left\+\_\+timeline,  }\item[{int}]{branch\+\_\+time,  }\item[{Moment\+Deleter}]{moment\+\_\+deleter = {\ttfamily MomentDeleter\{\}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily timeplane\+::\+Time\+Line\+::\+Time\+Line (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} const \&}]{left\+\_\+timeline,  }\item[{int}]{branch\+\_\+time,  }\item[{Moment\+Deleter\+Fn}]{moment\+\_\+deleter = {\ttfamily MomentDeleterFn\{\}} }\end{DoxyParamCaption})}
 
 
 
@@ -92,6 +92,19 @@ Custom destructor.
 The moment deletion handler, if active, is called to handle the removal of all unreachable moments within the timeline before it is destroyed. 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f80a5}\label{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f80a5}} 
+\index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!timeline\+\_\+number@{timeline\+\_\+number}}
+\index{timeline\+\_\+number@{timeline\+\_\+number}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
+\subsubsection{\texorpdfstring{timeline\+\_\+number()}{timeline\_number()}}
+{\footnotesize\ttfamily int const timeplane\+::\+Time\+Line\+::timeline\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Accessor for the timeline number. 
+
+\begin{DoxyReturn}{Returns}
+An ID number unique to a timeline. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classtimeplane_1_1_time_line_ae18ca86c0f036731e1bb148ed3381ea8}\label{classtimeplane_1_1_time_line_ae18ca86c0f036731e1bb148ed3381ea8}} 
 \index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!Get\+Moment@{Get\+Moment}}
 \index{Get\+Moment@{Get\+Moment}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
@@ -115,19 +128,6 @@ The {\ttfamily \hyperlink{classtimeplane_1_1_moment}{Moment}} instance at the sp
 {\em std\+::out\+\_\+of\+\_\+range} & If no moment exists at the specified time. \\
 \hline
 \end{DoxyExceptions}
-\mbox{\Hypertarget{classtimeplane_1_1_time_line_acc391553e5c45a647c82f27e53ae3af8}\label{classtimeplane_1_1_time_line_acc391553e5c45a647c82f27e53ae3af8}} 
-\index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!Latest\+Moment@{Latest\+Moment}}
-\index{Latest\+Moment@{Latest\+Moment}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
-\subsubsection{\texorpdfstring{Latest\+Moment()}{LatestMoment()}}
-{\footnotesize\ttfamily \hyperlink{classtimeplane_1_1_moment}{Moment} const timeplane\+::\+Time\+Line\+::\+Latest\+Moment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Retrieve the latest moment from the timeline. 
-
-\begin{DoxyReturn}{Returns}
-The moment at the end of the timeline. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classtimeplane_1_1_time_line_a7520362a8b33962371b1a47831b37b03}\label{classtimeplane_1_1_time_line_a7520362a8b33962371b1a47831b37b03}} 
 \index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!Make\+Moment@{Make\+Moment}}
 \index{Make\+Moment@{Make\+Moment}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
@@ -140,6 +140,19 @@ Creates a new moment at the end of the timeline.
 
 \begin{DoxyReturn}{Returns}
 The moment newly created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimeplane_1_1_time_line_acc391553e5c45a647c82f27e53ae3af8}\label{classtimeplane_1_1_time_line_acc391553e5c45a647c82f27e53ae3af8}} 
+\index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!Latest\+Moment@{Latest\+Moment}}
+\index{Latest\+Moment@{Latest\+Moment}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
+\subsubsection{\texorpdfstring{Latest\+Moment()}{LatestMoment()}}
+{\footnotesize\ttfamily \hyperlink{classtimeplane_1_1_moment}{Moment} const timeplane\+::\+Time\+Line\+::\+Latest\+Moment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Retrieve the latest moment from the timeline. 
+
+\begin{DoxyReturn}{Returns}
+The moment at the end of the timeline. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtimeplane_1_1_time_line_a14e1d9701e1a6571458343e0831855b6}\label{classtimeplane_1_1_time_line_a14e1d9701e1a6571458343e0831855b6}} 
 \index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!operator=@{operator=}}
@@ -158,19 +171,6 @@ This function also cleans up any moments that cannot be accessed as a result of 
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The object that was assigned to. 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f80a5}\label{classtimeplane_1_1_time_line_a4297da8acc6fbee73bfc7db0de2f80a5}} 
-\index{timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}!timeline\+\_\+number@{timeline\+\_\+number}}
-\index{timeline\+\_\+number@{timeline\+\_\+number}!timeplane\+::\+Time\+Line@{timeplane\+::\+Time\+Line}}
-\subsubsection{\texorpdfstring{timeline\+\_\+number()}{timeline\_number()}}
-{\footnotesize\ttfamily int const timeplane\+::\+Time\+Line\+::timeline\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-
-
-Accessor for the timeline number. 
-
-\begin{DoxyReturn}{Returns}
-An ID number unique to a timeline. 
 \end{DoxyReturn}
 
 

@@ -73,23 +73,31 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classtimeplane_1_1_moment_a2e50bd80270c77f8d1b9fdbc586efc7c}\label{classtimeplane_1_1_moment_a2e50bd80270c77f8d1b9fdbc586efc7c}} 
-\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!operator"!=@{operator"!=}}
-\index{operator"!=@{operator"!=}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
-\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
-{\footnotesize\ttfamily bool timeplane\+::\+Moment\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classtimeplane_1_1_moment}{Moment} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}\label{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!parent\+\_\+timeline\+\_\+num@{parent\+\_\+timeline\+\_\+num}}
+\index{parent\+\_\+timeline\+\_\+num@{parent\+\_\+timeline\+\_\+num}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{parent\+\_\+timeline\+\_\+num()}{parent\_timeline\_num()}}
+{\footnotesize\ttfamily int timeplane\+::\+Moment\+::parent\+\_\+timeline\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
-Inequality operator. 
+Accessor for the timeline number. 
 
-Both the timeline number and time are compared. 
-\begin{DoxyParams}{Parameters}
-{\em rhs} & The instance to compare against. \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Whether the instances are not equal. 
+The timeline number of the moment. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}\label{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!time@{time}}
+\index{time@{time}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily int timeplane\+::\+Moment\+::time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the time. 
+
+\begin{DoxyReturn}{Returns}
+The time associated with the moment. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtimeplane_1_1_moment_abe69bf9b6e324f3147c9f1ed078b9d0c}\label{classtimeplane_1_1_moment_abe69bf9b6e324f3147c9f1ed078b9d0c}} 
 \index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!operator==@{operator==}}
@@ -109,18 +117,23 @@ Both the timeline number and time are compared.
 \begin{DoxyReturn}{Returns}
 Whether the instances are equal. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}\label{classtimeplane_1_1_moment_ad8ea04fc7e079694a0843ff7b3f42c6c}} 
-\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!parent\+\_\+timeline\+\_\+num@{parent\+\_\+timeline\+\_\+num}}
-\index{parent\+\_\+timeline\+\_\+num@{parent\+\_\+timeline\+\_\+num}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
-\subsubsection{\texorpdfstring{parent\+\_\+timeline\+\_\+num()}{parent\_timeline\_num()}}
-{\footnotesize\ttfamily int timeplane\+::\+Moment\+::parent\+\_\+timeline\+\_\+num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classtimeplane_1_1_moment_a2e50bd80270c77f8d1b9fdbc586efc7c}\label{classtimeplane_1_1_moment_a2e50bd80270c77f8d1b9fdbc586efc7c}} 
+\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool timeplane\+::\+Moment\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classtimeplane_1_1_moment}{Moment} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
-Accessor for the timeline number. 
+Inequality operator. 
 
+Both the timeline number and time are compared. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The instance to compare against. \\
+\hline
+\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The timeline number of the moment. 
+Whether the instances are not equal. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classtimeplane_1_1_moment_ac7870eb30ed18b8ea85bf7584632cd11}\label{classtimeplane_1_1_moment_ac7870eb30ed18b8ea85bf7584632cd11}} 
 \index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!serialize@{serialize}}
@@ -145,19 +158,6 @@ Serialization function.
 {\em version} & The verion of the serialization protocol to use. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}\label{classtimeplane_1_1_moment_a118be8757aa459d4d6e4d859a5164251}} 
-\index{timeplane\+::\+Moment@{timeplane\+::\+Moment}!time@{time}}
-\index{time@{time}!timeplane\+::\+Moment@{timeplane\+::\+Moment}}
-\subsubsection{\texorpdfstring{time()}{time()}}
-{\footnotesize\ttfamily int timeplane\+::\+Moment\+::time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-
-Accessor for the time. 
-
-\begin{DoxyReturn}{Returns}
-The time associated with the moment. 
-\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

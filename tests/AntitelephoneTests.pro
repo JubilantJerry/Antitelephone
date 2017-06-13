@@ -6,6 +6,7 @@ CONFIG -= qt
 SOURCES += *.cpp
 SOURCES += $$files(../src/*.cpp)
 HEADERS += *.hpp
+HEADERS += $$files(../src/*.hpp)
 
 INCLUDEPATH += $$(VS2017BUILDTOOLS)/include
 INCLUDEPATH += $$(BOOST_ROOT)

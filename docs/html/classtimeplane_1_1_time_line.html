@@ -72,12 +72,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afacd08f817ddae17b1dea9c1989f74ae"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#afacd08f817ddae17b1dea9c1989f74ae">TimeLine</a> (MomentDeleter moment_deleter=MomentDeleter{})</td></tr>
-<tr class="memdesc:afacd08f817ddae17b1dea9c1989f74ae"><td class="mdescLeft"> </td><td class="mdescRight">Default constructor.  <a href="#afacd08f817ddae17b1dea9c1989f74ae">More...</a><br/></td></tr>
-<tr class="separator:afacd08f817ddae17b1dea9c1989f74ae"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a5e9a864bc9838c82dc3e5a50e69ece9b"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#a5e9a864bc9838c82dc3e5a50e69ece9b">TimeLine</a> (<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> const &amp;left_timeline, int branch_time, MomentDeleter moment_deleter=MomentDeleter{})</td></tr>
-<tr class="memdesc:a5e9a864bc9838c82dc3e5a50e69ece9b"><td class="mdescLeft"> </td><td class="mdescRight">Constructor from an existing timeline.  <a href="#a5e9a864bc9838c82dc3e5a50e69ece9b">More...</a><br/></td></tr>
-<tr class="separator:a5e9a864bc9838c82dc3e5a50e69ece9b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1f23d03d9ca5799fc641ffbc29a5f32d"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#a1f23d03d9ca5799fc641ffbc29a5f32d">TimeLine</a> (MomentDeleterFn moment_deleter=MomentDeleterFn{})</td></tr>
+<tr class="memdesc:a1f23d03d9ca5799fc641ffbc29a5f32d"><td class="mdescLeft"> </td><td class="mdescRight">Default constructor.  <a href="#a1f23d03d9ca5799fc641ffbc29a5f32d">More...</a><br/></td></tr>
+<tr class="separator:a1f23d03d9ca5799fc641ffbc29a5f32d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a914a02e64e4bbc4bb4840012368c03f3"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#a914a02e64e4bbc4bb4840012368c03f3">TimeLine</a> (<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> const &amp;left_timeline, int branch_time, MomentDeleterFn moment_deleter=MomentDeleterFn{})</td></tr>
+<tr class="memdesc:a914a02e64e4bbc4bb4840012368c03f3"><td class="mdescLeft"> </td><td class="mdescRight">Constructor from an existing timeline.  <a href="#a914a02e64e4bbc4bb4840012368c03f3">More...</a><br/></td></tr>
+<tr class="separator:a914a02e64e4bbc4bb4840012368c03f3"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a2d16c3db644a5e8dc4c0f12622c6a4e6"><td align="right" class="memItemLeft" valign="top"> </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_line.html#a2d16c3db644a5e8dc4c0f12622c6a4e6">~TimeLine</a> ()</td></tr>
 <tr class="memdesc:a2d16c3db644a5e8dc4c0f12622c6a4e6"><td class="mdescLeft"> </td><td class="mdescRight">Custom destructor.  <a href="#a2d16c3db644a5e8dc4c0f12622c6a4e6">More...</a><br/></td></tr>
 <tr class="separator:a2d16c3db644a5e8dc4c0f12622c6a4e6"><td class="memSeparator" colspan="2"> </td></tr>
@@ -110,20 +110,20 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>A chronological sequence of <code><a class="el" href="classtimeplane_1_1_moment.html" title="A unique moment in a TimePlane. ">Moment</a></code> instances. </p>
 <p>The times of the <code><a class="el" href="classtimeplane_1_1_moment.html" title="A unique moment in a TimePlane. ">Moment</a></code> instances in a timeline are consecutive and begin at 0. It is possible to create new moments at the end of the timeline or retrieve moments at any valid time in the timeline. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afacd08f817ddae17b1dea9c1989f74ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afacd08f817ddae17b1dea9c1989f74ae">◆ </a></span>TimeLine() <span class="overload">[1/2]</span></h2>
+<a id="a1f23d03d9ca5799fc641ffbc29a5f32d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f23d03d9ca5799fc641ffbc29a5f32d">◆ </a></span>TimeLine() <span class="overload">[1/2]</span></h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
 <td class="memname">timeplane::TimeLine::TimeLine </td>
 <td>(</td>
-<td class="paramtype">MomentDeleter </td>
-<td class="paramname"><em>moment_deleter</em> = <code>MomentDeleter{}</code></td><td>)</td>
+<td class="paramtype">MomentDeleterFn </td>
+<td class="paramname"><em>moment_deleter</em> = <code>MomentDeleterFn{}</code></td><td>)</td>
 <td></td>
 </tr>
 </table>
-</div><!-- $$$TimeLine[overload1]$$$timeplane::TimeLine::TimeLine(MomentDeleter moment_deleter=MomentDeleter{}) --><div class="memdoc"><div style="display: none">timeplane::TimeLine::TimeLine (MomentDeleter moment_deleter = MomentDeleter{})</div>
+</div><!-- $$$TimeLine[overload1]$$$timeplane::TimeLine::TimeLine(MomentDeleterFn moment_deleter=MomentDeleterFn{}) --><div class="memdoc"><div style="display: none">timeplane::TimeLine::TimeLine (MomentDeleterFn moment_deleter = MomentDeleterFn{})</div>
 <p>Default constructor. </p>
 <p>This constructor is used to make the leftmost timeline, and in the process it creates the earliest moment as well. </p><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -133,8 +133,8 @@ Public Member Functions</h2></td></tr>
 </dl>
 </div><!-- @@@TimeLine -->
 </div>
-<a id="a5e9a864bc9838c82dc3e5a50e69ece9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e9a864bc9838c82dc3e5a50e69ece9b">◆ </a></span>TimeLine() <span class="overload">[2/2]</span></h2>
+<a id="a914a02e64e4bbc4bb4840012368c03f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a914a02e64e4bbc4bb4840012368c03f3">◆ </a></span>TimeLine() <span class="overload">[2/2]</span></h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -153,8 +153,8 @@ Public Member Functions</h2></td></tr>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype">MomentDeleter </td>
-<td class="paramname"><em>moment_deleter</em> = <code>MomentDeleter{}</code> </td>
+<td class="paramtype">MomentDeleterFn </td>
+<td class="paramname"><em>moment_deleter</em> = <code>MomentDeleterFn{}</code> </td>
 </tr>
 <tr>
 <td></td>
@@ -162,7 +162,7 @@ Public Member Functions</h2></td></tr>
 <td></td><td></td>
 </tr>
 </table>
-</div><!-- $$$TimeLine[overload1]$$$timeplane::TimeLine::TimeLine(TimeLineconst& left_timeline,int branch_time,MomentDeleter moment_deleter=MomentDeleter{} ) --><div class="memdoc"><div style="display: none">timeplane::TimeLine::TimeLine (TimeLine const &amp; left_timeline, int branch_time, MomentDeleter moment_deleter = MomentDeleter{} )</div>
+</div><!-- $$$TimeLine[overload1]$$$timeplane::TimeLine::TimeLine(TimeLineconst& left_timeline,int branch_time,MomentDeleterFn moment_deleter=MomentDeleterFn{} ) --><div class="memdoc"><div style="display: none">timeplane::TimeLine::TimeLine (TimeLine const &amp; left_timeline, int branch_time, MomentDeleterFn moment_deleter = MomentDeleterFn{} )</div>
 <p>Constructor from an existing timeline. </p>
 <p>This constructor creates a timeline as a branch of an existing timeline. It also creates a distinct <code><a class="el" href="classtimeplane_1_1_moment.html" title="A unique moment in a TimePlane. ">Moment</a></code> instance in the newly created timeline whose time is equal to the branch time. </p><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -192,6 +192,31 @@ Public Member Functions</h2></td></tr>
 </div><!-- @@@~TimeLine -->
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4297da8acc6fbee73bfc7db0de2f80a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4297da8acc6fbee73bfc7db0de2f80a5">◆ </a></span>timeline_number()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname">int const timeplane::TimeLine::timeline_number </td>
+<td>(</td>
+<td class="paramname"></td><td>)</td>
+<td> const</td>
+</tr>
+</table>
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$timeline_number[overload1]$$$intconsttimeplane::TimeLine::timeline_number()const --><div class="memdoc"><div style="display: none">int const timeplane::TimeLine::timeline_number () const</div>
+<p>Accessor for the timeline number. </p>
+<dl class="section return"><dt>Returns</dt><dd>An ID number unique to a timeline. </dd></dl>
+</div><!-- @@@timeline_number -->
+</div>
 <a id="ae18ca86c0f036731e1bb148ed3381ea8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae18ca86c0f036731e1bb148ed3381ea8">◆ </a></span>GetMoment()</h2>
 <div class="memitem">
@@ -222,6 +247,23 @@ Public Member Functions</h2></td></tr>
 </dl>
 </div><!-- @@@GetMoment -->
 </div>
+<a id="a7520362a8b33962371b1a47831b37b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7520362a8b33962371b1a47831b37b03">◆ </a></span>MakeMoment()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> const timeplane::TimeLine::MakeMoment </td>
+<td>(</td>
+<td class="paramname"></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><!-- $$$MakeMoment[overload1]$$$Momentconsttimeplane::TimeLine::MakeMoment() --><div class="memdoc"><div style="display: none">Moment const timeplane::TimeLine::MakeMoment ()</div>
+<p>Creates a new moment at the end of the timeline. </p>
+<dl class="section return"><dt>Returns</dt><dd>The moment newly created. </dd></dl>
+</div><!-- @@@MakeMoment -->
+</div>
 <a id="acc391553e5c45a647c82f27e53ae3af8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acc391553e5c45a647c82f27e53ae3af8">◆ </a></span>LatestMoment()</h2>
 <div class="memitem">
@@ -246,23 +288,6 @@ Public Member Functions</h2></td></tr>
 <p>Retrieve the latest moment from the timeline. </p>
 <dl class="section return"><dt>Returns</dt><dd>The moment at the end of the timeline. </dd></dl>
 </div><!-- @@@LatestMoment -->
-</div>
-<a id="a7520362a8b33962371b1a47831b37b03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7520362a8b33962371b1a47831b37b03">◆ </a></span>MakeMoment()</h2>
-<div class="memitem">
-<div class="memproto">
-<table class="memname">
-<tr>
-<td class="memname"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> const timeplane::TimeLine::MakeMoment </td>
-<td>(</td>
-<td class="paramname"></td><td>)</td>
-<td></td>
-</tr>
-</table>
-</div><!-- $$$MakeMoment[overload1]$$$Momentconsttimeplane::TimeLine::MakeMoment() --><div class="memdoc"><div style="display: none">Moment const timeplane::TimeLine::MakeMoment ()</div>
-<p>Creates a new moment at the end of the timeline. </p>
-<dl class="section return"><dt>Returns</dt><dd>The moment newly created. </dd></dl>
-</div><!-- @@@MakeMoment -->
 </div>
 <a id="a14e1d9701e1a6571458343e0831855b6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14e1d9701e1a6571458343e0831855b6">◆ </a></span>operator=()</h2>
@@ -295,31 +320,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The object that was assigned to. </dd></dl>
 </div><!-- @@@operator= -->
-</div>
-<a id="a4297da8acc6fbee73bfc7db0de2f80a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4297da8acc6fbee73bfc7db0de2f80a5">◆ </a></span>timeline_number()</h2>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-<tr>
-<td class="mlabels-left">
-<table class="memname">
-<tr>
-<td class="memname">int const timeplane::TimeLine::timeline_number </td>
-<td>(</td>
-<td class="paramname"></td><td>)</td>
-<td> const</td>
-</tr>
-</table>
-</td>
-<td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span> </td>
-</tr>
-</table>
-</div><!-- $$$timeline_number[overload1]$$$intconsttimeplane::TimeLine::timeline_number()const --><div class="memdoc"><div style="display: none">int const timeplane::TimeLine::timeline_number () const</div>
-<p>Accessor for the timeline number. </p>
-<dl class="section return"><dt>Returns</dt><dd>An ID number unique to a timeline. </dd></dl>
-</div><!-- @@@timeline_number -->
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>K:/Personal Projects/AntitelephoneQT/src/<a class="el" href="timeline_8hpp_source.html">timeline.hpp</a></li>

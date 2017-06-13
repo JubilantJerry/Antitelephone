@@ -1,0 +1,162 @@
+\hypertarget{classitem_1_1_item_properties}{}\section{item\+:\+:Item\+Properties Class Reference}
+\label{classitem_1_1_item_properties}\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+
+
+A class holding properties of an item at a specific moment.  
+
+
+
+
+{\ttfamily \#include $<$itemproperties.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classitem_1_1_item_properties_a9d1fbd93e6ead012daf5d09a787c0514}{lockdown} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the lockdown of the item. \end{DoxyCompactList}\item 
+void \hyperlink{classitem_1_1_item_properties_aa29d6b35f5c5bbdc6920851bf734cf90}{set\+\_\+lockdown} (int \hyperlink{classitem_1_1_item_properties_a9d1fbd93e6ead012daf5d09a787c0514}{lockdown}) noexcept
+\begin{DoxyCompactList}\small\item\em Mutator for the lockdown of the item. \end{DoxyCompactList}\item 
+int \hyperlink{classitem_1_1_item_properties_ad51e71ee8a456e511c87a6e345acb839}{cooldown} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the cooldown of the item. \end{DoxyCompactList}\item 
+void \hyperlink{classitem_1_1_item_properties_aefdce7b5ead1319fff498dc9db102971}{set\+\_\+cooldown} (int \hyperlink{classitem_1_1_item_properties_ad51e71ee8a456e511c87a6e345acb839}{cooldown}) noexcept
+\begin{DoxyCompactList}\small\item\em Mutator for the cooldown of the item. \end{DoxyCompactList}\item 
+int \hyperlink{classitem_1_1_item_properties_af81450b28e66fb82ca3f3c4d25143641}{custom} (int key) const
+\begin{DoxyCompactList}\small\item\em Accessor for custom properties of an item. \end{DoxyCompactList}\item 
+void \hyperlink{classitem_1_1_item_properties_a984264931e08aef21d41335afc3ba582}{set\+\_\+custom} (int key, int value)
+\begin{DoxyCompactList}\small\item\em Mutator for the cooldown of the item. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive $>$ }\\void \hyperlink{classitem_1_1_item_properties_a0192995b931d99be5e8e5a1c5d24311d}{serialize} (Archive \&ar, unsigned int const version)
+\begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classitem_1_1_item_properties_ac98d07dd8f7b70e16ccb9a01abf56b9c}\label{classitem_1_1_item_properties_ac98d07dd8f7b70e16ccb9a01abf56b9c}} 
+class {\bfseries boost\+::serialization\+::access}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class holding properties of an item at a specific moment. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classitem_1_1_item_properties_a9d1fbd93e6ead012daf5d09a787c0514}\label{classitem_1_1_item_properties_a9d1fbd93e6ead012daf5d09a787c0514}} 
+\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}!lockdown@{lockdown}}
+\index{lockdown@{lockdown}!item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+\subsubsection{\texorpdfstring{lockdown()}{lockdown()}}
+{\footnotesize\ttfamily int item\+::\+Item\+Properties\+::lockdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the lockdown of the item. 
+
+The lockdown represents the amount of energy needed to make the item accessible for use. Once the lockdown becomes zero the item becomes available. \begin{DoxyReturn}{Returns}
+Lockdown quantity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classitem_1_1_item_properties_aa29d6b35f5c5bbdc6920851bf734cf90}\label{classitem_1_1_item_properties_aa29d6b35f5c5bbdc6920851bf734cf90}} 
+\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}!set\+\_\+lockdown@{set\+\_\+lockdown}}
+\index{set\+\_\+lockdown@{set\+\_\+lockdown}!item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+\subsubsection{\texorpdfstring{set\+\_\+lockdown()}{set\_lockdown()}}
+{\footnotesize\ttfamily void item\+::\+Item\+Properties\+::set\+\_\+lockdown (\begin{DoxyParamCaption}\item[{int}]{lockdown }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Mutator for the lockdown of the item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lockdown} & Lockdown quantity. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classitem_1_1_item_properties_ad51e71ee8a456e511c87a6e345acb839}\label{classitem_1_1_item_properties_ad51e71ee8a456e511c87a6e345acb839}} 
+\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}!cooldown@{cooldown}}
+\index{cooldown@{cooldown}!item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+\subsubsection{\texorpdfstring{cooldown()}{cooldown()}}
+{\footnotesize\ttfamily int item\+::\+Item\+Properties\+::cooldown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the cooldown of the item. 
+
+The cooldown in general represents the amount of energy needed to trigger an action in the item, though it can represent other quantities too. Essentially, the item is used by reducing its cooldown value. The cooldown usually increases by 1 per turn if the player leaves an item alone. \begin{DoxyReturn}{Returns}
+Cooldown quantity. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classitem_1_1_item_properties_aefdce7b5ead1319fff498dc9db102971}\label{classitem_1_1_item_properties_aefdce7b5ead1319fff498dc9db102971}} 
+\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}!set\+\_\+cooldown@{set\+\_\+cooldown}}
+\index{set\+\_\+cooldown@{set\+\_\+cooldown}!item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+\subsubsection{\texorpdfstring{set\+\_\+cooldown()}{set\_cooldown()}}
+{\footnotesize\ttfamily void item\+::\+Item\+Properties\+::set\+\_\+cooldown (\begin{DoxyParamCaption}\item[{int}]{cooldown }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Mutator for the cooldown of the item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cooldown} & Cooldown quantity. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classitem_1_1_item_properties_af81450b28e66fb82ca3f3c4d25143641}\label{classitem_1_1_item_properties_af81450b28e66fb82ca3f3c4d25143641}} 
+\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}!custom@{custom}}
+\index{custom@{custom}!item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+\subsubsection{\texorpdfstring{custom()}{custom()}}
+{\footnotesize\ttfamily int item\+::\+Item\+Properties\+::custom (\begin{DoxyParamCaption}\item[{int}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor for custom properties of an item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The ID of the property to access. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the custom property. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the key is an invalid property ID. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classitem_1_1_item_properties_a984264931e08aef21d41335afc3ba582}\label{classitem_1_1_item_properties_a984264931e08aef21d41335afc3ba582}} 
+\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}!set\+\_\+custom@{set\+\_\+custom}}
+\index{set\+\_\+custom@{set\+\_\+custom}!item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+\subsubsection{\texorpdfstring{set\+\_\+custom()}{set\_custom()}}
+{\footnotesize\ttfamily void item\+::\+Item\+Properties\+::set\+\_\+custom (\begin{DoxyParamCaption}\item[{int}]{key,  }\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mutator for the cooldown of the item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lockdown} & The ID of the property to access.  value The value of the custom property to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classitem_1_1_item_properties_a0192995b931d99be5e8e5a1c5d24311d}\label{classitem_1_1_item_properties_a0192995b931d99be5e8e5a1c5d24311d}} 
+\index{item\+::\+Item\+Properties@{item\+::\+Item\+Properties}!serialize@{serialize}}
+\index{serialize@{serialize}!item\+::\+Item\+Properties@{item\+::\+Item\+Properties}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename Archive $>$ \\
+void item\+::\+Item\+Properties\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{unsigned int const}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialization function. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Archive} & The serialization archive type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & The serialization archive. \\
+\hline
+{\em version} & The verion of the serialization protocol to use. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/itemproperties.\+hpp\end{DoxyCompactItemize}

@@ -99,9 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a400dfeabc4056d36bfd348ff9c51cf7d"><td align="right" class="memItemLeft" valign="top">virtual <a class="el" href="classitem_1_1_effect.html">Effect</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#a400dfeabc4056d36bfd348ff9c51cf7d">View</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m)=0</td></tr>
 <tr class="memdesc:a400dfeabc4056d36bfd348ff9c51cf7d"><td class="mdescLeft"> </td><td class="mdescRight">View the effects of an item at a specific moment.  <a href="#a400dfeabc4056d36bfd348ff9c51cf7d">More...</a><br/></td></tr>
 <tr class="separator:a400dfeabc4056d36bfd348ff9c51cf7d"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:acc560ac68be4f5781cd90cddfd602942"><td align="right" class="memItemLeft" valign="top">virtual Tags </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#acc560ac68be4f5781cd90cddfd602942">StateTags</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m) const =0</td></tr>
-<tr class="memdesc:acc560ac68be4f5781cd90cddfd602942"><td class="mdescLeft"> </td><td class="mdescRight">Virtual method to provide user-friendly tagged values.  <a href="#acc560ac68be4f5781cd90cddfd602942">More...</a><br/></td></tr>
-<tr class="separator:acc560ac68be4f5781cd90cddfd602942"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8410ab3ab75e65360eddb4f6bd3cceff"><td align="right" class="memItemLeft" valign="top">virtual TaggedValues </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#a8410ab3ab75e65360eddb4f6bd3cceff">StateTaggedValues</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m) const =0</td></tr>
+<tr class="memdesc:a8410ab3ab75e65360eddb4f6bd3cceff"><td class="mdescLeft"> </td><td class="mdescRight">Virtual method to provide user-friendly tagged values.  <a href="#a8410ab3ab75e65360eddb4f6bd3cceff">More...</a><br/></td></tr>
+<tr class="separator:a8410ab3ab75e65360eddb4f6bd3cceff"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -340,8 +340,8 @@ Static Protected Member Functions</h2></td></tr>
 <p>Implemented in <a class="el" href="classitem_1_1_bridge.html#a7d579da1f368ba6a6b5dfd41de833f17">item::Bridge</a>, <a class="el" href="classitem_1_1_oracle.html#a9982f1934a769cc461246bab31b8a72d">item::Oracle</a>, <a class="el" href="classitem_1_1_shield.html#abdc88bd6d0a4d6021805fa3097f47633">item::Shield</a>, and <a class="el" href="classitem_1_1_antitelephone.html#aa44819e9242edbdfdfc4f14b5d2b34ec">item::Antitelephone</a>.</p>
 </div><!-- @@@View -->
 </div>
-<a id="acc560ac68be4f5781cd90cddfd602942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc560ac68be4f5781cd90cddfd602942">◆ </a></span>StateTags()</h2>
+<a id="a8410ab3ab75e65360eddb4f6bd3cceff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8410ab3ab75e65360eddb4f6bd3cceff">◆ </a></span>StateTaggedValues()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -349,7 +349,7 @@ Static Protected Member Functions</h2></td></tr>
 <td class="mlabels-left">
 <table class="memname">
 <tr>
-<td class="memname">virtual Tags item::Item::StateTags </td>
+<td class="memname">virtual TaggedValues item::Item::StateTaggedValues </td>
 <td>(</td>
 <td class="paramtype"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> </td>
 <td class="paramname"><em>m</em></td><td>)</td>
@@ -361,7 +361,7 @@ Static Protected Member Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td>
 </tr>
 </table>
-</div><!-- $$$StateTags[overload1]$$$virtualTagsitem::Item::StateTags(Moment m)const --><div class="memdoc"><div style="display: none">virtual Tags item::Item::StateTags (Moment m) const</div>
+</div><!-- $$$StateTaggedValues[overload1]$$$virtualTaggedValuesitem::Item::StateTaggedValues(Moment m)const --><div class="memdoc"><div style="display: none">virtual TaggedValues item::Item::StateTaggedValues (Moment m) const</div>
 <p>Virtual method to provide user-friendly tagged values. </p>
 <p>The tags are used as a user-friendly indication of the internal state of the item at a given moment without revealing implementation detail, and can also be used to attach specific meaning to the abstract lockdown and cooldown values associated with all items. </p><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -370,8 +370,8 @@ Static Protected Member Functions</h2></td></tr>
 </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A group of tagged values describing the state of an item. </dd></dl>
-<p>Implemented in <a class="el" href="classitem_1_1_bridge.html#af49adc6bbaf4788cce2b4cbf8d895865">item::Bridge</a>, <a class="el" href="classitem_1_1_oracle.html#a61b1924335a4c4443a78ee75f9935b14">item::Oracle</a>, <a class="el" href="classitem_1_1_shield.html#a91b92d4e1fca7015b75142d43f43e80e">item::Shield</a>, and <a class="el" href="classitem_1_1_antitelephone.html#a0322847417981b9acd4b323c35e728f0">item::Antitelephone</a>.</p>
-</div><!-- @@@StateTags -->
+<p>Implemented in <a class="el" href="classitem_1_1_bridge.html#a6339e1cd46f454625ef7cd6dc683f6cd">item::Bridge</a>, <a class="el" href="classitem_1_1_oracle.html#a78dd3984a5a0dae432c86e18520d7c46">item::Oracle</a>, <a class="el" href="classitem_1_1_shield.html#a1a246374ed47a4d9849bad97091c42cb">item::Shield</a>, and <a class="el" href="classitem_1_1_antitelephone.html#afe8ac703b5f19181f221afe07c05cae7">item::Antitelephone</a>.</p>
+</div><!-- @@@StateTaggedValues -->
 </div>
 <a id="a23790dceafc9e3f8950f69380cc4c4aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23790dceafc9e3f8950f69380cc4c4aa">◆ </a></span>GetProperties()</h2>

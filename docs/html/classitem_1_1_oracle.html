@@ -89,9 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9982f1934a769cc461246bab31b8a72d"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classitem_1_1_effect.html">Effect</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_oracle.html#a9982f1934a769cc461246bab31b8a72d">View</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m)</td></tr>
 <tr class="memdesc:a9982f1934a769cc461246bab31b8a72d"><td class="mdescLeft"> </td><td class="mdescRight">View the effects of an item at a specific moment.  <a href="#a9982f1934a769cc461246bab31b8a72d">More...</a><br/></td></tr>
 <tr class="separator:a9982f1934a769cc461246bab31b8a72d"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a61b1924335a4c4443a78ee75f9935b14"><td align="right" class="memItemLeft" valign="top">Tags </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_oracle.html#a61b1924335a4c4443a78ee75f9935b14">StateTags</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m) const</td></tr>
-<tr class="memdesc:a61b1924335a4c4443a78ee75f9935b14"><td class="mdescLeft"> </td><td class="mdescRight">Virtual method to provide user-friendly tagged values.  <a href="#a61b1924335a4c4443a78ee75f9935b14">More...</a><br/></td></tr>
-<tr class="separator:a61b1924335a4c4443a78ee75f9935b14"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a78dd3984a5a0dae432c86e18520d7c46"><td align="right" class="memItemLeft" valign="top">TaggedValues </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_oracle.html#a78dd3984a5a0dae432c86e18520d7c46">StateTaggedValues</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m) const</td></tr>
+<tr class="memdesc:a78dd3984a5a0dae432c86e18520d7c46"><td class="mdescLeft"> </td><td class="mdescRight">Virtual method to provide user-friendly tagged values.  <a href="#a78dd3984a5a0dae432c86e18520d7c46">More...</a><br/></td></tr>
+<tr class="separator:a78dd3984a5a0dae432c86e18520d7c46"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="inherit_header pub_methods_classitem_1_1_item"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classitem_1_1_item')"><img alt="-" src="closed.png"/> Public Member Functions inherited from <a class="el" href="classitem_1_1_item.html">item::Item</a></td></tr>
 <tr class="memitem:ad8d77979820782fd86a0a67e2ea25c75 inherit pub_methods_classitem_1_1_item"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classitem_1_1_effect.html">Effect</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75">Step</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> curr, <a class="el" href="classroundinfo_1_1_round_info_view.html">RoundInfoView</a> const &amp;round_info_view, int energy_input)</td></tr>
 <tr class="memdesc:ad8d77979820782fd86a0a67e2ea25c75 inherit pub_methods_classitem_1_1_item"><td class="mdescLeft"> </td><td class="mdescRight">Update the item across a regular step into the future.  <a href="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75">More...</a><br/></td></tr>
@@ -203,8 +203,8 @@ Additional Inherited Members</h2></td></tr>
 <p>Implements <a class="el" href="classitem_1_1_item.html#a400dfeabc4056d36bfd348ff9c51cf7d">item::Item</a>.</p>
 </div><!-- @@@View -->
 </div>
-<a id="a61b1924335a4c4443a78ee75f9935b14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61b1924335a4c4443a78ee75f9935b14">◆ </a></span>StateTags()</h2>
+<a id="a78dd3984a5a0dae432c86e18520d7c46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78dd3984a5a0dae432c86e18520d7c46">◆ </a></span>StateTaggedValues()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -212,7 +212,7 @@ Additional Inherited Members</h2></td></tr>
 <td class="mlabels-left">
 <table class="memname">
 <tr>
-<td class="memname">Tags Oracle::StateTags </td>
+<td class="memname">TaggedValues Oracle::StateTaggedValues </td>
 <td>(</td>
 <td class="paramtype"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> </td>
 <td class="paramname"><em>m</em></td><td>)</td>
@@ -224,7 +224,7 @@ Additional Inherited Members</h2></td></tr>
 <span class="mlabels"><span class="mlabel">virtual</span></span> </td>
 </tr>
 </table>
-</div><!-- $$$StateTags[overload1]$$$TagsOracle::StateTags(Moment m)const --><div class="memdoc"><div style="display: none">Tags Oracle::StateTags (Moment m) const</div>
+</div><!-- $$$StateTaggedValues[overload1]$$$TaggedValuesOracle::StateTaggedValues(Moment m)const --><div class="memdoc"><div style="display: none">TaggedValues Oracle::StateTaggedValues (Moment m) const</div>
 <p>Virtual method to provide user-friendly tagged values. </p>
 <p>The tags are used as a user-friendly indication of the internal state of the item at a given moment without revealing implementation detail, and can also be used to attach specific meaning to the abstract lockdown and cooldown values associated with all items. </p><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -233,8 +233,8 @@ Additional Inherited Members</h2></td></tr>
 </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A group of tagged values describing the state of an item. </dd></dl>
-<p>Implements <a class="el" href="classitem_1_1_item.html#acc560ac68be4f5781cd90cddfd602942">item::Item</a>.</p>
-</div><!-- @@@StateTags -->
+<p>Implements <a class="el" href="classitem_1_1_item.html#a8410ab3ab75e65360eddb4f6bd3cceff">item::Item</a>.</p>
+</div><!-- @@@StateTaggedValues -->
 </div>
 <a id="af765dd1df5a43de79539f9ce960854c0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af765dd1df5a43de79539f9ce960854c0">◆ </a></span>StepImpl()</h2>

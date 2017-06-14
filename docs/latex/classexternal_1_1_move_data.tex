@@ -1,0 +1,219 @@
+\hypertarget{classexternal_1_1_move_data}{}\section{external\+:\+:Move\+Data Class Reference}
+\label{classexternal_1_1_move_data}\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+
+
+A representation of a player\textquotesingle{}s move for a round in the game.  
+
+
+
+
+{\ttfamily \#include $<$movedata.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classexternal_1_1_move_data_a230c2389b03633b6b02928a867f59f27}{Move\+Data} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classexternal_1_1_move_data_acaef1f55196d7bb2fba3ebba2e9e9428}{Energy\+Input} (Item\+Type item) const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the energy input for each item. \end{DoxyCompactList}\item 
+void \hyperlink{classexternal_1_1_move_data_aba5ad33ec9f3e4632750e35236581096}{Set\+Energy\+Input} (Item\+Type item, int energy\+\_\+input) noexcept
+\begin{DoxyCompactList}\small\item\em Mutator for the energy input for each item. \end{DoxyCompactList}\item 
+int \hyperlink{classexternal_1_1_move_data_a2469eb5c4a210b6ebd769254f190ad7e}{new\+\_\+location} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the location that the player travels to. \end{DoxyCompactList}\item 
+void \hyperlink{classexternal_1_1_move_data_a81e78c6507a8cb0be615b23e9c94b7f4}{set\+\_\+new\+\_\+location} (int \hyperlink{classexternal_1_1_move_data_a2469eb5c4a210b6ebd769254f190ad7e}{new\+\_\+location})
+\begin{DoxyCompactList}\small\item\em Mutator for the location that the player travels to. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+set$<$ int $>$ const  \& \hyperlink{classexternal_1_1_move_data_a0bcb09d49ed392fb21395d6182d63f26}{added\+\_\+alliances} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the alliances that the player attempts to add. \end{DoxyCompactList}\item 
+void \hyperlink{classexternal_1_1_move_data_ae3a11d3c816e165ac2ceff604f191d32}{add\+\_\+alliance} (int player)
+\begin{DoxyCompactList}\small\item\em Adds the specified player as a potential ally. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+set$<$ int $>$ const  \& \hyperlink{classexternal_1_1_move_data_addc5f0e83d4c41edab01fe2e804b3eeb}{removed\+\_\+alliances} ()
+\begin{DoxyCompactList}\small\item\em Accessor for the alliances that the player removes. \end{DoxyCompactList}\item 
+void \hyperlink{classexternal_1_1_move_data_a397656419a2c5adf79ee8bf1bfae9ca8}{remove\+\_\+alliance} (int player)
+\begin{DoxyCompactList}\small\item\em Removes the specified player as an ally. \end{DoxyCompactList}\item 
+void \hyperlink{classexternal_1_1_move_data_a15f54d7e6fbf21cc9634e6f2bb854317}{leave\+\_\+unchanged\+\_\+alliance} (int player)
+\begin{DoxyCompactList}\small\item\em Leaves the alliance status of the specified player unchanged. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive $>$ }\\void \hyperlink{classexternal_1_1_move_data_afd1bb4302c0f725033149887c232af1a}{serialize} (Archive \&ar, unsigned int const version)
+\begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A representation of a player\textquotesingle{}s move for a round in the game. 
+
+This instance does not include antitelephone arrival times specified by the player. Such data is captured at a different phase of a round. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexternal_1_1_move_data_a230c2389b03633b6b02928a867f59f27}\label{classexternal_1_1_move_data_a230c2389b03633b6b02928a867f59f27}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!Move\+Data@{Move\+Data}}
+\index{Move\+Data@{Move\+Data}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{Move\+Data()}{MoveData()}}
+{\footnotesize\ttfamily external\+::\+Move\+Data\+::\+Move\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+By default, energy input for all items is 0 and no alliances are added or removed. The new location value is unspecified. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexternal_1_1_move_data_acaef1f55196d7bb2fba3ebba2e9e9428}\label{classexternal_1_1_move_data_acaef1f55196d7bb2fba3ebba2e9e9428}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!Energy\+Input@{Energy\+Input}}
+\index{Energy\+Input@{Energy\+Input}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{Energy\+Input()}{EnergyInput()}}
+{\footnotesize\ttfamily int external\+::\+Move\+Data\+::\+Energy\+Input (\begin{DoxyParamCaption}\item[{Item\+Type}]{item }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the energy input for each item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The energy input for the item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_move_data_aba5ad33ec9f3e4632750e35236581096}\label{classexternal_1_1_move_data_aba5ad33ec9f3e4632750e35236581096}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!Set\+Energy\+Input@{Set\+Energy\+Input}}
+\index{Set\+Energy\+Input@{Set\+Energy\+Input}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{Set\+Energy\+Input()}{SetEnergyInput()}}
+{\footnotesize\ttfamily void external\+::\+Move\+Data\+::\+Set\+Energy\+Input (\begin{DoxyParamCaption}\item[{Item\+Type}]{item,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Mutator for the energy input for each item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item to modify. \\
+\hline
+{\em energy\+\_\+input} & The amount of energy to put into the item. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexternal_1_1_move_data_a2469eb5c4a210b6ebd769254f190ad7e}\label{classexternal_1_1_move_data_a2469eb5c4a210b6ebd769254f190ad7e}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!new\+\_\+location@{new\+\_\+location}}
+\index{new\+\_\+location@{new\+\_\+location}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{new\+\_\+location()}{new\_location()}}
+{\footnotesize\ttfamily int external\+::\+Move\+Data\+::new\+\_\+location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the location that the player travels to. 
+
+\begin{DoxyReturn}{Returns}
+The location that the player moves to in the next round. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_move_data_a81e78c6507a8cb0be615b23e9c94b7f4}\label{classexternal_1_1_move_data_a81e78c6507a8cb0be615b23e9c94b7f4}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!set\+\_\+new\+\_\+location@{set\+\_\+new\+\_\+location}}
+\index{set\+\_\+new\+\_\+location@{set\+\_\+new\+\_\+location}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{set\+\_\+new\+\_\+location()}{set\_new\_location()}}
+{\footnotesize\ttfamily void external\+::\+Move\+Data\+::set\+\_\+new\+\_\+location (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mutator for the location that the player travels to. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+location} & The location that the player moves to in the next round. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexternal_1_1_move_data_a0bcb09d49ed392fb21395d6182d63f26}\label{classexternal_1_1_move_data_a0bcb09d49ed392fb21395d6182d63f26}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!added\+\_\+alliances@{added\+\_\+alliances}}
+\index{added\+\_\+alliances@{added\+\_\+alliances}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{added\+\_\+alliances()}{added\_alliances()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$int$>$ const\& external\+::\+Move\+Data\+::added\+\_\+alliances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the alliances that the player attempts to add. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the set of player I\+Ds that are added. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_move_data_ae3a11d3c816e165ac2ceff604f191d32}\label{classexternal_1_1_move_data_ae3a11d3c816e165ac2ceff604f191d32}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!add\+\_\+alliance@{add\+\_\+alliance}}
+\index{add\+\_\+alliance@{add\+\_\+alliance}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{add\+\_\+alliance()}{add\_alliance()}}
+{\footnotesize\ttfamily void external\+::\+Move\+Data\+::add\+\_\+alliance (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds the specified player as a potential ally. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The ID of the player to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexternal_1_1_move_data_addc5f0e83d4c41edab01fe2e804b3eeb}\label{classexternal_1_1_move_data_addc5f0e83d4c41edab01fe2e804b3eeb}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!removed\+\_\+alliances@{removed\+\_\+alliances}}
+\index{removed\+\_\+alliances@{removed\+\_\+alliances}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{removed\+\_\+alliances()}{removed\_alliances()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$int$>$ const\& external\+::\+Move\+Data\+::removed\+\_\+alliances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Accessor for the alliances that the player removes. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the set of player I\+Ds that are removed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_move_data_a397656419a2c5adf79ee8bf1bfae9ca8}\label{classexternal_1_1_move_data_a397656419a2c5adf79ee8bf1bfae9ca8}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!remove\+\_\+alliance@{remove\+\_\+alliance}}
+\index{remove\+\_\+alliance@{remove\+\_\+alliance}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{remove\+\_\+alliance()}{remove\_alliance()}}
+{\footnotesize\ttfamily void external\+::\+Move\+Data\+::remove\+\_\+alliance (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes the specified player as an ally. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The ID of the player to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexternal_1_1_move_data_a15f54d7e6fbf21cc9634e6f2bb854317}\label{classexternal_1_1_move_data_a15f54d7e6fbf21cc9634e6f2bb854317}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!leave\+\_\+unchanged\+\_\+alliance@{leave\+\_\+unchanged\+\_\+alliance}}
+\index{leave\+\_\+unchanged\+\_\+alliance@{leave\+\_\+unchanged\+\_\+alliance}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{leave\+\_\+unchanged\+\_\+alliance()}{leave\_unchanged\_alliance()}}
+{\footnotesize\ttfamily void external\+::\+Move\+Data\+::leave\+\_\+unchanged\+\_\+alliance (\begin{DoxyParamCaption}\item[{int}]{player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Leaves the alliance status of the specified player unchanged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player} & The ID of the player to leave alone. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classexternal_1_1_move_data_afd1bb4302c0f725033149887c232af1a}\label{classexternal_1_1_move_data_afd1bb4302c0f725033149887c232af1a}} 
+\index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!serialize@{serialize}}
+\index{serialize@{serialize}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename Archive $>$ \\
+void external\+::\+Move\+Data\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{unsigned int const}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialization function. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Archive} & The serialization archive type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & The serialization archive. \\
+\hline
+{\em version} & The verion of the serialization protocol to use. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/movedata.\+hpp\end{DoxyCompactItemize}

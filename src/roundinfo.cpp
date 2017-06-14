@@ -20,8 +20,8 @@ int RoundInfo::Location(int player, int viewing_player) const {
             viewing_player >= num_players_) {
         throw std::out_of_range("Player ID is invalid");
     }
-    return KeepIfAlliedOrEncounter(player, viewing_player,
-                                   location_data_[player]);
+    return KeepIfEncounter(player, viewing_player,
+                           location_data_[player]);
 }
 
 int RoundInfo::DamageReceived(int player, int viewing_player) const {
@@ -30,8 +30,8 @@ int RoundInfo::DamageReceived(int player, int viewing_player) const {
             viewing_player >= num_players_) {
         throw std::out_of_range("Player ID is invalid");
     }
-    return KeepIfAlliedOrEncounter(player, viewing_player,
-                                   damage_received_data_[player]);
+    return KeepIfEncounter(player, viewing_player,
+                           damage_received_data_[player]);
 }
 
 int RoundInfo::HealthRemaining(int player, int viewing_player) const {
@@ -40,8 +40,8 @@ int RoundInfo::HealthRemaining(int player, int viewing_player) const {
             viewing_player >= num_players_) {
         throw std::out_of_range("Player ID is invalid");
     }
-    return KeepIfAlliedOrEncounter(player, viewing_player,
-                                   health_remaining_data_[player]);
+    return KeepIfEncounter(player, viewing_player,
+                           health_remaining_data_[player]);
 }
 
 bool RoundInfo::Active(int player) const {
@@ -58,10 +58,9 @@ void RoundInfo::SetActive(int player, bool value) {
     active_data_.set(player, value);
 }
 
-int RoundInfo::KeepIfAlliedOrEncounter(int player, int viewing_player,
-                                       int value) const {
+int RoundInfo::KeepIfEncounter(int player, int viewing_player,
+                               int value) const {
     if (viewing_player == kOmniscientViewer ||
-            alliance_data_.Value(viewing_player, player) ||
             location_data_[player] ==
             location_data_[viewing_player]) {
         return value;

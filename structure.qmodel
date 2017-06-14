@@ -296,7 +296,7 @@
                          <object>{a2c6391c-1527-4c86-9738-c8c5cf3ce1a7}</object>
                          <name>Item</name>
                          <pos>x:1070;y:75</pos>
-                         <rect>x:-295;y:-105;w:590;h:210</rect>
+                         <rect>x:-295;y:-110;w:590;h:220</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -313,8 +313,8 @@
                         </DElement>
                        </base-DElement>
                        <text>namespace item</text>
-                       <pos>x:1195;y:75</pos>
-                       <rect>x:-470;y:-300;w:940;h:600</rect>
+                       <pos>x:1195;y:70</pos>
+                       <rect>x:-470;y:-305;w:940;h:610</rect>
                       </DBoundary>
                      </instance>
                     </item>
@@ -645,9 +645,9 @@
                           </DElement>
                          </base-DElement>
                          <object>{8293acb3-fa44-4ed9-a698-8623d867f347}</object>
-                         <name>Antitelephone</name>
-                         <pos>x:1275;y:630</pos>
-                         <rect>x:-210;y:-150;w:420;h:300</rect>
+                         <name>AntitelephoneGame</name>
+                         <pos>x:1335;y:625</pos>
+                         <rect>x:-225;y:-150;w:450;h:300</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -667,8 +667,8 @@
                          </base-DElement>
                          <object>{a17d5f00-cf87-4847-a4a2-083321e7ca7e}</object>
                          <name>MomentOverview</name>
-                         <pos>x:205;y:885</pos>
-                         <rect>x:-155;y:-85;w:310;h:170</rect>
+                         <pos>x:205;y:895</pos>
+                         <rect>x:-145;y:-85;w:290;h:170</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -685,8 +685,8 @@
                         </DElement>
                        </base-DElement>
                        <text>namespace external</text>
-                       <pos>x:400;y:885</pos>
-                       <rect>x:-375;y:-115;w:750;h:230</rect>
+                       <pos>x:400;y:895</pos>
+                       <rect>x:-375;y:-125;w:750;h:250</rect>
                       </DBoundary>
                      </instance>
                     </item>
@@ -723,8 +723,8 @@
                          </base-DElement>
                          <object>{f5c0cb13-38d1-44cd-a8c4-ba083ff7a627}</object>
                          <name>MoveData</name>
-                         <pos>x:575;y:890</pos>
-                         <rect>x:-175;y:-90;w:350;h:180</rect>
+                         <pos>x:575;y:900</pos>
+                         <rect>x:-145;y:-100;w:290;h:200</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -789,7 +789,7 @@
                          <object>{69bc58d1-6db8-4ee9-bfc4-8fe400ecb769}</object>
                          <name>MessageHeader</name>
                          <pos>x:1390;y:895</pos>
-                         <rect>x:-95;y:-95;w:190;h:190</rect>
+                         <rect>x:-100;y:-100;w:200;h:200</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -861,8 +861,8 @@
                          </base-DElement>
                          <object>{35d9ee35-2d60-42e9-9118-08061597249b}</object>
                          <name>QueryResult</name>
-                         <pos>x:895;y:630</pos>
-                         <rect>x:-85;y:-65;w:170;h:130</rect>
+                         <pos>x:920;y:625</pos>
+                         <rect>x:-110;y:-65;w:220;h:130</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -895,7 +895,7 @@
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1497219455510</last-modified>
+                  <last-modified>1497415491198</last-modified>
                   <toolbarid>General</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
@@ -1524,7 +1524,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{f4dcf0e5-d441-4967-aecf-8e12ccc15817}</uid>
+                    <uid>{f15d4716-bde3-438d-9bd0-3009b9ce3e86}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>Effect Step(Moment curr, RoundInfoView const&amp; turn_data, int energy_input)</declaration>
@@ -1532,7 +1532,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{fd32ed1a-1a8c-4b41-8315-e1525dc875cd}</uid>
+                    <uid>{3ed4eec7-2da2-479b-bfeb-94dd61a47c4f}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>Effect Branch(Moment curr, Moment dest)</declaration>
@@ -1540,7 +1540,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3ec1368b-74b0-4d8b-997e-aa76b9555784}</uid>
+                    <uid>{429ffb7d-bc39-4898-9c58-614e62fbff25}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void ConfirmPending(Moment new_moment)</declaration>
@@ -1548,7 +1548,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{109f038c-f8f1-4fa2-86fb-9580ca925d19}</uid>
+                    <uid>{d257ad91-4b2a-4621-8b5e-fbc5f8c2d2cb}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>1</properties>
@@ -1557,7 +1557,16 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{685f9861-a182-4c9d-ad2b-80d50a091946}</uid>
+                    <uid>{214103fd-3e05-4674-93de-61f3ac765170}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <properties>5</properties>
+                    <declaration>TaggedValues StateTaggedValues()</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{0bc8cdd0-0c58-408a-a5a3-fced9b70e97e}</uid>
                     <visibility>2</visibility>
                     <type>2</type>
                     <declaration>Item(Moment first_moment, ItemProperties const&amp; first_properties)</declaration>
@@ -1565,7 +1574,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{66573bdb-692a-445d-9616-df5b5a3d9d2e}</uid>
+                    <uid>{21b93329-8131-4369-8235-9c4f3963b4c4}</uid>
                     <visibility>2</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -1574,7 +1583,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f0cf739b-40c3-43f7-8ada-0009784822c6}</uid>
+                    <uid>{44d12f33-60b0-4171-9f14-f0d81bc4a0ca}</uid>
                     <visibility>2</visibility>
                     <type>2</type>
                     <properties>1</properties>
@@ -1583,7 +1592,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{73a92742-e18b-4a63-bbb6-9f537b8741e3}</uid>
+                    <uid>{df208e7b-7c87-4b90-88dd-5a4f593cb391}</uid>
                     <visibility>2</visibility>
                     <type>2</type>
                     <properties>1</properties>
@@ -1592,7 +1601,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5e197073-32eb-40a4-9b28-096ae04b5152}</uid>
+                    <uid>{3598629f-160a-48ee-95af-d65f802a8d43}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>boost::optional&lt;ItemProperties&gt; pending_new_properties</declaration>
@@ -1600,7 +1609,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d5274dea-4f6e-4fc1-989b-005e9f12c451}</uid>
+                    <uid>{5cdbb28b-9ead-4e39-a9e8-89b4bc5eaf8d}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::unordered_map&lt;Moment, ItemProperties const&gt; properties_</declaration>
@@ -1608,7 +1617,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{aa82096c-5cda-4e9b-aabc-0ce1d363231f}</uid>
+                    <uid>{64d69b0d-ef51-4055-84e6-5672e1841da9}</uid>
                     <visibility>3</visibility>
                     <type>2</type>
                     <declaration>void MomentDeleter(MomentIterators iterators)</declaration>
@@ -2282,7 +2291,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{798663cf-fc37-45c7-8a0a-bd279249ada8}</uid>
+                    <uid>{ce37dac2-6ad0-477f-a43e-8c31cd9c0cc1}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <properties>64</properties>
@@ -2291,7 +2300,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{52478611-9c00-4ab4-b2b3-269387c0a6d7}</uid>
+                    <uid>{d5e3f08f-1ab3-4c0e-9079-1f7133a6b1ed}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <properties>64</properties>
@@ -2300,7 +2309,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d054d42f-1beb-4379-9133-a1d573b58727}</uid>
+                    <uid>{2f61b7d3-ceb2-4ff1-afec-d2e3374f4a23}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>RoundInfo(int num_players)</declaration>
@@ -2308,7 +2317,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5bde7e76-cb33-4ade-a55f-769c308a52d1}</uid>
+                    <uid>{022c2f24-74af-4c87-867b-7deab6e45472}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -2317,7 +2326,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{50660959-b0bb-4011-8721-98e9505f01a9}</uid>
+                    <uid>{6690f547-380a-4696-bcea-e3116d6db91c}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -2326,7 +2335,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{96848cd7-583c-44b7-a492-e8fa4ff5b6b9}</uid>
+                    <uid>{c0c02aa6-a309-43bb-9637-d18811226d8f}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -2335,7 +2344,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3395e734-cd0c-4bc0-961d-60dd79665941}</uid>
+                    <uid>{8f3eb0cf-02fe-455f-9b08-8ee5ac163aac}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -2344,7 +2353,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7c20f463-5c34-4c86-b419-6165b7abd28a}</uid>
+                    <uid>{4c4870fe-ba89-4d3e-97e8-d85d7be5c900}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>IntIterator LocationIterator()</declaration>
@@ -2352,7 +2361,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{303d736e-694a-45e9-811f-2d531d6c3f1a}</uid>
+                    <uid>{ebcf3af3-7811-4ce1-aa99-f06160863818}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>IntIterator DamageReceivedIterator()</declaration>
@@ -2360,7 +2369,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{9ea1e60d-897f-4253-95c4-c00fd090e545}</uid>
+                    <uid>{45d26191-7ea1-4836-9d9c-ee821081eea9}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>IntIterator HealthRemainingIterator()</declaration>
@@ -2368,7 +2377,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{37d60990-9a3a-418f-9b88-734d948de6fc}</uid>
+                    <uid>{5b19e6a7-6273-45c4-906e-3fccd82e3f8e}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void SetActive(int player, bool value)</declaration>
@@ -2376,7 +2385,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ccddb4e7-21f9-4276-864a-9b7ca85ab0e3}</uid>
+                    <uid>{b096fb64-ff43-49ed-9f07-14d6c8cb1da4}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>SymmetricBitMatrix&amp; alliance_data()</declaration>
@@ -2384,7 +2393,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{df2a7b13-2634-4d10-9176-f2aa21242219}</uid>
+                    <uid>{cf6be049-c3fa-45ef-9adc-92b0be34837c}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::vector&lt;int&gt; location_data_</declaration>
@@ -2392,7 +2401,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ad307d58-8ec8-4d59-a29c-79cdd58a2934}</uid>
+                    <uid>{7f1e76db-7410-414d-be35-18f949e2feba}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::vector&lt;int&gt; damage_received_data_</declaration>
@@ -2400,7 +2409,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{15e8850a-c23f-4286-bf22-56b2f7ed20f8}</uid>
+                    <uid>{7b573f2f-61d2-4a9c-9ca7-b6282955c81d}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::vector&lt;int&gt; health_remaining_data_</declaration>
@@ -2408,7 +2417,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ebe9ed02-7aa7-4e6c-a6a9-be1ee638003e}</uid>
+                    <uid>{e666e341-cd42-4b43-a04e-f472b492b163}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>SymmetricBitMatrix alliance_data_</declaration>
@@ -2416,7 +2425,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b0d0acd8-2034-4548-accb-275d91d82a07}</uid>
+                    <uid>{31824da5-674c-4da0-bde3-b1c8d537de5a}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>BitSet active_data_</declaration>
@@ -2449,7 +2458,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{d881158f-c79d-452b-80f3-bc95023a6f82}</uid>
+                    <uid>{bf28619c-607b-468b-908e-c1e355a71c36}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>SymmetricBitMatrix(int size)</declaration>
@@ -2457,7 +2466,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{88f77cb1-3289-4f32-b908-564a24c218e8}</uid>
+                    <uid>{13484362-e7c2-4da0-a2be-29924dba7cce}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -2466,7 +2475,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{9be48018-075e-4ad9-a9f0-ff3b7e7f92f5}</uid>
+                    <uid>{5bb9ebd8-731d-4a15-90b8-f153f4a018b8}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -2475,7 +2484,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{53aa23ab-9be3-4763-9625-f69e5e49bdc5}</uid>
+                    <uid>{cd68c9ad-21fa-4f1e-b8ef-fecb6bdc35fd}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>bool SetValue(int row, int col, bool val)</declaration>
@@ -2483,7 +2492,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d9137e1e-146b-4a4c-affa-8b83608ddab4}</uid>
+                    <uid>{d4466054-b286-4d63-8179-34ffa27f0fed}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int size_</declaration>
@@ -2491,7 +2500,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{91f30197-90df-45f3-8d30-0c6b4b110e5e}</uid>
+                    <uid>{2c1e98a4-873e-459c-9405-2d6c62b979d0}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>boost::dynamic_bitset bits_</declaration>
@@ -2517,7 +2526,7 @@
                     <uid>{8293acb3-fa44-4ed9-a698-8623d867f347}</uid>
                    </MElement>
                   </base-MElement>
-                  <name>Antitelephone</name>
+                  <name>AntitelephoneGame</name>
                   <relations>
                    <handles>
                     <handles>
@@ -2559,23 +2568,23 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{4c939121-65f8-4a08-b586-210fc9f0a6ba}</uid>
+                    <uid>{de220143-d635-4fad-bffb-a54fa663a15d}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>(move only type)</declaration>
+                    <declaration>(pimpl implementation)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{458a0a5b-aaa0-47a4-ab21-327babb0eb3d}</uid>
+                    <uid>{bd70bd26-05ee-4fe4-bc82-8d5ffac71605}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>Antitelephone(int game_id, int num_players, unsigned int random_seed)</declaration>
+                    <declaration>AntitelephoneGame(int game_id, int num_players, unsigned int random_seed)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{52dee968-a0d1-4595-83c1-30bf89837d47}</uid>
+                    <uid>{a0d75b15-a361-400c-a158-ff6de0d4e80d}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>TimePlane const&amp; time_plane()</declaration>
@@ -2583,23 +2592,23 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{be0eae67-9b8d-4ac9-b9a2-3fc61da48dcc}</uid>
+                    <uid>{d2cd68ba-b65a-4d1e-9743-643f212dde8b}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>MomentOverview GetOverview(int player, Moment m)</declaration>
+                    <declaration>MomentOverviewQueryResult GetOverview(int player, Moment m, bool from_rightmost)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{05be471b-b7e8-481f-93be-8a94c747a9df}</uid>
+                    <uid>{30477b85-6d7d-4bbe-85fc-fa90def35b0c}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>QueryResult MakeRegularMove(int player, MoveData move)</declaration>
+                    <declaration>QueryResult MakeRegularMove(int player, MoveData const&amp; move)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{fb874368-34a7-4c42-9c0d-2f6aab24656b}</uid>
+                    <uid>{6fa8fb5d-1c72-44be-9669-866f4e9e3931}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>QueryResult MakeAntitelephoneMove(int player, Moment dest)</declaration>
@@ -2607,7 +2616,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{374219e5-53bc-4c2f-8655-31d505cddd61}</uid>
+                    <uid>{46e2b011-064a-4d7d-9328-cda6ee0c384b}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void RegisterNewRoundHandler(std::function&lt;void(MomentOverview)&gt; handler)</declaration>
@@ -2615,7 +2624,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7d3614b5-8fb6-42cd-b216-3214313852df}</uid>
+                    <uid>{e1b3e1ae-3cb1-41fd-9640-bc08cf35b01c}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void RegisterEndGameHandler(std::function&lt;void(void)&gt; handler)</declaration>
@@ -2623,7 +2632,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{944834a8-442c-4c4b-8da7-c849bbaffe98}</uid>
+                    <uid>{cd461c86-5551-4cae-9a88-3c5cf9e85007}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int game_id_</declaration>
@@ -2631,7 +2640,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{385830d6-4696-4ca3-abd7-e87531a5b98e}</uid>
+                    <uid>{9b807bb9-6f52-4f93-8f9d-bb3b586ba1c4}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int num_players_</declaration>
@@ -2639,7 +2648,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3fcde5f1-ac9d-4f24-8773-8bd67ac6cd83}</uid>
+                    <uid>{556665e0-8490-4a0c-9546-186be98f03f8}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::function&lt;void(MomentOverview)&gt; new_round_handler_</declaration>
@@ -2647,7 +2656,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{70bd1e6c-11fb-4114-887a-82dc32707c47}</uid>
+                    <uid>{b5661319-ed46-4532-b89e-4f40e42ede59}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::function&lt;void(void)&gt; end_game_handler_</declaration>
@@ -2655,7 +2664,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b433de82-071b-4cfe-8198-6aa04999dd25}</uid>
+                    <uid>{e63f074a-aa31-4f82-ab40-d5d5baabf1b7}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>RandomNumberGenerator rand</declaration>
@@ -2663,15 +2672,15 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{fb832253-cffe-4dac-8564-e1bd778d6bdd}</uid>
+                    <uid>{0311514d-1677-4f96-9a36-4c9771e301c2}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>TimePlane time_plane_</declaration>
+                    <declaration>TimePlane timeplane_</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{51fc516a-9629-44a5-b966-208bbd403cf7}</uid>
+                    <uid>{5784bd9c-b90c-4142-9ae4-152028c5e2eb}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::unordered_map&lt;Moment, RoundInfo&gt; round_info_</declaration>
@@ -2679,23 +2688,23 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{deb772ed-e738-46cf-b28b-86c9076921be}</uid>
+                    <uid>{521776fe-722f-429d-a942-8f0f19196064}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>std::vector&lt;std::vector&lt;ItemPtr&gt; const&gt; const items_</declaration>
+                    <declaration>std::vector&lt;std::vector&lt;ItemPtr&gt;&gt; items_</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0d9e28e8-4b49-4324-a6b7-cf31d392cc52}</uid>
+                    <uid>{4f01c7a0-d31a-4e2f-95d4-021ee55844e6}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>std::unordered_map&lt;int, std::variant&lt;MoveData, Moment&gt;&gt; moves_made_</declaration>
+                    <declaration>std::unordered_map&lt;int, MoveData&gt; moves_made_</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{9167065c-bca6-4a2e-ac0c-3c747d8db47a}</uid>
+                    <uid>{cec3c18b-8bb0-487f-bf74-9a0ad827f63d}</uid>
                     <visibility>3</visibility>
                     <type>2</type>
                     <declaration>void MomentDeleter(MomentIterators m)</declaration>
@@ -2728,31 +2737,34 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{f2b1dd5f-59cc-4b79-965c-0e32c205162b}</uid>
+                    <uid>{8dafff16-a88c-4a89-9251-4f9cf8804013}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
+                    <properties>4</properties>
                     <declaration>int player()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{187a8032-1914-4bdf-a352-c1354a081fa7}</uid>
+                    <uid>{a71267e6-3433-4c3d-92db-e09aff6ec2f0}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
+                    <properties>4</properties>
                     <declaration>Moment moment()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0a805b8d-ed8d-4f2c-bf04-c4f0b54ca896}</uid>
+                    <uid>{3017c5bd-d850-4c5d-9594-ee82848969bd}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>ItemProperties item_properties(ItemType item)</declaration>
+                    <properties>4</properties>
+                    <declaration>TaggedValues const&amp; ItemState(ItemType item)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{7df568bc-2fa5-43ea-acff-3b255d98660c}</uid>
+                    <uid>{b1a1c5a3-caee-4b49-9c71-346a86ab5a52}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -2761,7 +2773,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d354a3ea-6a0f-415c-a66b-6717856c9f54}</uid>
+                    <uid>{f09f7d84-bef6-4580-a27f-62cc6bf37756}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void serialize(Archive&amp; ar, unsigned int const version)</declaration>
@@ -2769,7 +2781,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c7179fa2-2626-4a0f-9ed2-5fedeca02708}</uid>
+                    <uid>{b4b5bf53-69bd-435e-8407-463bdd68cde0}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>Moment moment_</declaration>
@@ -2777,18 +2789,18 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{503c0901-ab84-4779-b0d9-12fa5d2539c5}</uid>
+                    <uid>{38897884-8a7f-4e0c-9d8d-a8043da5fe25}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>std::vector&lt;ItemProperties&gt; const item_properties_data_</declaration>
+                    <declaration>std::vector&lt;TaggedValues&gt; item_state_data_</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{97e3213b-17e1-4809-8d40-4188e5cc202b}</uid>
+                    <uid>{0e8b1197-134d-4329-8b58-53f5e5bf3e56}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>RoundInfo const round_info_</declaration>
+                    <declaration>RoundInfoView round_info_</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
@@ -2881,39 +2893,43 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{52d8512d-d774-44c6-98e5-b13d54db1545}</uid>
+                    <uid>{65c82eba-d614-493f-9138-4e82a7a2235e}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>int energy_input(ItemType item)</declaration>
+                    <properties>4</properties>
+                    <declaration>int EnergyInput(ItemType item)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8ea28445-4d84-4f3d-b855-05cf77e59cd9}</uid>
+                    <uid>{85f1c1b0-2002-4254-abfb-035f2ef63a8d}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
+                    <properties>4</properties>
                     <declaration>int new_location()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{52fbc474-19ed-46a7-9e61-ee0d4ad6fdba}</uid>
+                    <uid>{d2e4f58b-a3cf-4f0d-925d-22b6c8b1236c}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>std::pair&lt;ConstIntIterator, ConstIntIterator&gt; added_alliances()</declaration>
+                    <properties>4</properties>
+                    <declaration>std::vector&lt;int&gt; const&amp; added_alliances()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cf5fb670-c13d-4de0-b112-c64b235f6ad1}</uid>
+                    <uid>{db97d469-9bf7-44c1-abee-a6ee980e38be}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>std::pair&lt;ConstIntIterator, ConstIntIterator&gt; removed_alliances()</declaration>
+                    <properties>4</properties>
+                    <declaration>std::vector&lt;int&gt; const&amp; removed_alliances()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{dfe54734-0875-44c8-b300-eedda3d7c15b}</uid>
+                    <uid>{4330fc57-c963-48ae-b92d-17727f33c38e}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void serialize(Archive&amp; ar, unsigned int const version)</declaration>
@@ -2921,31 +2937,39 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e5fe750e-de7e-4b0d-b974-b287dd4e981d}</uid>
-                    <visibility>3</visibility>
-                    <type>1</type>
-                    <declaration>std::vector&lt;int const&gt; const energy_input_data_</declaration>
+                    <uid>{9f18102c-06a6-42a8-a6dc-80091cb4fba5}</uid>
+                    <visibility>1</visibility>
+                    <type>2</type>
+                    <declaration>(mutators)</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3e559197-f4d1-4740-bd32-36018b3e4479}</uid>
+                    <uid>{cd3f00de-7e0e-4f48-866d-f70853b6c508}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>std::vector&lt;int const&gt; const added_alliances_</declaration>
+                    <declaration>std::vector&lt;int&gt; energy_input_data_</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{36f45e25-0ec9-4812-a5e2-93c059edd289}</uid>
+                    <uid>{10737efb-1811-41a7-9231-38c2820a6c98}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>std::vector&lt;int const&gt; const removed_alliances_</declaration>
+                    <declaration>std::vector&lt;int&gt; added_alliances_</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{aa1099c0-6aec-44ea-b424-e40d011ad3be}</uid>
+                    <uid>{c0627848-b2ea-4bd9-a32e-fdc25666c2a5}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>std::vector&lt;int&gt; removed_alliances_</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b7db062d-6ff5-47ed-8ff5-6b89d29cc4cb}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int new_location_</declaration>
@@ -3137,7 +3161,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{ee96c225-6e69-4082-992c-894212270287}</uid>
+                    <uid>{754a129a-d2eb-4e66-ac56-da1fdb271eba}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kMessageSend</declaration>
@@ -3145,7 +3169,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e910b899-206d-427c-92f4-b99f18419676}</uid>
+                    <uid>{bf1ac4b7-8e51-4dcd-a7ab-6dbedb655c88}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kMessageReceived</declaration>
@@ -3153,7 +3177,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{728a0560-8933-46d6-a59e-50baeca05db8}</uid>
+                    <uid>{66b51b9d-6e6c-4908-a566-19172949afcd}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kDisconnected</declaration>
@@ -3161,7 +3185,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{18cb141b-9316-4894-b220-27521a39fd3e}</uid>
+                    <uid>{9f41dee8-5fc0-4d25-bdd6-7058f2f17040}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kOtherPlayerDisconnected</declaration>
@@ -3169,7 +3193,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cf052c9c-8240-40ea-af2c-7dfcbbaf2d9d}</uid>
+                    <uid>{dbbbf4a2-2665-4e47-888a-7d3b97615b34}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kMomentOverviewRequest</declaration>
@@ -3177,7 +3201,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{1275576f-976f-4847-b110-18181979954d}</uid>
+                    <uid>{2ffbd4e8-de2b-43d9-bccc-a12ab8630fe8}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kRegularMoveRequest</declaration>
@@ -3185,7 +3209,15 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5e645180-b436-49e1-be60-355675faeb7b}</uid>
+                    <uid>{33eb8f67-ce12-406b-a43f-745ca290c956}</uid>
+                    <visibility>1</visibility>
+                    <type>1</type>
+                    <declaration>kAntitelephoneDepartResponse</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{4d6c4b7d-8713-4982-a57c-1fc3fd03b0c9}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kAntitelephoneMoveRequest</declaration>
@@ -3193,7 +3225,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{bb01f78f-0d07-47d8-8531-f080e6b13a18}</uid>
+                    <uid>{4a4072d3-e2ef-4bf4-8d0a-dfd220fff538}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kMomentOverviewResponse</declaration>
@@ -3201,7 +3233,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{bb02b2a4-868b-4b54-b230-3572924c3008}</uid>
+                    <uid>{35b16dbd-3216-4c5c-9d99-8f14f0e53ea0}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kMoveReceivedResponse</declaration>
@@ -3209,7 +3241,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b095fa6c-43c5-455b-964f-e8c0316278bb}</uid>
+                    <uid>{4d69c0f2-3217-4744-9281-86bdf566abe8}</uid>
                     <visibility>1</visibility>
                     <type>1</type>
                     <declaration>kGameOver</declaration>
@@ -3320,7 +3352,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{da3f35ca-ed3f-4494-a53f-b8af002aa3f4}</uid>
+                    <uid>{630b6d9a-86f5-412b-acf2-b924a690ea3a}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -3329,7 +3361,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3ea12b87-df3a-4174-adac-ac241cbab9a8}</uid>
+                    <uid>{0afb8298-48f1-4d52-a671-9267dd9db65d}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <properties>4</properties>
@@ -3338,15 +3370,16 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{53abd358-5f68-484d-99d5-65dce19cda55}</uid>
+                    <uid>{dafddafd-a66b-4efa-a67d-254968cd9a58}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
-                    <declaration>std::string const&amp; message()</declaration>
+                    <properties>4</properties>
+                    <declaration>std::string const&amp; response_tag()</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{a54cce3d-b123-47fd-8fa4-64a59cf37d1c}</uid>
+                    <uid>{03e5bd65-b694-4dde-8c34-5f81e10edac0}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>bool const success_</declaration>
@@ -3354,10 +3387,10 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{220ff284-1eb6-48ae-b648-0e5fd0201f1f}</uid>
+                    <uid>{427e5728-f8c7-4647-908a-92a0b9aecc92}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
-                    <declaration>std::string const message_</declaration>
+                    <declaration>std::string const response_tag_</declaration>
                    </MClassMember>
                   </item>
                  </qlist>

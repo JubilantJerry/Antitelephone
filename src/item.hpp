@@ -2,9 +2,9 @@
 #define ITEM_H
 
 #include <unordered_map>
-#include <utility>
 #include <boost/optional.hpp>
 #include "moment.hpp"
+#include "itemproperties.hpp"
 #include "aliases.hpp"
 
 namespace roundinfo {
@@ -15,7 +15,6 @@ namespace item {
 using Moment = timeplane::Moment;
 using RoundInfoView = roundinfo::RoundInfoView;
 
-class ItemProperties;
 class Effect;
 
 /**
@@ -104,7 +103,7 @@ class Item {
      * @param m     The moment to query.
      * @return A group of tagged values describing the state of an item.
      */
-    virtual Tags StateTags(Moment m) const = 0;
+    virtual TaggedValues StateTaggedValues(Moment m) const = 0;
 
     virtual ~Item();
 
@@ -182,7 +181,7 @@ class Item {
 
   private:
     boost::optional<ItemProperties> pending_new_properties_;
-    std::unordered_map<Moment, ItemProperties const> properties_;
+    std::unordered_map<Moment, ItemProperties> properties_;
 
     // Deleter for inaccessible moments.
     void MomentDeleter(timeplane::MomentIterators iterators);

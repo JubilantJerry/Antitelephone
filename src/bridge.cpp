@@ -2,7 +2,6 @@
 #include "moment.hpp"
 #include "roundinfoview.hpp"
 #include "effect.hpp"
-#include "itemproperties.hpp"
 #include "bridge.hpp"
 
 using namespace item;
@@ -68,9 +67,9 @@ std::pair<Effect, ItemProperties> Bridge::BranchImpl(
     return result;
 }
 
-Tags Bridge::StateTags(Moment m) const {
+TaggedValues Bridge::StateTaggedValues(Moment m) const {
     ItemProperties properties = GetProperties(m);
-    Tags result;
+    TaggedValues result;
     int lockdown = properties.lockdown();
     if (lockdown > 0) {
         result.emplace_back("unlock_requirement", std::to_string(lockdown));

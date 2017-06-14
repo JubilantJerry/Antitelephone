@@ -8,18 +8,12 @@
 #include <boost/archive/text_iarchive.hpp>
 
 #include "../src/aliases.hpp"
-#include "../src/itemproperties.hpp"
-#include "../src/effect.hpp"
-#include "../src/item.hpp"
-#include "../src/antitelephone.hpp"
-#include "../src/bridge.hpp"
-#include "../src/oracle.hpp"
-#include "../src/shield.hpp"
 #include "../src/moment.hpp"
 #include "../src/timeline.hpp"
 #include "../src/timeplane.hpp"
 #include "../src/roundinfo.hpp"
 #include "../src/roundinfoview.hpp"
+#include "../src/itemsutil.hpp"
 
 using namespace item;
 using namespace timeplane;
@@ -96,7 +90,14 @@ TEST_CASE("Effect overall", "[effect, item_all]") {
     e2.set_antitelephone_departure(true);
     e2.set_antitelephone_dest_allowed(false);
     e2.set_player_make_active(true);
-    Effect e3{0, 1, 1, false, true, false};
+    Effect e3_t{0, 1, 1, false, true, false};
+    Effect e3;
+    std::stringstream stream{};
+    boost::archive::text_oarchive output_archive{stream};
+    output_archive << e3_t;
+
+    boost::archive::text_iarchive input_archive{stream};
+    input_archive >> e3;
 
     Effect temp = e1 + e2;
     REQUIRE(temp.attack_increase() == 5);
@@ -126,7 +127,7 @@ TEST_CASE("Effect overall", "[effect, item_all]") {
 extern RoundInfo MakeRoundInfo();
 
 void PrintTags(ItemPtr const& ptr, Moment m) {
-    for (Tag const& thing : ptr->StateTags(m)) {
+    for (TaggedValue const& thing : ptr->StateTaggedValues(m)) {
         std::cout << thing.first << " " << thing.second << std::endl;
     }
     std::cout << std::endl;

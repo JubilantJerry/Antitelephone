@@ -32,7 +32,7 @@ class Bridge : public Item {
 
     Effect View(Moment m);
 
-    Tags StateTags(Moment m) const;
+    TaggedValues StateTaggedValues(Moment m) const;
 
   protected:
     std::pair<Effect, ItemProperties> StepImpl(Moment curr,

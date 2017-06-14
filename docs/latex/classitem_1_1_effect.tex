@@ -32,7 +32,9 @@ void \hyperlink{classitem_1_1_effect_aedb5619a40edeb90776d14691cdb80b1}{set\+\_\
 \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_effect_a81c4b4c173683d278e1eae7e4ab8048a}{operator+} (\hyperlink{classitem_1_1_effect}{Effect} const \&rhs)
 \begin{DoxyCompactList}\small\item\em Addition operator to combine effects. \end{DoxyCompactList}\item 
 \hyperlink{classitem_1_1_effect}{Effect} \& \hyperlink{classitem_1_1_effect_af0d65e5a848289bfd28bfe980da51915}{operator+=} (\hyperlink{classitem_1_1_effect}{Effect} const \&rhs)
-\begin{DoxyCompactList}\small\item\em Addition assignment operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Addition assignment operator. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive $>$ }\\void \hyperlink{classitem_1_1_effect_a3a78c050c37dd9204aa35c25a0f65282}{serialize} (Archive \&ar, unsigned int const version)
+\begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
@@ -267,6 +269,29 @@ operator+
 \begin{DoxyReturn}{Returns}
 The left hand side, after modification. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classitem_1_1_effect_a3a78c050c37dd9204aa35c25a0f65282}\label{classitem_1_1_effect_a3a78c050c37dd9204aa35c25a0f65282}} 
+\index{item\+::\+Effect@{item\+::\+Effect}!serialize@{serialize}}
+\index{serialize@{serialize}!item\+::\+Effect@{item\+::\+Effect}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename Archive $>$ \\
+void item\+::\+Effect\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{unsigned int const}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialization function. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Archive} & The serialization archive type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & The serialization archive. \\
+\hline
+{\em version} & The verion of the serialization protocol to use. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

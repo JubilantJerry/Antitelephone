@@ -23,7 +23,7 @@ class Antitelephone : public Item {
 
     Effect View(Moment);
 
-    Tags StateTags(Moment m) const;
+    TaggedValues StateTaggedValues(Moment m) const;
 
   protected:
     std::pair<Effect, ItemProperties> StepImpl(Moment curr,

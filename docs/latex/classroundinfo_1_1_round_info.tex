@@ -22,10 +22,10 @@ int \hyperlink{classroundinfo_1_1_round_info_a2b6c4500a8076cb24f83591f05b99fba}{
 \begin{DoxyCompactList}\small\item\em Accessor for the damage a player received. \end{DoxyCompactList}\item 
 int \hyperlink{classroundinfo_1_1_round_info_accb2ab979f9fe090cf03753ed1c78e0a}{Health\+Remaining} (int player, int viewing\+\_\+player) const
 \begin{DoxyCompactList}\small\item\em Accessor for the health a player has remaining. \end{DoxyCompactList}\item 
-\hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const  \& \hyperlink{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}{calliance\+\_\+data} () const noexcept
-\begin{DoxyCompactList}\small\item\em Accessor to view the alliance data. \end{DoxyCompactList}\item 
 bool \hyperlink{classroundinfo_1_1_round_info_a03a7ee40677506160aef2766929e6105}{Active} (int player) const
 \begin{DoxyCompactList}\small\item\em Accessor for whether a player is active. \end{DoxyCompactList}\item 
+\hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const  \& \hyperlink{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}{calliance\+\_\+data} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor to view the alliance data. \end{DoxyCompactList}\item 
 Int\+Iterator \hyperlink{classroundinfo_1_1_round_info_ab9e17ca5d68f9981862cbf540cc0b297}{Location\+Iterator} () noexcept
 \begin{DoxyCompactList}\small\item\em Iterator to modify the location data. \end{DoxyCompactList}\item 
 Int\+Iterator \hyperlink{classroundinfo_1_1_round_info_a94ea1a09ae7680e74188296aef0b0d63}{Damage\+Received\+Iterator} () noexcept
@@ -41,6 +41,9 @@ void \hyperlink{classroundinfo_1_1_round_info_a28d85479753dae18a6b2a27d048d2973}
 \item 
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_a6a7ac5df8cced5aac3c30a98f88df3d9}\label{classroundinfo_1_1_round_info_a6a7ac5df8cced5aac3c30a98f88df3d9}} 
 static int constexpr {\bfseries k\+Unknown} = -\/1
+\item 
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a316f9f9173bcbf923181a84deb70c4d0}\label{classroundinfo_1_1_round_info_a316f9f9173bcbf923181a84deb70c4d0}} 
+static int constexpr {\bfseries k\+Graveyard\+Location} = -\/2
 \item 
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_a29eb9d113e033613762e50e1aaf63290}\label{classroundinfo_1_1_round_info_a29eb9d113e033613762e50e1aaf63290}} 
 static int constexpr {\bfseries k\+Omniscient\+Viewer} = -\/1
@@ -159,19 +162,6 @@ The health remaining of the player queried, or {\ttfamily k\+Unknown} if the pla
 {\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
 \hline
 \end{DoxyExceptions}
-\mbox{\Hypertarget{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}\label{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}} 
-\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!calliance\+\_\+data@{calliance\+\_\+data}}
-\index{calliance\+\_\+data@{calliance\+\_\+data}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
-\subsubsection{\texorpdfstring{calliance\+\_\+data()}{calliance\_data()}}
-{\footnotesize\ttfamily \hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const\& roundinfo\+::\+Round\+Info\+::calliance\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
-
-
-
-Accessor to view the alliance data. 
-
-\begin{DoxyReturn}{Returns}
-A constant reference to the alliance data. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_a03a7ee40677506160aef2766929e6105}\label{classroundinfo_1_1_round_info_a03a7ee40677506160aef2766929e6105}} 
 \index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Active@{Active}}
 \index{Active@{Active}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
@@ -195,6 +185,19 @@ Whether the player queried is active.
 {\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
 \hline
 \end{DoxyExceptions}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}\label{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!calliance\+\_\+data@{calliance\+\_\+data}}
+\index{calliance\+\_\+data@{calliance\+\_\+data}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{calliance\+\_\+data()}{calliance\_data()}}
+{\footnotesize\ttfamily \hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const\& roundinfo\+::\+Round\+Info\+::calliance\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor to view the alliance data. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the alliance data. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_ab9e17ca5d68f9981862cbf540cc0b297}\label{classroundinfo_1_1_round_info_ab9e17ca5d68f9981862cbf540cc0b297}} 
 \index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!Location\+Iterator@{Location\+Iterator}}
 \index{Location\+Iterator@{Location\+Iterator}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}

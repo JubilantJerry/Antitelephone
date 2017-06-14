@@ -26,7 +26,7 @@ void \hyperlink{classitem_1_1_item_a99eaccdd31a817a7cb0e501cb632f711}{Confirm\+P
 \begin{DoxyCompactList}\small\item\em Finalize the changes in the item after a call to {\ttfamily Step} or {\ttfamily Branch}. \end{DoxyCompactList}\item 
 virtual \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m)=0
 \begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
-virtual Tags \hyperlink{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}{State\+Tags} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const =0
+virtual Tagged\+Values \hyperlink{classitem_1_1_item_a8410ab3ab75e65360eddb4f6bd3cceff}{State\+Tagged\+Values} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const =0
 \begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
@@ -176,11 +176,11 @@ The effects granted by the item at the specified moment.
 
 Implemented in \hyperlink{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a9982f1934a769cc461246bab31b8a72d}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_abdc88bd6d0a4d6021805fa3097f47633}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}{item\+::\+Antitelephone}.
 
-\mbox{\Hypertarget{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}\label{classitem_1_1_item_acc560ac68be4f5781cd90cddfd602942}} 
-\index{item\+::\+Item@{item\+::\+Item}!State\+Tags@{State\+Tags}}
-\index{State\+Tags@{State\+Tags}!item\+::\+Item@{item\+::\+Item}}
-\subsubsection{\texorpdfstring{State\+Tags()}{StateTags()}}
-{\footnotesize\ttfamily virtual Tags item\+::\+Item\+::\+State\+Tags (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\mbox{\Hypertarget{classitem_1_1_item_a8410ab3ab75e65360eddb4f6bd3cceff}\label{classitem_1_1_item_a8410ab3ab75e65360eddb4f6bd3cceff}} 
+\index{item\+::\+Item@{item\+::\+Item}!State\+Tagged\+Values@{State\+Tagged\+Values}}
+\index{State\+Tagged\+Values@{State\+Tagged\+Values}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{State\+Tagged\+Values()}{StateTaggedValues()}}
+{\footnotesize\ttfamily virtual Tagged\+Values item\+::\+Item\+::\+State\+Tagged\+Values (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -196,7 +196,7 @@ A group of tagged values describing the state of an item.
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classitem_1_1_bridge_af49adc6bbaf4788cce2b4cbf8d895865}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a61b1924335a4c4443a78ee75f9935b14}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_a91b92d4e1fca7015b75142d43f43e80e}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_a0322847417981b9acd4b323c35e728f0}{item\+::\+Antitelephone}.
+Implemented in \hyperlink{classitem_1_1_bridge_a6339e1cd46f454625ef7cd6dc683f6cd}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a78dd3984a5a0dae432c86e18520d7c46}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_a1a246374ed47a4d9849bad97091c42cb}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_afe8ac703b5f19181f221afe07c05cae7}{item\+::\+Antitelephone}.
 
 \mbox{\Hypertarget{classitem_1_1_item_a23790dceafc9e3f8950f69380cc4c4aa}\label{classitem_1_1_item_a23790dceafc9e3f8950f69380cc4c4aa}} 
 \index{item\+::\+Item@{item\+::\+Item}!Get\+Properties@{Get\+Properties}}

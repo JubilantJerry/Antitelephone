@@ -1,8 +1,27 @@
 var searchData=
 [
-  ['time',['time',['../classtimeplane_1_1_moment.html#a118be8757aa459d4d6e4d859a5164251',1,'timeplane::Moment']]],
-  ['timeline',['TimeLine',['../classtimeplane_1_1_time_line.html',1,'timeplane::TimeLine'],['../classtimeplane_1_1_time_line.html#a1f23d03d9ca5799fc641ffbc29a5f32d',1,'timeplane::TimeLine::TimeLine(MomentDeleterFn moment_deleter=MomentDeleterFn{})'],['../classtimeplane_1_1_time_line.html#a914a02e64e4bbc4bb4840012368c03f3',1,'timeplane::TimeLine::TimeLine(TimeLine const &amp;left_timeline, int branch_time, MomentDeleterFn moment_deleter=MomentDeleterFn{})']]],
-  ['timeline_5fnumber',['timeline_number',['../classtimeplane_1_1_time_line.html#a4297da8acc6fbee73bfc7db0de2f80a5',1,'timeplane::TimeLine']]],
-  ['timeplane',['TimePlane',['../classtimeplane_1_1_time_plane.html',1,'timeplane::TimePlane'],['../classtimeplane_1_1_time_plane.html#a8d8f1227ade6490fa8b814f1b7f18ecc',1,'timeplane::TimePlane::TimePlane()']]],
-  ['type',['type',['../classitem_1_1_antitelephone.html#ab6d34885da8ab27a578da87a0c746744',1,'item::Antitelephone::type()'],['../classitem_1_1_bridge.html#aeb376b4b999ec6144454cd806e5e06d2',1,'item::Bridge::type()'],['../classitem_1_1_oracle.html#a6905378f36854ca2ef63d403c95ede8f',1,'item::Oracle::type()'],['../classitem_1_1_shield.html#a936299d37c16f407535e373f1f879d34',1,'item::Shield::type()']]]
+  ['second_5frightmost_5ftimeline',['second_rightmost_timeLine',['../classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f',1,'timeplane::TimePlane']]],
+  ['serialize',['serialize',['../classitem_1_1_effect.html#a3a78c050c37dd9204aa35c25a0f65282',1,'item::Effect::serialize()'],['../classitem_1_1_item_properties.html#a0192995b931d99be5e8e5a1c5d24311d',1,'item::ItemProperties::serialize()'],['../classtimeplane_1_1_moment.html#ac7870eb30ed18b8ea85bf7584632cd11',1,'timeplane::Moment::serialize()'],['../classexternal_1_1_moment_overview.html#a5791e663d0c7be6c1a19b0b7af416855',1,'external::MomentOverview::serialize()'],['../classexternal_1_1_move_data.html#afd1bb4302c0f725033149887c232af1a',1,'external::MoveData::serialize()'],['../classroundinfo_1_1_round_info_view.html#a101e6ee624aacfa8dd110aea67e67538',1,'roundinfo::RoundInfoView::serialize()']]],
+  ['set_5fantitelephone_5fdeparture',['set_antitelephone_departure',['../classitem_1_1_effect.html#a209135cb3afb7f25dfd56c5b7c9e2ffd',1,'item::Effect']]],
+  ['set_5fantitelephone_5fdest_5fallowed',['set_antitelephone_dest_allowed',['../classitem_1_1_effect.html#add9197b674f7ebd90c6a412d4a65e0e1',1,'item::Effect']]],
+  ['set_5fattack_5fincrease',['set_attack_increase',['../classitem_1_1_effect.html#a0a98eb24f70970c00b95cfa0a40f6a6a',1,'item::Effect']]],
+  ['set_5fcooldown',['set_cooldown',['../classitem_1_1_item_properties.html#aefdce7b5ead1319fff498dc9db102971',1,'item::ItemProperties']]],
+  ['set_5fcustom',['set_custom',['../classitem_1_1_item_properties.html#a984264931e08aef21d41335afc3ba582',1,'item::ItemProperties']]],
+  ['set_5flockdown',['set_lockdown',['../classitem_1_1_item_properties.html#aa29d6b35f5c5bbdc6920851bf734cf90',1,'item::ItemProperties']]],
+  ['set_5fmax_5fhitpoint_5fincrease',['set_max_hitpoint_increase',['../classitem_1_1_effect.html#af2710ca17d043b8aeb3360fd991e3140',1,'item::Effect']]],
+  ['set_5fnew_5flocation',['set_new_location',['../classexternal_1_1_move_data.html#a81e78c6507a8cb0be615b23e9c94b7f4',1,'external::MoveData']]],
+  ['set_5fplayer_5fmake_5factive',['set_player_make_active',['../classitem_1_1_effect.html#aedb5619a40edeb90776d14691cdb80b1',1,'item::Effect']]],
+  ['set_5fshield_5famount',['set_shield_amount',['../classitem_1_1_effect.html#a1610df003ab26e8ce4aafc5a13543e86',1,'item::Effect']]],
+  ['setactive',['SetActive',['../classroundinfo_1_1_round_info.html#a28d85479753dae18a6b2a27d048d2973',1,'roundinfo::RoundInfo']]],
+  ['setenergyinput',['SetEnergyInput',['../classexternal_1_1_move_data.html#aba5ad33ec9f3e4632750e35236581096',1,'external::MoveData']]],
+  ['setvalue',['SetValue',['../class_symmetric_bit_matrix.html#a5d97dfec2cf3910b2f46b80307528c43',1,'SymmetricBitMatrix']]],
+  ['shield',['Shield',['../classitem_1_1_shield.html',1,'item']]],
+  ['shield_5famount',['shield_amount',['../classitem_1_1_effect.html#a9a6f54d0eab7dd13b2ef14e04f6ddb56',1,'item::Effect']]],
+  ['size',['size',['../class_symmetric_bit_matrix.html#aed948744d70716f6325063ed55a76c6c',1,'SymmetricBitMatrix']]],
+  ['standardstepupdate',['StandardStepUpdate',['../classitem_1_1_item.html#a93ef8f291ecf2886ea6902d496624334',1,'item::Item']]],
+  ['statetaggedvalues',['StateTaggedValues',['../classitem_1_1_antitelephone.html#afe8ac703b5f19181f221afe07c05cae7',1,'item::Antitelephone::StateTaggedValues()'],['../classitem_1_1_bridge.html#a6339e1cd46f454625ef7cd6dc683f6cd',1,'item::Bridge::StateTaggedValues()'],['../classitem_1_1_item.html#a8410ab3ab75e65360eddb4f6bd3cceff',1,'item::Item::StateTaggedValues()'],['../classitem_1_1_oracle.html#a78dd3984a5a0dae432c86e18520d7c46',1,'item::Oracle::StateTaggedValues()'],['../classitem_1_1_shield.html#a1a246374ed47a4d9849bad97091c42cb',1,'item::Shield::StateTaggedValues()']]],
+  ['step',['Step',['../classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75',1,'item::Item']]],
+  ['stepimpl',['StepImpl',['../classitem_1_1_antitelephone.html#aa59b4569bac948f37fd15dbea234503f',1,'item::Antitelephone::StepImpl()'],['../classitem_1_1_bridge.html#a08aa3fdb36e203e489bc0af65dde451c',1,'item::Bridge::StepImpl()'],['../classitem_1_1_item.html#a90df61c8a2a20144eb1100af5fb2d464',1,'item::Item::StepImpl()'],['../classitem_1_1_oracle.html#af765dd1df5a43de79539f9ce960854c0',1,'item::Oracle::StepImpl()'],['../classitem_1_1_shield.html#a0c446c3f436c4eb221ebafd817df9a5f',1,'item::Shield::StepImpl()']]],
+  ['success',['success',['../class_query_result.html#ae1b66d19c66ed5c97dd3322c3c721c82',1,'QueryResult']]],
+  ['symmetricbitmatrix',['SymmetricBitMatrix',['../class_symmetric_bit_matrix.html',1,'SymmetricBitMatrix'],['../class_symmetric_bit_matrix.html#a828dbcd597cd13390922d863357da3f3',1,'SymmetricBitMatrix::SymmetricBitMatrix()']]]
 ];

@@ -21,6 +21,7 @@ namespace roundinfo {
 class RoundInfo {
   public:
     static int constexpr kUnknown = -1;
+    static int constexpr kGraveyardLocation = -2;
     static int constexpr kOmniscientViewer = -1;
 
     /**
@@ -79,14 +80,6 @@ class RoundInfo {
     int HealthRemaining(int player, int viewing_player) const;
 
     /**
-     * @brief Accessor to view the alliance data.
-     * @return A constant reference to the alliance data.
-     */
-    SymmetricBitMatrix const& calliance_data() const noexcept {
-        return alliance_data_;
-    }
-
-    /**
      * @brief Accessor for whether a player is active.
      *
      * @param player                The player ID to query.
@@ -94,6 +87,14 @@ class RoundInfo {
      * @throws std::out_of_range If no player with the specified ID exists.
      */
     bool Active(int player) const;
+
+    /**
+     * @brief Accessor to view the alliance data.
+     * @return A constant reference to the alliance data.
+     */
+    SymmetricBitMatrix const& calliance_data() const noexcept {
+        return alliance_data_;
+    }
 
     /**
      * @brief Iterator to modify the location data.
@@ -145,8 +146,8 @@ class RoundInfo {
     SymmetricBitMatrix alliance_data_;
 
     // Keep the value if the players are allied only.
-    int KeepIfAlliedOrEncounter(int player, int viewing_player,
-                                int value) const;
+    int KeepIfEncounter(int player, int viewing_player,
+                        int value) const;
 };
 }
 

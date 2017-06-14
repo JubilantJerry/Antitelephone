@@ -1,0 +1,80 @@
+\hypertarget{class_query_result}{}\section{Query\+Result Class Reference}
+\label{class_query_result}\index{Query\+Result@{Query\+Result}}
+
+
+A class representing a server\textquotesingle{}s response to a query.  
+
+
+
+
+{\ttfamily \#include $<$queryresult.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_query_result_a2bcdccec574314df85c4bff6611c215b}{Query\+Result} (bool \hyperlink{class_query_result_ae1b66d19c66ed5c97dd3322c3c721c82}{success}, std\+::string const \&\hyperlink{class_query_result_a3d238ce0ccc659d2918dac0479937d3c}{response\+\_\+tag}=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_query_result_a280533eecc3453bb2e65119070cc9fc7}\label{class_query_result_a280533eecc3453bb2e65119070cc9fc7}} 
+\hyperlink{class_query_result_a280533eecc3453bb2e65119070cc9fc7}{operator bool} () const noexcept
+\begin{DoxyCompactList}\small\item\em Implicit cast to the underlying success value. \end{DoxyCompactList}\item 
+bool \hyperlink{class_query_result_ae1b66d19c66ed5c97dd3322c3c721c82}{success} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the success value. \end{DoxyCompactList}\item 
+std\+::string const  \& \hyperlink{class_query_result_a3d238ce0ccc659d2918dac0479937d3c}{response\+\_\+tag} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the response tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class representing a server\textquotesingle{}s response to a query. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_query_result_a2bcdccec574314df85c4bff6611c215b}\label{class_query_result_a2bcdccec574314df85c4bff6611c215b}} 
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\index{Query\+Result@{Query\+Result}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{Query\+Result()}{QueryResult()}}
+{\footnotesize\ttfamily Query\+Result\+::\+Query\+Result (\begin{DoxyParamCaption}\item[{bool}]{success,  }\item[{std\+::string const \&}]{response\+\_\+tag = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em success} & Whether the query was a success. \\
+\hline
+{\em response\+\_\+tag} & String tag associated with the response. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_query_result_ae1b66d19c66ed5c97dd3322c3c721c82}\label{class_query_result_ae1b66d19c66ed5c97dd3322c3c721c82}} 
+\index{Query\+Result@{Query\+Result}!success@{success}}
+\index{success@{success}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{success()}{success()}}
+{\footnotesize\ttfamily bool Query\+Result\+::success (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the success value. 
+
+\begin{DoxyReturn}{Returns}
+Whether the query was a success. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_query_result_a3d238ce0ccc659d2918dac0479937d3c}\label{class_query_result_a3d238ce0ccc659d2918dac0479937d3c}} 
+\index{Query\+Result@{Query\+Result}!response\+\_\+tag@{response\+\_\+tag}}
+\index{response\+\_\+tag@{response\+\_\+tag}!Query\+Result@{Query\+Result}}
+\subsubsection{\texorpdfstring{response\+\_\+tag()}{response\_tag()}}
+{\footnotesize\ttfamily std\+::string const\& Query\+Result\+::response\+\_\+tag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the response tag. 
+
+\begin{DoxyReturn}{Returns}
+Tag associated with the response. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/queryresult.\+hpp\end{DoxyCompactItemize}

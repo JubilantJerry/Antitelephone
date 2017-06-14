@@ -1,0 +1,168 @@
+\hypertarget{classexternal_1_1_moment_overview}{}\section{external\+:\+:Moment\+Overview Class Reference}
+\label{classexternal_1_1_moment_overview}\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+
+
+A class that gives a user-\/friendly overview of a moment.  
+
+
+
+
+{\ttfamily \#include $<$momentoverview.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classexternal_1_1_moment_overview_aabe55b10c977be45ba2574c606676c87}{Moment\+Overview} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classexternal_1_1_moment_overview_af03a8f31dfc944daf5d54477b1acab26}{Moment\+Overview} (\hyperlink{classtimeplane_1_1_moment}{Moment} \hyperlink{classexternal_1_1_moment_overview_a6aaebaf6107f40bfb22a15f82c92e131}{moment}, \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classexternal_1_1_moment_overview_abeb27fa11c351eea2c90679842895497}{effect}, std\+::vector$<$ Tagged\+Values $>$ item\+\_\+state\+\_\+data, \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} \hyperlink{classexternal_1_1_moment_overview_a186a205fd74b30b627b82bf837b78f79}{round\+\_\+info})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classexternal_1_1_moment_overview_afb04d3b50661c06510b77e73d66e70ac}{player} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the ID of the overviewed player. \end{DoxyCompactList}\item 
+\hyperlink{classtimeplane_1_1_moment}{Moment} \hyperlink{classexternal_1_1_moment_overview_a6aaebaf6107f40bfb22a15f82c92e131}{moment} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the moment that is overviewed. \end{DoxyCompactList}\item 
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classexternal_1_1_moment_overview_abeb27fa11c351eea2c90679842895497}{effect} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the items\textquotesingle{} effects to the player at the moment. \end{DoxyCompactList}\item 
+Tagged\+Values const  \& \hyperlink{classexternal_1_1_moment_overview_a0be90c4fbf03a2db4bfaa8a1ba2c7674}{Item\+State} (Item\+Type item) const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the state of an item. \end{DoxyCompactList}\item 
+\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const  \& \hyperlink{classexternal_1_1_moment_overview_a186a205fd74b30b627b82bf837b78f79}{round\+\_\+info} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for a view into information about the round. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Archive $>$ }\\void \hyperlink{classexternal_1_1_moment_overview_a5791e663d0c7be6c1a19b0b7af416855}{serialize} (Archive \&ar, unsigned int const version)
+\begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class that gives a user-\/friendly overview of a moment. 
+
+The overview given is specific to one player of the game. The instance can also be serialized. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_aabe55b10c977be45ba2574c606676c87}\label{classexternal_1_1_moment_overview_aabe55b10c977be45ba2574c606676c87}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!Moment\+Overview@{Moment\+Overview}}
+\index{Moment\+Overview@{Moment\+Overview}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{Moment\+Overview()}{MomentOverview()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily external\+::\+Moment\+Overview\+::\+Moment\+Overview (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+The fields are not initialized. The only mutator is the {\ttfamily serialize} function, and so this constructor should only be used to deserialize an instance. \mbox{\Hypertarget{classexternal_1_1_moment_overview_af03a8f31dfc944daf5d54477b1acab26}\label{classexternal_1_1_moment_overview_af03a8f31dfc944daf5d54477b1acab26}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!Moment\+Overview@{Moment\+Overview}}
+\index{Moment\+Overview@{Moment\+Overview}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{Moment\+Overview()}{MomentOverview()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily external\+::\+Moment\+Overview\+::\+Moment\+Overview (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{moment,  }\item[{\hyperlink{classitem_1_1_effect}{Effect}}]{effect,  }\item[{std\+::vector$<$ Tagged\+Values $>$}]{item\+\_\+state\+\_\+data,  }\item[{\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View}}]{round\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+The item state argument must have an entry for all items in the game. 
+\begin{DoxyParams}{Parameters}
+{\em moment} & The moment that is overviewed. \\
+\hline
+{\em item\+\_\+state\+\_\+data} & The state of the items. \\
+\hline
+{\em round\+\_\+info\+\_\+} & Information about the round. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_afb04d3b50661c06510b77e73d66e70ac}\label{classexternal_1_1_moment_overview_afb04d3b50661c06510b77e73d66e70ac}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!player@{player}}
+\index{player@{player}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{player()}{player()}}
+{\footnotesize\ttfamily int external\+::\+Moment\+Overview\+::player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the ID of the overviewed player. 
+
+\begin{DoxyReturn}{Returns}
+Player ID of the player whose viewpoint is used. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_a6aaebaf6107f40bfb22a15f82c92e131}\label{classexternal_1_1_moment_overview_a6aaebaf6107f40bfb22a15f82c92e131}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!moment@{moment}}
+\index{moment@{moment}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{moment()}{moment()}}
+{\footnotesize\ttfamily \hyperlink{classtimeplane_1_1_moment}{Moment} external\+::\+Moment\+Overview\+::moment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the moment that is overviewed. 
+
+\begin{DoxyReturn}{Returns}
+The moment that is looked at. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_abeb27fa11c351eea2c90679842895497}\label{classexternal_1_1_moment_overview_abeb27fa11c351eea2c90679842895497}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!effect@{effect}}
+\index{effect@{effect}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{effect()}{effect()}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} external\+::\+Moment\+Overview\+::effect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the items\textquotesingle{} effects to the player at the moment. 
+
+\begin{DoxyReturn}{Returns}
+The effects of the items on player at the moment overviewed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_a0be90c4fbf03a2db4bfaa8a1ba2c7674}\label{classexternal_1_1_moment_overview_a0be90c4fbf03a2db4bfaa8a1ba2c7674}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!Item\+State@{Item\+State}}
+\index{Item\+State@{Item\+State}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{Item\+State()}{ItemState()}}
+{\footnotesize\ttfamily Tagged\+Values const\& external\+::\+Moment\+Overview\+::\+Item\+State (\begin{DoxyParamCaption}\item[{Item\+Type}]{item }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the state of an item. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item queried. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A group of tagged values that offer a user-\/friendly view into the internal state of the item. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_a186a205fd74b30b627b82bf837b78f79}\label{classexternal_1_1_moment_overview_a186a205fd74b30b627b82bf837b78f79}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!round\+\_\+info@{round\+\_\+info}}
+\index{round\+\_\+info@{round\+\_\+info}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{round\+\_\+info()}{round\_info()}}
+{\footnotesize\ttfamily \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const\& external\+::\+Moment\+Overview\+::round\+\_\+info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for a view into information about the round. 
+
+\begin{DoxyReturn}{Returns}
+A reference to a view of the round information. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_a5791e663d0c7be6c1a19b0b7af416855}\label{classexternal_1_1_moment_overview_a5791e663d0c7be6c1a19b0b7af416855}} 
+\index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!serialize@{serialize}}
+\index{serialize@{serialize}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
+\subsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$typename Archive $>$ \\
+void external\+::\+Moment\+Overview\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{ar,  }\item[{unsigned int const}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Serialization function. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Archive} & The serialization archive type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & The serialization archive. \\
+\hline
+{\em version} & The verion of the serialization protocol to use. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+K\+:/\+Personal Projects/\+Antitelephone\+Q\+T/src/momentoverview.\+hpp\end{DoxyCompactItemize}

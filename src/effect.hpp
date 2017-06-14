@@ -1,6 +1,9 @@
 #ifndef EFFECT_H
 #define EFFECT_H
 
+#include <cassert>
+#include <boost/serialization/access.hpp>
+
 namespace item {
 class Effect {
   public:
@@ -174,6 +177,21 @@ class Effect {
         player_make_active_ = player_make_active_ ||
                               rhs.player_make_active_;
         return *this;
+    }
+
+    /**
+     * @brief Serialization function.
+     *
+     * @tparam Archive      The serialization archive type.
+     * @param ar            The serialization archive.
+     * @param version       The verion of the serialization protocol to use.
+     */
+    template <typename Archive>
+    void serialize(Archive& ar, unsigned int const version) {
+        assert(version == 0);
+        ar & attack_increase_ & max_hitpoint_increase_ & shield_amount_;
+        ar & antitelephone_departure_ &
+        antitelephone_dest_allowed_ & player_make_active_;
     }
 
   private:

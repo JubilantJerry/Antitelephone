@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['shield',['Shield',['../classitem_1_1_shield.html',1,'item']]],
-  ['symmetricbitmatrix',['SymmetricBitMatrix',['../class_symmetric_bit_matrix.html',1,'']]]
+  ['roundinfo',['RoundInfo',['../classroundinfo_1_1_round_info.html',1,'roundinfo']]],
+  ['roundinfoview',['RoundInfoView',['../classroundinfo_1_1_round_info_view.html',1,'roundinfo']]]
 ];

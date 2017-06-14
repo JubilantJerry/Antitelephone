@@ -1,7 +1,6 @@
 #include "moment.hpp"
 #include "roundinfoview.hpp"
 #include "effect.hpp"
-#include "itemproperties.hpp"
 #include "antitelephone.hpp"
 
 using namespace item;
@@ -42,9 +41,9 @@ std::pair<Effect, ItemProperties> Antitelephone::BranchImpl(
     return result;
 }
 
-Tags Antitelephone::StateTags(Moment m) const {
+TaggedValues Antitelephone::StateTaggedValues(Moment m) const {
     ItemProperties properties = GetProperties(m);
-    Tags result;
+    TaggedValues result;
     int lockdown = properties.lockdown();
     if (lockdown > 0) {
         result.emplace_back("energy_debt", std::to_string(lockdown));

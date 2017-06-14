@@ -54,8 +54,8 @@ class TimeLine::Impl {
         CleanUpMomentsInternal(time);
     }
 
-    TimeLine::Impl(TimeLine::Impl const&) = delete;
-    TimeLine::Impl& operator=(TimeLine::Impl const&) = delete;
+    Impl(Impl const&) = delete;
+    Impl& operator=(Impl const&) = delete;
 
   private:
     static int constexpr kInitialEraseFrom = -1;

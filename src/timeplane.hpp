@@ -92,7 +92,7 @@ class TimePlane {
      * @param handler       The moment deletion handler to register.
      */
     void RegisterMomentDeleter(MomentDeleterFn handler) {
-        handlers_.push_back(handler);
+        handlers_.push_back(std::move(handler));
     }
 
   private:

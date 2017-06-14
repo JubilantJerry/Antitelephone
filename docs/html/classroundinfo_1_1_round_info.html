@@ -88,12 +88,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:accb2ab979f9fe090cf03753ed1c78e0a"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info.html#accb2ab979f9fe090cf03753ed1c78e0a">HealthRemaining</a> (int player, int viewing_player) const</td></tr>
 <tr class="memdesc:accb2ab979f9fe090cf03753ed1c78e0a"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the health a player has remaining.  <a href="#accb2ab979f9fe090cf03753ed1c78e0a">More...</a><br/></td></tr>
 <tr class="separator:accb2ab979f9fe090cf03753ed1c78e0a"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a0944e6bf6facb52e9955695ea0b3feb3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_symmetric_bit_matrix.html">SymmetricBitMatrix</a> const  &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info.html#a0944e6bf6facb52e9955695ea0b3feb3">calliance_data</a> () const noexcept</td></tr>
-<tr class="memdesc:a0944e6bf6facb52e9955695ea0b3feb3"><td class="mdescLeft"> </td><td class="mdescRight">Accessor to view the alliance data.  <a href="#a0944e6bf6facb52e9955695ea0b3feb3">More...</a><br/></td></tr>
-<tr class="separator:a0944e6bf6facb52e9955695ea0b3feb3"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a03a7ee40677506160aef2766929e6105"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info.html#a03a7ee40677506160aef2766929e6105">Active</a> (int player) const</td></tr>
 <tr class="memdesc:a03a7ee40677506160aef2766929e6105"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for whether a player is active.  <a href="#a03a7ee40677506160aef2766929e6105">More...</a><br/></td></tr>
 <tr class="separator:a03a7ee40677506160aef2766929e6105"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a0944e6bf6facb52e9955695ea0b3feb3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_symmetric_bit_matrix.html">SymmetricBitMatrix</a> const  &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info.html#a0944e6bf6facb52e9955695ea0b3feb3">calliance_data</a> () const noexcept</td></tr>
+<tr class="memdesc:a0944e6bf6facb52e9955695ea0b3feb3"><td class="mdescLeft"> </td><td class="mdescRight">Accessor to view the alliance data.  <a href="#a0944e6bf6facb52e9955695ea0b3feb3">More...</a><br/></td></tr>
+<tr class="separator:a0944e6bf6facb52e9955695ea0b3feb3"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab9e17ca5d68f9981862cbf540cc0b297"><td align="right" class="memItemLeft" valign="top">IntIterator </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info.html#ab9e17ca5d68f9981862cbf540cc0b297">LocationIterator</a> () noexcept</td></tr>
 <tr class="memdesc:ab9e17ca5d68f9981862cbf540cc0b297"><td class="mdescLeft"> </td><td class="mdescRight">Iterator to modify the location data.  <a href="#ab9e17ca5d68f9981862cbf540cc0b297">More...</a><br/></td></tr>
 <tr class="separator:ab9e17ca5d68f9981862cbf540cc0b297"><td class="memSeparator" colspan="2"> </td></tr>
@@ -115,6 +115,9 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a6a7ac5df8cced5aac3c30a98f88df3d9"><td align="right" class="memItemLeft" valign="top"><a id="a6a7ac5df8cced5aac3c30a98f88df3d9"></a>
 static int constexpr </td><td class="memItemRight" valign="bottom"><b>kUnknown</b> = -1</td></tr>
 <tr class="separator:a6a7ac5df8cced5aac3c30a98f88df3d9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a316f9f9173bcbf923181a84deb70c4d0"><td align="right" class="memItemLeft" valign="top"><a id="a316f9f9173bcbf923181a84deb70c4d0"></a>
+static int constexpr </td><td class="memItemRight" valign="bottom"><b>kGraveyardLocation</b> = -2</td></tr>
+<tr class="separator:a316f9f9173bcbf923181a84deb70c4d0"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a29eb9d113e033613762e50e1aaf63290"><td align="right" class="memItemLeft" valign="top"><a id="a29eb9d113e033613762e50e1aaf63290"></a>
 static int constexpr </td><td class="memItemRight" valign="bottom"><b>kOmniscientViewer</b> = -1</td></tr>
 <tr class="separator:a29eb9d113e033613762e50e1aaf63290"><td class="memSeparator" colspan="2"> </td></tr>
@@ -295,31 +298,6 @@ static int constexpr </td><td class="memItemRight" valign="bottom"><b>kOmniscie
 </dl>
 </div><!-- @@@HealthRemaining -->
 </div>
-<a id="a0944e6bf6facb52e9955695ea0b3feb3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0944e6bf6facb52e9955695ea0b3feb3">◆ </a></span>calliance_data()</h2>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-<tr>
-<td class="mlabels-left">
-<table class="memname">
-<tr>
-<td class="memname"><a class="el" href="class_symmetric_bit_matrix.html">SymmetricBitMatrix</a> const&amp; roundinfo::RoundInfo::calliance_data </td>
-<td>(</td>
-<td class="paramname"></td><td>)</td>
-<td> const</td>
-</tr>
-</table>
-</td>
-<td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
-</tr>
-</table>
-</div><!-- $$$calliance_data[overload1]$$$SymmetricBitMatrixconst&roundinfo::RoundInfo::calliance_data()const --><div class="memdoc"><div style="display: none">SymmetricBitMatrix const&amp; roundinfo::RoundInfo::calliance_data () const</div>
-<p>Accessor to view the alliance data. </p>
-<dl class="section return"><dt>Returns</dt><dd>A constant reference to the alliance data. </dd></dl>
-</div><!-- @@@calliance_data -->
-</div>
 <a id="a03a7ee40677506160aef2766929e6105"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a03a7ee40677506160aef2766929e6105">◆ </a></span>Active()</h2>
 <div class="memitem">
@@ -349,6 +327,31 @@ static int constexpr </td><td class="memItemRight" valign="bottom"><b>kOmniscie
 </dd>
 </dl>
 </div><!-- @@@Active -->
+</div>
+<a id="a0944e6bf6facb52e9955695ea0b3feb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0944e6bf6facb52e9955695ea0b3feb3">◆ </a></span>calliance_data()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="class_symmetric_bit_matrix.html">SymmetricBitMatrix</a> const&amp; roundinfo::RoundInfo::calliance_data </td>
+<td>(</td>
+<td class="paramname"></td><td>)</td>
+<td> const</td>
+</tr>
+</table>
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$calliance_data[overload1]$$$SymmetricBitMatrixconst&roundinfo::RoundInfo::calliance_data()const --><div class="memdoc"><div style="display: none">SymmetricBitMatrix const&amp; roundinfo::RoundInfo::calliance_data () const</div>
+<p>Accessor to view the alliance data. </p>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the alliance data. </dd></dl>
+</div><!-- @@@calliance_data -->
 </div>
 <a id="ab9e17ca5d68f9981862cbf540cc0b297"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab9e17ca5d68f9981862cbf540cc0b297">◆ </a></span>LocationIterator()</h2>

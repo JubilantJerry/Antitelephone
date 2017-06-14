@@ -1,8 +1,6 @@
-#include <cassert>
 #include "moment.hpp"
 #include "roundinfoview.hpp"
 #include "effect.hpp"
-#include "itemproperties.hpp"
 #include "shield.hpp"
 
 using namespace item;
@@ -86,9 +84,9 @@ std::pair<Effect, ItemProperties> Shield::BranchImpl(
     return result;
 }
 
-Tags Shield::StateTags(Moment m) const {
+TaggedValues Shield::StateTaggedValues(Moment m) const {
     ItemProperties properties = GetProperties(m);
-    Tags result;
+    TaggedValues result;
     int lockdown = properties.lockdown();
     if (lockdown > 0) {
         result.emplace_back("unlock_requirement", std::to_string(lockdown));

@@ -29,6 +29,10 @@ Effect Item::Branch(Moment curr, Moment dest) {
     return pair.first;
 }
 
+void Item::Duplicate(Moment to_duplicate) {
+    pending_new_properties_ = GetProperties(to_duplicate);
+}
+
 void Item::ConfirmPending(Moment new_moment) {
     if (!pending_new_properties_) {
         throw std::runtime_error("Item does not have pending properties");

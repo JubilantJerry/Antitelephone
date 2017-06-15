@@ -2,8 +2,6 @@
 #define ITEM_TYPE_H
 
 #include <type_traits>
-#include "moment.hpp"
-#include "aliases.hpp"
 
 namespace item {
 /**

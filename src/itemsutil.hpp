@@ -18,17 +18,15 @@ namespace item {
  * @param first_moment      The first moment of the game.
  * @return A vector containing a new instance of all the items.
  */
-inline std::vector<ItemPtr> MakeItemPtrs(Moment first_moment) {
+inline ItemArr MakeItemPtrs(Moment first_moment) {
     assert(ItemTypeID(ItemType::kAntitelephone) == 0);
     assert(ItemTypeID(ItemType::kBridge) == 1);
     assert(ItemTypeID(ItemType::kOracle) == 2);
     assert(ItemTypeID(ItemType::kShield) == 3);
-    std::vector<ItemPtr> result;
-    result.push_back(std::make_unique<Antitelephone>(first_moment));
-    result.push_back(std::make_unique<Bridge>(first_moment));
-    result.push_back(std::make_unique<Oracle>(first_moment));
-    result.push_back(std::make_unique<Shield>(first_moment));
-    return result;
+    return {std::make_unique<Antitelephone>(first_moment),
+            std::make_unique<Bridge>(first_moment),
+            std::make_unique<Oracle>(first_moment),
+            std::make_unique<Shield>(first_moment)};
 }
 }
 

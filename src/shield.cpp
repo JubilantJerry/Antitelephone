@@ -16,7 +16,7 @@ ItemProperties Shield::FirstProperties() noexcept {
     return result;
 }
 
-Effect Shield::View(Moment m) {
+Effect Shield::View(Moment m) const {
     ItemProperties properties = GetProperties(m);
     Effect result = Item::IncrementEffectIf(properties);
     if (properties.lockdown() > 0) {

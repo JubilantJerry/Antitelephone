@@ -21,7 +21,7 @@ class Antitelephone : public Item {
 
     Antitelephone(Moment first_moment);
 
-    Effect View(Moment);
+    Effect View(Moment) const;
 
     TaggedValues StateTaggedValues(Moment m) const;
 

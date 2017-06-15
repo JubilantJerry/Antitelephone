@@ -18,7 +18,7 @@ TimeLine& TimePlane::MakeNewTimeLine(int branch_time) {
         }};
     second_rightmost_timeline_ = std::move(rightmost_timeline_);
     rightmost_timeline_ = std::move(new_timeline);
-    if (branch_time < latest_antitelephone_arrival_) {
+    if (branch_time > latest_antitelephone_arrival_) {
         latest_antitelephone_arrival_ = branch_time;
     }
     return rightmost_timeline_;

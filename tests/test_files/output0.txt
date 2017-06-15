@@ -1,0 +1,1 @@
+[MOMENT (0, 0): PLAYER2, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=5| |ITEM 1|unlock_requirement=45| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|ALLY| |P1|LOC=4|HP=5|DMG=2| |P2|LOC=4|HP=26|DMG=4|ALLY| |P3| |P4|)]

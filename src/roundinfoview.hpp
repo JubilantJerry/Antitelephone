@@ -19,6 +19,10 @@ class RoundInfo;
  *
  * Any information that a player is unauthorized to see is reported as
  * @c RoundInfo::kUnknown. Instances of this class can be serialized.
+ * Almost all data stored in the instance is past-oriented, which means
+ * that it describes a moment that has already passed. Only information
+ * about whether players are active is future-oriented, which means it
+ * describes an upcoming moment.
  */
 class RoundInfoView {
   public:
@@ -48,6 +52,14 @@ class RoundInfoView {
      */
     int player() const noexcept {
         return player_;
+    }
+
+    /**
+     * @brief Accessor for the number of players in the game.
+     * @return Number of players in the game.
+     */
+    int num_players() const noexcept {
+        return (int)(allies_.size());
     }
 
     /**
@@ -94,6 +106,18 @@ class RoundInfoView {
      */
     bool active() const noexcept {
         return active_;
+    }
+
+    /**
+     * @brief Mutator for whether the player is actively in control.
+     *
+     * Only this property has a mutator because it is a future-oriented
+     * property, which allows it to be modified as a result of the actions
+     * that occur during a round.
+     * @param active        Whether the player is actively in control.
+     */
+    void set_active(bool active) noexcept {
+        active_ = active;
     }
 
     /**

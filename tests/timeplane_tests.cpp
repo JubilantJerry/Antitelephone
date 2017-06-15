@@ -517,7 +517,7 @@ TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
     TimePlane tp{};
 
     {
-        boost::optional<TimeLine>& tbad = tp.second_rightmost_timeLine();
+        boost::optional<TimeLine> const& tbad = tp.second_rightmost_timeLine();
         TimeLine& t0 = tp.rightmost_timeline();
 
         REQUIRE(!tbad.is_initialized());
@@ -532,7 +532,7 @@ TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
     tp.MakeNewTimeLine(2);
 
     {
-        boost::optional<TimeLine>& t0 = tp.second_rightmost_timeLine();
+        boost::optional<TimeLine> const& t0 = tp.second_rightmost_timeLine();
         TimeLine& t1 = tp.rightmost_timeline();
 
         REQUIRE(t0.is_initialized());
@@ -542,12 +542,13 @@ TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
         Moment m1 = t1.LatestMoment();
         REQUIRE(m1.parent_timeline_num() == 1);
         REQUIRE(m1.time() == 2);
+        REQUIRE(tp.latest_antitelephone_arrival() == 2);
     }
 
     tp.MakeNewTimeLine(1);
 
     {
-        boost::optional<TimeLine>& t1 = tp.second_rightmost_timeLine();
+        boost::optional<TimeLine> const& t1 = tp.second_rightmost_timeLine();
         TimeLine& t2 = tp.rightmost_timeline();
 
         REQUIRE(t1.is_initialized());
@@ -557,6 +558,7 @@ TEST_CASE("TimePlane basic functionality", "[timeplane, timeplane_all]") {
         Moment m2 = t2.LatestMoment();
         REQUIRE(m2.parent_timeline_num() == 2);
         REQUIRE(m2.time() == 1);
+        REQUIRE(tp.latest_antitelephone_arrival() == 2);
     }
 }
 

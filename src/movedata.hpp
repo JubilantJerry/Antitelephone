@@ -32,12 +32,12 @@ class MoveData {
          removed_alliances_{} {}
 
     /**
-     * @brief Accessor for the energy input for each item.
-     * @param item      The item to query.
+     * @brief Accessor for the energy input for an item.
+     * @param itemID      The item ID to query.
      * @return The energy input for the item.
      */
-    int EnergyInput(ItemType item) const noexcept {
-        return energy_input_data_[item::ItemTypeID(item)];
+    int EnergyInput(int itemID) const noexcept {
+        return energy_input_data_[itemID];
     }
 
     /**
@@ -45,8 +45,8 @@ class MoveData {
      * @param item              The item to modify.
      * @param energy_input      The amount of energy to put into the item.
      */
-    void SetEnergyInput(ItemType item, int energy_input) noexcept {
-        energy_input_data_[item::ItemTypeID(item)] = energy_input;
+    void SetEnergyInput(int itemID, int energy_input) noexcept {
+        energy_input_data_[itemID] = energy_input;
     }
 
     /**
@@ -87,7 +87,7 @@ class MoveData {
      * @brief Accessor for the alliances that the player removes.
      * @return A reference to the set of player IDs that are removed.
      */
-    std::unordered_set<int> const& removed_alliances() {
+    std::unordered_set<int> const& removed_alliances() const noexcept {
         return removed_alliances_;
     }
 

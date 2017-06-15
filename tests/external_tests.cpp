@@ -23,7 +23,7 @@ using namespace external;
 extern RoundInfo MakeRoundInfo();
 
 TEST_CASE("MomentOverview overall", "[momentoverview, external_all]") {
-    RoundInfo info = MakeRoundInfo();
+    RoundInfo info{MakeRoundInfo()};
     RoundInfoView viewer{info, 2};
     Moment m{0, 0};
 
@@ -34,11 +34,11 @@ TEST_CASE("MomentOverview overall", "[momentoverview, external_all]") {
     Effect e = antitelephone->View(m) + bridge->View(m) +
                oracle->View(m) + shield->View(m);
 
-    std::vector<TaggedValues> states{};
-    states.push_back(antitelephone->StateTaggedValues(m));
-    states.push_back(bridge->StateTaggedValues(m));
-    states.push_back(oracle->StateTaggedValues(m));
-    states.push_back(shield->StateTaggedValues(m));
+    MomentOverview::TaggedValuesArr states {
+        antitelephone->StateTaggedValues(m),
+        bridge->StateTaggedValues(m),
+        oracle->StateTaggedValues(m),
+        shield->StateTaggedValues(m)};
 
     MomentOverview overview{};
 
@@ -53,13 +53,13 @@ TEST_CASE("MomentOverview overall", "[momentoverview, external_all]") {
         REQUIRE(e.antitelephone_dest_allowed() ==
                 e2.antitelephone_dest_allowed());
         REQUIRE(e.player_make_active() == e2.player_make_active());
-        REQUIRE(overview.ItemState(ItemType::kAntitelephone) ==
+        REQUIRE(overview.ItemState(ItemTypeID(ItemType::kAntitelephone)) ==
                 antitelephone->StateTaggedValues(m));
-        REQUIRE(overview.ItemState(ItemType::kBridge) ==
+        REQUIRE(overview.ItemState(ItemTypeID(ItemType::kBridge)) ==
                 bridge->StateTaggedValues(m));
-        REQUIRE(overview.ItemState(ItemType::kOracle) ==
+        REQUIRE(overview.ItemState(ItemTypeID(ItemType::kOracle)) ==
                 oracle->StateTaggedValues(m));
-        REQUIRE(overview.ItemState(ItemType::kShield) ==
+        REQUIRE(overview.ItemState(ItemTypeID(ItemType::kShield)) ==
                 shield->StateTaggedValues(m));
         RoundInfoView const& viewer2 = overview.round_info();
         REQUIRE(viewer.active() == viewer2.active());
@@ -91,10 +91,10 @@ TEST_CASE("MomentOverview overall", "[momentoverview, external_all]") {
 TEST_CASE("MoveData overall", "[movedata, external_all]") {
     MoveData data{};
 
-    REQUIRE(data.EnergyInput(ItemType::kAntitelephone) == 0);
-    REQUIRE(data.EnergyInput(ItemType::kBridge) == 0);
-    REQUIRE(data.EnergyInput(ItemType::kOracle) == 0);
-    REQUIRE(data.EnergyInput(ItemType::kShield) == 0);
+    REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kAntitelephone)) == 0);
+    REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kBridge)) == 0);
+    REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kOracle)) == 0);
+    REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kShield)) == 0);
     std::unordered_set<int> added = data.added_alliances();
     REQUIRE(!added.count(0));
     REQUIRE(!added.count(1));
@@ -108,10 +108,10 @@ TEST_CASE("MoveData overall", "[movedata, external_all]") {
 
     auto continuation = [&] {
         REQUIRE(data.new_location() == 4);
-        REQUIRE(data.EnergyInput(ItemType::kAntitelephone) == 1);
-        REQUIRE(data.EnergyInput(ItemType::kBridge) == 0);
-        REQUIRE(data.EnergyInput(ItemType::kOracle) == 2);
-        REQUIRE(data.EnergyInput(ItemType::kShield) == 0);
+        REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kAntitelephone)) == 1);
+        REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kBridge)) == 0);
+        REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kOracle)) == 2);
+        REQUIRE(data.EnergyInput(ItemTypeID(ItemType::kShield)) == 0);
         std::unordered_set<int> added = data.added_alliances();
         REQUIRE(!added.count(0));
         REQUIRE(!added.count(1));
@@ -126,8 +126,8 @@ TEST_CASE("MoveData overall", "[movedata, external_all]") {
 
     SECTION("Direct setup") {
         data.set_new_location(4);
-        data.SetEnergyInput(ItemType::kAntitelephone, 1);
-        data.SetEnergyInput(ItemType::kOracle, 2);
+        data.SetEnergyInput(ItemTypeID(ItemType::kAntitelephone), 1);
+        data.SetEnergyInput(ItemTypeID(ItemType::kOracle), 2);
         data.add_alliance(2);
         data.remove_alliance(3);
 
@@ -151,11 +151,11 @@ TEST_CASE("MoveData overall", "[movedata, external_all]") {
     SECTION("Changing minds") {
         data.set_new_location(2);
         data.set_new_location(4);
-        data.SetEnergyInput(ItemType::kAntitelephone, 2);
-        data.SetEnergyInput(ItemType::kBridge, 1);
-        data.SetEnergyInput(ItemType::kAntitelephone, 1);
-        data.SetEnergyInput(ItemType::kBridge, 0);
-        data.SetEnergyInput(ItemType::kOracle, 2);
+        data.SetEnergyInput(ItemTypeID(ItemType::kAntitelephone), 2);
+        data.SetEnergyInput(ItemTypeID(ItemType::kBridge), 1);
+        data.SetEnergyInput(ItemTypeID(ItemType::kAntitelephone), 1);
+        data.SetEnergyInput(ItemTypeID(ItemType::kBridge), 0);
+        data.SetEnergyInput(ItemTypeID(ItemType::kOracle), 2);
         data.add_alliance(1);
         data.add_alliance(2);
         data.add_alliance(3);

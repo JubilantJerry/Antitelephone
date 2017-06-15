@@ -17,7 +17,7 @@ ItemProperties Bridge::FirstProperties() noexcept {
     return result;
 }
 
-Effect Bridge::View(Moment m) {
+Effect Bridge::View(Moment m) const {
     return Item::IncrementEffectIf(m);
 }
 

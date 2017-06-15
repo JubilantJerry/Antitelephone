@@ -15,8 +15,13 @@ namespace roundinfo {
  * Information about the players as well as any interactions between players
  * in a single round of gameplay is stored in this instance. Information
  * about the items held by players is @bold not stored in this instance.
- * Using alliance and encounter data, the instance also enforces the privacy
- * of certain player information from other viewers.
+ * Using location data, the instance also enforces the privacy of certain
+ * player information from other viewers.
+ *
+ * Almost all data stored in the instance is past-oriented, which means
+ * that it describes a moment that has already passed. Only information
+ * about whether players are active is future-oriented, which means it
+ * describes an upcoming moment.
  */
 class RoundInfo {
   public:

@@ -15,51 +15,55 @@
 using namespace roundinfo;
 
 TEST_CASE("SymmetricBitMatrix overall", "[bitmatrix, misc]") {
-    SymmetricBitMatrix m{8};
+    {
+        SymmetricBitMatrix m{8};
 
-    REQUIRE(!m.Value(0, 0));
-    m.SetValue(0, 0, true);
-    REQUIRE(m.Value(0, 0));
+        REQUIRE(!m.Value(0, 0));
+        m.SetValue(0, 0, true);
+        REQUIRE(m.Value(0, 0));
 
-    REQUIRE(!m.Value(7, 7));
-    m.SetValue(7, 7, true);
-    REQUIRE(m.Value(7, 7));
+        REQUIRE(!m.Value(7, 7));
+        m.SetValue(7, 7, true);
+        REQUIRE(m.Value(7, 7));
 
-    REQUIRE(!m.Value(2, 3));
-    REQUIRE(!m.Value(3, 2));
-    m.SetValue(2, 3, true);
-    REQUIRE(m.Value(2, 3));
-    REQUIRE(m.Value(3, 2));
-    m.SetValue(2, 3, false);
-    REQUIRE(!m.Value(2, 3));
-    REQUIRE(!m.Value(3, 2));
+        REQUIRE(!m.Value(2, 3));
+        REQUIRE(!m.Value(3, 2));
+        m.SetValue(2, 3, true);
+        REQUIRE(m.Value(2, 3));
+        REQUIRE(m.Value(3, 2));
+        m.SetValue(2, 3, false);
+        REQUIRE(!m.Value(2, 3));
+        REQUIRE(!m.Value(3, 2));
 
-    REQUIRE(!m.Value(4, 7));
-    REQUIRE(!m.Value(7, 4));
-    m.SetValue(4, 7, true);
-    REQUIRE(m.Value(4, 7));
-    REQUIRE(m.Value(7, 4));
-    m.SetValue(4, 7, false);
-    REQUIRE(!m.Value(4, 7));
-    REQUIRE(!m.Value(7, 4));
+        REQUIRE(!m.Value(4, 7));
+        REQUIRE(!m.Value(7, 4));
+        m.SetValue(4, 7, true);
+        REQUIRE(m.Value(4, 7));
+        REQUIRE(m.Value(7, 4));
+        m.SetValue(4, 7, false);
+        REQUIRE(!m.Value(4, 7));
+        REQUIRE(!m.Value(7, 4));
+    }
 
-    m = SymmetricBitMatrix{3};
-    m.SetValue(1, 2, true);
-    m.SetValue(1, 0, true);
-    m.SetValue(2, 2, true);
+    {
+        SymmetricBitMatrix m{3};
+        m.SetValue(1, 2, true);
+        m.SetValue(1, 0, true);
+        m.SetValue(2, 2, true);
 
-    // F T F
-    // T F T
-    // F T T
-    REQUIRE(!m.Value(0, 0));
-    REQUIRE( m.Value(0, 1));
-    REQUIRE(!m.Value(0, 2));
-    REQUIRE( m.Value(1, 0));
-    REQUIRE(!m.Value(1, 1));
-    REQUIRE( m.Value(1, 2));
-    REQUIRE(!m.Value(2, 0));
-    REQUIRE( m.Value(2, 1));
-    REQUIRE( m.Value(2, 2));
+        // F T F
+        // T F T
+        // F T T
+        REQUIRE(!m.Value(0, 0));
+        REQUIRE( m.Value(0, 1));
+        REQUIRE(!m.Value(0, 2));
+        REQUIRE( m.Value(1, 0));
+        REQUIRE(!m.Value(1, 1));
+        REQUIRE( m.Value(1, 2));
+        REQUIRE(!m.Value(2, 0));
+        REQUIRE( m.Value(2, 1));
+        REQUIRE( m.Value(2, 2));
+    }
 }
 
 RoundInfo MakeRoundInfo() {
@@ -247,7 +251,7 @@ TEST_CASE("RoundInfo overall", "[roundinfo, round_all]") {
     REQUIRE( calliances.Value(4, 4));
 }
 
-void TestRoundInfoViewers(RoundInfoView const& viewer0,
+void TestRoundInfoViewers(RoundInfoView& viewer0,
                           RoundInfoView const& viewer1,
                           RoundInfoView const& viewer2,
                           RoundInfoView const& viewer3,
@@ -257,6 +261,12 @@ void TestRoundInfoViewers(RoundInfoView const& viewer0,
     REQUIRE(viewer2.player() == 2);
     REQUIRE(viewer3.player() == 3);
     REQUIRE(viewer4.player() == 4);
+
+    REQUIRE(viewer0.num_players() == 5);
+    REQUIRE(viewer1.num_players() == 5);
+    REQUIRE(viewer2.num_players() == 5);
+    REQUIRE(viewer3.num_players() == 5);
+    REQUIRE(viewer4.num_players() == 5);
 
     REQUIRE(viewer0.Location(0) == 1);
     REQUIRE(viewer1.Location(0) == RoundInfo::kUnknown);
@@ -341,6 +351,8 @@ void TestRoundInfoViewers(RoundInfoView const& viewer0,
     REQUIRE( viewer2.active());
     REQUIRE(!viewer3.active());
     REQUIRE(!viewer4.active());
+    viewer0.set_active(false);
+    REQUIRE(!viewer0.active());
 
     BitSet const& allies0 = viewer0.allies();
     BitSet const& allies1 = viewer1.allies();

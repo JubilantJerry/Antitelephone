@@ -139,7 +139,7 @@ TEST_CASE("Antitelephone item tests", "[antitelephone, item_all]") {
     Moment m = tl->LatestMoment();
     Moment mn;
     ItemPtr antitelephone = std::make_unique<Antitelephone>(m);
-    RoundInfo info = MakeRoundInfo();
+    RoundInfo info{MakeRoundInfo()};
     RoundInfoView viewer{info, 0};
 
     Effect e = antitelephone->View(m);
@@ -314,6 +314,7 @@ TEST_CASE("Antitelephone item tests", "[antitelephone, item_all]") {
     RoundInfoView viewer2{info, 0};
     e = antitelephone->Step(m, viewer2, 3);
     REQUIRE(!e.antitelephone_departure());
+    // Let's not confirm that step
 }
 
 TEST_CASE("Bridge item tests", "[bridge, item_all]") {
@@ -924,10 +925,23 @@ TEST_CASE("Shield item tests", "[shield, item_all]") {
     // Shield strength 2, time 4
     // Player dies without being able to use the Shield.
     m = mn;
-    mn = tl->MakeMoment();
     info.DamageReceivedIterator()[0] = 2;
     info.HealthRemainingIterator()[0] = 0;
     viewer2 = RoundInfoView{info, 0};
     e = shield->Step(m, viewer2, 3);
     REQUIRE(e.shield_amount() == 0);
+
+    // Passive branching to the past
+    shield->Duplicate(tl->GetMoment(3));
+
+    tl = &tp.MakeNewTimeLine(3);
+    mn = tl->LatestMoment();
+    shield->ConfirmPending(mn);
+    e = shield->View(mn);
+    REQUIRE(e.attack_increase() == Shield::kAttackIncrement);
+    REQUIRE(e.max_hitpoint_increase() == Shield::kMaxHitpointIncrement);
+    REQUIRE(e.shield_amount() == 2); // !!!
+    REQUIRE(!e.antitelephone_departure());
+    REQUIRE(!e.antitelephone_dest_allowed());
+    REQUIRE(!e.player_make_active());
 }

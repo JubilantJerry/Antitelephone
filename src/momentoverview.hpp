@@ -1,10 +1,11 @@
 #ifndef MOMENT_OVERVIEW_H
 #define MOMENT_OVERVIEW_H
 
+#include <array>
 #include <cassert>
 #include <type_traits>
 #include <boost/serialization/access.hpp>
-#include <boost/serialization/vector.hpp>
+#include <boost/serialization/array.hpp>
 #include <boost/serialization/utility.hpp>
 #include "moment.hpp"
 #include "effect.hpp"
@@ -28,6 +29,8 @@ using ItemType = item::ItemType;
  */
 class MomentOverview {
   public:
+    using TaggedValuesArr = std::array<TaggedValues, item::ItemTypeCount>;
+
     /**
      * @brief Default constructor.
      *
@@ -46,8 +49,7 @@ class MomentOverview {
      * @param round_info_           Information about the round.
      */
     MomentOverview(Moment moment, Effect effect,
-                   std::vector<TaggedValues> item_state_data,
-                   RoundInfoView round_info)
+                   TaggedValuesArr item_state_data, RoundInfoView round_info)
         :moment_{moment},
          effect_{effect},
          item_state_data_{std::move(item_state_data)},
@@ -81,12 +83,12 @@ class MomentOverview {
 
     /**
      * @brief Accessor for the state of an item.
-     * @param item      The item queried.
+     * @param itemID        The item queried.
      * @return A group of tagged values that offer a user-friendly view
      *      into the internal state of the item.
      */
-    TaggedValues const& ItemState(ItemType item) const noexcept {
-        return item_state_data_[item::ItemTypeID(item)];
+    TaggedValues const& ItemState(int itemID) const noexcept {
+        return item_state_data_[itemID];
     }
 
     /**
@@ -113,7 +115,7 @@ class MomentOverview {
   private:
     Moment moment_;
     Effect effect_;
-    std::vector<TaggedValues> item_state_data_;
+    TaggedValuesArr item_state_data_;
     RoundInfoView round_info_;
 };
 }

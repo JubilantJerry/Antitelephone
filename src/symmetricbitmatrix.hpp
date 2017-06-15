@@ -47,6 +47,11 @@ class SymmetricBitMatrix {
         bits_[GetPos(row, col)] = value;
     }
 
+    SymmetricBitMatrix(SymmetricBitMatrix const& rhs) = default;
+    SymmetricBitMatrix(SymmetricBitMatrix&& rhs) = default;
+    SymmetricBitMatrix& operator=(SymmetricBitMatrix const& rhs) = delete;
+    SymmetricBitMatrix& operator=(SymmetricBitMatrix&& rhs) = delete;
+
   private:
     int size_;
     boost::dynamic_bitset<uintptr_t> bits_; // Machine word size blocks

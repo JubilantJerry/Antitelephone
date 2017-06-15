@@ -29,7 +29,7 @@ class Shield : public Item {
 
     Shield(Moment first_moment);
 
-    Effect View(Moment m);
+    Effect View(Moment m) const;
 
     TaggedValues StateTaggedValues(Moment m) const;
 

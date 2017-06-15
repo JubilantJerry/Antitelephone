@@ -16,7 +16,7 @@ ItemProperties Oracle::FirstProperties() noexcept {
     return result;
 }
 
-Effect Oracle::View(Moment m) {
+Effect Oracle::View(Moment m) const {
     Effect result = Item::IncrementEffectIf(m);
     ItemProperties const& properties = GetProperties(m);
     if (properties.custom(kActivatedID)) {

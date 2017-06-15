@@ -29,7 +29,7 @@ class Oracle : public Item {
 
     Oracle(Moment first_moment);
 
-    Effect View(Moment m);
+    Effect View(Moment m) const;
 
     TaggedValues StateTaggedValues(Moment m) const;
 

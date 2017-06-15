@@ -14,7 +14,7 @@ class QueryResult {
      * @param success           Whether the query was a success.
      * @param response_tag      String tag associated with the response.
      */
-    QueryResult(bool success, std::string const& response_tag = "")
+    QueryResult(bool success = true, std::string const& response_tag = "")
         :success_{success},
          response_tag_{response_tag} {}
 

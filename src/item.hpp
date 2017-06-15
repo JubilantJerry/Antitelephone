@@ -22,6 +22,11 @@ class Effect;
  *
  * This class contains is virtual and cannot be instantiated directly.
  * The various items in the game inherit from this type.
+ *
+ * Information about an item is always future-oriented, which means the
+ * effects and state tags describing an item at a specific moment apply
+ * to the moment as it occurs, instead of being a result of said moment
+ * after it has already passed.
  */
 class Item {
   public:
@@ -56,9 +61,12 @@ class Item {
      * The resulting item properties are stored temporarily until the client
      * calls @c ConfirmPending to finalize them. The item properties are
      * updated after considering the events that have occurred in the turn.
-     * @param curr          The current moment before the step.
-     * @param turn_data     The information about the turn just played.
+     * The round information parameter is in a past-oriented state, so all
+     * future-oriented values in the instance is unspecified.
+     * @param curr              The current moment before the step.
+     * @param round_info        The information about the turn just played.
      * @return The effects granted by the item for the next round.
+     * @throws std::out_of_range Potentially thrown by subclasses.
      */
     Effect Step(Moment curr, RoundInfoView const& round_info_view,
                 int energy_input);
@@ -72,26 +80,40 @@ class Item {
      * @param dest          The destination moment to reach.
      * @return The effects granted by the item for the next round.
      * @throws std::invalid_argument If the destination is not in the past.
+     * @throws std::out_of_range Potentially thrown by subclasses.
      */
     Effect Branch(Moment curr, Moment dest);
 
     /**
-     * @brief Finalize the changes in the item after a call to @c Step
-     * or @c Branch.
+     * @brief Finalize the changes in the item.
      *
      * This requires that the new moment occurs at time one more than the one
      * provided to @c Step, or has the same time as the destination moment
      * providede to @c Branch.
-     * @param new_moment
+     * @param new_moment        The moment to associate with item changes.
      */
     void ConfirmPending(Moment new_moment);
 
     /**
      * @brief View the effects of an item at a specific moment.
+     *
+     * This call must be a pure function not only of the provided
+     * moment, but also be a function of @c GetProperties(m).
      * @param m     The moment to query.
      * @return The effects granted by the item at the specified moment.
+     * @throws std::out_of_range Potentially thrown by subclasses.
      */
-    virtual Effect View(Moment m) = 0;
+    virtual Effect View(Moment m) const = 0;
+
+    /**
+     * @brief Duplicates the item properties at the specified moment.
+     *
+     * The resulting item properties are stored temporarily until the client
+     * calls @c ConfirmPending to finalize them.
+     * @param to_duplicate      The moment whose properties are duplicated.
+     * @throws std::out_of_range If no properties are stored for the moment.
+     */
+    void Duplicate(Moment to_duplicate);
 
     /**
      * @brief Virtual method to provide user-friendly tagged values.
@@ -106,6 +128,13 @@ class Item {
     virtual TaggedValues StateTaggedValues(Moment m) const = 0;
 
     virtual ~Item();
+
+    /**
+     * @brief Function to clean up data related to inaccessible moments.
+     * @param iterators     A pair of constant input iterators to moments
+     *      that will soon become inaccessible.
+     */
+    void MomentDeleter(timeplane::MomentIterators iterators);
 
   protected:
     /**
@@ -182,9 +211,6 @@ class Item {
   private:
     boost::optional<ItemProperties> pending_new_properties_;
     std::unordered_map<Moment, ItemProperties> properties_;
-
-    // Deleter for inaccessible moments.
-    void MomentDeleter(timeplane::MomentIterators iterators);
 };
 }
 

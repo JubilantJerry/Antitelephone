@@ -70,7 +70,7 @@ class TimePlane {
      * @return A reference to an optional type containing the
      * rightmost timeline, or @c boost::none if there is no such timeline.
      */
-    boost::optional<TimeLine>& second_rightmost_timeLine() noexcept {
+    boost::optional<TimeLine> const& second_rightmost_timeLine() noexcept {
         return second_rightmost_timeline_;
     }
 

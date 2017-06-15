@@ -15,7 +15,7 @@ ItemProperties Antitelephone::FirstProperties() noexcept {
     return result;
 }
 
-Effect Antitelephone::View(Moment) {
+Effect Antitelephone::View(Moment) const {
     return Item::BasicEffect();
 }
 

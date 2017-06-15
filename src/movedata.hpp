@@ -118,6 +118,7 @@ class MoveData {
      */
     template<typename Archive>
     void serialize(Archive& ar, unsigned int const version) {
+        (void)version;
         assert(version == 0);
         ar & energy_input_data_ & added_alliances_;
         ar & removed_alliances_ & new_location_;

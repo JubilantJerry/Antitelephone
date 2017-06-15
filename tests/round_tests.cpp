@@ -223,32 +223,32 @@ TEST_CASE("RoundInfo overall", "[roundinfo, round_all]") {
     REQUIRE(!info.Active(4));
     REQUIRE_THROWS_AS(info.Active(5), std::out_of_range);
 
-    SymmetricBitMatrix const& calliances = info.calliance_data();
-    REQUIRE( calliances.Value(0, 0));
-    REQUIRE( calliances.Value(0, 1));
-    REQUIRE( calliances.Value(0, 2));
-    REQUIRE(!calliances.Value(0, 3));
-    REQUIRE(!calliances.Value(0, 4));
-    REQUIRE( calliances.Value(1, 0));
-    REQUIRE( calliances.Value(1, 1));
-    REQUIRE(!calliances.Value(1, 2));
-    REQUIRE( calliances.Value(1, 3));
-    REQUIRE(!calliances.Value(1, 4));
-    REQUIRE( calliances.Value(2, 0));
-    REQUIRE(!calliances.Value(2, 1));
-    REQUIRE( calliances.Value(2, 2));
-    REQUIRE(!calliances.Value(2, 3));
-    REQUIRE(!calliances.Value(2, 4));
-    REQUIRE(!calliances.Value(3, 0));
-    REQUIRE( calliances.Value(3, 1));
-    REQUIRE(!calliances.Value(3, 2));
-    REQUIRE( calliances.Value(3, 3));
-    REQUIRE(!calliances.Value(3, 4));
-    REQUIRE(!calliances.Value(4, 0));
-    REQUIRE(!calliances.Value(4, 1));
-    REQUIRE(!calliances.Value(4, 2));
-    REQUIRE(!calliances.Value(4, 3));
-    REQUIRE( calliances.Value(4, 4));
+    SymmetricBitMatrix const& alliances = info.alliance_data();
+    REQUIRE( alliances.Value(0, 0));
+    REQUIRE( alliances.Value(0, 1));
+    REQUIRE( alliances.Value(0, 2));
+    REQUIRE(!alliances.Value(0, 3));
+    REQUIRE(!alliances.Value(0, 4));
+    REQUIRE( alliances.Value(1, 0));
+    REQUIRE( alliances.Value(1, 1));
+    REQUIRE(!alliances.Value(1, 2));
+    REQUIRE( alliances.Value(1, 3));
+    REQUIRE(!alliances.Value(1, 4));
+    REQUIRE( alliances.Value(2, 0));
+    REQUIRE(!alliances.Value(2, 1));
+    REQUIRE( alliances.Value(2, 2));
+    REQUIRE(!alliances.Value(2, 3));
+    REQUIRE(!alliances.Value(2, 4));
+    REQUIRE(!alliances.Value(3, 0));
+    REQUIRE( alliances.Value(3, 1));
+    REQUIRE(!alliances.Value(3, 2));
+    REQUIRE( alliances.Value(3, 3));
+    REQUIRE(!alliances.Value(3, 4));
+    REQUIRE(!alliances.Value(4, 0));
+    REQUIRE(!alliances.Value(4, 1));
+    REQUIRE(!alliances.Value(4, 2));
+    REQUIRE(!alliances.Value(4, 3));
+    REQUIRE( alliances.Value(4, 4));
 }
 
 void TestRoundInfoViewers(RoundInfoView& viewer0,

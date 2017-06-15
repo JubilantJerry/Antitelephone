@@ -58,6 +58,7 @@ $(function() {
 <div class="summary">
 <a href="#pub-types">Public Types</a> |
 <a href="#pub-methods">Public Member Functions</a> |
+<a href="#pub-static-attribs">Static Public Attributes</a> |
 <a href="class_antitelephone_game-members.html">List of all members</a> </div>
 <div class="headertitle">
 <div class="title">AntitelephoneGame Class Reference</div> </div>
@@ -81,8 +82,20 @@ using </td><td class="memItemRight" valign="bottom"><b>MomentOverview</b> = <a 
 <tr class="memitem:a8c579f8757044c9515a61a997af44701"><td align="right" class="memItemLeft" valign="top"><a id="a8c579f8757044c9515a61a997af44701"></a>
 using </td><td class="memItemRight" valign="bottom"><b>MoveData</b> = <a class="el" href="classexternal_1_1_move_data.html">external::MoveData</a></td></tr>
 <tr class="separator:a8c579f8757044c9515a61a997af44701"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a99ab937cb4918da1c80bd8d07e43f920"><td align="right" class="memItemLeft" valign="top">using </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920">MomentOverviewQueryResult</a> = std::pair&lt; <a class="el" href="class_query_result.html">QueryResult</a>, boost::optional&lt; <a class="el" href="classexternal_1_1_moment_overview.html">MomentOverview</a> &gt; &gt;</td></tr>
+<tr class="memitem:a99ab937cb4918da1c80bd8d07e43f920"><td align="right" class="memItemLeft" valign="top"><a id="a99ab937cb4918da1c80bd8d07e43f920"></a>
+using </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920">MomentOverviewQueryResult</a> = std::pair&lt; <a class="el" href="class_query_result.html">QueryResult</a>, boost::optional&lt; <a class="el" href="classexternal_1_1_moment_overview.html">MomentOverview</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a99ab937cb4918da1c80bd8d07e43f920"><td class="mdescLeft"> </td><td class="mdescRight">Alias for the result of a query for a moment overview. <br/></td></tr>
 <tr class="separator:a99ab937cb4918da1c80bd8d07e43f920"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8133e046c3f00cf8b1b056c6e67666c9"><td align="right" class="memItemLeft" valign="top">using </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a8133e046c3f00cf8b1b056c6e67666c9">NewRoundHandler</a> = std::function&lt; void(int, std::vector&lt; <a class="el" href="classexternal_1_1_moment_overview.html">MomentOverview</a> &gt; const  &amp;&amp;)&gt;</td></tr>
+<tr class="memdesc:a8133e046c3f00cf8b1b056c6e67666c9"><td class="mdescLeft"> </td><td class="mdescRight">Alias for the type of a handler called for every new round.  <a href="#a8133e046c3f00cf8b1b056c6e67666c9">More...</a><br/></td></tr>
+<tr class="separator:a8133e046c3f00cf8b1b056c6e67666c9"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af20c5801994054663bdb537b40c6683d"><td align="right" class="memItemLeft" valign="top">using </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#af20c5801994054663bdb537b40c6683d">TravelHandler</a> = std::function&lt; void(int, int)&gt;</td></tr>
+<tr class="memdesc:af20c5801994054663bdb537b40c6683d"><td class="mdescLeft"> </td><td class="mdescRight">Alias for the type of a handler called for time travel.  <a href="#af20c5801994054663bdb537b40c6683d">More...</a><br/></td></tr>
+<tr class="separator:af20c5801994054663bdb537b40c6683d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a9b790d05b5201d728aa47dd6001f5786"><td align="right" class="memItemLeft" valign="top"><a id="a9b790d05b5201d728aa47dd6001f5786"></a>
+using </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a9b790d05b5201d728aa47dd6001f5786">EndGameHandler</a> = std::function&lt; void(int)&gt;</td></tr>
+<tr class="memdesc:a9b790d05b5201d728aa47dd6001f5786"><td class="mdescLeft"> </td><td class="mdescRight">Alias for the type of a handler called at the end of the game. <br/></td></tr>
+<tr class="separator:a9b790d05b5201d728aa47dd6001f5786"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -92,38 +105,79 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adeaf2aa0a4015b04e688e2b694861a9c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classtimeplane_1_1_time_plane.html">TimePlane</a> const  &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#adeaf2aa0a4015b04e688e2b694861a9c">time_plane</a> () const noexcept</td></tr>
 <tr class="memdesc:adeaf2aa0a4015b04e688e2b694861a9c"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the timeplane manager.  <a href="#adeaf2aa0a4015b04e688e2b694861a9c">More...</a><br/></td></tr>
 <tr class="separator:adeaf2aa0a4015b04e688e2b694861a9c"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a4f0700772c0160ecbdcd9a136b493768"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920">MomentOverviewQueryResult</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a4f0700772c0160ecbdcd9a136b493768">GetOverview</a> (int player, <a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m, bool from_rightmost=true) const</td></tr>
-<tr class="memdesc:a4f0700772c0160ecbdcd9a136b493768"><td class="mdescLeft"> </td><td class="mdescRight">Requests an overview of the given moment.  <a href="#a4f0700772c0160ecbdcd9a136b493768">More...</a><br/></td></tr>
-<tr class="separator:a4f0700772c0160ecbdcd9a136b493768"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:af4d2547790e79bbf4413a68667821bed"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_query_result.html">QueryResult</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#af4d2547790e79bbf4413a68667821bed">MakeRegularMove</a> (int player, <a class="el" href="classexternal_1_1_move_data.html">MoveData</a> const &amp;move)</td></tr>
-<tr class="memdesc:af4d2547790e79bbf4413a68667821bed"><td class="mdescLeft"> </td><td class="mdescRight">Submits data for a regular move for the upcoming round.  <a href="#af4d2547790e79bbf4413a68667821bed">More...</a><br/></td></tr>
-<tr class="separator:af4d2547790e79bbf4413a68667821bed"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ab0737de4620c0f35eede4c3a8c13da1a"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_query_result.html">QueryResult</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#ab0737de4620c0f35eede4c3a8c13da1a">MakeAntitelephoneMove</a> (int player, <a class="el" href="classtimeplane_1_1_moment.html">Moment</a> dest)</td></tr>
-<tr class="memdesc:ab0737de4620c0f35eede4c3a8c13da1a"><td class="mdescLeft"> </td><td class="mdescRight">Submits data for antitelephone travel.  <a href="#ab0737de4620c0f35eede4c3a8c13da1a">More...</a><br/></td></tr>
-<tr class="separator:ab0737de4620c0f35eede4c3a8c13da1a"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a6a5a7e47e245313b53e076fac30ec4d3"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a6a5a7e47e245313b53e076fac30ec4d3">RegisterNewRoundHandler</a> (std::function&lt; void(<a class="el" href="classexternal_1_1_moment_overview.html">MomentOverview</a>)&gt; handler)</td></tr>
-<tr class="memdesc:a6a5a7e47e245313b53e076fac30ec4d3"><td class="mdescLeft"> </td><td class="mdescRight">Registers a handler to be called for every new round.  <a href="#a6a5a7e47e245313b53e076fac30ec4d3">More...</a><br/></td></tr>
-<tr class="separator:a6a5a7e47e245313b53e076fac30ec4d3"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:ab02a45cc50f47680560b541f0d4aeef2"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#ab02a45cc50f47680560b541f0d4aeef2">RegisterEndGameHandler</a> (std::function&lt; void()&gt; handler)</td></tr>
-<tr class="memdesc:ab02a45cc50f47680560b541f0d4aeef2"><td class="mdescLeft"> </td><td class="mdescRight">Registers a handler to be called once the game is over.  <a href="#ab02a45cc50f47680560b541f0d4aeef2">More...</a><br/></td></tr>
-<tr class="separator:ab02a45cc50f47680560b541f0d4aeef2"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a58b493d0ffa0500c515ac413ce52b429"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920">MomentOverviewQueryResult</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a58b493d0ffa0500c515ac413ce52b429">GetOverview</a> (int player, <a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m) const</td></tr>
+<tr class="memdesc:a58b493d0ffa0500c515ac413ce52b429"><td class="mdescLeft"> </td><td class="mdescRight">Requests an overview of the given moment.  <a href="#a58b493d0ffa0500c515ac413ce52b429">More...</a><br/></td></tr>
+<tr class="separator:a58b493d0ffa0500c515ac413ce52b429"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae24e552af1d86bdb0a89636c091d2ba3"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_query_result.html">QueryResult</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#ae24e552af1d86bdb0a89636c091d2ba3">MakeRegularMove</a> (int player, <a class="el" href="classexternal_1_1_move_data.html">MoveData</a> move)</td></tr>
+<tr class="memdesc:ae24e552af1d86bdb0a89636c091d2ba3"><td class="mdescLeft"> </td><td class="mdescRight">Submits data for a regular move for the upcoming round.  <a href="#ae24e552af1d86bdb0a89636c091d2ba3">More...</a><br/></td></tr>
+<tr class="separator:ae24e552af1d86bdb0a89636c091d2ba3"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a1f2c5e5679d20d1090b247f4229ac0ff"><td align="right" class="memItemLeft" valign="top"><a class="el" href="class_query_result.html">QueryResult</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a1f2c5e5679d20d1090b247f4229ac0ff">MakeAntitelephoneMove</a> (int player, int dest_time)</td></tr>
+<tr class="memdesc:a1f2c5e5679d20d1090b247f4229ac0ff"><td class="mdescLeft"> </td><td class="mdescRight">Submits data for antitelephone travel.  <a href="#a1f2c5e5679d20d1090b247f4229ac0ff">More...</a><br/></td></tr>
+<tr class="separator:a1f2c5e5679d20d1090b247f4229ac0ff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ae9c8eb5708660ae72b3fc1042bff4737"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#ae9c8eb5708660ae72b3fc1042bff4737">RegisterNewRoundHandler</a> (<a class="el" href="class_antitelephone_game.html#a8133e046c3f00cf8b1b056c6e67666c9">NewRoundHandler</a> handler)</td></tr>
+<tr class="memdesc:ae9c8eb5708660ae72b3fc1042bff4737"><td class="mdescLeft"> </td><td class="mdescRight">Registers a handler to be called for every new round.  <a href="#ae9c8eb5708660ae72b3fc1042bff4737">More...</a><br/></td></tr>
+<tr class="separator:ae9c8eb5708660ae72b3fc1042bff4737"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:acd72999c2c8111ed929f93e7f40b88d1"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#acd72999c2c8111ed929f93e7f40b88d1">RegisterTravelHandler</a> (<a class="el" href="class_antitelephone_game.html#af20c5801994054663bdb537b40c6683d">TravelHandler</a> handler)</td></tr>
+<tr class="memdesc:acd72999c2c8111ed929f93e7f40b88d1"><td class="mdescLeft"> </td><td class="mdescRight">Registers a handler to be called for time travel.  <a href="#acd72999c2c8111ed929f93e7f40b88d1">More...</a><br/></td></tr>
+<tr class="separator:acd72999c2c8111ed929f93e7f40b88d1"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a2bf00100f24cb1ba9291d358314a8ee8"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#a2bf00100f24cb1ba9291d358314a8ee8">RegisterEndGameHandler</a> (<a class="el" href="class_antitelephone_game.html#a9b790d05b5201d728aa47dd6001f5786">EndGameHandler</a> handler)</td></tr>
+<tr class="memdesc:a2bf00100f24cb1ba9291d358314a8ee8"><td class="mdescLeft"> </td><td class="mdescRight">Registers a handler to be called once the game is over.  <a href="#a2bf00100f24cb1ba9291d358314a8ee8">More...</a><br/></td></tr>
+<tr class="separator:a2bf00100f24cb1ba9291d358314a8ee8"><td class="memSeparator" colspan="2"> </td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:ae37bf7f9becd1fb13d5b14f18805f34a"><td align="right" class="memItemLeft" valign="top"><a id="ae37bf7f9becd1fb13d5b14f18805f34a"></a>
+static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#ae37bf7f9becd1fb13d5b14f18805f34a">kRoomsPerPlayer</a> = 5</td></tr>
+<tr class="memdesc:ae37bf7f9becd1fb13d5b14f18805f34a"><td class="mdescLeft"> </td><td class="mdescRight">Number of valid locations added for every player in the game. <br/></td></tr>
+<tr class="separator:ae37bf7f9becd1fb13d5b14f18805f34a"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ad83ef874d5a90a47bca6eedea6f20be4"><td align="right" class="memItemLeft" valign="top"><a id="ad83ef874d5a90a47bca6eedea6f20be4"></a>
+static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#ad83ef874d5a90a47bca6eedea6f20be4">kMinNumPlayers</a> = 2</td></tr>
+<tr class="memdesc:ad83ef874d5a90a47bca6eedea6f20be4"><td class="mdescLeft"> </td><td class="mdescRight">Minimum number of players. <br/></td></tr>
+<tr class="separator:ad83ef874d5a90a47bca6eedea6f20be4"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af706d2b7289d0d39de8746fb53ea7a4c"><td align="right" class="memItemLeft" valign="top"><a id="af706d2b7289d0d39de8746fb53ea7a4c"></a>
+static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#af706d2b7289d0d39de8746fb53ea7a4c">kMaxNumPlayers</a> = 6</td></tr>
+<tr class="memdesc:af706d2b7289d0d39de8746fb53ea7a4c"><td class="mdescLeft"> </td><td class="mdescRight">Maximum number of players. <br/></td></tr>
+<tr class="separator:af706d2b7289d0d39de8746fb53ea7a4c"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:abe921436c4e4102a6d1fe0fb835531af"><td align="right" class="memItemLeft" valign="top"><a id="abe921436c4e4102a6d1fe0fb835531af"></a>
+static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#abe921436c4e4102a6d1fe0fb835531af">kEnergyPerRound</a> = 3</td></tr>
+<tr class="memdesc:abe921436c4e4102a6d1fe0fb835531af"><td class="mdescLeft"> </td><td class="mdescRight">Energy available to players every round. <br/></td></tr>
+<tr class="separator:abe921436c4e4102a6d1fe0fb835531af"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af2f7eb8b10811d432c84400b4b55333d"><td align="right" class="memItemLeft" valign="top"><a id="af2f7eb8b10811d432c84400b4b55333d"></a>
+static double constexpr </td><td class="memItemRight" valign="bottom"><a class="el" href="class_antitelephone_game.html#af2f7eb8b10811d432c84400b4b55333d">kFamiliarEncounterMultiplier</a> = 1.5</td></tr>
+<tr class="memdesc:af2f7eb8b10811d432c84400b4b55333d"><td class="mdescLeft"> </td><td class="mdescRight">Damage multiplier for a reenacted encounter. <br/></td></tr>
+<tr class="separator:af2f7eb8b10811d432c84400b4b55333d"><td class="memSeparator" colspan="2"> </td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Top level manager for Antitelephone internal game logic. </p>
 <p>Interactions with this manager is mostly facilitated through objects designed for external message passing. The internal game logic is not thread-safe, but not global data is used. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a99ab937cb4918da1c80bd8d07e43f920"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99ab937cb4918da1c80bd8d07e43f920">◆ </a></span>MomentOverviewQueryResult</h2>
+<a id="a8133e046c3f00cf8b1b056c6e67666c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8133e046c3f00cf8b1b056c6e67666c9">◆ </a></span>NewRoundHandler</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
-<td class="memname">using <a class="el" href="class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920">AntitelephoneGame::MomentOverviewQueryResult</a> =  std::pair&lt;<a class="el" href="class_query_result.html">QueryResult</a>, boost::optional&lt;<a class="el" href="classexternal_1_1_moment_overview.html">MomentOverview</a>&gt; &gt;</td>
+<td class="memname">using <a class="el" href="class_antitelephone_game.html#a8133e046c3f00cf8b1b056c6e67666c9">AntitelephoneGame::NewRoundHandler</a> =  std::function&lt;void (int, std::vector&lt;<a class="el" href="classexternal_1_1_moment_overview.html">MomentOverview</a>&gt; const&amp;&amp;)&gt;</td>
 </tr>
 </table>
-</div><!-- $$$optional<MomentOverview> >[overload1]$$$usingAntitelephoneGame::MomentOverviewQueryResult=std::pair<QueryResult,boost::optional<MomentOverview>> --><div class="memdoc"><div style="display: none">using AntitelephoneGame::MomentOverviewQueryResult =  std::pair&lt;QueryResult, boost::optional&lt;MomentOverview&gt; &gt;</div>
-<p>Alias for the result of a query for a moment overview. </p>
-</div><!-- @@@optional<MomentOverview> > -->
+</div><!-- $$$vector<MomentOverview> const&&)>[overload1]$$$usingAntitelephoneGame::NewRoundHandler=std::function<void(int,std::vector<MomentOverview>const&&)> --><div class="memdoc"><div style="display: none">using AntitelephoneGame::NewRoundHandler =  std::function&lt;void (int, std::vector&lt;MomentOverview&gt; const&amp;&amp;)&gt;</div>
+<p>Alias for the type of a handler called for every new round. </p>
+<p>The argument represents the overview of the new moment as seen from each player in the game. </p>
+</div><!-- @@@vector<MomentOverview> const&&)> -->
+</div>
+<a id="af20c5801994054663bdb537b40c6683d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af20c5801994054663bdb537b40c6683d">◆ </a></span>TravelHandler</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">using <a class="el" href="class_antitelephone_game.html#af20c5801994054663bdb537b40c6683d">AntitelephoneGame::TravelHandler</a> =  std::function&lt;void (int, int)&gt;</td>
+</tr>
+</table>
+</div><!-- $$$function<void (int, int)>[overload1]$$$usingAntitelephoneGame::TravelHandler=std::function<void(int,int)> --><div class="memdoc"><div style="display: none">using AntitelephoneGame::TravelHandler =  std::function&lt;void (int, int)&gt;</div>
+<p>Alias for the type of a handler called for time travel. </p>
+<p>The argument represents the ID of the player that traveled in time. </p>
+</div><!-- @@@function<void (int, int)> -->
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a78654d7658827209499cd5fb6650ee61"></a>
@@ -193,8 +247,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A reference to the <code>TimePlane</code> instance stored internally. </dd></dl>
 </div><!-- @@@time_plane -->
 </div>
-<a id="a4f0700772c0160ecbdcd9a136b493768"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f0700772c0160ecbdcd9a136b493768">◆ </a></span>GetOverview()</h2>
+<a id="a58b493d0ffa0500c515ac413ce52b429"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58b493d0ffa0500c515ac413ce52b429">◆ </a></span>GetOverview()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -208,13 +262,7 @@ Public Member Functions</h2></td></tr>
 <td class="paramkey"></td>
 <td></td>
 <td class="paramtype"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> </td>
-<td class="paramname"><em>m</em>, </td>
-</tr>
-<tr>
-<td class="paramkey"></td>
-<td></td>
-<td class="paramtype">bool </td>
-<td class="paramname"><em>from_rightmost</em> = <code>true</code> </td>
+<td class="paramname"><em>m</em> </td>
 </tr>
 <tr>
 <td></td>
@@ -222,7 +270,7 @@ Public Member Functions</h2></td></tr>
 <td></td><td> const</td>
 </tr>
 </table>
-</div><!-- $$$GetOverview[overload1]$$$MomentOverviewQueryResultAntitelephoneGame::GetOverview(int player,Moment m,bool from_rightmost=true )const --><div class="memdoc"><div style="display: none">MomentOverviewQueryResult AntitelephoneGame::GetOverview (int player, Moment m, bool from_rightmost = true ) const</div>
+</div><!-- $$$GetOverview[overload1]$$$MomentOverviewQueryResultAntitelephoneGame::GetOverview(int player,Moment m )const --><div class="memdoc"><div style="display: none">MomentOverviewQueryResult AntitelephoneGame::GetOverview (int player, Moment m ) const</div>
 <p>Requests an overview of the given moment. </p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -235,8 +283,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether the request was successfully granted, and the resulting moment overview if it was. </dd></dl>
 </div><!-- @@@GetOverview -->
 </div>
-<a id="af4d2547790e79bbf4413a68667821bed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4d2547790e79bbf4413a68667821bed">◆ </a></span>MakeRegularMove()</h2>
+<a id="ae24e552af1d86bdb0a89636c091d2ba3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae24e552af1d86bdb0a89636c091d2ba3">◆ </a></span>MakeRegularMove()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -249,7 +297,7 @@ Public Member Functions</h2></td></tr>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="classexternal_1_1_move_data.html">MoveData</a> const &amp; </td>
+<td class="paramtype"><a class="el" href="classexternal_1_1_move_data.html">MoveData</a> </td>
 <td class="paramname"><em>move</em> </td>
 </tr>
 <tr>
@@ -258,7 +306,7 @@ Public Member Functions</h2></td></tr>
 <td></td><td></td>
 </tr>
 </table>
-</div><!-- $$$MakeRegularMove[overload1]$$$QueryResultAntitelephoneGame::MakeRegularMove(int player,MoveDataconst& move ) --><div class="memdoc"><div style="display: none">QueryResult AntitelephoneGame::MakeRegularMove (int player, MoveData const &amp; move )</div>
+</div><!-- $$$MakeRegularMove[overload1]$$$QueryResultAntitelephoneGame::MakeRegularMove(int player,MoveData move ) --><div class="memdoc"><div style="display: none">QueryResult AntitelephoneGame::MakeRegularMove (int player, MoveData move )</div>
 <p>Submits data for a regular move for the upcoming round. </p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -270,8 +318,8 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Whether the command was run successfully. </dd></dl>
 </div><!-- @@@MakeRegularMove -->
 </div>
-<a id="ab0737de4620c0f35eede4c3a8c13da1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0737de4620c0f35eede4c3a8c13da1a">◆ </a></span>MakeAntitelephoneMove()</h2>
+<a id="a1f2c5e5679d20d1090b247f4229ac0ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f2c5e5679d20d1090b247f4229ac0ff">◆ </a></span>MakeAntitelephoneMove()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
@@ -284,8 +332,8 @@ Public Member Functions</h2></td></tr>
 <tr>
 <td class="paramkey"></td>
 <td></td>
-<td class="paramtype"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> </td>
-<td class="paramname"><em>dest</em> </td>
+<td class="paramtype">int </td>
+<td class="paramname"><em>dest_time</em> </td>
 </tr>
 <tr>
 <td></td>
@@ -293,32 +341,32 @@ Public Member Functions</h2></td></tr>
 <td></td><td></td>
 </tr>
 </table>
-</div><!-- $$$MakeAntitelephoneMove[overload1]$$$QueryResultAntitelephoneGame::MakeAntitelephoneMove(int player,Moment dest ) --><div class="memdoc"><div style="display: none">QueryResult AntitelephoneGame::MakeAntitelephoneMove (int player, Moment dest )</div>
+</div><!-- $$$MakeAntitelephoneMove[overload1]$$$QueryResultAntitelephoneGame::MakeAntitelephoneMove(int player,int dest_time ) --><div class="memdoc"><div style="display: none">QueryResult AntitelephoneGame::MakeAntitelephoneMove (int player, int dest_time )</div>
 <p>Submits data for antitelephone travel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramname">player</td><td>The player making the move. </td></tr>
-<tr><td class="paramname">move</td><td>The move that the player makes. </td></tr>
+<tr><td class="paramname">dest_time</td><td>The time of the antitelephone destination. </td></tr>
 </table>
 </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether the command was run successfully. </dd></dl>
 </div><!-- @@@MakeAntitelephoneMove -->
 </div>
-<a id="a6a5a7e47e245313b53e076fac30ec4d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a5a7e47e245313b53e076fac30ec4d3">◆ </a></span>RegisterNewRoundHandler()</h2>
+<a id="ae9c8eb5708660ae72b3fc1042bff4737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9c8eb5708660ae72b3fc1042bff4737">◆ </a></span>RegisterNewRoundHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
 <td class="memname">void AntitelephoneGame::RegisterNewRoundHandler </td>
 <td>(</td>
-<td class="paramtype">std::function&lt; void(<a class="el" href="classexternal_1_1_moment_overview.html">MomentOverview</a>)&gt; </td>
+<td class="paramtype"><a class="el" href="class_antitelephone_game.html#a8133e046c3f00cf8b1b056c6e67666c9">NewRoundHandler</a> </td>
 <td class="paramname"><em>handler</em></td><td>)</td>
 <td></td>
 </tr>
 </table>
-</div><!-- $$$RegisterNewRoundHandler[overload1]$$$voidAntitelephoneGame::RegisterNewRoundHandler(std::function<void(MomentOverview)> handler) --><div class="memdoc"><div style="display: none">void AntitelephoneGame::RegisterNewRoundHandler (std::function&lt; void(MomentOverview)&gt; handler)</div>
+</div><!-- $$$RegisterNewRoundHandler[overload1]$$$voidAntitelephoneGame::RegisterNewRoundHandler(NewRoundHandler handler) --><div class="memdoc"><div style="display: none">void AntitelephoneGame::RegisterNewRoundHandler (NewRoundHandler handler)</div>
 <p>Registers a handler to be called for every new round. </p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
@@ -328,20 +376,43 @@ Public Member Functions</h2></td></tr>
 </dl>
 </div><!-- @@@RegisterNewRoundHandler -->
 </div>
-<a id="ab02a45cc50f47680560b541f0d4aeef2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab02a45cc50f47680560b541f0d4aeef2">◆ </a></span>RegisterEndGameHandler()</h2>
+<a id="acd72999c2c8111ed929f93e7f40b88d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd72999c2c8111ed929f93e7f40b88d1">◆ </a></span>RegisterTravelHandler()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void AntitelephoneGame::RegisterTravelHandler </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="class_antitelephone_game.html#af20c5801994054663bdb537b40c6683d">TravelHandler</a> </td>
+<td class="paramname"><em>handler</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><!-- $$$RegisterTravelHandler[overload1]$$$voidAntitelephoneGame::RegisterTravelHandler(TravelHandler handler) --><div class="memdoc"><div style="display: none">void AntitelephoneGame::RegisterTravelHandler (TravelHandler handler)</div>
+<p>Registers a handler to be called for time travel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">handler</td><td>The handler to register. </td></tr>
+</table>
+</dd>
+</dl>
+</div><!-- @@@RegisterTravelHandler -->
+</div>
+<a id="a2bf00100f24cb1ba9291d358314a8ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf00100f24cb1ba9291d358314a8ee8">◆ </a></span>RegisterEndGameHandler()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="memname">
 <tr>
 <td class="memname">void AntitelephoneGame::RegisterEndGameHandler </td>
 <td>(</td>
-<td class="paramtype">std::function&lt; void()&gt; </td>
+<td class="paramtype"><a class="el" href="class_antitelephone_game.html#a9b790d05b5201d728aa47dd6001f5786">EndGameHandler</a> </td>
 <td class="paramname"><em>handler</em></td><td>)</td>
 <td></td>
 </tr>
 </table>
-</div><!-- $$$RegisterEndGameHandler[overload1]$$$voidAntitelephoneGame::RegisterEndGameHandler(std::function<void()> handler) --><div class="memdoc"><div style="display: none">void AntitelephoneGame::RegisterEndGameHandler (std::function&lt; void()&gt; handler)</div>
+</div><!-- $$$RegisterEndGameHandler[overload1]$$$voidAntitelephoneGame::RegisterEndGameHandler(EndGameHandler handler) --><div class="memdoc"><div style="display: none">void AntitelephoneGame::RegisterEndGameHandler (EndGameHandler handler)</div>
 <p>Registers a handler to be called once the game is over. </p>
 <dl class="params"><dt>Parameters</dt><dd>
 <table class="params">

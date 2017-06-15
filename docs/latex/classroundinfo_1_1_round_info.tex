@@ -24,7 +24,7 @@ int \hyperlink{classroundinfo_1_1_round_info_accb2ab979f9fe090cf03753ed1c78e0a}{
 \begin{DoxyCompactList}\small\item\em Accessor for the health a player has remaining. \end{DoxyCompactList}\item 
 bool \hyperlink{classroundinfo_1_1_round_info_a03a7ee40677506160aef2766929e6105}{Active} (int player) const
 \begin{DoxyCompactList}\small\item\em Accessor for whether a player is active. \end{DoxyCompactList}\item 
-\hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const  \& \hyperlink{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}{calliance\+\_\+data} () const noexcept
+\hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const  \& \hyperlink{classroundinfo_1_1_round_info_ac19e64df26914ffb0292d1c475ce8a23}{alliance\+\_\+data} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor to view the alliance data. \end{DoxyCompactList}\item 
 Int\+Iterator \hyperlink{classroundinfo_1_1_round_info_ab9e17ca5d68f9981862cbf540cc0b297}{Location\+Iterator} () noexcept
 \begin{DoxyCompactList}\small\item\em Iterator to modify the location data. \end{DoxyCompactList}\item 
@@ -53,7 +53,9 @@ static int constexpr {\bfseries k\+Omniscient\+Viewer} = -\/1
 \subsection{Detailed Description}
 A representation of data relevant to a single round of gameplay. 
 
-Information about the players as well as any interactions between players in a single round of gameplay is stored in this instance. Information about the items held by players is  not stored in this instance. Using alliance and encounter data, the instance also enforces the privacy of certain player information from other viewers. 
+Information about the players as well as any interactions between players in a single round of gameplay is stored in this instance. Information about the items held by players is  not stored in this instance. Using location data, the instance also enforces the privacy of certain player information from other viewers.
+
+Almost all data stored in the instance is past-\/oriented, which means that it describes a moment that has already passed. Only information about whether players are active is future-\/oriented, which means it describes an upcoming moment. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_abf54268ebef648dc57353dd2fd6374b5}\label{classroundinfo_1_1_round_info_abf54268ebef648dc57353dd2fd6374b5}} 
@@ -185,11 +187,11 @@ Whether the player queried is active.
 {\em std\+::out\+\_\+of\+\_\+range} & If no player with the specified ID exists. \\
 \hline
 \end{DoxyExceptions}
-\mbox{\Hypertarget{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}\label{classroundinfo_1_1_round_info_a0944e6bf6facb52e9955695ea0b3feb3}} 
-\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!calliance\+\_\+data@{calliance\+\_\+data}}
-\index{calliance\+\_\+data@{calliance\+\_\+data}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
-\subsubsection{\texorpdfstring{calliance\+\_\+data()}{calliance\_data()}}
-{\footnotesize\ttfamily \hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const\& roundinfo\+::\+Round\+Info\+::calliance\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_ac19e64df26914ffb0292d1c475ce8a23}\label{classroundinfo_1_1_round_info_ac19e64df26914ffb0292d1c475ce8a23}} 
+\index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!alliance\+\_\+data@{alliance\+\_\+data}}
+\index{alliance\+\_\+data@{alliance\+\_\+data}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
+\subsubsection{\texorpdfstring{alliance\+\_\+data()}{alliance\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix} const\& roundinfo\+::\+Round\+Info\+::alliance\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -262,7 +264,7 @@ Mutator to set the active status of a player.
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_a9d5ae58298d3acd11377da7992235762}\label{classroundinfo_1_1_round_info_a9d5ae58298d3acd11377da7992235762}} 
 \index{roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}!alliance\+\_\+data@{alliance\+\_\+data}}
 \index{alliance\+\_\+data@{alliance\+\_\+data}!roundinfo\+::\+Round\+Info@{roundinfo\+::\+Round\+Info}}
-\subsubsection{\texorpdfstring{alliance\+\_\+data()}{alliance\_data()}}
+\subsubsection{\texorpdfstring{alliance\+\_\+data()}{alliance\_data()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \hyperlink{class_symmetric_bit_matrix}{Symmetric\+Bit\+Matrix}\& roundinfo\+::\+Round\+Info\+::alliance\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 

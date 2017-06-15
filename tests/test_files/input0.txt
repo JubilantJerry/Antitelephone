@@ -1,0 +1,9 @@
+# This is the shortest possible game, where the players decide to draw immediately
+# Also displays the earliest moment in the game
+SHOW OVERVIEW
+0 0 0
+SHOW OVERVIEW
+1 0 0
+MAKE MOVES
+[L0|A0|B0|O0|S0|+1] # Player 0 allies with player 1
+[L1|A0|B0|O0|S0|+0] # Player 1 allies with player 0 and the game ends

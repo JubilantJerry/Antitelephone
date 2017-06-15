@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['second_5frightmost_5ftimeline',['second_rightmost_timeLine',['../classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f',1,'timeplane::TimePlane']]],
+  ['second_5frightmost_5ftimeline',['second_rightmost_timeLine',['../classtimeplane_1_1_time_plane.html#aa7c579aa9eda4aebd505ff8b473a3be4',1,'timeplane::TimePlane']]],
   ['serialize',['serialize',['../classitem_1_1_effect.html#a3a78c050c37dd9204aa35c25a0f65282',1,'item::Effect::serialize()'],['../classitem_1_1_item_properties.html#a0192995b931d99be5e8e5a1c5d24311d',1,'item::ItemProperties::serialize()'],['../classtimeplane_1_1_moment.html#ac7870eb30ed18b8ea85bf7584632cd11',1,'timeplane::Moment::serialize()'],['../classexternal_1_1_moment_overview.html#a5791e663d0c7be6c1a19b0b7af416855',1,'external::MomentOverview::serialize()'],['../classexternal_1_1_move_data.html#afd1bb4302c0f725033149887c232af1a',1,'external::MoveData::serialize()'],['../classroundinfo_1_1_round_info_view.html#a101e6ee624aacfa8dd110aea67e67538',1,'roundinfo::RoundInfoView::serialize()']]],
+  ['set_5factive',['set_active',['../classroundinfo_1_1_round_info_view.html#a5225bbd75931d1f5235e83d13b726927',1,'roundinfo::RoundInfoView']]],
   ['set_5fantitelephone_5fdeparture',['set_antitelephone_departure',['../classitem_1_1_effect.html#a209135cb3afb7f25dfd56c5b7c9e2ffd',1,'item::Effect']]],
   ['set_5fantitelephone_5fdest_5fallowed',['set_antitelephone_dest_allowed',['../classitem_1_1_effect.html#add9197b674f7ebd90c6a412d4a65e0e1',1,'item::Effect']]],
   ['set_5fattack_5fincrease',['set_attack_increase',['../classitem_1_1_effect.html#a0a98eb24f70970c00b95cfa0a40f6a6a',1,'item::Effect']]],
@@ -13,7 +14,7 @@ var searchData=
   ['set_5fplayer_5fmake_5factive',['set_player_make_active',['../classitem_1_1_effect.html#aedb5619a40edeb90776d14691cdb80b1',1,'item::Effect']]],
   ['set_5fshield_5famount',['set_shield_amount',['../classitem_1_1_effect.html#a1610df003ab26e8ce4aafc5a13543e86',1,'item::Effect']]],
   ['setactive',['SetActive',['../classroundinfo_1_1_round_info.html#a28d85479753dae18a6b2a27d048d2973',1,'roundinfo::RoundInfo']]],
-  ['setenergyinput',['SetEnergyInput',['../classexternal_1_1_move_data.html#aba5ad33ec9f3e4632750e35236581096',1,'external::MoveData']]],
+  ['setenergyinput',['SetEnergyInput',['../classexternal_1_1_move_data.html#a9e15f73abac9be9eeeb4e8f702af05f8',1,'external::MoveData']]],
   ['setvalue',['SetValue',['../class_symmetric_bit_matrix.html#a5d97dfec2cf3910b2f46b80307528c43',1,'SymmetricBitMatrix']]],
   ['shield_5famount',['shield_amount',['../classitem_1_1_effect.html#a9a6f54d0eab7dd13b2ef14e04f6ddb56',1,'item::Effect']]],
   ['size',['size',['../class_symmetric_bit_matrix.html#aed948744d70716f6325063ed55a76c6c',1,'SymmetricBitMatrix']]],

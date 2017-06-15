@@ -21,7 +21,7 @@ Inheritance diagram for item\+:\+:Antitelephone\+:\begin{figure}[H]
 \mbox{\Hypertarget{classitem_1_1_antitelephone_a832d79223e555ae7dd69d11377392731}\label{classitem_1_1_antitelephone_a832d79223e555ae7dd69d11377392731}} 
 {\bfseries Antitelephone} (\hyperlink{classtimeplane_1_1_moment}{Moment} first\+\_\+moment)
 \item 
-\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment})
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_antitelephone_ae8f9abbbb65d23970fb3b61393bda141}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment}) const
 \begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
 Tagged\+Values \hyperlink{classitem_1_1_antitelephone_afe8ac703b5f19181f221afe07c05cae7}{State\+Tagged\+Values} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
 \begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -44,17 +44,17 @@ std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_
 \hyperlink{classitem_1_1_item}{Item} which allows traveling to the past. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}\label{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}} 
+\mbox{\Hypertarget{classitem_1_1_antitelephone_ae8f9abbbb65d23970fb3b61393bda141}\label{classitem_1_1_antitelephone_ae8f9abbbb65d23970fb3b61393bda141}} 
 \index{item\+::\+Antitelephone@{item\+::\+Antitelephone}!View@{View}}
 \index{View@{View}!item\+::\+Antitelephone@{item\+::\+Antitelephone}}
 \subsubsection{\texorpdfstring{View()}{View()}}
-{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Antitelephone\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Antitelephone\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 View the effects of an item at a specific moment. 
 
-
+This call must be a pure function not only of the provided moment, but also be a function of {\ttfamily Get\+Properties(m)}. 
 \begin{DoxyParams}{Parameters}
 {\em m} & The moment to query. \\
 \hline
@@ -63,8 +63,13 @@ View the effects of an item at a specific moment.
 The effects granted by the item at the specified moment. 
 \end{DoxyReturn}
 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Potentially thrown by subclasses. \\
+\hline
+\end{DoxyExceptions}
 
-Implements \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{item\+::\+Item}.
+
+Implements \hyperlink{classitem_1_1_item_a7d2b010a27fec55e04a56e7c4fca7837}{item\+::\+Item}.
 
 \mbox{\Hypertarget{classitem_1_1_antitelephone_afe8ac703b5f19181f221afe07c05cae7}\label{classitem_1_1_antitelephone_afe8ac703b5f19181f221afe07c05cae7}} 
 \index{item\+::\+Antitelephone@{item\+::\+Antitelephone}!State\+Tagged\+Values@{State\+Tagged\+Values}}

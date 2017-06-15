@@ -9,12 +9,18 @@ A class that gives a user-\/friendly overview of a moment.
 
 {\ttfamily \#include $<$momentoverview.\+hpp$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_a7a270c8af32c575c6ec85888c1e9a877}\label{classexternal_1_1_moment_overview_a7a270c8af32c575c6ec85888c1e9a877}} 
+using {\bfseries Tagged\+Values\+Arr} = std\+::array$<$ Tagged\+Values, item\+::\+Item\+Type\+Count $>$
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classexternal_1_1_moment_overview_aabe55b10c977be45ba2574c606676c87}{Moment\+Overview} ()
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{classexternal_1_1_moment_overview_af03a8f31dfc944daf5d54477b1acab26}{Moment\+Overview} (\hyperlink{classtimeplane_1_1_moment}{Moment} \hyperlink{classexternal_1_1_moment_overview_a6aaebaf6107f40bfb22a15f82c92e131}{moment}, \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classexternal_1_1_moment_overview_abeb27fa11c351eea2c90679842895497}{effect}, std\+::vector$<$ Tagged\+Values $>$ item\+\_\+state\+\_\+data, \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} \hyperlink{classexternal_1_1_moment_overview_a186a205fd74b30b627b82bf837b78f79}{round\+\_\+info})
+\hyperlink{classexternal_1_1_moment_overview_a66f1625110407c8fe6fd9e07fca75ff3}{Moment\+Overview} (\hyperlink{classtimeplane_1_1_moment}{Moment} \hyperlink{classexternal_1_1_moment_overview_a6aaebaf6107f40bfb22a15f82c92e131}{moment}, \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classexternal_1_1_moment_overview_abeb27fa11c351eea2c90679842895497}{effect}, Tagged\+Values\+Arr item\+\_\+state\+\_\+data, \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} \hyperlink{classexternal_1_1_moment_overview_a186a205fd74b30b627b82bf837b78f79}{round\+\_\+info})
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 int \hyperlink{classexternal_1_1_moment_overview_afb04d3b50661c06510b77e73d66e70ac}{player} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the ID of the overviewed player. \end{DoxyCompactList}\item 
@@ -22,7 +28,7 @@ int \hyperlink{classexternal_1_1_moment_overview_afb04d3b50661c06510b77e73d66e70
 \begin{DoxyCompactList}\small\item\em Accessor for the moment that is overviewed. \end{DoxyCompactList}\item 
 \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classexternal_1_1_moment_overview_abeb27fa11c351eea2c90679842895497}{effect} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the items\textquotesingle{} effects to the player at the moment. \end{DoxyCompactList}\item 
-Tagged\+Values const  \& \hyperlink{classexternal_1_1_moment_overview_a0be90c4fbf03a2db4bfaa8a1ba2c7674}{Item\+State} (Item\+Type item) const noexcept
+Tagged\+Values const  \& \hyperlink{classexternal_1_1_moment_overview_a7b4fcaf0941014e26c847fb6dad5912c}{Item\+State} (int item\+ID) const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the state of an item. \end{DoxyCompactList}\item 
 \hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View} const  \& \hyperlink{classexternal_1_1_moment_overview_a186a205fd74b30b627b82bf837b78f79}{round\+\_\+info} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for a view into information about the round. \end{DoxyCompactList}\item 
@@ -46,11 +52,11 @@ The overview given is specific to one player of the game. The instance can also 
 
 Default constructor. 
 
-The fields are not initialized. The only mutator is the {\ttfamily serialize} function, and so this constructor should only be used to deserialize an instance. \mbox{\Hypertarget{classexternal_1_1_moment_overview_af03a8f31dfc944daf5d54477b1acab26}\label{classexternal_1_1_moment_overview_af03a8f31dfc944daf5d54477b1acab26}} 
+The fields are not initialized. The only mutator is the {\ttfamily serialize} function, and so this constructor should only be used to deserialize an instance. \mbox{\Hypertarget{classexternal_1_1_moment_overview_a66f1625110407c8fe6fd9e07fca75ff3}\label{classexternal_1_1_moment_overview_a66f1625110407c8fe6fd9e07fca75ff3}} 
 \index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!Moment\+Overview@{Moment\+Overview}}
 \index{Moment\+Overview@{Moment\+Overview}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
 \subsubsection{\texorpdfstring{Moment\+Overview()}{MomentOverview()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily external\+::\+Moment\+Overview\+::\+Moment\+Overview (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{moment,  }\item[{\hyperlink{classitem_1_1_effect}{Effect}}]{effect,  }\item[{std\+::vector$<$ Tagged\+Values $>$}]{item\+\_\+state\+\_\+data,  }\item[{\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View}}]{round\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily external\+::\+Moment\+Overview\+::\+Moment\+Overview (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{moment,  }\item[{\hyperlink{classitem_1_1_effect}{Effect}}]{effect,  }\item[{Tagged\+Values\+Arr}]{item\+\_\+state\+\_\+data,  }\item[{\hyperlink{classroundinfo_1_1_round_info_view}{Round\+Info\+View}}]{round\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -107,11 +113,11 @@ Accessor for the items\textquotesingle{} effects to the player at the moment.
 \begin{DoxyReturn}{Returns}
 The effects of the items on player at the moment overviewed. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classexternal_1_1_moment_overview_a0be90c4fbf03a2db4bfaa8a1ba2c7674}\label{classexternal_1_1_moment_overview_a0be90c4fbf03a2db4bfaa8a1ba2c7674}} 
+\mbox{\Hypertarget{classexternal_1_1_moment_overview_a7b4fcaf0941014e26c847fb6dad5912c}\label{classexternal_1_1_moment_overview_a7b4fcaf0941014e26c847fb6dad5912c}} 
 \index{external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}!Item\+State@{Item\+State}}
 \index{Item\+State@{Item\+State}!external\+::\+Moment\+Overview@{external\+::\+Moment\+Overview}}
 \subsubsection{\texorpdfstring{Item\+State()}{ItemState()}}
-{\footnotesize\ttfamily Tagged\+Values const\& external\+::\+Moment\+Overview\+::\+Item\+State (\begin{DoxyParamCaption}\item[{Item\+Type}]{item }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily Tagged\+Values const\& external\+::\+Moment\+Overview\+::\+Item\+State (\begin{DoxyParamCaption}\item[{int}]{item\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -119,7 +125,7 @@ Accessor for the state of an item.
 
 
 \begin{DoxyParams}{Parameters}
-{\em item} & The item queried. \\
+{\em item\+ID} & The item queried. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

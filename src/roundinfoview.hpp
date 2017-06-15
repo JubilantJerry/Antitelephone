@@ -147,6 +147,7 @@ class RoundInfoView {
 
 template <typename Archive>
 void RoundInfoView::serialize(Archive &ar, const unsigned int version) {
+    (void)version;
     assert(version == 0);
     ar & player_ & location_data_ & damage_received_data_;
     ar & health_remaining_data_ & active_ & allies_;

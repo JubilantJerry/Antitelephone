@@ -16,9 +16,11 @@ A wrapper to access individual {\ttfamily \hyperlink{classtimeplane_1_1_time_lin
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 int \hyperlink{classtimeplane_1_1_time_plane_ae66d15a7ce9adb5f63906011a455400b}{latest\+\_\+antitelephone\+\_\+arrival} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the latest Antitelephone arrival time. \end{DoxyCompactList}\item 
+\hyperlink{classtimeplane_1_1_time_line}{Time\+Line} const  \& \hyperlink{classtimeplane_1_1_time_plane_adec17c7b3931df31bd14478f55df5821}{rightmost\+\_\+timeline} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the rightmost timeline. \end{DoxyCompactList}\item 
 \hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \& \hyperlink{classtimeplane_1_1_time_plane_a317c9e247011cf5f4e6e36f2f7651932}{rightmost\+\_\+timeline} () noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the rightmost timeline. \end{DoxyCompactList}\item 
-boost\+::optional$<$ \hyperlink{classtimeplane_1_1_time_line}{Time\+Line} $>$ \& \hyperlink{classtimeplane_1_1_time_plane_a32da05c87dfe4bc33ec5cb87fd97297f}{second\+\_\+rightmost\+\_\+time\+Line} () noexcept
+boost\+::optional$<$ \hyperlink{classtimeplane_1_1_time_line}{Time\+Line} $>$ const  \& \hyperlink{classtimeplane_1_1_time_plane_aa7c579aa9eda4aebd505ff8b473a3be4}{second\+\_\+rightmost\+\_\+time\+Line} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the rightmost timeline. \end{DoxyCompactList}\item 
 \hyperlink{classtimeplane_1_1_time_line}{Time\+Line} \& \hyperlink{classtimeplane_1_1_time_plane_ab8c82092c1c5c3f18c8677f8ce38662c}{Make\+New\+Time\+Line} (int branch\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Creates a new timeline branching from the rightmost timeline. \end{DoxyCompactList}\item 
@@ -66,10 +68,23 @@ The value applies to the rightmost timeline, though note that Antitelephone arri
 If there is no Antitelephone arrival, then the constant {\ttfamily k\+No\+Antitelephone\+Arrival} is returned. \begin{DoxyReturn}{Returns}
 Time of the latest Antitelephone arrival. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classtimeplane_1_1_time_plane_adec17c7b3931df31bd14478f55df5821}\label{classtimeplane_1_1_time_plane_adec17c7b3931df31bd14478f55df5821}} 
+\index{timeplane\+::\+Time\+Plane@{timeplane\+::\+Time\+Plane}!rightmost\+\_\+timeline@{rightmost\+\_\+timeline}}
+\index{rightmost\+\_\+timeline@{rightmost\+\_\+timeline}!timeplane\+::\+Time\+Plane@{timeplane\+::\+Time\+Plane}}
+\subsubsection{\texorpdfstring{rightmost\+\_\+timeline()}{rightmost\_timeline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classtimeplane_1_1_time_line}{Time\+Line} const\& timeplane\+::\+Time\+Plane\+::rightmost\+\_\+timeline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the rightmost timeline. 
+
+The reference returned is invalidated once a new timeline is created. \begin{DoxyReturn}{Returns}
+A constant reference to the rightmost timeline. 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classtimeplane_1_1_time_plane_a317c9e247011cf5f4e6e36f2f7651932}\label{classtimeplane_1_1_time_plane_a317c9e247011cf5f4e6e36f2f7651932}} 
 \index{timeplane\+::\+Time\+Plane@{timeplane\+::\+Time\+Plane}!rightmost\+\_\+timeline@{rightmost\+\_\+timeline}}
 \index{rightmost\+\_\+timeline@{rightmost\+\_\+timeline}!timeplane\+::\+Time\+Plane@{timeplane\+::\+Time\+Plane}}
-\subsubsection{\texorpdfstring{rightmost\+\_\+timeline()}{rightmost\_timeline()}}
+\subsubsection{\texorpdfstring{rightmost\+\_\+timeline()}{rightmost\_timeline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \hyperlink{classtimeplane_1_1_time_line}{Time\+Line}\& timeplane\+::\+Time\+Plane\+::rightmost\+\_\+timeline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
@@ -77,13 +92,13 @@ Time of the latest Antitelephone arrival.
 Accessor for the rightmost timeline. 
 
 The reference returned is invalidated once a new timeline is created. \begin{DoxyReturn}{Returns}
-A reference to the rightmost timeline. 
+A mutable reference to the rightmost timeline. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classtimeplane_1_1_time_plane_a32da05c87dfe4bc33ec5cb87fd97297f}\label{classtimeplane_1_1_time_plane_a32da05c87dfe4bc33ec5cb87fd97297f}} 
+\mbox{\Hypertarget{classtimeplane_1_1_time_plane_aa7c579aa9eda4aebd505ff8b473a3be4}\label{classtimeplane_1_1_time_plane_aa7c579aa9eda4aebd505ff8b473a3be4}} 
 \index{timeplane\+::\+Time\+Plane@{timeplane\+::\+Time\+Plane}!second\+\_\+rightmost\+\_\+time\+Line@{second\+\_\+rightmost\+\_\+time\+Line}}
 \index{second\+\_\+rightmost\+\_\+time\+Line@{second\+\_\+rightmost\+\_\+time\+Line}!timeplane\+::\+Time\+Plane@{timeplane\+::\+Time\+Plane}}
 \subsubsection{\texorpdfstring{second\+\_\+rightmost\+\_\+time\+Line()}{second\_rightmost\_timeLine()}}
-{\footnotesize\ttfamily boost\+::optional$<$\hyperlink{classtimeplane_1_1_time_line}{Time\+Line}$>$\& timeplane\+::\+Time\+Plane\+::second\+\_\+rightmost\+\_\+time\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily boost\+::optional$<$\hyperlink{classtimeplane_1_1_time_line}{Time\+Line}$>$ const\& timeplane\+::\+Time\+Plane\+::second\+\_\+rightmost\+\_\+time\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 

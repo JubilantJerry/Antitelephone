@@ -87,6 +87,7 @@ class Moment {
      */
     template<typename Archive>
     void serialize(Archive& ar, unsigned int const version) {
+        (void)version;
         assert(version == 0);
         ar & parent_timeline_num_ & time_;
     }

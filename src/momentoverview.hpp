@@ -108,6 +108,7 @@ class MomentOverview {
      */
     template <typename Archive>
     void serialize(Archive& ar, unsigned int const version) {
+        (void)version;
         assert(version == 0);
         ar & moment_ & effect_ & item_state_data_ & round_info_;
     }

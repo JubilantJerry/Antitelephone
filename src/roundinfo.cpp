@@ -60,9 +60,10 @@ void RoundInfo::SetActive(int player, bool value) {
 
 int RoundInfo::KeepIfEncounter(int player, int viewing_player,
                                int value) const {
+    int player_location = location_data_[player];
     if (viewing_player == kOmniscientViewer ||
-            location_data_[player] ==
-            location_data_[viewing_player]) {
+            (player_location != kUnknown &&
+             player_location == location_data_[viewing_player])) {
         return value;
     } else {
         return kUnknown;

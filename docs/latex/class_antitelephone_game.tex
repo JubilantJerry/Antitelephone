@@ -24,8 +24,16 @@ using {\bfseries Moment\+Overview} = \hyperlink{classexternal_1_1_moment_overvie
 \mbox{\Hypertarget{class_antitelephone_game_a8c579f8757044c9515a61a997af44701}\label{class_antitelephone_game_a8c579f8757044c9515a61a997af44701}} 
 using {\bfseries Move\+Data} = \hyperlink{classexternal_1_1_move_data}{external\+::\+Move\+Data}
 \item 
+\mbox{\Hypertarget{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}\label{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}} 
 using \hyperlink{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}{Moment\+Overview\+Query\+Result} = std\+::pair$<$ \hyperlink{class_query_result}{Query\+Result}, boost\+::optional$<$ \hyperlink{classexternal_1_1_moment_overview}{Moment\+Overview} $>$ $>$
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Alias for the result of a query for a moment overview. \end{DoxyCompactList}\item 
+using \hyperlink{class_antitelephone_game_a8133e046c3f00cf8b1b056c6e67666c9}{New\+Round\+Handler} = std\+::function$<$ void(int, std\+::vector$<$ \hyperlink{classexternal_1_1_moment_overview}{Moment\+Overview} $>$ const  \&\&)$>$
+\begin{DoxyCompactList}\small\item\em Alias for the type of a handler called for every new round. \end{DoxyCompactList}\item 
+using \hyperlink{class_antitelephone_game_af20c5801994054663bdb537b40c6683d}{Travel\+Handler} = std\+::function$<$ void(int, int)$>$
+\begin{DoxyCompactList}\small\item\em Alias for the type of a handler called for time travel. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_antitelephone_game_a9b790d05b5201d728aa47dd6001f5786}\label{class_antitelephone_game_a9b790d05b5201d728aa47dd6001f5786}} 
+using \hyperlink{class_antitelephone_game_a9b790d05b5201d728aa47dd6001f5786}{End\+Game\+Handler} = std\+::function$<$ void(int)$>$
+\begin{DoxyCompactList}\small\item\em Alias for the type of a handler called at the end of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,16 +41,36 @@ using \hyperlink{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}{Mom
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classtimeplane_1_1_time_plane}{Time\+Plane} const  \& \hyperlink{class_antitelephone_game_adeaf2aa0a4015b04e688e2b694861a9c}{time\+\_\+plane} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the timeplane manager. \end{DoxyCompactList}\item 
-\hyperlink{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}{Moment\+Overview\+Query\+Result} \hyperlink{class_antitelephone_game_a4f0700772c0160ecbdcd9a136b493768}{Get\+Overview} (int player, \hyperlink{classtimeplane_1_1_moment}{Moment} m, bool from\+\_\+rightmost=true) const
+\hyperlink{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}{Moment\+Overview\+Query\+Result} \hyperlink{class_antitelephone_game_a58b493d0ffa0500c515ac413ce52b429}{Get\+Overview} (int player, \hyperlink{classtimeplane_1_1_moment}{Moment} m) const
 \begin{DoxyCompactList}\small\item\em Requests an overview of the given moment. \end{DoxyCompactList}\item 
-\hyperlink{class_query_result}{Query\+Result} \hyperlink{class_antitelephone_game_af4d2547790e79bbf4413a68667821bed}{Make\+Regular\+Move} (int player, \hyperlink{classexternal_1_1_move_data}{Move\+Data} const \&move)
+\hyperlink{class_query_result}{Query\+Result} \hyperlink{class_antitelephone_game_ae24e552af1d86bdb0a89636c091d2ba3}{Make\+Regular\+Move} (int player, \hyperlink{classexternal_1_1_move_data}{Move\+Data} move)
 \begin{DoxyCompactList}\small\item\em Submits data for a regular move for the upcoming round. \end{DoxyCompactList}\item 
-\hyperlink{class_query_result}{Query\+Result} \hyperlink{class_antitelephone_game_ab0737de4620c0f35eede4c3a8c13da1a}{Make\+Antitelephone\+Move} (int player, \hyperlink{classtimeplane_1_1_moment}{Moment} dest)
+\hyperlink{class_query_result}{Query\+Result} \hyperlink{class_antitelephone_game_a1f2c5e5679d20d1090b247f4229ac0ff}{Make\+Antitelephone\+Move} (int player, int dest\+\_\+time)
 \begin{DoxyCompactList}\small\item\em Submits data for antitelephone travel. \end{DoxyCompactList}\item 
-void \hyperlink{class_antitelephone_game_a6a5a7e47e245313b53e076fac30ec4d3}{Register\+New\+Round\+Handler} (std\+::function$<$ void(\hyperlink{classexternal_1_1_moment_overview}{Moment\+Overview})$>$ handler)
+void \hyperlink{class_antitelephone_game_ae9c8eb5708660ae72b3fc1042bff4737}{Register\+New\+Round\+Handler} (\hyperlink{class_antitelephone_game_a8133e046c3f00cf8b1b056c6e67666c9}{New\+Round\+Handler} handler)
 \begin{DoxyCompactList}\small\item\em Registers a handler to be called for every new round. \end{DoxyCompactList}\item 
-void \hyperlink{class_antitelephone_game_ab02a45cc50f47680560b541f0d4aeef2}{Register\+End\+Game\+Handler} (std\+::function$<$ void()$>$ handler)
+void \hyperlink{class_antitelephone_game_acd72999c2c8111ed929f93e7f40b88d1}{Register\+Travel\+Handler} (\hyperlink{class_antitelephone_game_af20c5801994054663bdb537b40c6683d}{Travel\+Handler} handler)
+\begin{DoxyCompactList}\small\item\em Registers a handler to be called for time travel. \end{DoxyCompactList}\item 
+void \hyperlink{class_antitelephone_game_a2bf00100f24cb1ba9291d358314a8ee8}{Register\+End\+Game\+Handler} (\hyperlink{class_antitelephone_game_a9b790d05b5201d728aa47dd6001f5786}{End\+Game\+Handler} handler)
 \begin{DoxyCompactList}\small\item\em Registers a handler to be called once the game is over. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_antitelephone_game_ae37bf7f9becd1fb13d5b14f18805f34a}\label{class_antitelephone_game_ae37bf7f9becd1fb13d5b14f18805f34a}} 
+static int constexpr \hyperlink{class_antitelephone_game_ae37bf7f9becd1fb13d5b14f18805f34a}{k\+Rooms\+Per\+Player} = 5
+\begin{DoxyCompactList}\small\item\em Number of valid locations added for every player in the game. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_antitelephone_game_ad83ef874d5a90a47bca6eedea6f20be4}\label{class_antitelephone_game_ad83ef874d5a90a47bca6eedea6f20be4}} 
+static int constexpr \hyperlink{class_antitelephone_game_ad83ef874d5a90a47bca6eedea6f20be4}{k\+Min\+Num\+Players} = 2
+\begin{DoxyCompactList}\small\item\em Minimum number of players. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_antitelephone_game_af706d2b7289d0d39de8746fb53ea7a4c}\label{class_antitelephone_game_af706d2b7289d0d39de8746fb53ea7a4c}} 
+static int constexpr \hyperlink{class_antitelephone_game_af706d2b7289d0d39de8746fb53ea7a4c}{k\+Max\+Num\+Players} = 6
+\begin{DoxyCompactList}\small\item\em Maximum number of players. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_antitelephone_game_abe921436c4e4102a6d1fe0fb835531af}\label{class_antitelephone_game_abe921436c4e4102a6d1fe0fb835531af}} 
+static int constexpr \hyperlink{class_antitelephone_game_abe921436c4e4102a6d1fe0fb835531af}{k\+Energy\+Per\+Round} = 3
+\begin{DoxyCompactList}\small\item\em Energy available to players every round. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_antitelephone_game_af2f7eb8b10811d432c84400b4b55333d}\label{class_antitelephone_game_af2f7eb8b10811d432c84400b4b55333d}} 
+static double constexpr \hyperlink{class_antitelephone_game_af2f7eb8b10811d432c84400b4b55333d}{k\+Familiar\+Encounter\+Multiplier} = 1.\+5
+\begin{DoxyCompactList}\small\item\em Damage multiplier for a reenacted encounter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -51,13 +79,27 @@ Top level manager for Antitelephone internal game logic.
 Interactions with this manager is mostly facilitated through objects designed for external message passing. The internal game logic is not thread-\/safe, but not global data is used. 
 
 \subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}\label{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}} 
-\index{Antitelephone\+Game@{Antitelephone\+Game}!Moment\+Overview\+Query\+Result@{Moment\+Overview\+Query\+Result}}
-\index{Moment\+Overview\+Query\+Result@{Moment\+Overview\+Query\+Result}!Antitelephone\+Game@{Antitelephone\+Game}}
-\subsubsection{\texorpdfstring{Moment\+Overview\+Query\+Result}{MomentOverviewQueryResult}}
-{\footnotesize\ttfamily using \hyperlink{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}{Antitelephone\+Game\+::\+Moment\+Overview\+Query\+Result} =  std\+::pair$<$\hyperlink{class_query_result}{Query\+Result}, boost\+::optional$<$\hyperlink{classexternal_1_1_moment_overview}{Moment\+Overview}$>$ $>$}
+\mbox{\Hypertarget{class_antitelephone_game_a8133e046c3f00cf8b1b056c6e67666c9}\label{class_antitelephone_game_a8133e046c3f00cf8b1b056c6e67666c9}} 
+\index{Antitelephone\+Game@{Antitelephone\+Game}!New\+Round\+Handler@{New\+Round\+Handler}}
+\index{New\+Round\+Handler@{New\+Round\+Handler}!Antitelephone\+Game@{Antitelephone\+Game}}
+\subsubsection{\texorpdfstring{New\+Round\+Handler}{NewRoundHandler}}
+{\footnotesize\ttfamily using \hyperlink{class_antitelephone_game_a8133e046c3f00cf8b1b056c6e67666c9}{Antitelephone\+Game\+::\+New\+Round\+Handler} =  std\+::function$<$void (int, std\+::vector$<$\hyperlink{classexternal_1_1_moment_overview}{Moment\+Overview}$>$ const\&\&)$>$}
 
-Alias for the result of a query for a moment overview. 
+
+
+Alias for the type of a handler called for every new round. 
+
+The argument represents the overview of the new moment as seen from each player in the game. \mbox{\Hypertarget{class_antitelephone_game_af20c5801994054663bdb537b40c6683d}\label{class_antitelephone_game_af20c5801994054663bdb537b40c6683d}} 
+\index{Antitelephone\+Game@{Antitelephone\+Game}!Travel\+Handler@{Travel\+Handler}}
+\index{Travel\+Handler@{Travel\+Handler}!Antitelephone\+Game@{Antitelephone\+Game}}
+\subsubsection{\texorpdfstring{Travel\+Handler}{TravelHandler}}
+{\footnotesize\ttfamily using \hyperlink{class_antitelephone_game_af20c5801994054663bdb537b40c6683d}{Antitelephone\+Game\+::\+Travel\+Handler} =  std\+::function$<$void (int, int)$>$}
+
+
+
+Alias for the type of a handler called for time travel. 
+
+The argument represents the ID of the player that traveled in time. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_antitelephone_game_a78654d7658827209499cd5fb6650ee61}\label{class_antitelephone_game_a78654d7658827209499cd5fb6650ee61}} 
@@ -95,11 +137,11 @@ Accessor for the timeplane manager.
 \begin{DoxyReturn}{Returns}
 A reference to the {\ttfamily Time\+Plane} instance stored internally. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_antitelephone_game_a4f0700772c0160ecbdcd9a136b493768}\label{class_antitelephone_game_a4f0700772c0160ecbdcd9a136b493768}} 
+\mbox{\Hypertarget{class_antitelephone_game_a58b493d0ffa0500c515ac413ce52b429}\label{class_antitelephone_game_a58b493d0ffa0500c515ac413ce52b429}} 
 \index{Antitelephone\+Game@{Antitelephone\+Game}!Get\+Overview@{Get\+Overview}}
 \index{Get\+Overview@{Get\+Overview}!Antitelephone\+Game@{Antitelephone\+Game}}
 \subsubsection{\texorpdfstring{Get\+Overview()}{GetOverview()}}
-{\footnotesize\ttfamily \hyperlink{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}{Moment\+Overview\+Query\+Result} Antitelephone\+Game\+::\+Get\+Overview (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m,  }\item[{bool}]{from\+\_\+rightmost = {\ttfamily true} }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \hyperlink{class_antitelephone_game_a99ab937cb4918da1c80bd8d07e43f920}{Moment\+Overview\+Query\+Result} Antitelephone\+Game\+::\+Get\+Overview (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const}
 
 
 
@@ -117,11 +159,11 @@ Requests an overview of the given moment.
 \begin{DoxyReturn}{Returns}
 Whether the request was successfully granted, and the resulting moment overview if it was. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_antitelephone_game_af4d2547790e79bbf4413a68667821bed}\label{class_antitelephone_game_af4d2547790e79bbf4413a68667821bed}} 
+\mbox{\Hypertarget{class_antitelephone_game_ae24e552af1d86bdb0a89636c091d2ba3}\label{class_antitelephone_game_ae24e552af1d86bdb0a89636c091d2ba3}} 
 \index{Antitelephone\+Game@{Antitelephone\+Game}!Make\+Regular\+Move@{Make\+Regular\+Move}}
 \index{Make\+Regular\+Move@{Make\+Regular\+Move}!Antitelephone\+Game@{Antitelephone\+Game}}
 \subsubsection{\texorpdfstring{Make\+Regular\+Move()}{MakeRegularMove()}}
-{\footnotesize\ttfamily \hyperlink{class_query_result}{Query\+Result} Antitelephone\+Game\+::\+Make\+Regular\+Move (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{\hyperlink{classexternal_1_1_move_data}{Move\+Data} const \&}]{move }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_query_result}{Query\+Result} Antitelephone\+Game\+::\+Make\+Regular\+Move (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{\hyperlink{classexternal_1_1_move_data}{Move\+Data}}]{move }\end{DoxyParamCaption})}
 
 
 
@@ -137,11 +179,11 @@ Submits data for a regular move for the upcoming round.
 \begin{DoxyReturn}{Returns}
 Whether the command was run successfully. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_antitelephone_game_ab0737de4620c0f35eede4c3a8c13da1a}\label{class_antitelephone_game_ab0737de4620c0f35eede4c3a8c13da1a}} 
+\mbox{\Hypertarget{class_antitelephone_game_a1f2c5e5679d20d1090b247f4229ac0ff}\label{class_antitelephone_game_a1f2c5e5679d20d1090b247f4229ac0ff}} 
 \index{Antitelephone\+Game@{Antitelephone\+Game}!Make\+Antitelephone\+Move@{Make\+Antitelephone\+Move}}
 \index{Make\+Antitelephone\+Move@{Make\+Antitelephone\+Move}!Antitelephone\+Game@{Antitelephone\+Game}}
 \subsubsection{\texorpdfstring{Make\+Antitelephone\+Move()}{MakeAntitelephoneMove()}}
-{\footnotesize\ttfamily \hyperlink{class_query_result}{Query\+Result} Antitelephone\+Game\+::\+Make\+Antitelephone\+Move (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{dest }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_query_result}{Query\+Result} Antitelephone\+Game\+::\+Make\+Antitelephone\+Move (\begin{DoxyParamCaption}\item[{int}]{player,  }\item[{int}]{dest\+\_\+time }\end{DoxyParamCaption})}
 
 
 
@@ -151,17 +193,17 @@ Submits data for antitelephone travel.
 \begin{DoxyParams}{Parameters}
 {\em player} & The player making the move. \\
 \hline
-{\em move} & The move that the player makes. \\
+{\em dest\+\_\+time} & The time of the antitelephone destination. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Whether the command was run successfully. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_antitelephone_game_a6a5a7e47e245313b53e076fac30ec4d3}\label{class_antitelephone_game_a6a5a7e47e245313b53e076fac30ec4d3}} 
+\mbox{\Hypertarget{class_antitelephone_game_ae9c8eb5708660ae72b3fc1042bff4737}\label{class_antitelephone_game_ae9c8eb5708660ae72b3fc1042bff4737}} 
 \index{Antitelephone\+Game@{Antitelephone\+Game}!Register\+New\+Round\+Handler@{Register\+New\+Round\+Handler}}
 \index{Register\+New\+Round\+Handler@{Register\+New\+Round\+Handler}!Antitelephone\+Game@{Antitelephone\+Game}}
 \subsubsection{\texorpdfstring{Register\+New\+Round\+Handler()}{RegisterNewRoundHandler()}}
-{\footnotesize\ttfamily void Antitelephone\+Game\+::\+Register\+New\+Round\+Handler (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(\hyperlink{classexternal_1_1_moment_overview}{Moment\+Overview})$>$}]{handler }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Antitelephone\+Game\+::\+Register\+New\+Round\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{class_antitelephone_game_a8133e046c3f00cf8b1b056c6e67666c9}{New\+Round\+Handler}}]{handler }\end{DoxyParamCaption})}
 
 
 
@@ -172,11 +214,26 @@ Registers a handler to be called for every new round.
 {\em handler} & The handler to register. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_antitelephone_game_ab02a45cc50f47680560b541f0d4aeef2}\label{class_antitelephone_game_ab02a45cc50f47680560b541f0d4aeef2}} 
+\mbox{\Hypertarget{class_antitelephone_game_acd72999c2c8111ed929f93e7f40b88d1}\label{class_antitelephone_game_acd72999c2c8111ed929f93e7f40b88d1}} 
+\index{Antitelephone\+Game@{Antitelephone\+Game}!Register\+Travel\+Handler@{Register\+Travel\+Handler}}
+\index{Register\+Travel\+Handler@{Register\+Travel\+Handler}!Antitelephone\+Game@{Antitelephone\+Game}}
+\subsubsection{\texorpdfstring{Register\+Travel\+Handler()}{RegisterTravelHandler()}}
+{\footnotesize\ttfamily void Antitelephone\+Game\+::\+Register\+Travel\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{class_antitelephone_game_af20c5801994054663bdb537b40c6683d}{Travel\+Handler}}]{handler }\end{DoxyParamCaption})}
+
+
+
+Registers a handler to be called for time travel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em handler} & The handler to register. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_antitelephone_game_a2bf00100f24cb1ba9291d358314a8ee8}\label{class_antitelephone_game_a2bf00100f24cb1ba9291d358314a8ee8}} 
 \index{Antitelephone\+Game@{Antitelephone\+Game}!Register\+End\+Game\+Handler@{Register\+End\+Game\+Handler}}
 \index{Register\+End\+Game\+Handler@{Register\+End\+Game\+Handler}!Antitelephone\+Game@{Antitelephone\+Game}}
 \subsubsection{\texorpdfstring{Register\+End\+Game\+Handler()}{RegisterEndGameHandler()}}
-{\footnotesize\ttfamily void Antitelephone\+Game\+::\+Register\+End\+Game\+Handler (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{handler }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Antitelephone\+Game\+::\+Register\+End\+Game\+Handler (\begin{DoxyParamCaption}\item[{\hyperlink{class_antitelephone_game_a9b790d05b5201d728aa47dd6001f5786}{End\+Game\+Handler}}]{handler }\end{DoxyParamCaption})}
 
 
 

@@ -188,6 +188,7 @@ class Effect {
      */
     template <typename Archive>
     void serialize(Archive& ar, unsigned int const version) {
+        (void)version;
         assert(version == 0);
         ar & attack_increase_ & max_hitpoint_increase_ & shield_amount_;
         ar & antitelephone_departure_ &

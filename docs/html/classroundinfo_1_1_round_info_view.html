@@ -82,6 +82,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acb1e4edcbe9b01f59ba26542f528ba24"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info_view.html#acb1e4edcbe9b01f59ba26542f528ba24">player</a> () const noexcept</td></tr>
 <tr class="memdesc:acb1e4edcbe9b01f59ba26542f528ba24"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the ID of the player that the view centers from.  <a href="#acb1e4edcbe9b01f59ba26542f528ba24">More...</a><br/></td></tr>
 <tr class="separator:acb1e4edcbe9b01f59ba26542f528ba24"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:af4d82c9aff1c4a27cba11740f6ac76ab"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info_view.html#af4d82c9aff1c4a27cba11740f6ac76ab">num_players</a> () const noexcept</td></tr>
+<tr class="memdesc:af4d82c9aff1c4a27cba11740f6ac76ab"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the number of players in the game.  <a href="#af4d82c9aff1c4a27cba11740f6ac76ab">More...</a><br/></td></tr>
+<tr class="separator:af4d82c9aff1c4a27cba11740f6ac76ab"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a05f42a982570552bbeb8c330e62437ad"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info_view.html#a05f42a982570552bbeb8c330e62437ad">Location</a> (int <a class="el" href="classroundinfo_1_1_round_info_view.html#acb1e4edcbe9b01f59ba26542f528ba24">player</a>) const noexcept</td></tr>
 <tr class="memdesc:a05f42a982570552bbeb8c330e62437ad"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the location of another player.  <a href="#a05f42a982570552bbeb8c330e62437ad">More...</a><br/></td></tr>
 <tr class="separator:a05f42a982570552bbeb8c330e62437ad"><td class="memSeparator" colspan="2"> </td></tr>
@@ -97,6 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ff1802f7ab8e24008f02bbc0169a160"><td align="right" class="memItemLeft" valign="top">bool </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info_view.html#a1ff1802f7ab8e24008f02bbc0169a160">active</a> () const noexcept</td></tr>
 <tr class="memdesc:a1ff1802f7ab8e24008f02bbc0169a160"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for whether the player is actively in control.  <a href="#a1ff1802f7ab8e24008f02bbc0169a160">More...</a><br/></td></tr>
 <tr class="separator:a1ff1802f7ab8e24008f02bbc0169a160"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a5225bbd75931d1f5235e83d13b726927"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info_view.html#a5225bbd75931d1f5235e83d13b726927">set_active</a> (bool <a class="el" href="classroundinfo_1_1_round_info_view.html#a1ff1802f7ab8e24008f02bbc0169a160">active</a>) noexcept</td></tr>
+<tr class="memdesc:a5225bbd75931d1f5235e83d13b726927"><td class="mdescLeft"> </td><td class="mdescRight">Mutator for whether the player is actively in control.  <a href="#a5225bbd75931d1f5235e83d13b726927">More...</a><br/></td></tr>
+<tr class="separator:a5225bbd75931d1f5235e83d13b726927"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a101e6ee624aacfa8dd110aea67e67538"><td class="memTemplParams" colspan="2">template&lt;typename Archive &gt; </td></tr>
 <tr class="memitem:a101e6ee624aacfa8dd110aea67e67538"><td align="right" class="memTemplItemLeft" valign="top">void </td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classroundinfo_1_1_round_info_view.html#a101e6ee624aacfa8dd110aea67e67538">serialize</a> (Archive &amp;ar, unsigned int const version)</td></tr>
 <tr class="memdesc:a101e6ee624aacfa8dd110aea67e67538"><td class="mdescLeft"> </td><td class="mdescRight">Serialization function.  <a href="#a101e6ee624aacfa8dd110aea67e67538">More...</a><br/></td></tr>
@@ -110,7 +116,7 @@ class </td><td class="memItemRight" valign="bottom"><b>boost::serialization::ac
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Information contained in <code><a class="el" href="classroundinfo_1_1_round_info.html" title="A representation of data relevant to a single round of gameplay. ">RoundInfo</a></code> as seen from a single player. </p>
-<p>Any information that a player is unauthorized to see is reported as <code>RoundInfo::kUnknown</code>. Instances of this class can be serialized. </p>
+<p>Any information that a player is unauthorized to see is reported as <code>RoundInfo::kUnknown</code>. Instances of this class can be serialized. Almost all data stored in the instance is past-oriented, which means that it describes a moment that has already passed. Only information about whether players are active is future-oriented, which means it describes an upcoming moment. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a29937c9ac9cd71b7edd10f612ce76c91"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29937c9ac9cd71b7edd10f612ce76c91">◆ </a></span>RoundInfoView() <span class="overload">[1/2]</span></h2>
@@ -195,6 +201,31 @@ class </td><td class="memItemRight" valign="bottom"><b>boost::serialization::ac
 <p>Accessor for the ID of the player that the view centers from. </p>
 <dl class="section return"><dt>Returns</dt><dd>Player ID of the viewer. </dd></dl>
 </div><!-- @@@player -->
+</div>
+<a id="af4d82c9aff1c4a27cba11740f6ac76ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d82c9aff1c4a27cba11740f6ac76ab">◆ </a></span>num_players()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname">int roundinfo::RoundInfoView::num_players </td>
+<td>(</td>
+<td class="paramname"></td><td>)</td>
+<td> const</td>
+</tr>
+</table>
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$num_players[overload1]$$$introundinfo::RoundInfoView::num_players()const --><div class="memdoc"><div style="display: none">int roundinfo::RoundInfoView::num_players () const</div>
+<p>Accessor for the number of players in the game. </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of players in the game. </dd></dl>
+</div><!-- @@@num_players -->
 </div>
 <a id="a05f42a982570552bbeb8c330e62437ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a05f42a982570552bbeb8c330e62437ad">◆ </a></span>Location()</h2>
@@ -341,6 +372,37 @@ class </td><td class="memItemRight" valign="bottom"><b>boost::serialization::ac
 <p>Accessor for whether the player is actively in control. </p>
 <dl class="section return"><dt>Returns</dt><dd>Whether the player can actively control their moves. </dd></dl>
 </div><!-- @@@active -->
+</div>
+<a id="a5225bbd75931d1f5235e83d13b726927"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5225bbd75931d1f5235e83d13b726927">◆ </a></span>set_active()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname">void roundinfo::RoundInfoView::set_active </td>
+<td>(</td>
+<td class="paramtype">bool </td>
+<td class="paramname"><em>active</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$set_active[overload1]$$$voidroundinfo::RoundInfoView::set_active(bool active) --><div class="memdoc"><div style="display: none">void roundinfo::RoundInfoView::set_active (bool active)</div>
+<p>Mutator for whether the player is actively in control. </p>
+<p>Only this property has a mutator because it is a future-oriented property, which allows it to be modified as a result of the actions that occur during a round. </p><dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">active</td><td>Whether the player is actively in control. </td></tr>
+</table>
+</dd>
+</dl>
+</div><!-- @@@set_active -->
 </div>
 <a id="a101e6ee624aacfa8dd110aea67e67538"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a101e6ee624aacfa8dd110aea67e67538">◆ </a></span>serialize()</h2>

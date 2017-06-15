@@ -34,27 +34,31 @@ std::pair<Effect, ItemProperties> Shield::StepImpl(
     std::pair<Effect, ItemProperties> result =
         std::make_pair(Effect{}, GetProperties(curr));
 
-    int regular = kMaxCooldown - result.second.cooldown();
-    int phantom = result.second.custom(kPhantomEnergyID);
-    int damage = round_info_view.DamageReceived(round_info_view.player());
-    if (damage > phantom) {
-        result.second.set_custom(kPhantomEnergyID, 0);
-        damage -= phantom;
-        if (damage > regular) {
-            result.second.set_cooldown(kMaxCooldown);
+    if (result.second.lockdown() == 0) {
+        int regular = RegularFromCooldown(result.second.cooldown());
+        int phantom = result.second.custom(kPhantomEnergyID);
+        int damage = round_info_view.DamageReceived(round_info_view.player());
+        if (damage > phantom) {
+            result.second.set_custom(kPhantomEnergyID, 0);
+            damage -= phantom;
+            if (damage > regular) {
+                result.second.set_cooldown(kMaxCooldown);
+            }
+            result.second.set_cooldown(kMaxCooldown - (regular - damage));
+        } else {
+            result.second.set_custom(kPhantomEnergyID, phantom - damage);
         }
-        result.second.set_cooldown(kMaxCooldown - (regular - damage));
-    } else {
-        result.second.set_custom(kPhantomEnergyID, phantom - damage);
     }
 
     Item::StandardStepUpdate(result.second, energy_input);
     result.first = IncrementEffectIf(result.second);
 
     // Compute the shield strength.
-    regular = kMaxCooldown - result.second.cooldown();
-    phantom = result.second.custom(kPhantomEnergyID);
-    result.first.set_shield_amount(regular + phantom);
+    if (result.second.lockdown() == 0) {
+        int regular = RegularFromCooldown(result.second.cooldown());
+        int phantom = result.second.custom(kPhantomEnergyID);
+        result.first.set_shield_amount(regular + phantom);
+    }
     return result;
 }
 
@@ -97,8 +101,9 @@ TaggedValues Shield::StateTaggedValues(Moment m) const {
         if (phantom > 0) {
             result.emplace_back("shield_phantom", std::to_string(phantom));
         }
-        result.emplace_back("shield_carryable", std::to_string(
-                                CarryableFromRegularPhantom(regular, phantom)));
+        result.emplace_back(
+            "shield_carryable", std::to_string(
+                CarryableFromRegularPhantom(regular, phantom)));
     }
     return result;
 }

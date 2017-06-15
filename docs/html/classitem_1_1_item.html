@@ -94,14 +94,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa4b1c982b6d35d047c7a8ea86b06be99"><td class="mdescLeft"> </td><td class="mdescRight">Update the item while traveling to the past (branching).  <a href="#aa4b1c982b6d35d047c7a8ea86b06be99">More...</a><br/></td></tr>
 <tr class="separator:aa4b1c982b6d35d047c7a8ea86b06be99"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a99eaccdd31a817a7cb0e501cb632f711"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711">ConfirmPending</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> new_moment)</td></tr>
-<tr class="memdesc:a99eaccdd31a817a7cb0e501cb632f711"><td class="mdescLeft"> </td><td class="mdescRight">Finalize the changes in the item after a call to <code>Step</code> or <code>Branch</code>.  <a href="#a99eaccdd31a817a7cb0e501cb632f711">More...</a><br/></td></tr>
+<tr class="memdesc:a99eaccdd31a817a7cb0e501cb632f711"><td class="mdescLeft"> </td><td class="mdescRight">Finalize the changes in the item.  <a href="#a99eaccdd31a817a7cb0e501cb632f711">More...</a><br/></td></tr>
 <tr class="separator:a99eaccdd31a817a7cb0e501cb632f711"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a400dfeabc4056d36bfd348ff9c51cf7d"><td align="right" class="memItemLeft" valign="top">virtual <a class="el" href="classitem_1_1_effect.html">Effect</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#a400dfeabc4056d36bfd348ff9c51cf7d">View</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m)=0</td></tr>
-<tr class="memdesc:a400dfeabc4056d36bfd348ff9c51cf7d"><td class="mdescLeft"> </td><td class="mdescRight">View the effects of an item at a specific moment.  <a href="#a400dfeabc4056d36bfd348ff9c51cf7d">More...</a><br/></td></tr>
-<tr class="separator:a400dfeabc4056d36bfd348ff9c51cf7d"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a7d2b010a27fec55e04a56e7c4fca7837"><td align="right" class="memItemLeft" valign="top">virtual <a class="el" href="classitem_1_1_effect.html">Effect</a> </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#a7d2b010a27fec55e04a56e7c4fca7837">View</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m) const =0</td></tr>
+<tr class="memdesc:a7d2b010a27fec55e04a56e7c4fca7837"><td class="mdescLeft"> </td><td class="mdescRight">View the effects of an item at a specific moment.  <a href="#a7d2b010a27fec55e04a56e7c4fca7837">More...</a><br/></td></tr>
+<tr class="separator:a7d2b010a27fec55e04a56e7c4fca7837"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:ab31c1b5e2b0993341e7a268693960b90"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#ab31c1b5e2b0993341e7a268693960b90">Duplicate</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> to_duplicate)</td></tr>
+<tr class="memdesc:ab31c1b5e2b0993341e7a268693960b90"><td class="mdescLeft"> </td><td class="mdescRight">Duplicates the item properties at the specified moment.  <a href="#ab31c1b5e2b0993341e7a268693960b90">More...</a><br/></td></tr>
+<tr class="separator:ab31c1b5e2b0993341e7a268693960b90"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a8410ab3ab75e65360eddb4f6bd3cceff"><td align="right" class="memItemLeft" valign="top">virtual TaggedValues </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#a8410ab3ab75e65360eddb4f6bd3cceff">StateTaggedValues</a> (<a class="el" href="classtimeplane_1_1_moment.html">Moment</a> m) const =0</td></tr>
 <tr class="memdesc:a8410ab3ab75e65360eddb4f6bd3cceff"><td class="mdescLeft"> </td><td class="mdescRight">Virtual method to provide user-friendly tagged values.  <a href="#a8410ab3ab75e65360eddb4f6bd3cceff">More...</a><br/></td></tr>
 <tr class="separator:a8410ab3ab75e65360eddb4f6bd3cceff"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:a8d78594540bff88538723a8a1fb881d5"><td align="right" class="memItemLeft" valign="top">void </td><td class="memItemRight" valign="bottom"><a class="el" href="classitem_1_1_item.html#a8d78594540bff88538723a8a1fb881d5">MomentDeleter</a> (timeplane::MomentIterators iterators)</td></tr>
+<tr class="memdesc:a8d78594540bff88538723a8a1fb881d5"><td class="mdescLeft"> </td><td class="mdescRight">Function to clean up data related to inaccessible moments.  <a href="#a8d78594540bff88538723a8a1fb881d5">More...</a><br/></td></tr>
+<tr class="separator:a8d78594540bff88538723a8a1fb881d5"><td class="memSeparator" colspan="2"> </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -158,7 +164,8 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 <a id="details" name="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The properties of an item in the game across moments. </p>
-<p>This class contains is virtual and cannot be instantiated directly. The various items in the game inherit from this type. </p>
+<p>This class contains is virtual and cannot be instantiated directly. The various items in the game inherit from this type.</p>
+<p>Information about an item is always future-oriented, which means the effects and state tags describing an item at a specific moment apply to the moment as it occurs, instead of being a result of said moment after it has already passed. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aebe9569e9074ee805b6213f500066115"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebe9569e9074ee805b6213f500066115">◆ </a></span>Item()</h2>
@@ -233,14 +240,20 @@ Static Protected Member Functions</h2></td></tr>
 </table>
 </div><!-- $$$Step[overload1]$$$EffectItem::Step(Moment curr,RoundInfoViewconst& round_info_view,int energy_input ) --><div class="memdoc"><div style="display: none">Effect Item::Step (Moment curr, RoundInfoView const &amp; round_info_view, int energy_input )</div>
 <p>Update the item across a regular step into the future. </p>
-<p>The resulting item properties are stored temporarily until the client calls <code>ConfirmPending</code> to finalize them. The item properties are updated after considering the events that have occurred in the turn. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The resulting item properties are stored temporarily until the client calls <code>ConfirmPending</code> to finalize them. The item properties are updated after considering the events that have occurred in the turn. The round information parameter is in a past-oriented state, so all future-oriented values in the instance is unspecified. </p><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramname">curr</td><td>The current moment before the step. </td></tr>
-<tr><td class="paramname">turn_data</td><td>The information about the turn just played. </td></tr>
+<tr><td class="paramname">round_info</td><td>The information about the turn just played. </td></tr>
 </table>
 </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The effects granted by the item for the next round. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+<table class="exception">
+<tr><td class="paramname">std::out_of_range</td><td>Potentially thrown by subclasses. </td></tr>
+</table>
+</dd>
+</dl>
 </div><!-- @@@Step -->
 </div>
 <a id="aa4b1c982b6d35d047c7a8ea86b06be99"></a>
@@ -279,6 +292,7 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="exception"><dt>Exceptions</dt><dd>
 <table class="exception">
 <tr><td class="paramname">std::invalid_argument</td><td>If the destination is not in the past. </td></tr>
+<tr><td class="paramname">std::out_of_range</td><td>Potentially thrown by subclasses. </td></tr>
 </table>
 </dd>
 </dl>
@@ -298,17 +312,17 @@ Static Protected Member Functions</h2></td></tr>
 </tr>
 </table>
 </div><!-- $$$ConfirmPending[overload1]$$$voidItem::ConfirmPending(Moment new_moment) --><div class="memdoc"><div style="display: none">void Item::ConfirmPending (Moment new_moment)</div>
-<p>Finalize the changes in the item after a call to <code>Step</code> or <code>Branch</code>. </p>
+<p>Finalize the changes in the item. </p>
 <p>This requires that the new moment occurs at time one more than the one provided to <code>Step</code>, or has the same time as the destination moment providede to <code>Branch</code>. </p><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
-<tr><td class="paramname">new_moment</td><td></td></tr>
+<tr><td class="paramname">new_moment</td><td>The moment to associate with item changes. </td></tr>
 </table>
 </dd>
 </dl>
 </div><!-- @@@ConfirmPending -->
 </div>
-<a id="a400dfeabc4056d36bfd348ff9c51cf7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a400dfeabc4056d36bfd348ff9c51cf7d">◆ </a></span>View()</h2>
+<a id="a7d2b010a27fec55e04a56e7c4fca7837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d2b010a27fec55e04a56e7c4fca7837">◆ </a></span>View()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -320,7 +334,7 @@ Static Protected Member Functions</h2></td></tr>
 <td>(</td>
 <td class="paramtype"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> </td>
 <td class="paramname"><em>m</em></td><td>)</td>
-<td></td>
+<td> const</td>
 </tr>
 </table>
 </td>
@@ -328,17 +342,52 @@ Static Protected Member Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel">pure virtual</span></span> </td>
 </tr>
 </table>
-</div><!-- $$$View[overload1]$$$virtualEffectitem::Item::View(Moment m) --><div class="memdoc"><div style="display: none">virtual Effect item::Item::View (Moment m)</div>
+</div><!-- $$$View[overload1]$$$virtualEffectitem::Item::View(Moment m)const --><div class="memdoc"><div style="display: none">virtual Effect item::Item::View (Moment m) const</div>
 <p>View the effects of an item at a specific moment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>This call must be a pure function not only of the provided moment, but also be a function of <code>GetProperties(m)</code>. </p><dl class="params"><dt>Parameters</dt><dd>
 <table class="params">
 <tr><td class="paramname">m</td><td>The moment to query. </td></tr>
 </table>
 </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The effects granted by the item at the specified moment. </dd></dl>
-<p>Implemented in <a class="el" href="classitem_1_1_bridge.html#a7d579da1f368ba6a6b5dfd41de833f17">item::Bridge</a>, <a class="el" href="classitem_1_1_oracle.html#a9982f1934a769cc461246bab31b8a72d">item::Oracle</a>, <a class="el" href="classitem_1_1_shield.html#abdc88bd6d0a4d6021805fa3097f47633">item::Shield</a>, and <a class="el" href="classitem_1_1_antitelephone.html#aa44819e9242edbdfdfc4f14b5d2b34ec">item::Antitelephone</a>.</p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+<table class="exception">
+<tr><td class="paramname">std::out_of_range</td><td>Potentially thrown by subclasses. </td></tr>
+</table>
+</dd>
+</dl>
+<p>Implemented in <a class="el" href="classitem_1_1_bridge.html#a644ccbcba577629cd0f07066e64afac1">item::Bridge</a>, <a class="el" href="classitem_1_1_oracle.html#ade8c5db0ab73bfa61d5dbe2c9c405f5c">item::Oracle</a>, <a class="el" href="classitem_1_1_shield.html#ae4a97ec6084467b7c87c91fdabcd9e94">item::Shield</a>, and <a class="el" href="classitem_1_1_antitelephone.html#ae8f9abbbb65d23970fb3b61393bda141">item::Antitelephone</a>.</p>
 </div><!-- @@@View -->
+</div>
+<a id="ab31c1b5e2b0993341e7a268693960b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab31c1b5e2b0993341e7a268693960b90">◆ </a></span>Duplicate()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void Item::Duplicate </td>
+<td>(</td>
+<td class="paramtype"><a class="el" href="classtimeplane_1_1_moment.html">Moment</a> </td>
+<td class="paramname"><em>to_duplicate</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><!-- $$$Duplicate[overload1]$$$voidItem::Duplicate(Moment to_duplicate) --><div class="memdoc"><div style="display: none">void Item::Duplicate (Moment to_duplicate)</div>
+<p>Duplicates the item properties at the specified moment. </p>
+<p>The resulting item properties are stored temporarily until the client calls <code>ConfirmPending</code> to finalize them. </p><dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">to_duplicate</td><td>The moment whose properties are duplicated. </td></tr>
+</table>
+</dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+<table class="exception">
+<tr><td class="paramname">std::out_of_range</td><td>If no properties are stored for the moment. </td></tr>
+</table>
+</dd>
+</dl>
+</div><!-- @@@Duplicate -->
 </div>
 <a id="a8410ab3ab75e65360eddb4f6bd3cceff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8410ab3ab75e65360eddb4f6bd3cceff">◆ </a></span>StateTaggedValues()</h2>
@@ -372,6 +421,29 @@ Static Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A group of tagged values describing the state of an item. </dd></dl>
 <p>Implemented in <a class="el" href="classitem_1_1_bridge.html#a6339e1cd46f454625ef7cd6dc683f6cd">item::Bridge</a>, <a class="el" href="classitem_1_1_oracle.html#a78dd3984a5a0dae432c86e18520d7c46">item::Oracle</a>, <a class="el" href="classitem_1_1_shield.html#a1a246374ed47a4d9849bad97091c42cb">item::Shield</a>, and <a class="el" href="classitem_1_1_antitelephone.html#afe8ac703b5f19181f221afe07c05cae7">item::Antitelephone</a>.</p>
 </div><!-- @@@StateTaggedValues -->
+</div>
+<a id="a8d78594540bff88538723a8a1fb881d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d78594540bff88538723a8a1fb881d5">◆ </a></span>MomentDeleter()</h2>
+<div class="memitem">
+<div class="memproto">
+<table class="memname">
+<tr>
+<td class="memname">void Item::MomentDeleter </td>
+<td>(</td>
+<td class="paramtype">timeplane::MomentIterators </td>
+<td class="paramname"><em>iterators</em></td><td>)</td>
+<td></td>
+</tr>
+</table>
+</div><!-- $$$MomentDeleter[overload1]$$$voidItem::MomentDeleter(timeplane::MomentIterators iterators) --><div class="memdoc"><div style="display: none">void Item::MomentDeleter (timeplane::MomentIterators iterators)</div>
+<p>Function to clean up data related to inaccessible moments. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+<table class="params">
+<tr><td class="paramname">iterators</td><td>A pair of constant input iterators to moments that will soon become inaccessible. </td></tr>
+</table>
+</dd>
+</dl>
+</div><!-- @@@MomentDeleter -->
 </div>
 <a id="a23790dceafc9e3f8950f69380cc4c4aa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a23790dceafc9e3f8950f69380cc4c4aa">◆ </a></span>GetProperties()</h2>

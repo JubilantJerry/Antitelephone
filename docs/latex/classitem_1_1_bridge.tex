@@ -21,7 +21,7 @@ Inheritance diagram for item\+:\+:Bridge\+:\begin{figure}[H]
 \mbox{\Hypertarget{classitem_1_1_bridge_a5bc97b39c3fcb52578942f5f41d7bb7d}\label{classitem_1_1_bridge_a5bc97b39c3fcb52578942f5f41d7bb7d}} 
 {\bfseries Bridge} (\hyperlink{classtimeplane_1_1_moment}{Moment} first\+\_\+moment)
 \item 
-\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m)
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_bridge_a644ccbcba577629cd0f07066e64afac1}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
 \begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
 Tagged\+Values \hyperlink{classitem_1_1_bridge_a6339e1cd46f454625ef7cd6dc683f6cd}{State\+Tagged\+Values} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
 \begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -49,17 +49,17 @@ std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_
 Moments that are otherwise separated because the latest antitelephone arrival lies in between can be connected with the \hyperlink{classitem_1_1_bridge}{Bridge}. Then it would be possible to travel from the later moment to the earlier moment. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}\label{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}} 
+\mbox{\Hypertarget{classitem_1_1_bridge_a644ccbcba577629cd0f07066e64afac1}\label{classitem_1_1_bridge_a644ccbcba577629cd0f07066e64afac1}} 
 \index{item\+::\+Bridge@{item\+::\+Bridge}!View@{View}}
 \index{View@{View}!item\+::\+Bridge@{item\+::\+Bridge}}
 \subsubsection{\texorpdfstring{View()}{View()}}
-{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Bridge\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Bridge\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 View the effects of an item at a specific moment. 
 
-
+This call must be a pure function not only of the provided moment, but also be a function of {\ttfamily Get\+Properties(m)}. 
 \begin{DoxyParams}{Parameters}
 {\em m} & The moment to query. \\
 \hline
@@ -68,8 +68,13 @@ View the effects of an item at a specific moment.
 The effects granted by the item at the specified moment. 
 \end{DoxyReturn}
 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Potentially thrown by subclasses. \\
+\hline
+\end{DoxyExceptions}
 
-Implements \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{item\+::\+Item}.
+
+Implements \hyperlink{classitem_1_1_item_a7d2b010a27fec55e04a56e7c4fca7837}{item\+::\+Item}.
 
 \mbox{\Hypertarget{classitem_1_1_bridge_a6339e1cd46f454625ef7cd6dc683f6cd}\label{classitem_1_1_bridge_a6339e1cd46f454625ef7cd6dc683f6cd}} 
 \index{item\+::\+Bridge@{item\+::\+Bridge}!State\+Tagged\+Values@{State\+Tagged\+Values}}

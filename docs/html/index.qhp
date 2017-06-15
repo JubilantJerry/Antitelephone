@@ -11,24 +11,25 @@
           <section title="Class List" ref="annotated.html">
             <section title="external">
               <section title="MomentOverview" ref="classexternal_1_1_moment_overview.html">
+                <section title="TaggedValuesArr" ref="classexternal_1_1_moment_overview.html#a7a270c8af32c575c6ec85888c1e9a877" />
                 <section title="MomentOverview" ref="classexternal_1_1_moment_overview.html#aabe55b10c977be45ba2574c606676c87" />
-                <section title="MomentOverview" ref="classexternal_1_1_moment_overview.html#af03a8f31dfc944daf5d54477b1acab26" />
+                <section title="MomentOverview" ref="classexternal_1_1_moment_overview.html#a66f1625110407c8fe6fd9e07fca75ff3" />
                 <section title="player" ref="classexternal_1_1_moment_overview.html#afb04d3b50661c06510b77e73d66e70ac" />
                 <section title="moment" ref="classexternal_1_1_moment_overview.html#a6aaebaf6107f40bfb22a15f82c92e131" />
                 <section title="effect" ref="classexternal_1_1_moment_overview.html#abeb27fa11c351eea2c90679842895497" />
-                <section title="ItemState" ref="classexternal_1_1_moment_overview.html#a0be90c4fbf03a2db4bfaa8a1ba2c7674" />
+                <section title="ItemState" ref="classexternal_1_1_moment_overview.html#a7b4fcaf0941014e26c847fb6dad5912c" />
                 <section title="round_info" ref="classexternal_1_1_moment_overview.html#a186a205fd74b30b627b82bf837b78f79" />
                 <section title="serialize" ref="classexternal_1_1_moment_overview.html#a5791e663d0c7be6c1a19b0b7af416855" />
               </section>
               <section title="MoveData" ref="classexternal_1_1_move_data.html">
                 <section title="MoveData" ref="classexternal_1_1_move_data.html#a230c2389b03633b6b02928a867f59f27" />
-                <section title="EnergyInput" ref="classexternal_1_1_move_data.html#acaef1f55196d7bb2fba3ebba2e9e9428" />
-                <section title="SetEnergyInput" ref="classexternal_1_1_move_data.html#aba5ad33ec9f3e4632750e35236581096" />
+                <section title="EnergyInput" ref="classexternal_1_1_move_data.html#adec73e4cffd6895b046411a25aa516ff" />
+                <section title="SetEnergyInput" ref="classexternal_1_1_move_data.html#a9e15f73abac9be9eeeb4e8f702af05f8" />
                 <section title="new_location" ref="classexternal_1_1_move_data.html#a2469eb5c4a210b6ebd769254f190ad7e" />
                 <section title="set_new_location" ref="classexternal_1_1_move_data.html#a81e78c6507a8cb0be615b23e9c94b7f4" />
                 <section title="added_alliances" ref="classexternal_1_1_move_data.html#a0bcb09d49ed392fb21395d6182d63f26" />
                 <section title="add_alliance" ref="classexternal_1_1_move_data.html#ae3a11d3c816e165ac2ceff604f191d32" />
-                <section title="removed_alliances" ref="classexternal_1_1_move_data.html#addc5f0e83d4c41edab01fe2e804b3eeb" />
+                <section title="removed_alliances" ref="classexternal_1_1_move_data.html#ace46398597a4ba0139c7c043d0d8d5be" />
                 <section title="remove_alliance" ref="classexternal_1_1_move_data.html#a397656419a2c5adf79ee8bf1bfae9ca8" />
                 <section title="leave_unchanged_alliance" ref="classexternal_1_1_move_data.html#a15f54d7e6fbf21cc9634e6f2bb854317" />
                 <section title="serialize" ref="classexternal_1_1_move_data.html#afd1bb4302c0f725033149887c232af1a" />
@@ -37,14 +38,14 @@
             <section title="item">
               <section title="Antitelephone" ref="classitem_1_1_antitelephone.html">
                 <section title="Antitelephone" ref="classitem_1_1_antitelephone.html#a832d79223e555ae7dd69d11377392731" />
-                <section title="View" ref="classitem_1_1_antitelephone.html#aa44819e9242edbdfdfc4f14b5d2b34ec" />
+                <section title="View" ref="classitem_1_1_antitelephone.html#ae8f9abbbb65d23970fb3b61393bda141" />
                 <section title="StateTaggedValues" ref="classitem_1_1_antitelephone.html#afe8ac703b5f19181f221afe07c05cae7" />
                 <section title="StepImpl" ref="classitem_1_1_antitelephone.html#aa59b4569bac948f37fd15dbea234503f" />
                 <section title="BranchImpl" ref="classitem_1_1_antitelephone.html#a1b094baeb7cae7e1161d1aa1650022d1" />
               </section>
               <section title="Bridge" ref="classitem_1_1_bridge.html">
                 <section title="Bridge" ref="classitem_1_1_bridge.html#a5bc97b39c3fcb52578942f5f41d7bb7d" />
-                <section title="View" ref="classitem_1_1_bridge.html#a7d579da1f368ba6a6b5dfd41de833f17" />
+                <section title="View" ref="classitem_1_1_bridge.html#a644ccbcba577629cd0f07066e64afac1" />
                 <section title="StateTaggedValues" ref="classitem_1_1_bridge.html#a6339e1cd46f454625ef7cd6dc683f6cd" />
                 <section title="StepImpl" ref="classitem_1_1_bridge.html#a08aa3fdb36e203e489bc0af65dde451c" />
                 <section title="BranchImpl" ref="classitem_1_1_bridge.html#a175b2a911174c682ea163bc248836a87" />
@@ -73,8 +74,10 @@
                 <section title="Step" ref="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75" />
                 <section title="Branch" ref="classitem_1_1_item.html#aa4b1c982b6d35d047c7a8ea86b06be99" />
                 <section title="ConfirmPending" ref="classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711" />
-                <section title="View" ref="classitem_1_1_item.html#a400dfeabc4056d36bfd348ff9c51cf7d" />
+                <section title="View" ref="classitem_1_1_item.html#a7d2b010a27fec55e04a56e7c4fca7837" />
+                <section title="Duplicate" ref="classitem_1_1_item.html#ab31c1b5e2b0993341e7a268693960b90" />
                 <section title="StateTaggedValues" ref="classitem_1_1_item.html#a8410ab3ab75e65360eddb4f6bd3cceff" />
+                <section title="MomentDeleter" ref="classitem_1_1_item.html#a8d78594540bff88538723a8a1fb881d5" />
                 <section title="GetProperties" ref="classitem_1_1_item.html#a23790dceafc9e3f8950f69380cc4c4aa" />
                 <section title="IncrementEffectIf" ref="classitem_1_1_item.html#a35583f2bcdaea50728a9e16e0626e341" />
                 <section title="StepImpl" ref="classitem_1_1_item.html#a90df61c8a2a20144eb1100af5fb2d464" />
@@ -92,14 +95,14 @@
               </section>
               <section title="Oracle" ref="classitem_1_1_oracle.html">
                 <section title="Oracle" ref="classitem_1_1_oracle.html#aef8394c1370b0cf661b84ea454cff536" />
-                <section title="View" ref="classitem_1_1_oracle.html#a9982f1934a769cc461246bab31b8a72d" />
+                <section title="View" ref="classitem_1_1_oracle.html#ade8c5db0ab73bfa61d5dbe2c9c405f5c" />
                 <section title="StateTaggedValues" ref="classitem_1_1_oracle.html#a78dd3984a5a0dae432c86e18520d7c46" />
                 <section title="StepImpl" ref="classitem_1_1_oracle.html#af765dd1df5a43de79539f9ce960854c0" />
                 <section title="BranchImpl" ref="classitem_1_1_oracle.html#a9a8911eef902d4dcca95f111fda7c5d0" />
               </section>
               <section title="Shield" ref="classitem_1_1_shield.html">
                 <section title="Shield" ref="classitem_1_1_shield.html#ac65eef60e78829da35895968923fb3b7" />
-                <section title="View" ref="classitem_1_1_shield.html#abdc88bd6d0a4d6021805fa3097f47633" />
+                <section title="View" ref="classitem_1_1_shield.html#ae4a97ec6084467b7c87c91fdabcd9e94" />
                 <section title="StateTaggedValues" ref="classitem_1_1_shield.html#a1a246374ed47a4d9849bad97091c42cb" />
                 <section title="StepImpl" ref="classitem_1_1_shield.html#a0c446c3f436c4eb221ebafd817df9a5f" />
                 <section title="BranchImpl" ref="classitem_1_1_shield.html#a29993d7965fe391d052214cd415eec75" />
@@ -113,7 +116,7 @@
                 <section title="DamageReceived" ref="classroundinfo_1_1_round_info.html#a2b6c4500a8076cb24f83591f05b99fba" />
                 <section title="HealthRemaining" ref="classroundinfo_1_1_round_info.html#accb2ab979f9fe090cf03753ed1c78e0a" />
                 <section title="Active" ref="classroundinfo_1_1_round_info.html#a03a7ee40677506160aef2766929e6105" />
-                <section title="calliance_data" ref="classroundinfo_1_1_round_info.html#a0944e6bf6facb52e9955695ea0b3feb3" />
+                <section title="alliance_data" ref="classroundinfo_1_1_round_info.html#ac19e64df26914ffb0292d1c475ce8a23" />
                 <section title="LocationIterator" ref="classroundinfo_1_1_round_info.html#ab9e17ca5d68f9981862cbf540cc0b297" />
                 <section title="DamageReceivedIterator" ref="classroundinfo_1_1_round_info.html#a94ea1a09ae7680e74188296aef0b0d63" />
                 <section title="HealthRemainingIterator" ref="classroundinfo_1_1_round_info.html#a3a81f2d87bea27339f035201f1887423" />
@@ -124,11 +127,13 @@
                 <section title="RoundInfoView" ref="classroundinfo_1_1_round_info_view.html#a29937c9ac9cd71b7edd10f612ce76c91" />
                 <section title="RoundInfoView" ref="classroundinfo_1_1_round_info_view.html#a8c5bca173f30cc869505c36baf04ebaa" />
                 <section title="player" ref="classroundinfo_1_1_round_info_view.html#acb1e4edcbe9b01f59ba26542f528ba24" />
+                <section title="num_players" ref="classroundinfo_1_1_round_info_view.html#af4d82c9aff1c4a27cba11740f6ac76ab" />
                 <section title="Location" ref="classroundinfo_1_1_round_info_view.html#a05f42a982570552bbeb8c330e62437ad" />
                 <section title="DamageReceived" ref="classroundinfo_1_1_round_info_view.html#ac2d60e02ab84297d958b5b5caa653c7b" />
                 <section title="HealthRemaining" ref="classroundinfo_1_1_round_info_view.html#a5b7dd1135b438e04017ad0a3bcc4034a" />
                 <section title="allies" ref="classroundinfo_1_1_round_info_view.html#af00b23d7a3f2fa21fd3cbba1f71e0fd4" />
                 <section title="active" ref="classroundinfo_1_1_round_info_view.html#a1ff1802f7ab8e24008f02bbc0169a160" />
+                <section title="set_active" ref="classroundinfo_1_1_round_info_view.html#a5225bbd75931d1f5235e83d13b726927" />
                 <section title="serialize" ref="classroundinfo_1_1_round_info_view.html#a101e6ee624aacfa8dd110aea67e67538" />
                 <section title="boost::serialization::access" ref="classroundinfo_1_1_round_info_view.html#ac98d07dd8f7b70e16ccb9a01abf56b9c" />
               </section>
@@ -166,8 +171,9 @@
               <section title="TimePlane" ref="classtimeplane_1_1_time_plane.html">
                 <section title="TimePlane" ref="classtimeplane_1_1_time_plane.html#a8d8f1227ade6490fa8b814f1b7f18ecc" />
                 <section title="latest_antitelephone_arrival" ref="classtimeplane_1_1_time_plane.html#ae66d15a7ce9adb5f63906011a455400b" />
+                <section title="rightmost_timeline" ref="classtimeplane_1_1_time_plane.html#adec17c7b3931df31bd14478f55df5821" />
                 <section title="rightmost_timeline" ref="classtimeplane_1_1_time_plane.html#a317c9e247011cf5f4e6e36f2f7651932" />
-                <section title="second_rightmost_timeLine" ref="classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f" />
+                <section title="second_rightmost_timeLine" ref="classtimeplane_1_1_time_plane.html#aa7c579aa9eda4aebd505ff8b473a3be4" />
                 <section title="MakeNewTimeLine" ref="classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c" />
                 <section title="RegisterMomentDeleter" ref="classtimeplane_1_1_time_plane.html#a22be7b27d461dcb849f48c149a044502" />
               </section>
@@ -178,25 +184,33 @@
               <section title="MomentOverview" ref="class_antitelephone_game.html#abada6d8d7931cf15fd1eb4b6290d7c15" />
               <section title="MoveData" ref="class_antitelephone_game.html#a8c579f8757044c9515a61a997af44701" />
               <section title="MomentOverviewQueryResult" ref="class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920" />
+              <section title="NewRoundHandler" ref="class_antitelephone_game.html#a8133e046c3f00cf8b1b056c6e67666c9" />
+              <section title="TravelHandler" ref="class_antitelephone_game.html#af20c5801994054663bdb537b40c6683d" />
+              <section title="EndGameHandler" ref="class_antitelephone_game.html#a9b790d05b5201d728aa47dd6001f5786" />
               <section title="AntitelephoneGame" ref="class_antitelephone_game.html#a78654d7658827209499cd5fb6650ee61" />
               <section title="time_plane" ref="class_antitelephone_game.html#adeaf2aa0a4015b04e688e2b694861a9c" />
-              <section title="GetOverview" ref="class_antitelephone_game.html#a4f0700772c0160ecbdcd9a136b493768" />
-              <section title="MakeRegularMove" ref="class_antitelephone_game.html#af4d2547790e79bbf4413a68667821bed" />
-              <section title="MakeAntitelephoneMove" ref="class_antitelephone_game.html#ab0737de4620c0f35eede4c3a8c13da1a" />
-              <section title="RegisterNewRoundHandler" ref="class_antitelephone_game.html#a6a5a7e47e245313b53e076fac30ec4d3" />
-              <section title="RegisterEndGameHandler" ref="class_antitelephone_game.html#ab02a45cc50f47680560b541f0d4aeef2" />
+              <section title="GetOverview" ref="class_antitelephone_game.html#a58b493d0ffa0500c515ac413ce52b429" />
+              <section title="MakeRegularMove" ref="class_antitelephone_game.html#ae24e552af1d86bdb0a89636c091d2ba3" />
+              <section title="MakeAntitelephoneMove" ref="class_antitelephone_game.html#a1f2c5e5679d20d1090b247f4229ac0ff" />
+              <section title="RegisterNewRoundHandler" ref="class_antitelephone_game.html#ae9c8eb5708660ae72b3fc1042bff4737" />
+              <section title="RegisterTravelHandler" ref="class_antitelephone_game.html#acd72999c2c8111ed929f93e7f40b88d1" />
+              <section title="RegisterEndGameHandler" ref="class_antitelephone_game.html#a2bf00100f24cb1ba9291d358314a8ee8" />
             </section>
             <section title="QueryResult" ref="class_query_result.html">
-              <section title="QueryResult" ref="class_query_result.html#a2bcdccec574314df85c4bff6611c215b" />
+              <section title="QueryResult" ref="class_query_result.html#ae7376f37c36d6df11cb0a6d809f54ac3" />
               <section title="operator bool" ref="class_query_result.html#a280533eecc3453bb2e65119070cc9fc7" />
               <section title="success" ref="class_query_result.html#ae1b66d19c66ed5c97dd3322c3c721c82" />
               <section title="response_tag" ref="class_query_result.html#a3d238ce0ccc659d2918dac0479937d3c" />
             </section>
             <section title="SymmetricBitMatrix" ref="class_symmetric_bit_matrix.html">
               <section title="SymmetricBitMatrix" ref="class_symmetric_bit_matrix.html#a828dbcd597cd13390922d863357da3f3" />
+              <section title="SymmetricBitMatrix" ref="class_symmetric_bit_matrix.html#a826df2bf3b6c87438ecad72e83681816" />
+              <section title="SymmetricBitMatrix" ref="class_symmetric_bit_matrix.html#ad2ae57483fbfcd2f9f25adce74113984" />
               <section title="size" ref="class_symmetric_bit_matrix.html#aed948744d70716f6325063ed55a76c6c" />
               <section title="Value" ref="class_symmetric_bit_matrix.html#a02221e8620c41734a56ec329da1b66c6" />
               <section title="SetValue" ref="class_symmetric_bit_matrix.html#a5d97dfec2cf3910b2f46b80307528c43" />
+              <section title="operator=" ref="class_symmetric_bit_matrix.html#ae99a5e93be79299d6e19cb676202423a" />
+              <section title="operator=" ref="class_symmetric_bit_matrix.html#a10f01bb01e7254d487c7d5cc98740d70" />
             </section>
           </section>
           <section title="Class Index" ref="classes.html" />
@@ -264,15 +278,24 @@
       <keyword name="MomentOverview" id="AntitelephoneGame::MomentOverview" ref="class_antitelephone_game.html#abada6d8d7931cf15fd1eb4b6290d7c15" />
       <keyword name="MoveData" id="AntitelephoneGame::MoveData" ref="class_antitelephone_game.html#a8c579f8757044c9515a61a997af44701" />
       <keyword name="MomentOverviewQueryResult" id="AntitelephoneGame::MomentOverviewQueryResult" ref="class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920" />
+      <keyword name="NewRoundHandler" id="AntitelephoneGame::NewRoundHandler" ref="class_antitelephone_game.html#a8133e046c3f00cf8b1b056c6e67666c9" />
+      <keyword name="TravelHandler" id="AntitelephoneGame::TravelHandler" ref="class_antitelephone_game.html#af20c5801994054663bdb537b40c6683d" />
+      <keyword name="EndGameHandler" id="AntitelephoneGame::EndGameHandler" ref="class_antitelephone_game.html#a9b790d05b5201d728aa47dd6001f5786" />
       <keyword name="AntitelephoneGame" id="AntitelephoneGame::AntitelephoneGame" ref="class_antitelephone_game.html#a78654d7658827209499cd5fb6650ee61" />
       <keyword name="time_plane" id="AntitelephoneGame::time_plane" ref="class_antitelephone_game.html#adeaf2aa0a4015b04e688e2b694861a9c" />
-      <keyword name="GetOverview" id="AntitelephoneGame::GetOverview" ref="class_antitelephone_game.html#a4f0700772c0160ecbdcd9a136b493768" />
-      <keyword name="MakeRegularMove" id="AntitelephoneGame::MakeRegularMove" ref="class_antitelephone_game.html#af4d2547790e79bbf4413a68667821bed" />
-      <keyword name="MakeAntitelephoneMove" id="AntitelephoneGame::MakeAntitelephoneMove" ref="class_antitelephone_game.html#ab0737de4620c0f35eede4c3a8c13da1a" />
-      <keyword name="RegisterNewRoundHandler" id="AntitelephoneGame::RegisterNewRoundHandler" ref="class_antitelephone_game.html#a6a5a7e47e245313b53e076fac30ec4d3" />
-      <keyword name="RegisterEndGameHandler" id="AntitelephoneGame::RegisterEndGameHandler" ref="class_antitelephone_game.html#ab02a45cc50f47680560b541f0d4aeef2" />
+      <keyword name="GetOverview" id="AntitelephoneGame::GetOverview" ref="class_antitelephone_game.html#a58b493d0ffa0500c515ac413ce52b429" />
+      <keyword name="MakeRegularMove" id="AntitelephoneGame::MakeRegularMove" ref="class_antitelephone_game.html#ae24e552af1d86bdb0a89636c091d2ba3" />
+      <keyword name="MakeAntitelephoneMove" id="AntitelephoneGame::MakeAntitelephoneMove" ref="class_antitelephone_game.html#a1f2c5e5679d20d1090b247f4229ac0ff" />
+      <keyword name="RegisterNewRoundHandler" id="AntitelephoneGame::RegisterNewRoundHandler" ref="class_antitelephone_game.html#ae9c8eb5708660ae72b3fc1042bff4737" />
+      <keyword name="RegisterTravelHandler" id="AntitelephoneGame::RegisterTravelHandler" ref="class_antitelephone_game.html#acd72999c2c8111ed929f93e7f40b88d1" />
+      <keyword name="RegisterEndGameHandler" id="AntitelephoneGame::RegisterEndGameHandler" ref="class_antitelephone_game.html#a2bf00100f24cb1ba9291d358314a8ee8" />
+      <keyword name="kRoomsPerPlayer" id="AntitelephoneGame::kRoomsPerPlayer" ref="class_antitelephone_game.html#ae37bf7f9becd1fb13d5b14f18805f34a" />
+      <keyword name="kMinNumPlayers" id="AntitelephoneGame::kMinNumPlayers" ref="class_antitelephone_game.html#ad83ef874d5a90a47bca6eedea6f20be4" />
+      <keyword name="kMaxNumPlayers" id="AntitelephoneGame::kMaxNumPlayers" ref="class_antitelephone_game.html#af706d2b7289d0d39de8746fb53ea7a4c" />
+      <keyword name="kEnergyPerRound" id="AntitelephoneGame::kEnergyPerRound" ref="class_antitelephone_game.html#abe921436c4e4102a6d1fe0fb835531af" />
+      <keyword name="kFamiliarEncounterMultiplier" id="AntitelephoneGame::kFamiliarEncounterMultiplier" ref="class_antitelephone_game.html#af2f7eb8b10811d432c84400b4b55333d" />
       <keyword name="QueryResult" id="QueryResult" ref="class_query_result.html" />
-      <keyword name="QueryResult" id="QueryResult::QueryResult" ref="class_query_result.html#a2bcdccec574314df85c4bff6611c215b" />
+      <keyword name="QueryResult" id="QueryResult::QueryResult" ref="class_query_result.html#ae7376f37c36d6df11cb0a6d809f54ac3" />
       <keyword name="operator bool" id="QueryResult::operator bool" ref="class_query_result.html#a280533eecc3453bb2e65119070cc9fc7" />
       <keyword name="success" id="QueryResult::success" ref="class_query_result.html#ae1b66d19c66ed5c97dd3322c3c721c82" />
       <keyword name="response_tag" id="QueryResult::response_tag" ref="class_query_result.html#a3d238ce0ccc659d2918dac0479937d3c" />
@@ -281,34 +304,41 @@
       <keyword name="size" id="SymmetricBitMatrix::size" ref="class_symmetric_bit_matrix.html#aed948744d70716f6325063ed55a76c6c" />
       <keyword name="Value" id="SymmetricBitMatrix::Value" ref="class_symmetric_bit_matrix.html#a02221e8620c41734a56ec329da1b66c6" />
       <keyword name="SetValue" id="SymmetricBitMatrix::SetValue" ref="class_symmetric_bit_matrix.html#a5d97dfec2cf3910b2f46b80307528c43" />
+      <keyword name="SymmetricBitMatrix" id="SymmetricBitMatrix::SymmetricBitMatrix" ref="class_symmetric_bit_matrix.html#a826df2bf3b6c87438ecad72e83681816" />
+      <keyword name="SymmetricBitMatrix" id="SymmetricBitMatrix::SymmetricBitMatrix" ref="class_symmetric_bit_matrix.html#ad2ae57483fbfcd2f9f25adce74113984" />
+      <keyword name="operator=" id="SymmetricBitMatrix::operator=" ref="class_symmetric_bit_matrix.html#ae99a5e93be79299d6e19cb676202423a" />
+      <keyword name="operator=" id="SymmetricBitMatrix::operator=" ref="class_symmetric_bit_matrix.html#a10f01bb01e7254d487c7d5cc98740d70" />
       <keyword name="external::MomentOverview" id="external::MomentOverview" ref="classexternal_1_1_moment_overview.html" />
+      <keyword name="TaggedValuesArr" id="external::MomentOverview::TaggedValuesArr" ref="classexternal_1_1_moment_overview.html#a7a270c8af32c575c6ec85888c1e9a877" />
       <keyword name="MomentOverview" id="external::MomentOverview::MomentOverview" ref="classexternal_1_1_moment_overview.html#aabe55b10c977be45ba2574c606676c87" />
-      <keyword name="MomentOverview" id="external::MomentOverview::MomentOverview" ref="classexternal_1_1_moment_overview.html#af03a8f31dfc944daf5d54477b1acab26" />
+      <keyword name="MomentOverview" id="external::MomentOverview::MomentOverview" ref="classexternal_1_1_moment_overview.html#a66f1625110407c8fe6fd9e07fca75ff3" />
       <keyword name="player" id="external::MomentOverview::player" ref="classexternal_1_1_moment_overview.html#afb04d3b50661c06510b77e73d66e70ac" />
       <keyword name="moment" id="external::MomentOverview::moment" ref="classexternal_1_1_moment_overview.html#a6aaebaf6107f40bfb22a15f82c92e131" />
       <keyword name="effect" id="external::MomentOverview::effect" ref="classexternal_1_1_moment_overview.html#abeb27fa11c351eea2c90679842895497" />
-      <keyword name="ItemState" id="external::MomentOverview::ItemState" ref="classexternal_1_1_moment_overview.html#a0be90c4fbf03a2db4bfaa8a1ba2c7674" />
+      <keyword name="ItemState" id="external::MomentOverview::ItemState" ref="classexternal_1_1_moment_overview.html#a7b4fcaf0941014e26c847fb6dad5912c" />
       <keyword name="round_info" id="external::MomentOverview::round_info" ref="classexternal_1_1_moment_overview.html#a186a205fd74b30b627b82bf837b78f79" />
       <keyword name="serialize" id="external::MomentOverview::serialize" ref="classexternal_1_1_moment_overview.html#a5791e663d0c7be6c1a19b0b7af416855" />
       <keyword name="external::MoveData" id="external::MoveData" ref="classexternal_1_1_move_data.html" />
       <keyword name="MoveData" id="external::MoveData::MoveData" ref="classexternal_1_1_move_data.html#a230c2389b03633b6b02928a867f59f27" />
-      <keyword name="EnergyInput" id="external::MoveData::EnergyInput" ref="classexternal_1_1_move_data.html#acaef1f55196d7bb2fba3ebba2e9e9428" />
-      <keyword name="SetEnergyInput" id="external::MoveData::SetEnergyInput" ref="classexternal_1_1_move_data.html#aba5ad33ec9f3e4632750e35236581096" />
+      <keyword name="EnergyInput" id="external::MoveData::EnergyInput" ref="classexternal_1_1_move_data.html#adec73e4cffd6895b046411a25aa516ff" />
+      <keyword name="SetEnergyInput" id="external::MoveData::SetEnergyInput" ref="classexternal_1_1_move_data.html#a9e15f73abac9be9eeeb4e8f702af05f8" />
       <keyword name="new_location" id="external::MoveData::new_location" ref="classexternal_1_1_move_data.html#a2469eb5c4a210b6ebd769254f190ad7e" />
       <keyword name="set_new_location" id="external::MoveData::set_new_location" ref="classexternal_1_1_move_data.html#a81e78c6507a8cb0be615b23e9c94b7f4" />
       <keyword name="added_alliances" id="external::MoveData::added_alliances" ref="classexternal_1_1_move_data.html#a0bcb09d49ed392fb21395d6182d63f26" />
       <keyword name="add_alliance" id="external::MoveData::add_alliance" ref="classexternal_1_1_move_data.html#ae3a11d3c816e165ac2ceff604f191d32" />
-      <keyword name="removed_alliances" id="external::MoveData::removed_alliances" ref="classexternal_1_1_move_data.html#addc5f0e83d4c41edab01fe2e804b3eeb" />
+      <keyword name="removed_alliances" id="external::MoveData::removed_alliances" ref="classexternal_1_1_move_data.html#ace46398597a4ba0139c7c043d0d8d5be" />
       <keyword name="remove_alliance" id="external::MoveData::remove_alliance" ref="classexternal_1_1_move_data.html#a397656419a2c5adf79ee8bf1bfae9ca8" />
       <keyword name="leave_unchanged_alliance" id="external::MoveData::leave_unchanged_alliance" ref="classexternal_1_1_move_data.html#a15f54d7e6fbf21cc9634e6f2bb854317" />
       <keyword name="serialize" id="external::MoveData::serialize" ref="classexternal_1_1_move_data.html#afd1bb4302c0f725033149887c232af1a" />
       <keyword name="item::Antitelephone" id="item::Antitelephone" ref="classitem_1_1_antitelephone.html" />
       <keyword name="Antitelephone" id="item::Antitelephone::Antitelephone" ref="classitem_1_1_antitelephone.html#a832d79223e555ae7dd69d11377392731" />
-      <keyword name="View" id="item::Antitelephone::View" ref="classitem_1_1_antitelephone.html#aa44819e9242edbdfdfc4f14b5d2b34ec" />
+      <keyword name="View" id="item::Antitelephone::View" ref="classitem_1_1_antitelephone.html#ae8f9abbbb65d23970fb3b61393bda141" />
       <keyword name="StateTaggedValues" id="item::Antitelephone::StateTaggedValues" ref="classitem_1_1_antitelephone.html#afe8ac703b5f19181f221afe07c05cae7" />
       <keyword name="Step" id="item::Item::Step" ref="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75" />
       <keyword name="Branch" id="item::Item::Branch" ref="classitem_1_1_item.html#aa4b1c982b6d35d047c7a8ea86b06be99" />
       <keyword name="ConfirmPending" id="item::Item::ConfirmPending" ref="classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711" />
+      <keyword name="Duplicate" id="item::Item::Duplicate" ref="classitem_1_1_item.html#ab31c1b5e2b0993341e7a268693960b90" />
+      <keyword name="MomentDeleter" id="item::Item::MomentDeleter" ref="classitem_1_1_item.html#a8d78594540bff88538723a8a1fb881d5" />
       <keyword name="type" id="item::Antitelephone::type" ref="classitem_1_1_antitelephone.html#ab6d34885da8ab27a578da87a0c746744" />
       <keyword name="kMaxCooldown" id="item::Item::kMaxCooldown" ref="classitem_1_1_item.html#aae2db5aecbcd2703453521c457bc9419" />
       <keyword name="kBasicMaxHitpoints" id="item::Item::kBasicMaxHitpoints" ref="classitem_1_1_item.html#a445a6061775c6a8cd3ce4e984698b9f6" />
@@ -325,11 +355,13 @@
       <keyword name="StandardStepUpdate" id="item::Item::StandardStepUpdate" ref="classitem_1_1_item.html#a93ef8f291ecf2886ea6902d496624334" />
       <keyword name="item::Bridge" id="item::Bridge" ref="classitem_1_1_bridge.html" />
       <keyword name="Bridge" id="item::Bridge::Bridge" ref="classitem_1_1_bridge.html#a5bc97b39c3fcb52578942f5f41d7bb7d" />
-      <keyword name="View" id="item::Bridge::View" ref="classitem_1_1_bridge.html#a7d579da1f368ba6a6b5dfd41de833f17" />
+      <keyword name="View" id="item::Bridge::View" ref="classitem_1_1_bridge.html#a644ccbcba577629cd0f07066e64afac1" />
       <keyword name="StateTaggedValues" id="item::Bridge::StateTaggedValues" ref="classitem_1_1_bridge.html#a6339e1cd46f454625ef7cd6dc683f6cd" />
       <keyword name="Step" id="item::Item::Step" ref="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75" />
       <keyword name="Branch" id="item::Item::Branch" ref="classitem_1_1_item.html#aa4b1c982b6d35d047c7a8ea86b06be99" />
       <keyword name="ConfirmPending" id="item::Item::ConfirmPending" ref="classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711" />
+      <keyword name="Duplicate" id="item::Item::Duplicate" ref="classitem_1_1_item.html#ab31c1b5e2b0993341e7a268693960b90" />
+      <keyword name="MomentDeleter" id="item::Item::MomentDeleter" ref="classitem_1_1_item.html#a8d78594540bff88538723a8a1fb881d5" />
       <keyword name="type" id="item::Bridge::type" ref="classitem_1_1_bridge.html#aeb376b4b999ec6144454cd806e5e06d2" />
       <keyword name="kUnlockRequirement" id="item::Bridge::kUnlockRequirement" ref="classitem_1_1_bridge.html#ad779bb244833ce97048e1a105ff09a8f" />
       <keyword name="kMaxCooldown" id="item::Item::kMaxCooldown" ref="classitem_1_1_item.html#aae2db5aecbcd2703453521c457bc9419" />
@@ -366,8 +398,10 @@
       <keyword name="Step" id="item::Item::Step" ref="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75" />
       <keyword name="Branch" id="item::Item::Branch" ref="classitem_1_1_item.html#aa4b1c982b6d35d047c7a8ea86b06be99" />
       <keyword name="ConfirmPending" id="item::Item::ConfirmPending" ref="classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711" />
-      <keyword name="View" id="item::Item::View" ref="classitem_1_1_item.html#a400dfeabc4056d36bfd348ff9c51cf7d" />
+      <keyword name="View" id="item::Item::View" ref="classitem_1_1_item.html#a7d2b010a27fec55e04a56e7c4fca7837" />
+      <keyword name="Duplicate" id="item::Item::Duplicate" ref="classitem_1_1_item.html#ab31c1b5e2b0993341e7a268693960b90" />
       <keyword name="StateTaggedValues" id="item::Item::StateTaggedValues" ref="classitem_1_1_item.html#a8410ab3ab75e65360eddb4f6bd3cceff" />
+      <keyword name="MomentDeleter" id="item::Item::MomentDeleter" ref="classitem_1_1_item.html#a8d78594540bff88538723a8a1fb881d5" />
       <keyword name="kMaxCooldown" id="item::Item::kMaxCooldown" ref="classitem_1_1_item.html#aae2db5aecbcd2703453521c457bc9419" />
       <keyword name="kBasicMaxHitpoints" id="item::Item::kBasicMaxHitpoints" ref="classitem_1_1_item.html#a445a6061775c6a8cd3ce4e984698b9f6" />
       <keyword name="kMaxHitpointIncrement" id="item::Item::kMaxHitpointIncrement" ref="classitem_1_1_item.html#a30b4c60171ecd398d5ff79f5340f40cb" />
@@ -392,11 +426,13 @@
       <keyword name="boost::serialization::access" id="item::ItemProperties::boost::serialization::access" ref="classitem_1_1_item_properties.html#ac98d07dd8f7b70e16ccb9a01abf56b9c" />
       <keyword name="item::Oracle" id="item::Oracle" ref="classitem_1_1_oracle.html" />
       <keyword name="Oracle" id="item::Oracle::Oracle" ref="classitem_1_1_oracle.html#aef8394c1370b0cf661b84ea454cff536" />
-      <keyword name="View" id="item::Oracle::View" ref="classitem_1_1_oracle.html#a9982f1934a769cc461246bab31b8a72d" />
+      <keyword name="View" id="item::Oracle::View" ref="classitem_1_1_oracle.html#ade8c5db0ab73bfa61d5dbe2c9c405f5c" />
       <keyword name="StateTaggedValues" id="item::Oracle::StateTaggedValues" ref="classitem_1_1_oracle.html#a78dd3984a5a0dae432c86e18520d7c46" />
       <keyword name="Step" id="item::Item::Step" ref="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75" />
       <keyword name="Branch" id="item::Item::Branch" ref="classitem_1_1_item.html#aa4b1c982b6d35d047c7a8ea86b06be99" />
       <keyword name="ConfirmPending" id="item::Item::ConfirmPending" ref="classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711" />
+      <keyword name="Duplicate" id="item::Item::Duplicate" ref="classitem_1_1_item.html#ab31c1b5e2b0993341e7a268693960b90" />
+      <keyword name="MomentDeleter" id="item::Item::MomentDeleter" ref="classitem_1_1_item.html#a8d78594540bff88538723a8a1fb881d5" />
       <keyword name="type" id="item::Oracle::type" ref="classitem_1_1_oracle.html#a6905378f36854ca2ef63d403c95ede8f" />
       <keyword name="kUnlockRequirement" id="item::Oracle::kUnlockRequirement" ref="classitem_1_1_oracle.html#aefa06d76cc06f9a9f5b324806ca3bb37" />
       <keyword name="kMaxCooldown" id="item::Item::kMaxCooldown" ref="classitem_1_1_item.html#aae2db5aecbcd2703453521c457bc9419" />
@@ -414,11 +450,13 @@
       <keyword name="StandardStepUpdate" id="item::Item::StandardStepUpdate" ref="classitem_1_1_item.html#a93ef8f291ecf2886ea6902d496624334" />
       <keyword name="item::Shield" id="item::Shield" ref="classitem_1_1_shield.html" />
       <keyword name="Shield" id="item::Shield::Shield" ref="classitem_1_1_shield.html#ac65eef60e78829da35895968923fb3b7" />
-      <keyword name="View" id="item::Shield::View" ref="classitem_1_1_shield.html#abdc88bd6d0a4d6021805fa3097f47633" />
+      <keyword name="View" id="item::Shield::View" ref="classitem_1_1_shield.html#ae4a97ec6084467b7c87c91fdabcd9e94" />
       <keyword name="StateTaggedValues" id="item::Shield::StateTaggedValues" ref="classitem_1_1_shield.html#a1a246374ed47a4d9849bad97091c42cb" />
       <keyword name="Step" id="item::Item::Step" ref="classitem_1_1_item.html#ad8d77979820782fd86a0a67e2ea25c75" />
       <keyword name="Branch" id="item::Item::Branch" ref="classitem_1_1_item.html#aa4b1c982b6d35d047c7a8ea86b06be99" />
       <keyword name="ConfirmPending" id="item::Item::ConfirmPending" ref="classitem_1_1_item.html#a99eaccdd31a817a7cb0e501cb632f711" />
+      <keyword name="Duplicate" id="item::Item::Duplicate" ref="classitem_1_1_item.html#ab31c1b5e2b0993341e7a268693960b90" />
+      <keyword name="MomentDeleter" id="item::Item::MomentDeleter" ref="classitem_1_1_item.html#a8d78594540bff88538723a8a1fb881d5" />
       <keyword name="type" id="item::Shield::type" ref="classitem_1_1_shield.html#a936299d37c16f407535e373f1f879d34" />
       <keyword name="kUnlockRequirement" id="item::Shield::kUnlockRequirement" ref="classitem_1_1_shield.html#af4d01df72cfe6f4a4b5155ba22afe2a6" />
       <keyword name="kMaxCooldown" id="item::Item::kMaxCooldown" ref="classitem_1_1_item.html#aae2db5aecbcd2703453521c457bc9419" />
@@ -441,7 +479,7 @@
       <keyword name="DamageReceived" id="roundinfo::RoundInfo::DamageReceived" ref="classroundinfo_1_1_round_info.html#a2b6c4500a8076cb24f83591f05b99fba" />
       <keyword name="HealthRemaining" id="roundinfo::RoundInfo::HealthRemaining" ref="classroundinfo_1_1_round_info.html#accb2ab979f9fe090cf03753ed1c78e0a" />
       <keyword name="Active" id="roundinfo::RoundInfo::Active" ref="classroundinfo_1_1_round_info.html#a03a7ee40677506160aef2766929e6105" />
-      <keyword name="calliance_data" id="roundinfo::RoundInfo::calliance_data" ref="classroundinfo_1_1_round_info.html#a0944e6bf6facb52e9955695ea0b3feb3" />
+      <keyword name="alliance_data" id="roundinfo::RoundInfo::alliance_data" ref="classroundinfo_1_1_round_info.html#ac19e64df26914ffb0292d1c475ce8a23" />
       <keyword name="LocationIterator" id="roundinfo::RoundInfo::LocationIterator" ref="classroundinfo_1_1_round_info.html#ab9e17ca5d68f9981862cbf540cc0b297" />
       <keyword name="DamageReceivedIterator" id="roundinfo::RoundInfo::DamageReceivedIterator" ref="classroundinfo_1_1_round_info.html#a94ea1a09ae7680e74188296aef0b0d63" />
       <keyword name="HealthRemainingIterator" id="roundinfo::RoundInfo::HealthRemainingIterator" ref="classroundinfo_1_1_round_info.html#a3a81f2d87bea27339f035201f1887423" />
@@ -454,11 +492,13 @@
       <keyword name="RoundInfoView" id="roundinfo::RoundInfoView::RoundInfoView" ref="classroundinfo_1_1_round_info_view.html#a29937c9ac9cd71b7edd10f612ce76c91" />
       <keyword name="RoundInfoView" id="roundinfo::RoundInfoView::RoundInfoView" ref="classroundinfo_1_1_round_info_view.html#a8c5bca173f30cc869505c36baf04ebaa" />
       <keyword name="player" id="roundinfo::RoundInfoView::player" ref="classroundinfo_1_1_round_info_view.html#acb1e4edcbe9b01f59ba26542f528ba24" />
+      <keyword name="num_players" id="roundinfo::RoundInfoView::num_players" ref="classroundinfo_1_1_round_info_view.html#af4d82c9aff1c4a27cba11740f6ac76ab" />
       <keyword name="Location" id="roundinfo::RoundInfoView::Location" ref="classroundinfo_1_1_round_info_view.html#a05f42a982570552bbeb8c330e62437ad" />
       <keyword name="DamageReceived" id="roundinfo::RoundInfoView::DamageReceived" ref="classroundinfo_1_1_round_info_view.html#ac2d60e02ab84297d958b5b5caa653c7b" />
       <keyword name="HealthRemaining" id="roundinfo::RoundInfoView::HealthRemaining" ref="classroundinfo_1_1_round_info_view.html#a5b7dd1135b438e04017ad0a3bcc4034a" />
       <keyword name="allies" id="roundinfo::RoundInfoView::allies" ref="classroundinfo_1_1_round_info_view.html#af00b23d7a3f2fa21fd3cbba1f71e0fd4" />
       <keyword name="active" id="roundinfo::RoundInfoView::active" ref="classroundinfo_1_1_round_info_view.html#a1ff1802f7ab8e24008f02bbc0169a160" />
+      <keyword name="set_active" id="roundinfo::RoundInfoView::set_active" ref="classroundinfo_1_1_round_info_view.html#a5225bbd75931d1f5235e83d13b726927" />
       <keyword name="serialize" id="roundinfo::RoundInfoView::serialize" ref="classroundinfo_1_1_round_info_view.html#a101e6ee624aacfa8dd110aea67e67538" />
       <keyword name="boost::serialization::access" id="roundinfo::RoundInfoView::boost::serialization::access" ref="classroundinfo_1_1_round_info_view.html#ac98d07dd8f7b70e16ccb9a01abf56b9c" />
       <keyword name="std::hash&lt; timeplane::Moment &gt;" id="std::hash&lt; timeplane::Moment &gt;" ref="structstd_1_1hash_3_01timeplane_1_1_moment_01_4.html" />
@@ -488,8 +528,9 @@
       <keyword name="timeplane::TimePlane" id="timeplane::TimePlane" ref="classtimeplane_1_1_time_plane.html" />
       <keyword name="TimePlane" id="timeplane::TimePlane::TimePlane" ref="classtimeplane_1_1_time_plane.html#a8d8f1227ade6490fa8b814f1b7f18ecc" />
       <keyword name="latest_antitelephone_arrival" id="timeplane::TimePlane::latest_antitelephone_arrival" ref="classtimeplane_1_1_time_plane.html#ae66d15a7ce9adb5f63906011a455400b" />
+      <keyword name="rightmost_timeline" id="timeplane::TimePlane::rightmost_timeline" ref="classtimeplane_1_1_time_plane.html#adec17c7b3931df31bd14478f55df5821" />
       <keyword name="rightmost_timeline" id="timeplane::TimePlane::rightmost_timeline" ref="classtimeplane_1_1_time_plane.html#a317c9e247011cf5f4e6e36f2f7651932" />
-      <keyword name="second_rightmost_timeLine" id="timeplane::TimePlane::second_rightmost_timeLine" ref="classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f" />
+      <keyword name="second_rightmost_timeLine" id="timeplane::TimePlane::second_rightmost_timeLine" ref="classtimeplane_1_1_time_plane.html#aa7c579aa9eda4aebd505ff8b473a3be4" />
       <keyword name="MakeNewTimeLine" id="timeplane::TimePlane::MakeNewTimeLine" ref="classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c" />
       <keyword name="RegisterMomentDeleter" id="timeplane::TimePlane::RegisterMomentDeleter" ref="classtimeplane_1_1_time_plane.html#a22be7b27d461dcb849f48c149a044502" />
       <keyword name="kNoAntitelephoneArrival" id="timeplane::TimePlane::kNoAntitelephoneArrival" ref="classtimeplane_1_1_time_plane.html#afe378e5e76ef261c9fc9c2637157c75e" />
@@ -627,6 +668,9 @@
       <file>functions_func.html</file>
       <file>functions_vars.html</file>
       <file>functions_vars.html</file>
+      <file>functions_type.html</file>
+      <file>functions_type.html</file>
+      <file>functions_type.html</file>
       <file>functions_type.html</file>
       <file>files.html</file>
     </files>

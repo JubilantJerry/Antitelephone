@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['momentoverviewqueryresult',['MomentOverviewQueryResult',['../class_antitelephone_game.html#a99ab937cb4918da1c80bd8d07e43f920',1,'AntitelephoneGame']]]
+  ['endgamehandler',['EndGameHandler',['../class_antitelephone_game.html#a9b790d05b5201d728aa47dd6001f5786',1,'AntitelephoneGame']]]
 ];

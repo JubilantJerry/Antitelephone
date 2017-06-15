@@ -23,11 +23,15 @@ Inheritance diagram for item\+:\+:Item\+:\begin{figure}[H]
 \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_aa4b1c982b6d35d047c7a8ea86b06be99}{Branch} (\hyperlink{classtimeplane_1_1_moment}{Moment} curr, \hyperlink{classtimeplane_1_1_moment}{Moment} dest)
 \begin{DoxyCompactList}\small\item\em Update the item while traveling to the past (branching). \end{DoxyCompactList}\item 
 void \hyperlink{classitem_1_1_item_a99eaccdd31a817a7cb0e501cb632f711}{Confirm\+Pending} (\hyperlink{classtimeplane_1_1_moment}{Moment} new\+\_\+moment)
-\begin{DoxyCompactList}\small\item\em Finalize the changes in the item after a call to {\ttfamily Step} or {\ttfamily Branch}. \end{DoxyCompactList}\item 
-virtual \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m)=0
+\begin{DoxyCompactList}\small\item\em Finalize the changes in the item. \end{DoxyCompactList}\item 
+virtual \hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_item_a7d2b010a27fec55e04a56e7c4fca7837}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const =0
 \begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
+void \hyperlink{classitem_1_1_item_ab31c1b5e2b0993341e7a268693960b90}{Duplicate} (\hyperlink{classtimeplane_1_1_moment}{Moment} to\+\_\+duplicate)
+\begin{DoxyCompactList}\small\item\em Duplicates the item properties at the specified moment. \end{DoxyCompactList}\item 
 virtual Tagged\+Values \hyperlink{classitem_1_1_item_a8410ab3ab75e65360eddb4f6bd3cceff}{State\+Tagged\+Values} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const =0
-\begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\item 
+void \hyperlink{classitem_1_1_item_a8d78594540bff88538723a8a1fb881d5}{Moment\+Deleter} (timeplane\+::\+Moment\+Iterators iterators)
+\begin{DoxyCompactList}\small\item\em Function to clean up data related to inaccessible moments. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -73,7 +77,9 @@ static bool \hyperlink{classitem_1_1_item_a93ef8f291ecf2886ea6902d496624334}{Sta
 \subsection{Detailed Description}
 The properties of an item in the game across moments. 
 
-This class contains is virtual and cannot be instantiated directly. The various items in the game inherit from this type. 
+This class contains is virtual and cannot be instantiated directly. The various items in the game inherit from this type.
+
+Information about an item is always future-\/oriented, which means the effects and state tags describing an item at a specific moment apply to the moment as it occurs, instead of being a result of said moment after it has already passed. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classitem_1_1_item_aebe9569e9074ee805b6213f500066115}\label{classitem_1_1_item_aebe9569e9074ee805b6213f500066115}} 
@@ -104,16 +110,21 @@ Constructor.
 
 Update the item across a regular step into the future. 
 
-The resulting item properties are stored temporarily until the client calls {\ttfamily Confirm\+Pending} to finalize them. The item properties are updated after considering the events that have occurred in the turn. 
+The resulting item properties are stored temporarily until the client calls {\ttfamily Confirm\+Pending} to finalize them. The item properties are updated after considering the events that have occurred in the turn. The round information parameter is in a past-\/oriented state, so all future-\/oriented values in the instance is unspecified. 
 \begin{DoxyParams}{Parameters}
 {\em curr} & The current moment before the step. \\
 \hline
-{\em turn\+\_\+data} & The information about the turn just played. \\
+{\em round\+\_\+info} & The information about the turn just played. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The effects granted by the item for the next round. 
 \end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Potentially thrown by subclasses. \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{classitem_1_1_item_aa4b1c982b6d35d047c7a8ea86b06be99}\label{classitem_1_1_item_aa4b1c982b6d35d047c7a8ea86b06be99}} 
 \index{item\+::\+Item@{item\+::\+Item}!Branch@{Branch}}
 \index{Branch@{Branch}!item\+::\+Item@{item\+::\+Item}}
@@ -138,6 +149,8 @@ The effects granted by the item for the next round.
 \begin{DoxyExceptions}{Exceptions}
 {\em std\+::invalid\+\_\+argument} & If the destination is not in the past. \\
 \hline
+{\em std\+::out\+\_\+of\+\_\+range} & Potentially thrown by subclasses. \\
+\hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classitem_1_1_item_a99eaccdd31a817a7cb0e501cb632f711}\label{classitem_1_1_item_a99eaccdd31a817a7cb0e501cb632f711}} 
 \index{item\+::\+Item@{item\+::\+Item}!Confirm\+Pending@{Confirm\+Pending}}
@@ -147,24 +160,24 @@ The effects granted by the item for the next round.
 
 
 
-Finalize the changes in the item after a call to {\ttfamily Step} or {\ttfamily Branch}. 
+Finalize the changes in the item. 
 
 This requires that the new moment occurs at time one more than the one provided to {\ttfamily Step}, or has the same time as the destination moment providede to {\ttfamily Branch}. 
 \begin{DoxyParams}{Parameters}
-{\em new\+\_\+moment} & \\
+{\em new\+\_\+moment} & The moment to associate with item changes. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}\label{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}} 
+\mbox{\Hypertarget{classitem_1_1_item_a7d2b010a27fec55e04a56e7c4fca7837}\label{classitem_1_1_item_a7d2b010a27fec55e04a56e7c4fca7837}} 
 \index{item\+::\+Item@{item\+::\+Item}!View@{View}}
 \index{View@{View}!item\+::\+Item@{item\+::\+Item}}
 \subsubsection{\texorpdfstring{View()}{View()}}
-{\footnotesize\ttfamily virtual \hyperlink{classitem_1_1_effect}{Effect} item\+::\+Item\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily virtual \hyperlink{classitem_1_1_effect}{Effect} item\+::\+Item\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
 View the effects of an item at a specific moment. 
 
-
+This call must be a pure function not only of the provided moment, but also be a function of {\ttfamily Get\+Properties(m)}. 
 \begin{DoxyParams}{Parameters}
 {\em m} & The moment to query. \\
 \hline
@@ -173,9 +186,34 @@ View the effects of an item at a specific moment.
 The effects granted by the item at the specified moment. 
 \end{DoxyReturn}
 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Potentially thrown by subclasses. \\
+\hline
+\end{DoxyExceptions}
 
-Implemented in \hyperlink{classitem_1_1_bridge_a7d579da1f368ba6a6b5dfd41de833f17}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a9982f1934a769cc461246bab31b8a72d}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_abdc88bd6d0a4d6021805fa3097f47633}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_aa44819e9242edbdfdfc4f14b5d2b34ec}{item\+::\+Antitelephone}.
 
+Implemented in \hyperlink{classitem_1_1_bridge_a644ccbcba577629cd0f07066e64afac1}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_ade8c5db0ab73bfa61d5dbe2c9c405f5c}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_ae4a97ec6084467b7c87c91fdabcd9e94}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_ae8f9abbbb65d23970fb3b61393bda141}{item\+::\+Antitelephone}.
+
+\mbox{\Hypertarget{classitem_1_1_item_ab31c1b5e2b0993341e7a268693960b90}\label{classitem_1_1_item_ab31c1b5e2b0993341e7a268693960b90}} 
+\index{item\+::\+Item@{item\+::\+Item}!Duplicate@{Duplicate}}
+\index{Duplicate@{Duplicate}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Duplicate()}{Duplicate()}}
+{\footnotesize\ttfamily void Item\+::\+Duplicate (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{to\+\_\+duplicate }\end{DoxyParamCaption})}
+
+
+
+Duplicates the item properties at the specified moment. 
+
+The resulting item properties are stored temporarily until the client calls {\ttfamily Confirm\+Pending} to finalize them. 
+\begin{DoxyParams}{Parameters}
+{\em to\+\_\+duplicate} & The moment whose properties are duplicated. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & If no properties are stored for the moment. \\
+\hline
+\end{DoxyExceptions}
 \mbox{\Hypertarget{classitem_1_1_item_a8410ab3ab75e65360eddb4f6bd3cceff}\label{classitem_1_1_item_a8410ab3ab75e65360eddb4f6bd3cceff}} 
 \index{item\+::\+Item@{item\+::\+Item}!State\+Tagged\+Values@{State\+Tagged\+Values}}
 \index{State\+Tagged\+Values@{State\+Tagged\+Values}!item\+::\+Item@{item\+::\+Item}}
@@ -198,6 +236,21 @@ A group of tagged values describing the state of an item.
 
 Implemented in \hyperlink{classitem_1_1_bridge_a6339e1cd46f454625ef7cd6dc683f6cd}{item\+::\+Bridge}, \hyperlink{classitem_1_1_oracle_a78dd3984a5a0dae432c86e18520d7c46}{item\+::\+Oracle}, \hyperlink{classitem_1_1_shield_a1a246374ed47a4d9849bad97091c42cb}{item\+::\+Shield}, and \hyperlink{classitem_1_1_antitelephone_afe8ac703b5f19181f221afe07c05cae7}{item\+::\+Antitelephone}.
 
+\mbox{\Hypertarget{classitem_1_1_item_a8d78594540bff88538723a8a1fb881d5}\label{classitem_1_1_item_a8d78594540bff88538723a8a1fb881d5}} 
+\index{item\+::\+Item@{item\+::\+Item}!Moment\+Deleter@{Moment\+Deleter}}
+\index{Moment\+Deleter@{Moment\+Deleter}!item\+::\+Item@{item\+::\+Item}}
+\subsubsection{\texorpdfstring{Moment\+Deleter()}{MomentDeleter()}}
+{\footnotesize\ttfamily void Item\+::\+Moment\+Deleter (\begin{DoxyParamCaption}\item[{timeplane\+::\+Moment\+Iterators}]{iterators }\end{DoxyParamCaption})}
+
+
+
+Function to clean up data related to inaccessible moments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterators} & A pair of constant input iterators to moments that will soon become inaccessible. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classitem_1_1_item_a23790dceafc9e3f8950f69380cc4c4aa}\label{classitem_1_1_item_a23790dceafc9e3f8950f69380cc4c4aa}} 
 \index{item\+::\+Item@{item\+::\+Item}!Get\+Properties@{Get\+Properties}}
 \index{Get\+Properties@{Get\+Properties}!item\+::\+Item@{item\+::\+Item}}

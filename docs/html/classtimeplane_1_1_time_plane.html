@@ -79,12 +79,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae66d15a7ce9adb5f63906011a455400b"><td align="right" class="memItemLeft" valign="top">int </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#ae66d15a7ce9adb5f63906011a455400b">latest_antitelephone_arrival</a> () const noexcept</td></tr>
 <tr class="memdesc:ae66d15a7ce9adb5f63906011a455400b"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the latest Antitelephone arrival time.  <a href="#ae66d15a7ce9adb5f63906011a455400b">More...</a><br/></td></tr>
 <tr class="separator:ae66d15a7ce9adb5f63906011a455400b"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:adec17c7b3931df31bd14478f55df5821"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> const  &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#adec17c7b3931df31bd14478f55df5821">rightmost_timeline</a> () const noexcept</td></tr>
+<tr class="memdesc:adec17c7b3931df31bd14478f55df5821"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the rightmost timeline.  <a href="#adec17c7b3931df31bd14478f55df5821">More...</a><br/></td></tr>
+<tr class="separator:adec17c7b3931df31bd14478f55df5821"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:a317c9e247011cf5f4e6e36f2f7651932"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#a317c9e247011cf5f4e6e36f2f7651932">rightmost_timeline</a> () noexcept</td></tr>
 <tr class="memdesc:a317c9e247011cf5f4e6e36f2f7651932"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the rightmost timeline.  <a href="#a317c9e247011cf5f4e6e36f2f7651932">More...</a><br/></td></tr>
 <tr class="separator:a317c9e247011cf5f4e6e36f2f7651932"><td class="memSeparator" colspan="2"> </td></tr>
-<tr class="memitem:a32da05c87dfe4bc33ec5cb87fd97297f"><td align="right" class="memItemLeft" valign="top">boost::optional&lt; <a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &gt; &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#a32da05c87dfe4bc33ec5cb87fd97297f">second_rightmost_timeLine</a> () noexcept</td></tr>
-<tr class="memdesc:a32da05c87dfe4bc33ec5cb87fd97297f"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the rightmost timeline.  <a href="#a32da05c87dfe4bc33ec5cb87fd97297f">More...</a><br/></td></tr>
-<tr class="separator:a32da05c87dfe4bc33ec5cb87fd97297f"><td class="memSeparator" colspan="2"> </td></tr>
+<tr class="memitem:aa7c579aa9eda4aebd505ff8b473a3be4"><td align="right" class="memItemLeft" valign="top">boost::optional&lt; <a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &gt; const  &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#aa7c579aa9eda4aebd505ff8b473a3be4">second_rightmost_timeLine</a> () const noexcept</td></tr>
+<tr class="memdesc:aa7c579aa9eda4aebd505ff8b473a3be4"><td class="mdescLeft"> </td><td class="mdescRight">Accessor for the rightmost timeline.  <a href="#aa7c579aa9eda4aebd505ff8b473a3be4">More...</a><br/></td></tr>
+<tr class="separator:aa7c579aa9eda4aebd505ff8b473a3be4"><td class="memSeparator" colspan="2"> </td></tr>
 <tr class="memitem:ab8c82092c1c5c3f18c8677f8ce38662c"><td align="right" class="memItemLeft" valign="top"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> &amp; </td><td class="memItemRight" valign="bottom"><a class="el" href="classtimeplane_1_1_time_plane.html#ab8c82092c1c5c3f18c8677f8ce38662c">MakeNewTimeLine</a> (int branch_time)</td></tr>
 <tr class="memdesc:ab8c82092c1c5c3f18c8677f8ce38662c"><td class="mdescLeft"> </td><td class="mdescRight">Creates a new timeline branching from the rightmost timeline.  <a href="#ab8c82092c1c5c3f18c8677f8ce38662c">More...</a><br/></td></tr>
 <tr class="separator:ab8c82092c1c5c3f18c8677f8ce38662c"><td class="memSeparator" colspan="2"> </td></tr>
@@ -147,8 +150,33 @@ static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el
 <p>If there is no Antitelephone arrival, then the constant <code>kNoAntitelephoneArrival</code> is returned. </p><dl class="section return"><dt>Returns</dt><dd>Time of the latest Antitelephone arrival. </dd></dl>
 </div><!-- @@@latest_antitelephone_arrival -->
 </div>
+<a id="adec17c7b3931df31bd14478f55df5821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec17c7b3931df31bd14478f55df5821">◆ </a></span>rightmost_timeline() <span class="overload">[1/2]</span></h2>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+<tr>
+<td class="mlabels-left">
+<table class="memname">
+<tr>
+<td class="memname"><a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a> const&amp; timeplane::TimePlane::rightmost_timeline </td>
+<td>(</td>
+<td class="paramname"></td><td>)</td>
+<td> const</td>
+</tr>
+</table>
+</td>
+<td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
+</tr>
+</table>
+</div><!-- $$$rightmost_timeline[overload1]$$$TimeLineconst&timeplane::TimePlane::rightmost_timeline()const --><div class="memdoc"><div style="display: none">TimeLine const&amp; timeplane::TimePlane::rightmost_timeline () const</div>
+<p>Accessor for the rightmost timeline. </p>
+<p>The reference returned is invalidated once a new timeline is created. </p><dl class="section return"><dt>Returns</dt><dd>A constant reference to the rightmost timeline. </dd></dl>
+</div><!-- @@@rightmost_timeline -->
+</div>
 <a id="a317c9e247011cf5f4e6e36f2f7651932"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a317c9e247011cf5f4e6e36f2f7651932">◆ </a></span>rightmost_timeline()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a317c9e247011cf5f4e6e36f2f7651932">◆ </a></span>rightmost_timeline() <span class="overload">[2/2]</span></h2>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -169,11 +197,11 @@ static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el
 </table>
 </div><!-- $$$rightmost_timeline[overload1]$$$TimeLine&timeplane::TimePlane::rightmost_timeline() --><div class="memdoc"><div style="display: none">TimeLine&amp; timeplane::TimePlane::rightmost_timeline ()</div>
 <p>Accessor for the rightmost timeline. </p>
-<p>The reference returned is invalidated once a new timeline is created. </p><dl class="section return"><dt>Returns</dt><dd>A reference to the rightmost timeline. </dd></dl>
+<p>The reference returned is invalidated once a new timeline is created. </p><dl class="section return"><dt>Returns</dt><dd>A mutable reference to the rightmost timeline. </dd></dl>
 </div><!-- @@@rightmost_timeline -->
 </div>
-<a id="a32da05c87dfe4bc33ec5cb87fd97297f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32da05c87dfe4bc33ec5cb87fd97297f">◆ </a></span>second_rightmost_timeLine()</h2>
+<a id="aa7c579aa9eda4aebd505ff8b473a3be4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c579aa9eda4aebd505ff8b473a3be4">◆ </a></span>second_rightmost_timeLine()</h2>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -181,10 +209,10 @@ static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el
 <td class="mlabels-left">
 <table class="memname">
 <tr>
-<td class="memname">boost::optional&lt;<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a>&gt;&amp; timeplane::TimePlane::second_rightmost_timeLine </td>
+<td class="memname">boost::optional&lt;<a class="el" href="classtimeplane_1_1_time_line.html">TimeLine</a>&gt; const&amp; timeplane::TimePlane::second_rightmost_timeLine </td>
 <td>(</td>
 <td class="paramname"></td><td>)</td>
-<td></td>
+<td> const</td>
 </tr>
 </table>
 </td>
@@ -192,7 +220,7 @@ static int constexpr </td><td class="memItemRight" valign="bottom"><a class="el
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span> </td>
 </tr>
 </table>
-</div><!-- $$$second_rightmost_timeLine[overload1]$$$boost::optional<TimeLine>&timeplane::TimePlane::second_rightmost_timeLine() --><div class="memdoc"><div style="display: none">boost::optional&lt;TimeLine&gt;&amp; timeplane::TimePlane::second_rightmost_timeLine ()</div>
+</div><!-- $$$second_rightmost_timeLine[overload1]$$$boost::optional<TimeLine>const&timeplane::TimePlane::second_rightmost_timeLine()const --><div class="memdoc"><div style="display: none">boost::optional&lt;TimeLine&gt; const&amp; timeplane::TimePlane::second_rightmost_timeLine () const</div>
 <p>Accessor for the rightmost timeline. </p>
 <p>The reference returned is invalidated once a new timeline is created. </p><dl class="section return"><dt>Returns</dt><dd>A reference to an optional type containing the rightmost timeline, or <code>boost::none</code> if there is no such timeline. </dd></dl>
 </div><!-- @@@second_rightmost_timeLine -->

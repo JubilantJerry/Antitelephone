@@ -21,7 +21,7 @@ Inheritance diagram for item\+:\+:Oracle\+:\begin{figure}[H]
 \mbox{\Hypertarget{classitem_1_1_oracle_aef8394c1370b0cf661b84ea454cff536}\label{classitem_1_1_oracle_aef8394c1370b0cf661b84ea454cff536}} 
 {\bfseries Oracle} (\hyperlink{classtimeplane_1_1_moment}{Moment} first\+\_\+moment)
 \item 
-\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_oracle_a9982f1934a769cc461246bab31b8a72d}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m)
+\hyperlink{classitem_1_1_effect}{Effect} \hyperlink{classitem_1_1_oracle_ade8c5db0ab73bfa61d5dbe2c9c405f5c}{View} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
 \begin{DoxyCompactList}\small\item\em View the effects of an item at a specific moment. \end{DoxyCompactList}\item 
 Tagged\+Values \hyperlink{classitem_1_1_oracle_a78dd3984a5a0dae432c86e18520d7c46}{State\+Tagged\+Values} (\hyperlink{classtimeplane_1_1_moment}{Moment} m) const
 \begin{DoxyCompactList}\small\item\em Virtual method to provide user-\/friendly tagged values. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -49,17 +49,17 @@ std\+::pair$<$ \hyperlink{classitem_1_1_effect}{Effect}, \hyperlink{classitem_1_
 The player is made directly controllable when the \hyperlink{classitem_1_1_oracle}{Oracle} is activated, regardless of what timeline the activation has occurred in. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classitem_1_1_oracle_a9982f1934a769cc461246bab31b8a72d}\label{classitem_1_1_oracle_a9982f1934a769cc461246bab31b8a72d}} 
+\mbox{\Hypertarget{classitem_1_1_oracle_ade8c5db0ab73bfa61d5dbe2c9c405f5c}\label{classitem_1_1_oracle_ade8c5db0ab73bfa61d5dbe2c9c405f5c}} 
 \index{item\+::\+Oracle@{item\+::\+Oracle}!View@{View}}
 \index{View@{View}!item\+::\+Oracle@{item\+::\+Oracle}}
 \subsubsection{\texorpdfstring{View()}{View()}}
-{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Oracle\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily \hyperlink{classitem_1_1_effect}{Effect} Oracle\+::\+View (\begin{DoxyParamCaption}\item[{\hyperlink{classtimeplane_1_1_moment}{Moment}}]{m }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
 
 View the effects of an item at a specific moment. 
 
-
+This call must be a pure function not only of the provided moment, but also be a function of {\ttfamily Get\+Properties(m)}. 
 \begin{DoxyParams}{Parameters}
 {\em m} & The moment to query. \\
 \hline
@@ -68,8 +68,13 @@ View the effects of an item at a specific moment.
 The effects granted by the item at the specified moment. 
 \end{DoxyReturn}
 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Potentially thrown by subclasses. \\
+\hline
+\end{DoxyExceptions}
 
-Implements \hyperlink{classitem_1_1_item_a400dfeabc4056d36bfd348ff9c51cf7d}{item\+::\+Item}.
+
+Implements \hyperlink{classitem_1_1_item_a7d2b010a27fec55e04a56e7c4fca7837}{item\+::\+Item}.
 
 \mbox{\Hypertarget{classitem_1_1_oracle_a78dd3984a5a0dae432c86e18520d7c46}\label{classitem_1_1_oracle_a78dd3984a5a0dae432c86e18520d7c46}} 
 \index{item\+::\+Oracle@{item\+::\+Oracle}!State\+Tagged\+Values@{State\+Tagged\+Values}}

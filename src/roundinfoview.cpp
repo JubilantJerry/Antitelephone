@@ -13,7 +13,7 @@ RoundInfoView::RoundInfoView(RoundInfo const& source, int player,
      health_remaining_data_{},
      active_{source.Active(player)},
      allies_{source.num_players()} {
-    SymmetricBitMatrix allies_matrix = source.calliance_data();
+    SymmetricBitMatrix const& allies_matrix = source.alliance_data();
     int num_players = source.num_players();
     int loc_viewer = location_omniscience ?
                      RoundInfo::kOmniscientViewer : player;

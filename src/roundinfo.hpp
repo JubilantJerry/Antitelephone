@@ -97,7 +97,7 @@ class RoundInfo {
      * @brief Accessor to view the alliance data.
      * @return A constant reference to the alliance data.
      */
-    SymmetricBitMatrix const& calliance_data() const noexcept {
+    SymmetricBitMatrix const& alliance_data() const noexcept {
         return alliance_data_;
     }
 
@@ -139,7 +139,7 @@ class RoundInfo {
      */
     SymmetricBitMatrix& alliance_data() noexcept {
         return const_cast<SymmetricBitMatrix&> (
-                   static_cast<RoundInfo&>(*this).calliance_data());
+                   static_cast<RoundInfo const&>(*this).alliance_data());
     }
 
   private:

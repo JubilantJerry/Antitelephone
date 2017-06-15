@@ -57,10 +57,21 @@ class TimePlane {
      * @brief Accessor for the rightmost timeline.
      *
      * The reference returned is invalidated once a new timeline is created.
-     * @return A reference to the rightmost timeline.
+     * @return A constant reference to the rightmost timeline.
+     */
+    TimeLine const& rightmost_timeline() const noexcept {
+        return rightmost_timeline_;
+    }
+
+    /**
+     * @brief Accessor for the rightmost timeline.
+     *
+     * The reference returned is invalidated once a new timeline is created.
+     * @return A mutable reference to the rightmost timeline.
      */
     TimeLine& rightmost_timeline() noexcept {
-        return rightmost_timeline_;
+        return const_cast<TimeLine&> (static_cast<TimePlane const&>(*this)
+                                      .rightmost_timeline());
     }
 
     /**
@@ -70,7 +81,8 @@ class TimePlane {
      * @return A reference to an optional type containing the
      * rightmost timeline, or @c boost::none if there is no such timeline.
      */
-    boost::optional<TimeLine> const& second_rightmost_timeLine() noexcept {
+    boost::optional<TimeLine> const&
+    second_rightmost_timeLine() const noexcept {
         return second_rightmost_timeline_;
     }
 

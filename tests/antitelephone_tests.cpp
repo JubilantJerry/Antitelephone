@@ -11,15 +11,25 @@
 
 #include "../src/momentoverview.hpp"
 #include "../src/movedata.hpp"
-#include "../src/antitelephonegame.hpp"
+
 #include "../src/roundinfo.hpp"
 #include "../src/roundinfoview.hpp"
+
 #include "../src/itemsutil.hpp"
+
+#include "../src/queryresult.hpp"
 #include "../src/aliases.hpp"
+
+#include "../src/moment.hpp"
+#include "../src/timeline.hpp"
+#include "../src/timeplane.hpp"
+
+#include "../src/antitelephonegame.hpp"
 
 using namespace roundinfo;
 using namespace external;
 using namespace item;
+using namespace timeplane;
 
 std::stringstream out_data{};
 std::ifstream in_data{};
@@ -53,7 +63,7 @@ bool SetupIO(std::string in_path, std::string out_path) {
 
 std::string test_files_path = TEST_FILES_PATH;
 
-#define TEST_INTERACTIVE
+//#define TEST_INTERACTIVE
 
 #ifdef TEST_INTERACTIVE
 
@@ -65,7 +75,16 @@ using StringAugmentedStream_ = boost::iostreams::stream<TeeDevice_>;
 StringAugmentedStream_ out{TeeDevice_{out_data, std::cout}};
 
 // Input is taken from string buffer, and from std::cin when it runs out.
-struct InitializedInput {};
+struct InitializedInput {
+    InitializedInput& ignore(std::streamsize n = 1, int delim = EOF) {
+        if (!in_data.is_open() || in_data.eof()) {
+            std::cin.ignore(n, delim);
+        } else {
+            in_data.ignore(n, delim);
+        }
+        return *this;
+    }
+};
 InitializedInput in;
 
 template<typename T>
@@ -74,6 +93,16 @@ InitializedInput& operator>>(InitializedInput&, T& item) {
         std::cin >> item;
     } else {
         in_data >> item;
+    }
+    return in;
+}
+
+InitializedInput& getline(InitializedInput&,
+                          std::string& item, char delim = '\n') {
+    if (!in_data.is_open() || in_data.eof()) {
+        getline(std::cin, item, delim);
+    } else {
+        getline(in_data, item, delim);
     }
     return in;
 }
@@ -88,7 +117,7 @@ void ShowMomentOverview(MomentOverview const& overview) {
     Moment m = overview.moment();
     out << "[MOMENT (";
     out << m.parent_timeline_num() << ", " << m.time() << "): ";
-    out << "PLAYER" << overview.player() << ", (";
+    out << "PLAYER " << overview.player() << ", (";
 
     Effect e = overview.effect();
     out << "EFFECTS: ";
@@ -134,21 +163,41 @@ void ShowMomentOverview(MomentOverview const& overview) {
     out << ")]" << std::endl;
 }
 
-void Disp(std::string data) {
-    std::cout << data << std::endl;
+void ShowQueryResult(QueryResult const& result) {
+    if (result.success()) {
+        out << "SUCCESS";
+        if (result.response_tag() != "") {
+            out << result.response_tag();
+        }
+        out << std::endl;
+        return;
+    }
+    out << "FAILURE ";
+    if (result.response_tag() != "") {
+        out << result.response_tag();
+    }
+    out << std::endl;
 }
 
 MoveData CollectMoveData() {
-    // Example valid string: [L3|A0|B1|O2|S3|+0-2+5]
-    static std::string pattern = "\\[L([0-9])\\|A([0-9])\\|B([0-9])\\|"
-                                 "O([0-9])\\|S([0-9])\\|((?:[+-][0-9])*)\\]";
+    // Example valid string: "[L3|A0|B1|O2|S3|+0-2+5] # Optional comment"
+    static std::string pattern = "\\[L([0-9]+)\\|A([0-9]+)\\|B([0-9]+)\\|"
+                                 "O([0-9]+)\\|S([0-9]+)\\|"
+                                 "((?:[+-][0-9])*)\\](?: #.*)?";
+    // The regex assumes that there cannot be more than 10 players
     static std::regex matcher{pattern};
     std::smatch results;
     std::string input;
 
-    do {
-        in >> input;
-    } while (!std::regex_match(input, results, matcher));
+    bool got_move = false;
+    while (!got_move) {
+        getline(in, input);
+        if (!std::regex_match(input, results, matcher)) {
+            out << "BAD SYNTAX" << std::endl;
+        } else {
+            got_move = true;
+        }
+    }
 
     auto iter = results.cbegin();
     iter++; // Remove the match of the whole string
@@ -170,36 +219,164 @@ MoveData CollectMoveData() {
     return movedata;
 }
 
-extern RoundInfo MakeRoundInfo();
+void RunGameEngine(int num_players) {
+    bool running = true;
+    int antiplayer = -1;
+    static int constexpr test_game_id = 42;
 
-TEST_CASE("Antitelephone trivial game", "[game_all]") {
+    AntitelephoneGame::NewRoundHandler round_handler =
+    [] (int game_id, std::vector<MomentOverview> const&& overviews) {
+        REQUIRE(game_id == test_game_id);
+        out << "NEW ROUND HANDLER" << std::endl;
+        for (MomentOverview const& overview: overviews) {
+            ShowMomentOverview(overview);
+        }
+    };
+
+    AntitelephoneGame::TravelHandler travel_handler =
+    [&antiplayer] (int game_id, int player) {
+        REQUIRE(game_id == test_game_id);
+        out << "TRAVEL HANDLER" << std::endl;
+        antiplayer = player;
+    };
+
+    AntitelephoneGame::EndGameHandler end_handler =
+    [&running] (int game_id) {
+        REQUIRE(game_id == test_game_id);
+        out << "END GAME HANDLER" << std::endl;
+        running = false;
+    };
+
+    AntitelephoneGame game{42, num_players};
+    game.RegisterNewRoundHandler(round_handler);
+    game.RegisterTravelHandler(travel_handler);
+    game.RegisterEndGameHandler(end_handler);
+    TimePlane const& tp = game.time_plane();
+
+    out << "GAME START" << std::endl;
+
+    while (running) {
+        if (antiplayer != -1) {
+            out << "PLAYER " << antiplayer;
+            out << " ANTITELPHONE DEST?" << std::endl;
+            int dest_time;
+            in >> dest_time;
+            in.ignore();
+            ShowQueryResult(game.MakeAntitelephoneMove(
+                                antiplayer, dest_time));
+            antiplayer = -1;
+            continue;
+        }
+        std::string line;
+        while(true) {
+            getline(in, line);
+            if (line == "" || line[0] == '#') {
+                // It's an empty line or a comment
+                continue;
+            } else if (line == "SHOW OVERVIEW") {
+                int player, time;
+                bool left;
+                in >> player;
+                in >> time;
+                in >> left;
+                in.ignore();
+                Moment m;
+                if (!left) {
+                    auto const& tl = tp.rightmost_timeline();
+                    if (time >= 0 && time <= tl.LatestMoment().time()) {
+                        m = tp.rightmost_timeline().GetMoment(time);
+                    } else {
+                        out << "BAD MOMENT" << std::endl;
+                        continue;
+                    }
+                } else {
+                    auto const& tl = tp.second_rightmost_timeLine();
+                    if (tl && time >= 0 &&
+                            time <= tl.get().LatestMoment().time()) {
+                        m = tp.rightmost_timeline().GetMoment(time);
+                    } else {
+                        out << "BAD MOMENT" << std::endl;
+                        continue;
+                    }
+                }
+                auto result = game.GetOverview(player, m);
+                if (result.second) {
+                    ShowMomentOverview(result.second.get());
+                }
+                ShowQueryResult(result.first);
+            } else if (line == "MAKE MOVES") {
+                break;
+            } else {
+                out << "BAD INSTRUCTION: " << line;
+            }
+        }
+        for (int i = 0; i < num_players; i++) {
+            out << "PLAYER " << i << " MOVE?" << std::endl;
+            QueryResult result{false};
+            while (!result) {
+                result = game.MakeRegularMove(i, CollectMoveData());
+                ShowQueryResult(result);
+            }
+        }
+    }
+    out << "GAME END" << std::endl << std::endl;
+}
+
+void CompareOutputWithReference(int test_no) {
+    int line_no = 1;
+    std::string line_from_output;
+    std::string line_from_reference;
+    std::string test_case_identifier = " in test case ";
+    test_case_identifier += std::to_string(test_no);
+
+    while (!out_data.eof() && !ref_data.eof()) {
+        getline(out_data, line_from_output);
+        getline(ref_data, line_from_reference);
+        if (line_from_output != line_from_reference) {
+            FAIL(std::string("Line ") + std::to_string(line_no) +
+                 test_case_identifier + " does not match");
+        } else {
+            REQUIRE(true);
+        }
+        line_no++;
+    }
+    if (!out_data.eof()) {
+        FAIL("Extra output data" + test_case_identifier);
+    }
+    if (!ref_data.eof()) {
+        FAIL("Missing output data" + test_case_identifier);
+    }
+}
+
+TEST_CASE("Antitelephone test 0", "[game_all]") {
     std::string in_path = test_files_path + "input0.txt";
     std::string out_path = test_files_path + "output0.txt";
-    REQUIRE(SetupIO("", out_path));
+    REQUIRE(SetupIO(in_path, out_path));
 
-    RoundInfo info{MakeRoundInfo()};
-    RoundInfoView viewer{info, 2};
-    Moment m{0, 0};
-
-    ItemPtr antitelephone = std::make_unique<Antitelephone>(m);
-    ItemPtr bridge = std::make_unique<Bridge>(m);
-    ItemPtr oracle = std::make_unique<Oracle>(m);
-    ItemPtr shield = std::make_unique<Shield>(m);
-    Effect e = antitelephone->View(m) + bridge->View(m) +
-               oracle->View(m) + shield->View(m);
-
-    MomentOverview::TaggedValuesArr states {
-        antitelephone->StateTaggedValues(m),
-        bridge->StateTaggedValues(m),
-        oracle->StateTaggedValues(m),
-        shield->StateTaggedValues(m)};
-
-    MomentOverview overview{m, e, std::move(states), viewer};
-
-    MoveData read = CollectMoveData();
-    ShowMomentOverview(overview);
-
-    std::stringstream ref_stream;
-    ref_stream << ref_data.rdbuf();
-    REQUIRE(ref_stream.str() == out_data.str());
+    RunGameEngine(2);
+    CompareOutputWithReference(0);
 }
+
+TEST_CASE("Antitelephone test 1", "[game_all]") {
+    std::string in_path = test_files_path + "input1.txt";
+    std::string out_path = test_files_path + "output1.txt";
+    REQUIRE(SetupIO(in_path, out_path));
+
+    RunGameEngine(2);
+    CompareOutputWithReference(1);
+}
+
+#ifdef TEST_INTERACTIVE
+TEST_CASE("Antitelephone test interactive", "[game_all]") {
+    SetupIO("", "");
+    out << "INTERACTIVE MODE. NUMBER OF PLAYERS?" << std::endl;
+    int num_players = 0;
+    in >> num_players;
+    if (num_players < AntitelephoneGame::kMinNumPlayers ||
+            num_players > AntitelephoneGame::kMaxNumPlayers) {
+        out << "BAD NUMBER OF PLAYERS" << std::endl;
+    } else {
+        RunGameEngine(num_players);
+    }
+}
+#endif

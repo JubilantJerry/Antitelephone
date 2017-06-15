@@ -647,7 +647,7 @@
                          <object>{8293acb3-fa44-4ed9-a698-8623d867f347}</object>
                          <name>AntitelephoneGame</name>
                          <pos>x:1335;y:625</pos>
-                         <rect>x:-245;y:-170;w:490;h:340</rect>
+                         <rect>x:-245;y:-175;w:490;h:350</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -2568,7 +2568,7 @@
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{0282174c-072d-4837-8137-ba6ca5012a1d}</uid>
+                    <uid>{a8bdedf3-38b0-4a53-b97b-c9a7232862d7}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>(pimpl implementation)</declaration>
@@ -2576,7 +2576,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e1f237a9-694c-43af-bb6f-b54d18648c23}</uid>
+                    <uid>{406d017e-1729-4029-be46-560ea4ab7252}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>AntitelephoneGame(int game_id, int num_players, unsigned int random_seed)</declaration>
@@ -2584,7 +2584,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{db56e8a5-9201-4ae2-b81f-8e67447ea68b}</uid>
+                    <uid>{3a60d042-30b0-4756-87a3-f2d053a1387a}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>TimePlane const&amp; time_plane()</declaration>
@@ -2592,7 +2592,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d87aa49a-5a44-4d70-9648-7e1ddbff3f53}</uid>
+                    <uid>{67a777ff-0821-47db-a567-49a4f2ad617a}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>MomentOverviewQueryResult GetOverview(int player, Moment m, bool from_rightmost)</declaration>
@@ -2600,7 +2600,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f2428b72-4679-4a4e-bb12-041bc2c1716a}</uid>
+                    <uid>{ea743f4a-ac88-4358-b5db-a66d5336d53a}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>QueryResult MakeRegularMove(int player, MoveData const&amp; move)</declaration>
@@ -2608,7 +2608,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f86c0fea-852c-4241-a179-a75cd2a74c80}</uid>
+                    <uid>{28313e21-5305-4b8c-8d5d-e96420100216}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>QueryResult MakeAntitelephoneMove(int player, int dest_time)</declaration>
@@ -2616,7 +2616,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e50e55da-4f06-4fbd-860c-cf65b2839cfe}</uid>
+                    <uid>{f60bda4d-6ab2-4f87-a911-b38fc1dc3c1a}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void RegisterNewRoundHandler(std::function&lt;void(std::vector&lt;MomentOverview&gt;)&gt; handler)</declaration>
@@ -2624,7 +2624,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{45dfcc62-af20-476a-9458-b3dd2009ab45}</uid>
+                    <uid>{27b0f352-98c7-41d1-bcd4-4d222fecf62a}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void RegisterTravelHandler(std::function&lt;void(int)&gt; handler)</declaration>
@@ -2632,7 +2632,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{793e24be-be64-4acb-81b0-f915c2a55ab3}</uid>
+                    <uid>{231e064d-616d-486c-a02c-76160d8175aa}</uid>
                     <visibility>1</visibility>
                     <type>2</type>
                     <declaration>void RegisterEndGameHandler(std::function&lt;void(void)&gt; handler)</declaration>
@@ -2640,7 +2640,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{c5f93e87-119f-4485-afa0-a57b5a98d9f4}</uid>
+                    <uid>{89128263-bb15-4d9b-9c55-061e81ae1cdf}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int game_id_</declaration>
@@ -2648,7 +2648,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{6dc6eddf-83e6-43e1-b3e0-45824f5c4cc4}</uid>
+                    <uid>{8b1305d5-abf4-4c86-b5f5-cb4e3cc60b13}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>int num_players_</declaration>
@@ -2656,7 +2656,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{884e4aeb-7ac8-4542-9127-8da524782c03}</uid>
+                    <uid>{a1f1ca77-8d3f-4a07-9afa-0a5baddf7a40}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::function&lt;void(std::vector&lt;MomentOverview&gt;)&gt; new_round_handler_</declaration>
@@ -2664,7 +2664,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{d020e45e-6999-414f-aae3-8f60a281498e}</uid>
+                    <uid>{1e3fc053-a104-41ac-8c4b-dd0cf9e590e1}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::function&lt;void(int)&gt; travel_handler_</declaration>
@@ -2672,7 +2672,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{0e11a7b0-cc25-4079-84b8-470b053e5e7a}</uid>
+                    <uid>{9f363e4f-768e-4753-b1f1-d99ca65c2db0}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::function&lt;void()&gt; end_game_handler_</declaration>
@@ -2680,7 +2680,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{706af3c2-a1c3-4c74-8594-269ab147931e}</uid>
+                    <uid>{c65792be-7ea9-47f9-9710-daf64cfa8ba0}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>RandomNumberGenerator rand</declaration>
@@ -2688,7 +2688,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3b8802a5-c0f6-4f1d-8dda-55ea27422045}</uid>
+                    <uid>{41026064-5cbe-448a-ad2f-3ebb391a2de1}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>TimePlane timeplane_</declaration>
@@ -2696,7 +2696,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8ce75781-730f-44cc-b62c-705449f77f1e}</uid>
+                    <uid>{bd25258f-71a9-45b0-a9cb-f3cd90e6b9be}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::unordered_map&lt;Moment, RoundInfo&gt; round_info_</declaration>
@@ -2704,7 +2704,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b51a8ea5-7be8-4564-b7e6-d7512f59d4b8}</uid>
+                    <uid>{b48fac3a-cb0a-431a-959d-38c8cb19b244}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::unordered_map&lt;Moment, MoveData&gt; moves_info_</declaration>
@@ -2712,7 +2712,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{5712e5e0-ad61-4dce-93c4-bf4d53a64825}</uid>
+                    <uid>{1ba804ea-400f-44af-ae1f-9b0765f1c73d}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::vector&lt;std::vector&lt;ItemPtr&gt;&gt; items_</declaration>
@@ -2720,7 +2720,7 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{55fbaf0a-23d7-400d-bb61-e0a8d5bbf7aa}</uid>
+                    <uid>{a21b26b7-439a-4f93-a1a1-381d2c412b95}</uid>
                     <visibility>3</visibility>
                     <type>1</type>
                     <declaration>std::unordered_map&lt;int, MoveData&gt; moves_pending_</declaration>
@@ -2728,7 +2728,15 @@
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{56004277-2cac-4f66-b40b-629b4fec6948}</uid>
+                    <uid>{8bc31026-cdb7-4752-baaf-3dc0fe2cf5c9}</uid>
+                    <visibility>3</visibility>
+                    <type>1</type>
+                    <declaration>int antiplayer_</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f99d92f6-916c-47da-b2b5-852f3ba08164}</uid>
                     <visibility>3</visibility>
                     <type>2</type>
                     <declaration>void MomentDeleter(MomentIterators m)</declaration>

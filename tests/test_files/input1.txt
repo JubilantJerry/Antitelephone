@@ -1,0 +1,17 @@
+# The players move around a bit without hitting each other, until they decide to draw
+MAKE MOVES
+[L3|A3|B0|O0|S0|]
+[L5|A0|B2|O0|S0|]
+
+MAKE MOVES
+[L8|A1|B0|O2|S0|]
+[L4|A0|B1|O1|S0|]
+
+MAKE MOVES
+[L2|A2|B0|O0|S0|]
+[L9|A0|B1|O0|S0|]
+
+MAKE MOVES
+[L10|A0|B0|O3|S0|+1] # This one fails
+[L0|A0|B0|O3|S0|+1]
+[L9|A0|B2|O0|S0|+0]

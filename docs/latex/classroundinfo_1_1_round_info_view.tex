@@ -18,6 +18,8 @@ Information contained in {\ttfamily \hyperlink{classroundinfo_1_1_round_info}{Ro
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the ID of the player that the view centers from. \end{DoxyCompactList}\item 
+int \hyperlink{classroundinfo_1_1_round_info_view_af4d82c9aff1c4a27cba11740f6ac76ab}{num\+\_\+players} () const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the number of players in the game. \end{DoxyCompactList}\item 
 int \hyperlink{classroundinfo_1_1_round_info_view_a05f42a982570552bbeb8c330e62437ad}{Location} (int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player}) const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the location of another player. \end{DoxyCompactList}\item 
 int \hyperlink{classroundinfo_1_1_round_info_view_ac2d60e02ab84297d958b5b5caa653c7b}{Damage\+Received} (int \hyperlink{classroundinfo_1_1_round_info_view_acb1e4edcbe9b01f59ba26542f528ba24}{player}) const noexcept
@@ -28,6 +30,8 @@ Bit\+Set const  \& \hyperlink{classroundinfo_1_1_round_info_view_af00b23d7a3f2fa
 \begin{DoxyCompactList}\small\item\em Accessor for the set of allies the player has. \end{DoxyCompactList}\item 
 bool \hyperlink{classroundinfo_1_1_round_info_view_a1ff1802f7ab8e24008f02bbc0169a160}{active} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for whether the player is actively in control. \end{DoxyCompactList}\item 
+void \hyperlink{classroundinfo_1_1_round_info_view_a5225bbd75931d1f5235e83d13b726927}{set\+\_\+active} (bool \hyperlink{classroundinfo_1_1_round_info_view_a1ff1802f7ab8e24008f02bbc0169a160}{active}) noexcept
+\begin{DoxyCompactList}\small\item\em Mutator for whether the player is actively in control. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename Archive $>$ }\\void \hyperlink{classroundinfo_1_1_round_info_view_a101e6ee624aacfa8dd110aea67e67538}{serialize} (Archive \&ar, unsigned int const version)
 \begin{DoxyCompactList}\small\item\em Serialization function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
@@ -41,7 +45,7 @@ class {\bfseries boost\+::serialization\+::access}
 \subsection{Detailed Description}
 Information contained in {\ttfamily \hyperlink{classroundinfo_1_1_round_info}{Round\+Info}} as seen from a single player. 
 
-Any information that a player is unauthorized to see is reported as {\ttfamily Round\+Info\+::k\+Unknown}. Instances of this class can be serialized. 
+Any information that a player is unauthorized to see is reported as {\ttfamily Round\+Info\+::k\+Unknown}. Instances of this class can be serialized. Almost all data stored in the instance is past-\/oriented, which means that it describes a moment that has already passed. Only information about whether players are active is future-\/oriented, which means it describes an upcoming moment. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a29937c9ac9cd71b7edd10f612ce76c91}\label{classroundinfo_1_1_round_info_view_a29937c9ac9cd71b7edd10f612ce76c91}} 
@@ -88,6 +92,19 @@ Accessor for the ID of the player that the view centers from.
 
 \begin{DoxyReturn}{Returns}
 Player ID of the viewer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_af4d82c9aff1c4a27cba11740f6ac76ab}\label{classroundinfo_1_1_round_info_view_af4d82c9aff1c4a27cba11740f6ac76ab}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!num\+\_\+players@{num\+\_\+players}}
+\index{num\+\_\+players@{num\+\_\+players}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{num\+\_\+players()}{num\_players()}}
+{\footnotesize\ttfamily int roundinfo\+::\+Round\+Info\+View\+::num\+\_\+players (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Accessor for the number of players in the game. 
+
+\begin{DoxyReturn}{Returns}
+Number of players in the game. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a05f42a982570552bbeb8c330e62437ad}\label{classroundinfo_1_1_round_info_view_a05f42a982570552bbeb8c330e62437ad}} 
 \index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!Location@{Location}}
@@ -169,6 +186,21 @@ Accessor for whether the player is actively in control.
 \begin{DoxyReturn}{Returns}
 Whether the player can actively control their moves. 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a5225bbd75931d1f5235e83d13b726927}\label{classroundinfo_1_1_round_info_view_a5225bbd75931d1f5235e83d13b726927}} 
+\index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!set\+\_\+active@{set\+\_\+active}}
+\index{set\+\_\+active@{set\+\_\+active}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}
+\subsubsection{\texorpdfstring{set\+\_\+active()}{set\_active()}}
+{\footnotesize\ttfamily void roundinfo\+::\+Round\+Info\+View\+::set\+\_\+active (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Mutator for whether the player is actively in control. 
+
+Only this property has a mutator because it is a future-\/oriented property, which allows it to be modified as a result of the actions that occur during a round. 
+\begin{DoxyParams}{Parameters}
+{\em active} & Whether the player is actively in control. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classroundinfo_1_1_round_info_view_a101e6ee624aacfa8dd110aea67e67538}\label{classroundinfo_1_1_round_info_view_a101e6ee624aacfa8dd110aea67e67538}} 
 \index{roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}!serialize@{serialize}}
 \index{serialize@{serialize}!roundinfo\+::\+Round\+Info\+View@{roundinfo\+::\+Round\+Info\+View}}

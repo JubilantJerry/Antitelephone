@@ -38,8 +38,7 @@ class AntitelephoneGame::Impl {
         return timeplane_;
     }
 
-    AG_::MomentOverviewQueryResult GetOverview(
-        int player, Moment m, bool from_rightmost) const;
+    AG_::MomentOverviewQueryResult GetOverview(int player, Moment m) const;
 
     QueryResult MakeRegularMove(int player, MoveData&& move);
 
@@ -58,6 +57,8 @@ class AntitelephoneGame::Impl {
     Impl& operator=(Impl&&) = delete;
 
   private:
+    static int constexpr kNoAntiplayer = -1;
+
     int game_id_;
     int num_players_;
     pcg32 rand_;
@@ -69,11 +70,12 @@ class AntitelephoneGame::Impl {
     std::unordered_map<Moment, std::unordered_map<int, MoveData>> moves_info_;
     std::vector<ItemArr> items_;
     std::unordered_map<int, MoveData> moves_pending_;
+    int antiplayer_;
     bool game_over;
 
     inline int NumLocations();
 
-    bool MoveValid(MoveData const& move);
+    QueryResult MoveValid(MoveData const& move);
 
     void ProcessMoves();
 
@@ -85,6 +87,7 @@ AI_::Impl(int game_id, int num_players, uint64_t random_seed)
      num_players_{num_players},
      rand_{random_seed},
      items_(),
+     antiplayer_{kNoAntiplayer},
      game_over{false} {
     assert(num_players >= kMinNumPlayers && num_players <= kMaxNumPlayers);
 
@@ -122,11 +125,14 @@ AI_::Impl(int game_id, int num_players, uint64_t random_seed)
     }
 }
 
-AG_::MomentOverviewQueryResult AI_::GetOverview(
-    int player, Moment m, bool from_rightmost) const {
+AG_::MomentOverviewQueryResult AI_::GetOverview(int player, Moment m) const {
 
     auto finder = round_info_.find(m);
+    int curr_timeline_no = timeplane_.rightmost_timeline()
+                           .LatestMoment().parent_timeline_num();
+    bool from_rightmost = (m.parent_timeline_num() == curr_timeline_no);
     if (player < 0 || player >= num_players_ ||
+            (!from_rightmost && player != antiplayer_) ||
             finder == round_info_.cend()) {
         return std::make_pair(QueryResult{false, "bad_request"},
                               boost::none);
@@ -152,40 +158,44 @@ int AI_::NumLocations() {
     return kRoomsPerPlayer * num_players_;
 }
 
-bool AI_::MoveValid(MoveData const& move) {
+QueryResult AI_::MoveValid(MoveData const& move) {
     int location = move.new_location();
     if (location < 0 || location >= NumLocations()) {
-        return false;
+        return QueryResult{false, "bad_location"};
     }
     int total_energy = 0;
     for (int i = 0; i < ItemTypeCount; i++) {
         int energy_input = move.EnergyInput(i);
         if (energy_input < 0) {
-            return false;
+            return QueryResult{false, "bad_energy"};
         }
         total_energy += energy_input;
     }
     if (total_energy > kEnergyPerRound) {
-        return false;
+        return QueryResult{false, "bad_energy"};
     }
     for (int alliance: move.added_alliances()) {
-        if (alliance < 0 || alliance > num_players_) {
-            return false;
+        if (alliance < 0 || alliance >= num_players_) {
+            return QueryResult{false, "bad_alliance"};
         }
     }
     for (int alliance: move.removed_alliances()) {
-        if (alliance < 0 || alliance > num_players_) {
-            return false;
+        if (alliance < 0 || alliance >= num_players_) {
+            return QueryResult{false, "bad_alliance"};
         }
     }
-    return true;
+    return QueryResult{};
 }
 
 QueryResult AI_::MakeRegularMove(int player, MoveData&& move) {
 
     if (game_over || player < 0 || player >= num_players_ ||
-            moves_pending_.count(player) || !MoveValid(move)) {
+            moves_pending_.count(player)) {
         return QueryResult{false, "bad_request"};
+    }
+    QueryResult result = MoveValid(move);
+    if (!result.success()) {
+        return result;
     }
 
     MoveData* move_to_use = &move;
@@ -211,6 +221,7 @@ QueryResult AI_::MakeAntitelephoneMove(int player, int dest_time) {
     TimeLine* timeline = &timeplane_.rightmost_timeline();
     Moment curr = timeline->LatestMoment();
     if (game_over || player < 0 || player >= num_players_ ||
+            player != antiplayer_ ||
             dest_time < 0 || dest_time >= curr.time() ||
             moves_pending_.size() != num_players_) {
         return QueryResult{false, "bad_request"};
@@ -273,7 +284,7 @@ QueryResult AI_::MakeAntitelephoneMove(int player, int dest_time) {
                                    std::move(item_state_data[i]),
                                    RoundInfoView{new_info, i});
         }
-        new_round_handler_(std::move(overviews));
+        new_round_handler_(game_id_, std::move(overviews));
     }
     moves_info_.emplace(curr, std::move(moves_pending_));
     moves_pending_ = std::unordered_map<int, MoveData>();
@@ -297,20 +308,21 @@ void AI_::ProcessMoves() {
     IntIterator location_data = new_info.LocationIterator();
     IntIterator damage_received = new_info.DamageReceivedIterator();
     IntIterator health_remaining = new_info.HealthRemainingIterator();
-    SymmetricBitMatrix alliances = new_info.alliance_data();
+    SymmetricBitMatrix& alliances = new_info.alliance_data();
 
     // Update alliance information
-    for (int i = 0; i < num_players_; i++) {
-        MoveData const& pmove = moves_pending_.at(i);
+    for (int pid = 0; pid < num_players_; pid++) {
+        MoveData const& pmove = moves_pending_.at(pid);
         for (int new_alliance: pmove.added_alliances()) {
-            if (moves_pending_.at(new_alliance).added_alliances().count(i)) {
+            if (pid < new_alliance && moves_pending_
+                    .at(new_alliance).added_alliances().count(pid)) {
                 // Both sides agreed to be allies
-                alliances.SetValue(i, new_alliance, true);
+                alliances.SetValue(pid, new_alliance, true);
             }
         }
         for (int broken_alliance: pmove.removed_alliances()) {
             // No agreement is needed to break an alliance
-            alliances.SetValue(i, broken_alliance, false);
+            alliances.SetValue(pid, broken_alliance, false);
         }
     }
 
@@ -380,6 +392,87 @@ void AI_::ProcessMoves() {
         }
     }
 
+    // The second-rightmost timeline is used to identity familiar
+    // encounter scenarios and changed encounters in the game.
+    // The following segment assumes that activeness hasn't been modified.
+    boost::optional<TimeLine> const& timeline_sec_opt =
+        timeplane_.second_rightmost_timeLine();
+    // The antiplayer might get an attack bonus if his opponent is inactive
+    bool antiplayer_attack_bonus = false;
+    if (antiplayer_ != kNoAntiplayer) {
+        antiplayer_attack_bonus =
+            !new_info.Active(weakest_opponent[antiplayer_]);
+    }
+
+    // Control flow gets very nested when done normally, so I used a
+    // few goto's to replace some giant if statements.
+
+    // *** if (second rightmost timeline exists) {
+    if (!timeline_sec_opt) {
+        goto timeline_sec_handling_end;
+    }
+    TimeLine const& timeline_sec = timeline_sec_opt.get();
+    int new_time = curr.time() + 1;
+
+    // ***** if (second rightmost timeline is not relevant) {
+    if (timeline_sec.LatestMoment().time() < new_time) {
+        // Make all players active because the second rightmost
+        // timeline has already ended
+        for (int sleeper = 0; sleeper < num_players_; sleeper++) {
+            if (!new_info.Active(sleeper)) {
+                new_info.SetActive(sleeper, true);
+            }
+        }
+        goto timeline_sec_handling_end;
+    }
+
+    // ***** } else {
+    RoundInfo const& sec_info =
+        round_info_.at(timeline_sec.GetMoment(new_time));
+    int constexpr omnv = RoundInfo::kOmniscientViewer;
+
+    for (int other = 0; other < num_players_; other++) {
+        // Checking for equality of two boolean expressions.
+        // Just a heads up since it's slightly confusing.
+        if ((sec_info.Location(other, omnv) == location_data[antiplayer_])
+                != encounters.Value(antiplayer_, other)) {
+            // Encounter is different because a different
+            // set of players are taking part in it
+            antiplayer_attack_bonus = false;
+            break;
+        }
+        if (encounters.Value(antiplayer_, other) && new_info.Active(other)) {
+            // Encounter is different because an active player
+            // is taking part in it
+            antiplayer_attack_bonus = false;
+            break;
+        }
+    }
+
+    for (int sleeper = 0; sleeper < num_players_; sleeper++) {
+        if (new_info.Active(sleeper)) {
+            // No need to care about active players
+            continue;
+        }
+        int sleeper_location = location_data[sleeper];
+        // If the sleeper is in a different location across
+        // the timelines, then something has gone horribly wrong.
+        assert(sleeper_location == sec_info.Location(sleeper, omnv));
+
+        for (int other = 0; other < num_players_; other++) {
+            // Same comparison of boolean values
+            if ((sec_info.Location(other, omnv) == sleeper_location)
+                    != encounters.Value(sleeper, other)) {
+                // Either a missed encounter, or a new encounter with
+                // an active player involved.
+                new_info.SetActive(sleeper, true);
+            }
+        }
+    }
+timeline_sec_handling_end:
+    // ***** }
+    // *** }
+
     // Now they fight!
     // Initially they don't take damage
     for (int i = 0; i < num_players_; i++) {
@@ -387,7 +480,15 @@ void AI_::ProcessMoves() {
     }
     // Rack up damage from each fighter
     for (int i = 0; i < num_players_; i++) {
-        damage_received[weakest_opponent[i]] += effects[i].attack_increase();
+        int opponent = weakest_opponent[i];
+        if (opponent == kNoEncounter) {
+            continue;
+        }
+        int damage = effects[i].attack_increase();
+        if (i == antiplayer_ && antiplayer_attack_bonus) {
+            damage = (int)(damage * kFamiliarEncounterMultiplier);
+        }
+        damage_received[opponent] += damage;
     }
     // Calculate remaining health
     for (int i = 0; i < num_players_; i++) {
@@ -430,9 +531,9 @@ void AI_::ProcessMoves() {
     if (num_antiplayers > 0) {
         // Who will be the true antitelephone player?
         std::uniform_int_distribution<int> uniform(0, num_antiplayers);
-        int antiplayer = antiplayers[uniform(rand_)];
+        antiplayer_ = antiplayers[uniform(rand_)];
         if (travel_handler_) {
-            travel_handler_(antiplayer);
+            travel_handler_(game_id_, antiplayer_);
         }
         // Have to discard all the work done above, but then again
         // time travel tends to undo things anyway.
@@ -441,52 +542,6 @@ void AI_::ProcessMoves() {
 
     // Make a new moment one step into the future
     Moment new_moment = timeline.MakeMoment();
-
-    // If there's a second-rightmost timeline and inactive players,
-    // check for changed encounter data and make players active if found.
-    boost::optional<TimeLine> const& timeline_sec_opt =
-        timeplane_.second_rightmost_timeLine();
-
-    // One of the few times I think goto makes things clearer...
-
-    // *** if (I need to use the second rightmost timeline) {
-    if (!timeline_sec_opt) {
-        goto timeline_sec_handling_end;
-    }
-    TimeLine const& timeline_sec = timeline_sec_opt.get();
-    int new_time = new_moment.time();
-    if (timeline_sec.LatestMoment().time() < new_time) {
-        goto timeline_sec_handling_end;
-    }
-
-    // *** (if statement body)
-    RoundInfo const& sec_info =
-        round_info_.at(timeline_sec.GetMoment(new_time));
-    for (int sleeper = 0; sleeper < num_players_; sleeper++) {
-        if (new_info.Active(sleeper)) {
-            // No need to care about already active players
-            continue;
-        }
-        int sleeper_location = location_data[sleeper];
-        int omnv = RoundInfo::kOmniscientViewer;
-        // If the sleeper is in a different location across
-        // the timelines, then something has gone horribly wrong.
-        assert(sleeper_location == sec_info.Location(sleeper, omnv));
-
-        for (int other = 0; other < num_players_; other++) {
-            // Checking for equality of two boolean expressions.
-            // Just a heads up since it's slightly confusing.
-            if ((sec_info.Location(other, omnv) == sleeper_location) !=
-                    encounters.Value(sleeper, other)) {
-                // Either a missed encounter, or a new encounter with
-                // an active player involved.
-                new_info.SetActive(sleeper, true);
-                views[sleeper].set_active(true);
-            }
-        }
-    }
-timeline_sec_handling_end:
-    // *** }
 
     // Now to finalize everything
     std::vector<MomentOverview::TaggedValuesArr> item_state_data;
@@ -510,7 +565,7 @@ timeline_sec_handling_end:
                                    std::move(item_state_data[i]),
                                    RoundInfoView{new_info, i});
         }
-        new_round_handler_(std::move(overviews));
+        new_round_handler_(game_id_, std::move(overviews));
     }
 
     // Is the game over yet?
@@ -532,7 +587,7 @@ timeline_sec_handling_end:
     if (!exists_pair_of_enemies) {
         game_over = true;
         if (end_game_handler_) {
-            end_game_handler_();
+            end_game_handler_(game_id_);
         }
     }
 
@@ -568,9 +623,12 @@ AG_::AntitelephoneGame(int game_id, int num_players,
                        uint64_t random_seed)
     :pimpl_{std::make_unique<Impl>(game_id, num_players, random_seed)} {}
 
-AG_::MomentOverviewQueryResult AG_::GetOverview(
-    int player, Moment m, bool from_rightmost) const {
-    return pimpl_->GetOverview(player, m, from_rightmost);
+TimePlane const& AG_::time_plane() const noexcept {
+    return pimpl_->time_plane();
+}
+
+AG_::MomentOverviewQueryResult AG_::GetOverview(int player, Moment m) const {
+    return pimpl_->GetOverview(player, m);
 }
 
 QueryResult AG_::MakeRegularMove(int player, MoveData move) {

@@ -53,6 +53,11 @@ class AntitelephoneGame {
     static int constexpr kEnergyPerRound = 3;
 
     /**
+     * @brief Damage multiplier for a reenacted encounter.
+     */
+    static double constexpr kFamiliarEncounterMultiplier = 1.5;
+
+    /**
      * @brief Constructor.
      * @param game_id           A numeric ID assigned to the game.
      * @param num_players       The number of players in the game.
@@ -83,8 +88,7 @@ class AntitelephoneGame {
      * @return Whether the request was successfully granted, and the
      *      resulting moment overview if it was.
      */
-    MomentOverviewQueryResult GetOverview(
-        int player, Moment m, bool from_rightmost = true) const;
+    MomentOverviewQueryResult GetOverview(int player, Moment m) const;
 
     /**
      * @brief Submits data for a regular move for the upcoming round.
@@ -108,8 +112,8 @@ class AntitelephoneGame {
      * The argument represents the overview of the new moment as seen from
      * each player in the game.
      */
-    using NewRoundHandler = std::function<
-                            void (std::vector<MomentOverview>&&)>;
+    using NewRoundHandler =
+        std::function<void (int, std::vector<MomentOverview> const&&)>;
 
     /**
      * @brief Registers a handler to be called for every new round.
@@ -122,7 +126,7 @@ class AntitelephoneGame {
      *
      * The argument represents the ID of the player that traveled in time.
      */
-    using TravelHandler = std::function<void (int)>;
+    using TravelHandler = std::function<void (int, int)>;
 
     /**
      * @brief Registers a handler to be called for time travel.
@@ -133,7 +137,7 @@ class AntitelephoneGame {
     /**
      * @brief Alias for the type of a handler called at the end of the game.
      */
-    using EndGameHandler = std::function<void ()>;
+    using EndGameHandler = std::function<void (int)>;
 
     /**
      * @brief Registers a handler to be called once the game is over.

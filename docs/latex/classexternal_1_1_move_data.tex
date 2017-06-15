@@ -14,9 +14,9 @@ A representation of a player\textquotesingle{}s move for a round in the game.
 \item 
 \hyperlink{classexternal_1_1_move_data_a230c2389b03633b6b02928a867f59f27}{Move\+Data} ()
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-int \hyperlink{classexternal_1_1_move_data_acaef1f55196d7bb2fba3ebba2e9e9428}{Energy\+Input} (Item\+Type item) const noexcept
-\begin{DoxyCompactList}\small\item\em Accessor for the energy input for each item. \end{DoxyCompactList}\item 
-void \hyperlink{classexternal_1_1_move_data_aba5ad33ec9f3e4632750e35236581096}{Set\+Energy\+Input} (Item\+Type item, int energy\+\_\+input) noexcept
+int \hyperlink{classexternal_1_1_move_data_adec73e4cffd6895b046411a25aa516ff}{Energy\+Input} (int item\+ID) const noexcept
+\begin{DoxyCompactList}\small\item\em Accessor for the energy input for an item. \end{DoxyCompactList}\item 
+void \hyperlink{classexternal_1_1_move_data_a9e15f73abac9be9eeeb4e8f702af05f8}{Set\+Energy\+Input} (int item\+ID, int energy\+\_\+input) noexcept
 \begin{DoxyCompactList}\small\item\em Mutator for the energy input for each item. \end{DoxyCompactList}\item 
 int \hyperlink{classexternal_1_1_move_data_a2469eb5c4a210b6ebd769254f190ad7e}{new\+\_\+location} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the location that the player travels to. \end{DoxyCompactList}\item 
@@ -26,7 +26,7 @@ std\+::unordered\+\_\+set$<$ int $>$ const  \& \hyperlink{classexternal_1_1_move
 \begin{DoxyCompactList}\small\item\em Accessor for the alliances that the player attempts to add. \end{DoxyCompactList}\item 
 void \hyperlink{classexternal_1_1_move_data_ae3a11d3c816e165ac2ceff604f191d32}{add\+\_\+alliance} (int player)
 \begin{DoxyCompactList}\small\item\em Adds the specified player as a potential ally. \end{DoxyCompactList}\item 
-std\+::unordered\+\_\+set$<$ int $>$ const  \& \hyperlink{classexternal_1_1_move_data_addc5f0e83d4c41edab01fe2e804b3eeb}{removed\+\_\+alliances} ()
+std\+::unordered\+\_\+set$<$ int $>$ const  \& \hyperlink{classexternal_1_1_move_data_ace46398597a4ba0139c7c043d0d8d5be}{removed\+\_\+alliances} () const noexcept
 \begin{DoxyCompactList}\small\item\em Accessor for the alliances that the player removes. \end{DoxyCompactList}\item 
 void \hyperlink{classexternal_1_1_move_data_a397656419a2c5adf79ee8bf1bfae9ca8}{remove\+\_\+alliance} (int player)
 \begin{DoxyCompactList}\small\item\em Removes the specified player as an ally. \end{DoxyCompactList}\item 
@@ -55,29 +55,29 @@ Constructor.
 By default, energy input for all items is 0 and no alliances are added or removed. The new location value is unspecified. 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classexternal_1_1_move_data_acaef1f55196d7bb2fba3ebba2e9e9428}\label{classexternal_1_1_move_data_acaef1f55196d7bb2fba3ebba2e9e9428}} 
+\mbox{\Hypertarget{classexternal_1_1_move_data_adec73e4cffd6895b046411a25aa516ff}\label{classexternal_1_1_move_data_adec73e4cffd6895b046411a25aa516ff}} 
 \index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!Energy\+Input@{Energy\+Input}}
 \index{Energy\+Input@{Energy\+Input}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
 \subsubsection{\texorpdfstring{Energy\+Input()}{EnergyInput()}}
-{\footnotesize\ttfamily int external\+::\+Move\+Data\+::\+Energy\+Input (\begin{DoxyParamCaption}\item[{Item\+Type}]{item }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily int external\+::\+Move\+Data\+::\+Energy\+Input (\begin{DoxyParamCaption}\item[{int}]{item\+ID }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
-Accessor for the energy input for each item. 
+Accessor for the energy input for an item. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em item} & The item to query. \\
+{\em item\+ID} & The item ID to query. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 The energy input for the item. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classexternal_1_1_move_data_aba5ad33ec9f3e4632750e35236581096}\label{classexternal_1_1_move_data_aba5ad33ec9f3e4632750e35236581096}} 
+\mbox{\Hypertarget{classexternal_1_1_move_data_a9e15f73abac9be9eeeb4e8f702af05f8}\label{classexternal_1_1_move_data_a9e15f73abac9be9eeeb4e8f702af05f8}} 
 \index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!Set\+Energy\+Input@{Set\+Energy\+Input}}
 \index{Set\+Energy\+Input@{Set\+Energy\+Input}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
 \subsubsection{\texorpdfstring{Set\+Energy\+Input()}{SetEnergyInput()}}
-{\footnotesize\ttfamily void external\+::\+Move\+Data\+::\+Set\+Energy\+Input (\begin{DoxyParamCaption}\item[{Item\+Type}]{item,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily void external\+::\+Move\+Data\+::\+Set\+Energy\+Input (\begin{DoxyParamCaption}\item[{int}]{item\+ID,  }\item[{int}]{energy\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 
@@ -146,11 +146,11 @@ Adds the specified player as a potential ally.
 {\em player} & The ID of the player to add. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classexternal_1_1_move_data_addc5f0e83d4c41edab01fe2e804b3eeb}\label{classexternal_1_1_move_data_addc5f0e83d4c41edab01fe2e804b3eeb}} 
+\mbox{\Hypertarget{classexternal_1_1_move_data_ace46398597a4ba0139c7c043d0d8d5be}\label{classexternal_1_1_move_data_ace46398597a4ba0139c7c043d0d8d5be}} 
 \index{external\+::\+Move\+Data@{external\+::\+Move\+Data}!removed\+\_\+alliances@{removed\+\_\+alliances}}
 \index{removed\+\_\+alliances@{removed\+\_\+alliances}!external\+::\+Move\+Data@{external\+::\+Move\+Data}}
 \subsubsection{\texorpdfstring{removed\+\_\+alliances()}{removed\_alliances()}}
-{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$int$>$ const\& external\+::\+Move\+Data\+::removed\+\_\+alliances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$int$>$ const\& external\+::\+Move\+Data\+::removed\+\_\+alliances (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
 
 

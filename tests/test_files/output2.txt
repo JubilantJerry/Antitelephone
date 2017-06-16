@@ -1,0 +1,37 @@
+NUMBER OF PLAYERS?
+GAME START
+PLAYER 0 MOVE?
+SUCCESS
+PLAYER 1 MOVE?
+NEW ROUND HANDLER
+[MOMENT (0, 1): PLAYER 0, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=3| |ITEM 1|unlock_requirement=45| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|LOC=3|HP=10|DMG=0|ALLY| |P1|)]
+[MOMENT (0, 1): PLAYER 1, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=5| |ITEM 1|unlock_requirement=43| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0| |P1|LOC=5|HP=11|DMG=0|ALLY|)]
+SUCCESS
+PLAYER 0 MOVE?
+SUCCESS
+PLAYER 1 MOVE?
+NEW ROUND HANDLER
+[MOMENT (0, 2): PLAYER 0, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=3| |ITEM 1|unlock_requirement=45| |ITEM 2|unlock_requirement=43| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|LOC=8|HP=10|DMG=0|ALLY| |P1|)]
+[MOMENT (0, 2): PLAYER 1, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=5| |ITEM 1|unlock_requirement=40| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0| |P1|LOC=2|HP=11|DMG=0|ALLY|)]
+SUCCESS
+PLAYER 0 MOVE?
+SUCCESS
+PLAYER 1 MOVE?
+NEW ROUND HANDLER
+[MOMENT (0, 3): PLAYER 0, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=2| |ITEM 1|unlock_requirement=45| |ITEM 2|unlock_requirement=42| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|LOC=4|HP=6|DMG=4|ALLY| |P1|LOC=4|HP=7|DMG=4|)]
+[MOMENT (0, 3): PLAYER 1, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=5| |ITEM 1|unlock_requirement=37| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|LOC=4|HP=6|DMG=4| |P1|LOC=4|HP=7|DMG=4|ALLY|)]
+SUCCESS
+[MOMENT (0, 3): PLAYER 0, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=2| |ITEM 1|unlock_requirement=45| |ITEM 2|unlock_requirement=42| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|LOC=4|HP=6|DMG=4|ALLY| |P1|LOC=4|HP=7|DMG=4|)]
+SUCCESS
+[MOMENT (0, 3): PLAYER 1, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=5| |ITEM 1|unlock_requirement=37| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|LOC=4|HP=6|DMG=4| |P1|LOC=4|HP=7|DMG=4|ALLY|)]
+SUCCESS
+PLAYER 0 MOVE?
+SUCCESS
+PLAYER 1 MOVE?
+NEW ROUND HANDLER
+[MOMENT (0, 4): PLAYER 0, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=1| |ITEM 1|unlock_requirement=45| |ITEM 2|unlock_requirement=41| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|LOC=8|HP=6|DMG=0|ALLY| |P1|ALLY|)]
+[MOMENT (0, 4): PLAYER 1, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=5| |ITEM 1|unlock_requirement=34| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|ALLY| |P1|LOC=2|HP=7|DMG=0|ALLY|)]
+END GAME HANDLER
+SUCCESS
+GAME END
+

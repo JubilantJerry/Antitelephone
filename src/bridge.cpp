@@ -68,7 +68,7 @@ std::pair<Effect, ItemProperties> Bridge::BranchImpl(
 }
 
 TaggedValues Bridge::StateTaggedValues(Moment m) const {
-    ItemProperties properties = GetProperties(m);
+    ItemProperties const& properties = GetProperties(m);
     TaggedValues result;
     int lockdown = properties.lockdown();
     if (lockdown > 0) {

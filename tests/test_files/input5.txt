@@ -1,0 +1,88 @@
+# Here there are 4 players, in two teams. They move in pairs and attack in pairs.
+# Also a test to make sure dead people can't do anything weird.
+4
+
+# Teams are 0-2, 1-3. Team 0-2 builds up HP and team 1-3 will die.
+MAKE MOVES
+[L8|A0|B0|O0|S0|+2]
+[L2|A0|B0|O0|S3|+3]
+[L8|A0|B0|O0|S0|+0]
+[L2|A0|B0|O0|S3|+1]
+
+MAKE MOVES
+[L6|A0|B0|O0|S0|]
+[L19|A0|B0|O0|S3|]
+[L6|A0|B0|O0|S0|]
+[L19|A0|B0|O0|S3|]
+
+MAKE MOVES
+[L16|A0|B0|O0|S0|]
+[L12|A0|B0|O0|S3|]
+[L16|A0|B0|O0|S0|]
+[L12|A0|B0|O0|S3|]
+
+# Player 0 has 19 HP and will survive 2 hits.
+# Player 1 will try to heal but will barely die after 2 turns.
+# Player 2 is not targeted and will remain with 19 HP.
+# Player 3 is not targeted and will heal to 16 HP.
+MAKE MOVES
+[L2|A0|B3|O0|S0|]
+[L2|A0|B0|O0|S0|]
+[L2|A0|B3|O0|S0|]
+[L2|A0|B0|O0|S0|]
+
+MAKE MOVES
+[L13|A0|B3|O0|S0|]
+[L13|A0|B0|O0|S0|]
+[L13|A0|B3|O0|S0|]
+[L13|A0|B0|O0|S0|]
+
+# Being outnumbered 2-1, player 3 soon dies too. Bringing player 0 with him though.
+MAKE MOVES
+[L3|A0|B0|O0|S0|] # Ow, now only has 2HP.
+[L11|A0|B3|O0|S0|] # Is actually going to the graveyard without altering any items.
+[L3|A0|B3|O0|S0|] # Builds up energy because why not.
+[L3|A0|B0|O0|S0|] # Now 11 HP.
+
+MAKE MOVES
+[L5|A0|B0|O0|S0|] # 1HP
+[L19|A0|B3|O0|S0|]
+[L5|A0|B3|O0|S0|]
+[L5|A0|B0|O0|S0|] # 6HP
+
+MAKE MOVES
+[L5|A0|B0|O0|S0|] # Dead
+[L19|A0|B3|O0|S0|]
+[L5|A0|B3|O0|S0|]
+[L5|A0|B0|O0|S0|] # 1HP
+
+# Miss once for good measure
+MAKE MOVES
+[L19|A0|B3|O0|S0|]
+[L19|A0|B3|O0|S0|]
+[L4|A0|B3|O0|S0|] # 19HP
+[L5|A0|B0|O0|S0|] # 4HP
+
+MAKE MOVES
+[L19|A0|B3|O0|S0|]
+[L19|A0|B3|O0|S0|]
+[L5|A0|B3|O0|S0|] # 15HP
+[L5|A0|B0|O0|S0|] # 3HP
+
+MAKE MOVES
+[L19|A0|B3|O0|S0|]
+[L19|A0|B3|O0|S0|]
+[L6|A0|B3|O0|S0|] # 11HP
+[L6|A0|B0|O0|S0|] # 2HP
+
+MAKE MOVES
+[L19|A0|B3|O0|S0|]
+[L19|A0|B3|O0|S0|]
+[L7|A0|B3|O0|S0|] # 7HP
+[L7|A0|B0|O0|S0|] # 1HP
+
+MAKE MOVES
+[L19|A0|B3|O0|S0|]
+[L19|A0|B3|O0|S0|]
+[L8|A0|B3|O0|S0|] # 3HP
+[L8|A0|B0|O0|S0|] # Dead

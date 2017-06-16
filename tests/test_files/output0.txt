@@ -1,3 +1,4 @@
+NUMBER OF PLAYERS?
 GAME START
 [MOMENT (0, 0): PLAYER 0, (EFFECTS: ATK 4 HPMAX 20 SHLD 0 000), (ITEMS: |ITEM 0|activation_energy=5| |ITEM 1|unlock_requirement=45| |ITEM 2|unlock_requirement=45| |ITEM 3|unlock_requirement=45|), (ROUNDINFO: ACTIVE, |P0|ALLY| |P1|)]
 SUCCESS

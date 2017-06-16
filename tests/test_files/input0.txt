@@ -1,5 +1,6 @@
 # This is the shortest possible game, where the players decide to draw immediately
 # Also displays the earliest moment in the game
+2
 SHOW OVERVIEW
 0 0 0
 SHOW OVERVIEW

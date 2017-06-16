@@ -1,4 +1,5 @@
 # The players move around a bit without hitting each other, until they decide to draw
+2
 MAKE MOVES
 [L3|A3|B0|O0|S0|]
 [L5|A0|B2|O0|S0|]

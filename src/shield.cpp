@@ -17,7 +17,7 @@ ItemProperties Shield::FirstProperties() noexcept {
 }
 
 Effect Shield::View(Moment m) const {
-    ItemProperties properties = GetProperties(m);
+    ItemProperties const& properties = GetProperties(m);
     Effect result = Item::IncrementEffectIf(properties);
     if (properties.lockdown() > 0) {
         return result;
@@ -89,7 +89,7 @@ std::pair<Effect, ItemProperties> Shield::BranchImpl(
 }
 
 TaggedValues Shield::StateTaggedValues(Moment m) const {
-    ItemProperties properties = GetProperties(m);
+    ItemProperties const& properties = GetProperties(m);
     TaggedValues result;
     int lockdown = properties.lockdown();
     if (lockdown > 0) {

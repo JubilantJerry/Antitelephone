@@ -1,0 +1,34 @@
+# Here there are 4 players, in two teams. They move in pairs and the pairs never meet.
+# Also, a test to make sure health doesn't pass the maximum.
+4
+MAKE MOVES
+[L0|A0|B0|O0|S0|+1] # Teams should form before the move takes place
+[L0|A0|B0|O0|S0|+0]
+[L8|A0|B0|O0|S3|+3]
+[L8|A0|B0|O0|S3|+2]
+
+MAKE MOVES
+[L6|A0|B0|O0|S0|]
+[L6|A0|B0|O0|S0|]
+[L19|A0|B0|O0|S3|]
+[L19|A0|B0|O0|S3|]
+
+MAKE MOVES
+[L16|A0|B0|O0|S0|]
+[L16|A0|B0|O0|S0|]
+[L20|A0|B0|O0|S3|] # This should fail
+[L12|A0|B0|O0|S3|]
+[L12|A0|B0|O0|S3|]
+
+MAKE MOVES
+[L13|A0|B0|O1|S0|+2] # HP maxed at 20
+[L13|A0|B0|O1|S0|+3]
+[L1|A0|B0|O0|S3|+0]
+[L1|A0|B0|O0|S3|+1]
+
+# Players 0 and 3 are still enemies. Same for 1 and 2.
+MAKE MOVES
+[L13|A3|B0|O0|S0|+3]
+[L13|A3|B0|O0|S0|+2]
+[L13|A0|B0|O0|S3|+1]
+[L13|A0|B0|O0|S3|+0]

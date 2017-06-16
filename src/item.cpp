@@ -16,7 +16,7 @@ Effect Item::Step(Moment curr, RoundInfoView const& round_info_view,
     }
     std::pair<Effect, ItemProperties> pair =
         StepImpl(curr, round_info_view, energy_input);
-    pending_new_properties_ = pair.second;
+    pending_new_properties_ = std::move(pair.second);
     return pair.first;
 }
 
@@ -25,7 +25,7 @@ Effect Item::Branch(Moment curr, Moment dest) {
         throw std::invalid_argument("Destination is not in the past");
     }
     std::pair<Effect, ItemProperties> pair = BranchImpl(curr, dest);
-    pending_new_properties_ = pair.second;
+    pending_new_properties_ = std::move(pair.second);
     return pair.first;
 }
 
@@ -37,7 +37,7 @@ void Item::ConfirmPending(Moment new_moment) {
     if (!pending_new_properties_) {
         throw std::runtime_error("Item does not have pending properties");
     }
-    properties_.emplace(new_moment, pending_new_properties_.get());
+    properties_.emplace(new_moment, std::move(pending_new_properties_.get()));
     pending_new_properties_ = boost::none;
 }
 

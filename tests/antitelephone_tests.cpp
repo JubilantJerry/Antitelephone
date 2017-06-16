@@ -31,10 +31,13 @@ using namespace external;
 using namespace item;
 using namespace timeplane;
 
+// Framework to test the correctness of the game through a console interface
+
 std::stringstream out_data{};
 std::ifstream in_data{};
 std::ifstream ref_data{};
 
+// Reset all the I/O objects
 bool SetupIO(std::string in_path, std::string out_path) {
     if (in_data.is_open()) {
         in_data.close();
@@ -63,6 +66,9 @@ bool SetupIO(std::string in_path, std::string out_path) {
 
 std::string test_files_path = TEST_FILES_PATH;
 
+// Allow interactive gameplay. This allows the user to specify moves
+// through the console when the input file is incomplete, and also
+// displays output in the console and enables a dedicated interactive mode.
 //#define TEST_INTERACTIVE
 
 #ifdef TEST_INTERACTIVE
@@ -113,6 +119,7 @@ std::ifstream& in = in_data;
 std::stringstream& out = out_data;
 #endif
 
+// Output the contents of a MomentOverview
 void ShowMomentOverview(MomentOverview const& overview) {
     Moment m = overview.moment();
     out << "[MOMENT (";
@@ -163,6 +170,7 @@ void ShowMomentOverview(MomentOverview const& overview) {
     out << ")]" << std::endl;
 }
 
+// Output the contents of a QueryResult
 void ShowQueryResult(QueryResult const& result) {
     if (result.success()) {
         out << "SUCCESS";
@@ -179,6 +187,7 @@ void ShowQueryResult(QueryResult const& result) {
     out << std::endl;
 }
 
+// Requests a move from the user
 MoveData CollectMoveData() {
     // Example valid string: "[L3|A0|B1|O2|S3|+0-2+5] # Optional comment"
     static std::string pattern = "\\[L([0-9]+)\\|A([0-9]+)\\|B([0-9]+)\\|"
@@ -219,7 +228,27 @@ MoveData CollectMoveData() {
     return movedata;
 }
 
-void RunGameEngine(int num_players) {
+// Runs the game through the framework
+void RunGameEngine() {
+    int num_players = 0;
+    std::string line;
+    out << "NUMBER OF PLAYERS?" << std::endl;
+    while(true) {
+        getline(in, line);
+        if (line == "" || line[0] == '#') {
+            // It's an empty line or a comment
+            continue;
+        }
+        std::stringstream temp_stream{line};
+        temp_stream >> num_players;
+        if (num_players < AntitelephoneGame::kMinNumPlayers ||
+                num_players > AntitelephoneGame::kMaxNumPlayers) {
+            out << "BAD NUMBER OF PLAYERS" << std::endl;
+        } else {
+            break;
+        }
+    }
+
     bool running = true;
     int antiplayer = -1;
     static int constexpr test_game_id = 42;
@@ -267,7 +296,7 @@ void RunGameEngine(int num_players) {
             antiplayer = -1;
             continue;
         }
-        std::string line;
+
         while(true) {
             getline(in, line);
             if (line == "" || line[0] == '#') {
@@ -307,7 +336,7 @@ void RunGameEngine(int num_players) {
             } else if (line == "MAKE MOVES") {
                 break;
             } else {
-                out << "BAD INSTRUCTION: " << line;
+                out << "BAD INSTRUCTION: " << line << std::endl;
             }
         }
         for (int i = 0; i < num_players; i++) {
@@ -322,61 +351,60 @@ void RunGameEngine(int num_players) {
     out << "GAME END" << std::endl << std::endl;
 }
 
-void CompareOutputWithReference(int test_no) {
+// Verifies the correctness of the output with a reference file
+void CompareOutputWithReference() {
     int line_no = 1;
     std::string line_from_output;
     std::string line_from_reference;
-    std::string test_case_identifier = " in test case ";
-    test_case_identifier += std::to_string(test_no);
 
     while (!out_data.eof() && !ref_data.eof()) {
         getline(out_data, line_from_output);
         getline(ref_data, line_from_reference);
         if (line_from_output != line_from_reference) {
             FAIL(std::string("Line ") + std::to_string(line_no) +
-                 test_case_identifier + " does not match");
+                 " does not match");
         } else {
             REQUIRE(true);
         }
         line_no++;
     }
     if (!out_data.eof()) {
-        FAIL("Extra output data" + test_case_identifier);
+        FAIL("Trailing output data");
     }
     if (!ref_data.eof()) {
-        FAIL("Missing output data" + test_case_identifier);
+        FAIL("Missing output data");
     }
 }
 
-TEST_CASE("Antitelephone test 0", "[game_all]") {
-    std::string in_path = test_files_path + "input0.txt";
-    std::string out_path = test_files_path + "output0.txt";
-    REQUIRE(SetupIO(in_path, out_path));
-
-    RunGameEngine(2);
-    CompareOutputWithReference(0);
+// Macro to quickly instantiate a test case
+#define ANTI_TEST(case_str) \
+TEST_CASE("Antitelephone test " case_str, "[game_all]") {\
+    std::string suffix = case_str;\
+    suffix += ".txt";\
+    std::string in_path = test_files_path + "input" + suffix;\
+    std::string out_path = test_files_path + "output" + suffix;\
+    if(SetupIO(in_path, out_path)) {\
+        RunGameEngine();\
+        CompareOutputWithReference();\
+    }\
 }
 
-TEST_CASE("Antitelephone test 1", "[game_all]") {
-    std::string in_path = test_files_path + "input1.txt";
-    std::string out_path = test_files_path + "output1.txt";
-    REQUIRE(SetupIO(in_path, out_path));
+ANTI_TEST("0")
+ANTI_TEST("1")
+ANTI_TEST("2")
+ANTI_TEST("3")
+ANTI_TEST("4")
+ANTI_TEST("5")
 
-    RunGameEngine(2);
-    CompareOutputWithReference(1);
-}
-
+// Dedicated interactive mode of the game
 #ifdef TEST_INTERACTIVE
 TEST_CASE("Antitelephone test interactive", "[game_all]") {
     SetupIO("", "");
-    out << "INTERACTIVE MODE. NUMBER OF PLAYERS?" << std::endl;
-    int num_players = 0;
-    in >> num_players;
-    if (num_players < AntitelephoneGame::kMinNumPlayers ||
-            num_players > AntitelephoneGame::kMaxNumPlayers) {
-        out << "BAD NUMBER OF PLAYERS" << std::endl;
-    } else {
-        RunGameEngine(num_players);
+    out << "INTERACTIVE MODE?" << std::endl;
+    bool run;
+    in >> run;
+    if (run) {
+        RunGameEngine();
     }
 }
 #endif

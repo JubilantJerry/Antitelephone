@@ -42,7 +42,7 @@ std::pair<Effect, ItemProperties> Antitelephone::BranchImpl(
 }
 
 TaggedValues Antitelephone::StateTaggedValues(Moment m) const {
-    ItemProperties properties = GetProperties(m);
+    ItemProperties const& properties = GetProperties(m);
     TaggedValues result;
     int lockdown = properties.lockdown();
     if (lockdown > 0) {
